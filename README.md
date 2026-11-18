@@ -2,10 +2,11 @@
 
 对官方训练集的 2,699 段文本按 `prompt_id` 做固定五折分组。每次用四折训练，在持出的新题目上预测，汇总全部折外预测计算 18 类平均召回率。下表是本地 Balanced Accuracy，Kaggle 公榜和私榜以赛事评分为准。
 
-已记录 **53** 个候选。每个候选目录有五折分数、逐类召回率和混淆矩阵。
+已记录 **55** 个候选。每个候选目录有五折分数、逐类召回率和混淆矩阵。
 
 | 实验 | Balanced Accuracy | 折 1 | 折 2 | 折 3 | 折 4 | 折 5 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [`hybrid-modernbert`](results/hybrid-modernbert) | 0.4101 | 0.4185 | 0.3963 | 0.3838 | 0.4426 | 0.4093 |
 | [`hybrid-glm-refine-25`](results/hybrid-glm-refine-25) | 0.3986 | 0.4056 | 0.3833 | 0.3781 | 0.4444 | 0.3815 |
 | [`hybrid-two-corpora`](results/hybrid-two-corpora) | 0.3986 | 0.4093 | 0.3852 | 0.3744 | 0.4407 | 0.3833 |
 | [`hybrid-glm-refine-50`](results/hybrid-glm-refine-50) | 0.3978 | 0.4056 | 0.3852 | 0.3743 | 0.4426 | 0.3815 |
@@ -54,6 +55,7 @@
 | [`char`](results/char) | 0.3212 | 0.3259 | 0.3148 | 0.3226 | 0.3130 | 0.3296 |
 | [`family`](results/family) | 0.3134 | 0.3111 | 0.3222 | 0.2853 | 0.3537 | 0.2944 |
 | [`token-shape`](results/token-shape) | 0.3037 | 0.3241 | 0.2722 | 0.2872 | 0.3222 | 0.3130 |
+| [`modernbert-standalone`](results/modernbert-standalone) | 0.2934 | 0.2981 | 0.2759 | 0.3057 | 0.2889 | 0.2981 |
 | [`char-lm`](results/char-lm) | 0.2826 | 0.3000 | 0.2722 | 0.2557 | 0.2852 | 0.3000 |
 | [`boundaries`](results/boundaries) | 0.2801 | 0.2667 | 0.2667 | 0.2946 | 0.2815 | 0.2907 |
 | [`typography`](results/typography) | 0.2552 | 0.2296 | 0.2556 | 0.2817 | 0.2741 | 0.2352 |
@@ -76,6 +78,7 @@
 - `hybrid-two-corpora` 融合单篇版与两套加权 SVM。新增样本只加入训练折，筛除由重建赛题 prompt 或 Kaggle Proxy 路由产生的记录。 [Claude API 语料与加权实验](https://www.kaggle.com/datasets/seyitkaangunes/ntl-extra-api-passages) · [18 类扩展语料](https://www.kaggle.com/datasets/prvsiyan/prvsiyans-extended-name-that-llm-dataset)
 - `glm-augment` 单独对两个 GLM 型号补样；`glm-refine` 仅重排两个 GLM 型号；`glm-claude` 对七个 GLM 与 Claude 型号做专项对照。
 - [ModernBERT 两折筛选](reports/modernbert-two-fold.json)记录每轮分数和 15% 与 25% 融合结果。完整五折实验列入上表。
+- [ModernBERT 五折复核](reports/modernbert-five-fold.json)保留各轮学习曲线和同折对照。`hybrid-modernbert` 采用前两折选定的第 3 轮与 25% 融合权重，后三折沿用该配方。
 
 ## 数据
 
