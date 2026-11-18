@@ -2,10 +2,16 @@
 
 对官方训练集的 2,699 段文本按 `prompt_id` 做固定五折分组。每次用四折训练，在持出的新题目上预测，汇总全部折外预测计算 18 类平均召回率。下表是本地 Balanced Accuracy，Kaggle 公榜和私榜以赛事评分为准。
 
-已记录 **35** 个候选。每个候选目录有五折分数、逐类召回率和混淆矩阵。
+已记录 **45** 个候选。每个候选目录有五折分数、逐类召回率和混淆矩阵。
 
 | 实验 | Balanced Accuracy | 折 1 | 折 2 | 折 3 | 折 4 | 折 5 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [`hybrid-two-corpora`](results/hybrid-two-corpora) | 0.3986 | 0.4093 | 0.3852 | 0.3744 | 0.4407 | 0.3833 |
+| [`hybrid-claude-augment-50`](results/hybrid-claude-augment-50) | 0.3967 | 0.4056 | 0.3796 | 0.3782 | 0.4352 | 0.3852 |
+| [`hybrid-claude-only-refine`](results/hybrid-claude-only-refine) | 0.3967 | 0.4074 | 0.3741 | 0.3762 | 0.4407 | 0.3852 |
+| [`hybrid-claude-augment-25`](results/hybrid-claude-augment-25) | 0.3956 | 0.4056 | 0.3778 | 0.3726 | 0.4389 | 0.3833 |
+| [`hybrid-extended-augment-50`](results/hybrid-extended-augment-50) | 0.3945 | 0.4000 | 0.3889 | 0.3687 | 0.4370 | 0.3778 |
+| [`hybrid-extended-augment-25`](results/hybrid-extended-augment-25) | 0.3930 | 0.4019 | 0.3778 | 0.3669 | 0.4370 | 0.3815 |
 | [`hybrid-style-mix-thin`](results/hybrid-style-mix-thin) | 0.3927 | 0.3963 | 0.3796 | 0.3615 | 0.4426 | 0.3833 |
 | [`hybrid-style-mix`](results/hybrid-style-mix) | 0.3923 | 0.3981 | 0.3796 | 0.3596 | 0.4407 | 0.3833 |
 | [`hybrid-char-typography`](results/hybrid-char-typography) | 0.3912 | 0.4000 | 0.3704 | 0.3651 | 0.4352 | 0.3852 |
@@ -15,11 +21,15 @@
 | [`hybrid-prompt-residual-thin`](results/hybrid-prompt-residual-thin) | 0.3838 | 0.3833 | 0.3741 | 0.3541 | 0.4278 | 0.3796 |
 | [`hybrid`](results/hybrid) | 0.3838 | 0.3944 | 0.3537 | 0.3614 | 0.4241 | 0.3852 |
 | [`external-hybrid`](results/external-hybrid) | 0.3830 | 0.3981 | 0.3556 | 0.3577 | 0.4241 | 0.3796 |
+| [`claude-augment-25`](results/claude-augment-25) | 0.3827 | 0.3852 | 0.3685 | 0.3597 | 0.4259 | 0.3741 |
 | [`prompt-residual`](results/prompt-residual) | 0.3823 | 0.3759 | 0.3685 | 0.3727 | 0.4185 | 0.3759 |
 | [`hybrid-family`](results/hybrid-family) | 0.3823 | 0.3981 | 0.3593 | 0.3447 | 0.4259 | 0.3833 |
+| [`extended-augment-25`](results/extended-augment-25) | 0.3819 | 0.3889 | 0.3704 | 0.3576 | 0.4185 | 0.3741 |
 | [`hybrid-nb-svm`](results/hybrid-nb-svm) | 0.3812 | 0.4019 | 0.3519 | 0.3558 | 0.4241 | 0.3722 |
 | [`hybrid-boundaries`](results/hybrid-boundaries) | 0.3808 | 0.4000 | 0.3500 | 0.3521 | 0.4370 | 0.3648 |
+| [`claude-augment-50`](results/claude-augment-50) | 0.3804 | 0.3815 | 0.3630 | 0.3709 | 0.4130 | 0.3741 |
 | [`hybrid-token-shape`](results/hybrid-token-shape) | 0.3800 | 0.3907 | 0.3556 | 0.3558 | 0.4278 | 0.3704 |
+| [`extended-augment-50`](results/extended-augment-50) | 0.3797 | 0.3759 | 0.3630 | 0.3613 | 0.4222 | 0.3759 |
 | [`hybrid-family-refine`](results/hybrid-family-refine) | 0.3797 | 0.3833 | 0.3500 | 0.3522 | 0.4315 | 0.3815 |
 | [`masked-external`](results/masked-external) | 0.3786 | 0.3759 | 0.3556 | 0.3614 | 0.4130 | 0.3870 |
 | [`masked`](results/masked) | 0.3782 | 0.3852 | 0.3444 | 0.3522 | 0.4315 | 0.3778 |
@@ -54,6 +64,8 @@
 - `hybrid-family-refine` 仅重排同系列型号，保留每个家族原有的概率总量。
 
 公开方法参考包括字符语言模型、遮蔽、主题居中和排版指纹。 [字符作者语言模型](https://aclanthology.org/E03-1053/) · [内容词遮蔽](https://aclanthology.org/E17-1107/) · [主题居中](https://github.com/jerrythomas/name-that-llm) · [排版与家族重排](https://huggingface.co/datasets/yauwes/name-that-llm-sota-artifacts)
+- `claude-augment` 和 `extended-augment` 是加权 SVM。25 和 50 是外部样本占对应类别训练权重的百分比；各类别的总权重相同。
+- `hybrid-two-corpora` 融合单篇版与两套加权 SVM。新增样本只加入训练折，筛除由重建赛题 prompt 或 Kaggle Proxy 路由产生的记录。 [Claude API 语料与加权实验](https://www.kaggle.com/datasets/seyitkaangunes/ntl-extra-api-passages) · [18 类扩展语料](https://www.kaggle.com/datasets/prvsiyan/prvsiyans-extended-name-that-llm-dataset)
 
 ## 数据
 
