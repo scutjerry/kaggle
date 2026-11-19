@@ -1,0 +1,1074 @@
+{
+  "source": "https://www.kaggle.com/datasets/dhananjayk2609/ntl-panel-gap-passages-kaggle-benchmarks/versions/5",
+  "input_sha256": {
+    "component-diagnostic-input.parquet": "680de01174bb89a8dd03c329dfe56084a6c0790b64dd26376df462435f5e2d4a",
+    "component-diagnostic-targets.parquet": "bf1a0cff813799b76e5d13f948cb6f9fb7a8611ec2454fba0242744fe2b7f32d"
+  },
+  "score_file_sha256": {
+    "component-qwen-probabilities.parquet": "00bf4dc9f7500cccbcfe40834d6703b227d2cb47cbdc42e03f74989eab4ed74c",
+    "component-qwen-raw.parquet": "6356871b7ca0eb3b2b079f8b122d0f8d47b13bb1a87e67e93c3b9c980c8214d4",
+    "component-atlas-top4.parquet": "26ba671c9ac85c92b879f24a68ab0442223e0731cad1ed5c8a2eaa1cd9460836"
+  },
+  "scope": "Fixed dual-Qwen and four-prefix ATLAS on publisher-recorded proxy labels dated after both adapters. 1360 separate prompts, 12 of 18 classes. Retain all 18 prediction choices. No GLM likelihood pass or full V30. Compare to deployed Qwen, using the same style pass for both styled arms. Source and language distribution can differ from the contest.",
+  "exploratory_arm": "adaptive_v30_exploratory was designed after observing the raw vs uniform result on this cohort. Its result here is exploratory. Other arms were specified before opening the labels.",
+  "max_deployed_probability_replay_error": 8.881784197001252e-16,
+  "evaluation": {
+    "all_observed_classes": {
+      "no_marginal": {
+        "rows": 1360,
+        "classes": 12,
+        "balanced_accuracy": 0.6806224995639062,
+        "ordinary_accuracy": 0.6794117647058824,
+        "predictions_for_classes_absent_from_entire_cohort": 158,
+        "corrected": 419,
+        "regressed": 22,
+        "delta_95pct_stratified_bootstrap": [
+          0.14231421125709015,
+          0.1848521845397966
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 120,
+            "recall": 0.75
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 60,
+            "recall": 0.4838709677419355
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 160,
+            "recall": 0.8421052631578947
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 97,
+            "recall": 0.7461538461538462
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 203,
+            "recall": 0.8529411764705882
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 125,
+            "recall": 0.5482456140350878
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 124,
+            "recall": 0.5188284518828452
+          },
+          "gpt-5.5": {
+            "n": 11,
+            "correct": 9,
+            "recall": 0.8181818181818182
+          },
+          "gpt-5.6-luna": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-sol": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-terra": {
+            "n": 2,
+            "correct": 2,
+            "recall": 1.0
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "half_marginal": {
+        "rows": 1360,
+        "classes": 12,
+        "balanced_accuracy": 0.6286569397321334,
+        "ordinary_accuracy": 0.5816176470588236,
+        "predictions_for_classes_absent_from_entire_cohort": 277,
+        "corrected": 273,
+        "regressed": 9,
+        "delta_95pct_stratified_bootstrap": [
+          0.09946749678773367,
+          0.12651539232976677
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 97,
+            "recall": 0.60625
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 53,
+            "recall": 0.4274193548387097
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 132,
+            "recall": 0.6947368421052632
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 84,
+            "recall": 0.6461538461538462
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 163,
+            "recall": 0.6848739495798319
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 112,
+            "recall": 0.49122807017543857
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 114,
+            "recall": 0.4769874476987448
+          },
+          "gpt-5.5": {
+            "n": 11,
+            "correct": 10,
+            "recall": 0.9090909090909091
+          },
+          "gpt-5.6-luna": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-sol": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-terra": {
+            "n": 2,
+            "correct": 2,
+            "recall": 1.0
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "deployed_qwen": {
+        "rows": 1360,
+        "classes": 12,
+        "balanced_accuracy": 0.5155894716387278,
+        "ordinary_accuracy": 0.3875,
+        "predictions_for_classes_absent_from_entire_cohort": 403,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_stratified_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 69,
+            "recall": 0.43125
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 34,
+            "recall": 0.27419354838709675
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 89,
+            "recall": 0.46842105263157896
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 66,
+            "recall": 0.5076923076923077
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 95,
+            "recall": 0.39915966386554624
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 63,
+            "recall": 0.27631578947368424
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 75,
+            "recall": 0.3138075313807531
+          },
+          "gpt-5.5": {
+            "n": 11,
+            "correct": 10,
+            "recall": 0.9090909090909091
+          },
+          "gpt-5.6-luna": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-sol": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-terra": {
+            "n": 2,
+            "correct": 2,
+            "recall": 1.0
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "v30_marginal_on_dual_qwen": {
+        "rows": 1360,
+        "classes": 12,
+        "balanced_accuracy": 0.668211401298003,
+        "ordinary_accuracy": 0.6588235294117647,
+        "predictions_for_classes_absent_from_entire_cohort": 177,
+        "corrected": 390,
+        "regressed": 21,
+        "delta_95pct_stratified_bootstrap": [
+          0.1305878551990381,
+          0.17194994518285586
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 118,
+            "recall": 0.7375
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 58,
+            "recall": 0.46774193548387094
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 152,
+            "recall": 0.8
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 94,
+            "recall": 0.7230769230769231
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 196,
+            "recall": 0.8235294117647058
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 122,
+            "recall": 0.5350877192982456
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 121,
+            "recall": 0.5062761506276151
+          },
+          "gpt-5.5": {
+            "n": 11,
+            "correct": 9,
+            "recall": 0.8181818181818182
+          },
+          "gpt-5.6-luna": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-sol": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-terra": {
+            "n": 2,
+            "correct": 2,
+            "recall": 1.0
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "adaptive_v30_exploratory": {
+        "rows": 1360,
+        "classes": 12,
+        "balanced_accuracy": 0.6806224995639062,
+        "ordinary_accuracy": 0.6794117647058824,
+        "predictions_for_classes_absent_from_entire_cohort": 158,
+        "corrected": 419,
+        "regressed": 22,
+        "delta_95pct_stratified_bootstrap": [
+          0.14231421125709015,
+          0.1848521845397966
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 120,
+            "recall": 0.75
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 60,
+            "recall": 0.4838709677419355
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 160,
+            "recall": 0.8421052631578947
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 97,
+            "recall": 0.7461538461538462
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 203,
+            "recall": 0.8529411764705882
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 125,
+            "recall": 0.5482456140350878
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 124,
+            "recall": 0.5188284518828452
+          },
+          "gpt-5.5": {
+            "n": 11,
+            "correct": 9,
+            "recall": 0.8181818181818182
+          },
+          "gpt-5.6-luna": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-sol": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-terra": {
+            "n": 2,
+            "correct": 2,
+            "recall": 1.0
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "qwen_with_atlas": {
+        "rows": 1360,
+        "classes": 12,
+        "balanced_accuracy": 0.5461203985685744,
+        "ordinary_accuracy": 0.4183823529411765,
+        "predictions_for_classes_absent_from_entire_cohort": 391,
+        "corrected": 47,
+        "regressed": 5,
+        "delta_95pct_stratified_bootstrap": [
+          0.013440166221809973,
+          0.05723366677082402
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 74,
+            "recall": 0.4625
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 41,
+            "recall": 0.33064516129032256
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 91,
+            "recall": 0.4789473684210526
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 69,
+            "recall": 0.5307692307692308
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 105,
+            "recall": 0.4411764705882353
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 71,
+            "recall": 0.31140350877192985
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 81,
+            "recall": 0.3389121338912134
+          },
+          "gpt-5.5": {
+            "n": 11,
+            "correct": 10,
+            "recall": 0.9090909090909091
+          },
+          "gpt-5.6-luna": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-sol": {
+            "n": 7,
+            "correct": 4,
+            "recall": 0.5714285714285714
+          },
+          "gpt-5.6-terra": {
+            "n": 2,
+            "correct": 2,
+            "recall": 1.0
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "deployed_qwen_with_style": {
+        "rows": 1360,
+        "classes": 12,
+        "balanced_accuracy": 0.5114182024675703,
+        "ordinary_accuracy": 0.37941176470588234,
+        "predictions_for_classes_absent_from_entire_cohort": 406,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_stratified_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 69,
+            "recall": 0.43125
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 33,
+            "recall": 0.2661290322580645
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 90,
+            "recall": 0.47368421052631576
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 66,
+            "recall": 0.5076923076923077
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 94,
+            "recall": 0.3949579831932773
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 57,
+            "recall": 0.25
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 71,
+            "recall": 0.29707112970711297
+          },
+          "gpt-5.5": {
+            "n": 11,
+            "correct": 10,
+            "recall": 0.9090909090909091
+          },
+          "gpt-5.6-luna": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-sol": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-terra": {
+            "n": 2,
+            "correct": 2,
+            "recall": 1.0
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "qwen_with_atlas_with_style": {
+        "rows": 1360,
+        "classes": 12,
+        "balanced_accuracy": 0.5405718548741386,
+        "ordinary_accuracy": 0.40661764705882353,
+        "predictions_for_classes_absent_from_entire_cohort": 402,
+        "corrected": 44,
+        "regressed": 7,
+        "delta_95pct_stratified_bootstrap": [
+          0.01215104370192583,
+          0.055333838943776845
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 75,
+            "recall": 0.46875
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 41,
+            "recall": 0.33064516129032256
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 91,
+            "recall": 0.4789473684210526
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 69,
+            "recall": 0.5307692307692308
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 100,
+            "recall": 0.42016806722689076
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 63,
+            "recall": 0.27631578947368424
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 77,
+            "recall": 0.32217573221757323
+          },
+          "gpt-5.5": {
+            "n": 11,
+            "correct": 10,
+            "recall": 0.9090909090909091
+          },
+          "gpt-5.6-luna": {
+            "n": 7,
+            "correct": 3,
+            "recall": 0.42857142857142855
+          },
+          "gpt-5.6-sol": {
+            "n": 7,
+            "correct": 4,
+            "recall": 0.5714285714285714
+          },
+          "gpt-5.6-terra": {
+            "n": 2,
+            "correct": 2,
+            "recall": 1.0
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      }
+    },
+    "classes_with_at_least_20_rows": {
+      "no_marginal": {
+        "rows": 1333,
+        "classes": 8,
+        "balanced_accuracy": 0.6865181649302747,
+        "ordinary_accuracy": 0.6804201050262566,
+        "predictions_for_classes_absent_from_entire_cohort": 157,
+        "corrected": 419,
+        "regressed": 21,
+        "delta_95pct_stratified_bootstrap": [
+          0.2344177677836376,
+          0.2820792938035085
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 120,
+            "recall": 0.75
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 60,
+            "recall": 0.4838709677419355
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 160,
+            "recall": 0.8421052631578947
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 97,
+            "recall": 0.7461538461538462
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 203,
+            "recall": 0.8529411764705882
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 125,
+            "recall": 0.5482456140350878
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 124,
+            "recall": 0.5188284518828452
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "half_marginal": {
+        "rows": 1333,
+        "classes": 8,
+        "balanced_accuracy": 0.5972061888189794,
+        "ordinary_accuracy": 0.5798949737434359,
+        "predictions_for_classes_absent_from_entire_cohort": 277,
+        "corrected": 273,
+        "regressed": 9,
+        "delta_95pct_stratified_bootstrap": [
+          0.14920124518160052,
+          0.18977308849465016
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 97,
+            "recall": 0.60625
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 53,
+            "recall": 0.4274193548387097
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 132,
+            "recall": 0.6947368421052632
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 84,
+            "recall": 0.6461538461538462
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 163,
+            "recall": 0.6848739495798319
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 112,
+            "recall": 0.49122807017543857
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 114,
+            "recall": 0.4769874476987448
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "deployed_qwen": {
+        "rows": 1333,
+        "classes": 8,
+        "balanced_accuracy": 0.42760498667887087,
+        "ordinary_accuracy": 0.3818454613653413,
+        "predictions_for_classes_absent_from_entire_cohort": 403,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_stratified_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 69,
+            "recall": 0.43125
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 34,
+            "recall": 0.27419354838709675
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 89,
+            "recall": 0.46842105263157896
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 66,
+            "recall": 0.5076923076923077
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 95,
+            "recall": 0.39915966386554624
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 63,
+            "recall": 0.27631578947368424
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 75,
+            "recall": 0.3138075313807531
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "v30_marginal_on_dual_qwen": {
+        "rows": 1333,
+        "classes": 8,
+        "balanced_accuracy": 0.66790151753142,
+        "ordinary_accuracy": 0.6594148537134283,
+        "predictions_for_classes_absent_from_entire_cohort": 177,
+        "corrected": 390,
+        "regressed": 20,
+        "delta_95pct_stratified_bootstrap": [
+          0.2170261103874737,
+          0.2631221494992615
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 118,
+            "recall": 0.7375
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 58,
+            "recall": 0.46774193548387094
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 152,
+            "recall": 0.8
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 94,
+            "recall": 0.7230769230769231
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 196,
+            "recall": 0.8235294117647058
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 122,
+            "recall": 0.5350877192982456
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 121,
+            "recall": 0.5062761506276151
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "adaptive_v30_exploratory": {
+        "rows": 1333,
+        "classes": 8,
+        "balanced_accuracy": 0.6865181649302747,
+        "ordinary_accuracy": 0.6804201050262566,
+        "predictions_for_classes_absent_from_entire_cohort": 157,
+        "corrected": 419,
+        "regressed": 21,
+        "delta_95pct_stratified_bootstrap": [
+          0.2344177677836376,
+          0.2820792938035085
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 120,
+            "recall": 0.75
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 60,
+            "recall": 0.4838709677419355
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 160,
+            "recall": 0.8421052631578947
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 97,
+            "recall": 0.7461538461538462
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 203,
+            "recall": 0.8529411764705882
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 125,
+            "recall": 0.5482456140350878
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 124,
+            "recall": 0.5188284518828452
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "qwen_with_atlas": {
+        "rows": 1333,
+        "classes": 8,
+        "balanced_accuracy": 0.45554423421649803,
+        "ordinary_accuracy": 0.41260315078769694,
+        "predictions_for_classes_absent_from_entire_cohort": 391,
+        "corrected": 46,
+        "regressed": 5,
+        "delta_95pct_stratified_bootstrap": [
+          0.018199629651267913,
+          0.038073869387010746
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 74,
+            "recall": 0.4625
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 41,
+            "recall": 0.33064516129032256
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 91,
+            "recall": 0.4789473684210526
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 69,
+            "recall": 0.5307692307692308
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 105,
+            "recall": 0.4411764705882353
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 71,
+            "recall": 0.31140350877192985
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 81,
+            "recall": 0.3389121338912134
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "deployed_qwen_with_style": {
+        "rows": 1333,
+        "classes": 8,
+        "balanced_accuracy": 0.42134808292213477,
+        "ordinary_accuracy": 0.3735933983495874,
+        "predictions_for_classes_absent_from_entire_cohort": 406,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_stratified_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 69,
+            "recall": 0.43125
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 33,
+            "recall": 0.2661290322580645
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 90,
+            "recall": 0.47368421052631576
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 66,
+            "recall": 0.5076923076923077
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 94,
+            "recall": 0.3949579831932773
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 57,
+            "recall": 0.25
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 71,
+            "recall": 0.29707112970711297
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      },
+      "qwen_with_atlas_with_style": {
+        "rows": 1333,
+        "classes": 8,
+        "balanced_accuracy": 0.44722141867484433,
+        "ordinary_accuracy": 0.4006001500375094,
+        "predictions_for_classes_absent_from_entire_cohort": 402,
+        "corrected": 43,
+        "regressed": 7,
+        "delta_95pct_stratified_bootstrap": [
+          0.015805927014653744,
+          0.03670943194144714
+        ],
+        "by_class": {
+          "claude-opus-4-6": {
+            "n": 160,
+            "correct": 75,
+            "recall": 0.46875
+          },
+          "claude-opus-4-8": {
+            "n": 124,
+            "correct": 41,
+            "recall": 0.33064516129032256
+          },
+          "claude-opus-5": {
+            "n": 190,
+            "correct": 91,
+            "recall": 0.4789473684210526
+          },
+          "claude-sonnet-5": {
+            "n": 130,
+            "correct": 69,
+            "recall": 0.5307692307692308
+          },
+          "gemini-3.1-pro-preview": {
+            "n": 238,
+            "correct": 100,
+            "recall": 0.42016806722689076
+          },
+          "gemini-3.6-flash": {
+            "n": 228,
+            "correct": 63,
+            "recall": 0.27631578947368424
+          },
+          "gemini-3.8-flash": {
+            "n": 239,
+            "correct": 77,
+            "recall": 0.32217573221757323
+          },
+          "gpt-6-astra": {
+            "n": 24,
+            "correct": 18,
+            "recall": 0.75
+          }
+        }
+      }
+    },
+    "atlas_eligible": 340,
+    "eligible_real_labels": {
+      "gemini-3.8-flash": 77,
+      "gemini-3.6-flash": 66,
+      "gemini-3.1-pro-preview": 60,
+      "claude-opus-5": 42,
+      "claude-opus-4-6": 37,
+      "claude-opus-4-8": 27,
+      "claude-sonnet-5": 25,
+      "gpt-5.6-luna": 2,
+      "gpt-5.6-sol": 2,
+      "gpt-6-astra": 2
+    }
+  }
+}

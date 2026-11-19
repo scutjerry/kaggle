@@ -1,0 +1,32 @@
+{
+  "parent_sha256": "48a1e47d327476f0fea03ff093e9d96514c494e81ac59663f43d381e404d1275",
+  "sha256": "3d928f5de5a594e01dd97c246d8149ae00f2d9fa1deb081af3d4b1ae82194abb",
+  "changed_cells": [
+    0,
+    19
+  ],
+  "inputs": 45,
+  "internet": false,
+  "cases": {
+    "singleton": {
+      "rows": 1,
+      "rho": 0.35,
+      "changed_argmax_vs_fixed": 0
+    },
+    "preview_three": {
+      "rows": 3,
+      "rho": 0.35,
+      "changed_argmax_vs_fixed": 0
+    },
+    "balanced_fold": {
+      "rows": 540,
+      "rho": 0.35,
+      "changed_argmax_vs_fixed": 0
+    },
+    "published_temporal_1360": {
+      "rows": 1360,
+      "rho": 0.0073895144958569334,
+      "changed_argmax_vs_fixed": 64
+    }
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "protocol": "CHEN authentic single-passage prompt-grouped OOF, with the fold-fitted 76-feature GLM head and corrected final style. Test the fixed V30 projection in isolation, disabling it, and estimating a batch-dependent shrinkage capped at the original rho=.35. It compares the estimated sampling variance of the class means with their squared distance from the smoothed training prior. Moderate shift keeps 50\u2013100% of each label. For strong shifts, randomly assign the 12-class temporal frequency pattern to the 18 labels. Resample inside each validation fold, then recompute all batch selection and calibration. Published raw-probability projection matched original V30 code bit-for-bit. This repeats the same 150 training prompts; the temporal 1360-row cohort motivated the experiment.",
+  "code_sha256": "9276c93019aaf52e275fb042819385ac8f006146ea13a80dcbb7cb8aad292827",
+  "runs": {
+    "complete": [
+      {
+        "repeat": 0,
+        "rows": 2699,
+        "n_classes": 18,
+        "rho_by_fold": [
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6849888143176734,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6842505592841164,
+            "corrected": 6,
+            "regressed": 8
+          },
+          "adaptive_v30": {
+            "ba": 0.6849888143176734,
+            "corrected": 0,
+            "regressed": 0
+          }
+        }
+      }
+    ],
+    "moderate_18": [
+      {
+        "repeat": 0,
+        "rows": 1844,
+        "n_classes": 18,
+        "rho_by_fold": [
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6826116673868282,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6806320769147366,
+            "corrected": 6,
+            "regressed": 8
+          },
+          "adaptive_v30": {
+            "ba": 0.6826116673868282,
+            "corrected": 0,
+            "regressed": 0
+          }
+        }
+      },
+      {
+        "repeat": 1,
+        "rows": 2120,
+        "n_classes": 18,
+        "rho_by_fold": [
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6809637344349988,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6802097606522893,
+            "corrected": 9,
+            "regressed": 9
+          },
+          "adaptive_v30": {
+            "ba": 0.6809637344349988,
+            "corrected": 0,
+            "regressed": 0
+          }
+        }
+      },
+      {
+        "repeat": 2,
+        "rows": 2085,
+        "n_classes": 18,
+        "rho_by_fold": [
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6807994871640198,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6777662413903527,
+            "corrected": 5,
+            "regressed": 10
+          },
+          "adaptive_v30": {
+            "ba": 0.6807994871640198,
+            "corrected": 0,
+            "regressed": 0
+          }
+        }
+      },
+      {
+        "repeat": 3,
+        "rows": 2094,
+        "n_classes": 18,
+        "rho_by_fold": [
+          0.3416506214869485,
+          0.35,
+          0.35,
+          0.35,
+          0.35
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6893094716254301,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6878838251751718,
+            "corrected": 5,
+            "regressed": 7
+          },
+          "adaptive_v30": {
+            "ba": 0.6893094716254301,
+            "corrected": 0,
+            "regressed": 0
+          }
+        }
+      },
+      {
+        "repeat": 4,
+        "rows": 2119,
+        "n_classes": 18,
+        "rho_by_fold": [
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6900301332835564,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.688033521383436,
+            "corrected": 6,
+            "regressed": 10
+          },
+          "adaptive_v30": {
+            "ba": 0.6900301332835564,
+            "corrected": 0,
+            "regressed": 0
+          }
+        }
+      },
+      {
+        "repeat": 5,
+        "rows": 2185,
+        "n_classes": 18,
+        "rho_by_fold": [
+          0.35,
+          0.35,
+          0.35,
+          0.35,
+          0.35
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6858977889796549,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6846602131510021,
+            "corrected": 6,
+            "regressed": 8
+          },
+          "adaptive_v30": {
+            "ba": 0.6858977889796549,
+            "corrected": 0,
+            "regressed": 0
+          }
+        }
+      }
+    ],
+    "imbalanced_12": [
+      {
+        "repeat": 0,
+        "rows": 860,
+        "n_classes": 12,
+        "rho_by_fold": [
+          0.13335387200567822,
+          0.1080426653596916,
+          0.13740104199875922,
+          0.13591400414299387,
+          0.1338417172682598
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.604492337164751,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6158572796934866,
+            "corrected": 17,
+            "regressed": 0
+          },
+          "adaptive_v30": {
+            "ba": 0.6108381226053641,
+            "corrected": 9,
+            "regressed": 0
+          }
+        }
+      },
+      {
+        "repeat": 1,
+        "rows": 859,
+        "n_classes": 12,
+        "rho_by_fold": [
+          0.07771736345196018,
+          0.09311575079202541,
+          0.11419771116071838,
+          0.11216759632443607,
+          0.08775044231897569
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6492511631089218,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6416252937956792,
+            "corrected": 14,
+            "regressed": 1
+          },
+          "adaptive_v30": {
+            "ba": 0.6375089144853344,
+            "corrected": 8,
+            "regressed": 1
+          }
+        }
+      },
+      {
+        "repeat": 2,
+        "rows": 859,
+        "n_classes": 12,
+        "rho_by_fold": [
+          0.11005154189213627,
+          0.12111134168270186,
+          0.14243844581946433,
+          0.12336017353579289,
+          0.10401334975202702
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6295535817949611,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6578917769650529,
+            "corrected": 21,
+            "regressed": 2
+          },
+          "adaptive_v30": {
+            "ba": 0.6524582752815512,
+            "corrected": 11,
+            "regressed": 0
+          }
+        }
+      },
+      {
+        "repeat": 3,
+        "rows": 860,
+        "n_classes": 12,
+        "rho_by_fold": [
+          0.09980723699312899,
+          0.10434923629187137,
+          0.11516019215863688,
+          0.11122878967732823,
+          0.13814033958075234
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.5775550766283525,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.5698347701149425,
+            "corrected": 14,
+            "regressed": 1
+          },
+          "adaptive_v30": {
+            "ba": 0.5671072796934866,
+            "corrected": 10,
+            "regressed": 1
+          }
+        }
+      },
+      {
+        "repeat": 4,
+        "rows": 860,
+        "n_classes": 12,
+        "rho_by_fold": [
+          0.10219664946050558,
+          0.09337818701258728,
+          0.09542860640893067,
+          0.09560204246946875,
+          0.09697544973902086
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6610272988505748,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6630483716475096,
+            "corrected": 21,
+            "regressed": 4
+          },
+          "adaptive_v30": {
+            "ba": 0.6703208812260536,
+            "corrected": 15,
+            "regressed": 2
+          }
+        }
+      },
+      {
+        "repeat": 5,
+        "rows": 860,
+        "n_classes": 12,
+        "rho_by_fold": [
+          0.0689521081100748,
+          0.08461066252713562,
+          0.07579239508763162,
+          0.07539212197374288,
+          0.07669718089264245
+        ],
+        "metrics": {
+          "fixed_v30": {
+            "ba": 0.6221863026819924,
+            "corrected": 0,
+            "regressed": 0
+          },
+          "no_projection": {
+            "ba": 0.6062021072796934,
+            "corrected": 18,
+            "regressed": 4
+          },
+          "adaptive_v30": {
+            "ba": 0.626271551724138,
+            "corrected": 14,
+            "regressed": 1
+          }
+        }
+      }
+    ]
+  }
+}
