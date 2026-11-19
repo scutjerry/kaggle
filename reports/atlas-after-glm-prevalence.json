@@ -1,0 +1,413 @@
+{
+  "protocol": "Fixed 150-prompt, 5-fold single-passage expert. Keep 35% of each GLM class for GLM-rare, keep all GLM and 70% of other classes for GLM-frequent, or sample the 18 retention rates uniformly from 50% to 100%. Six row draws with the same head fits per scenario. Labels determine the requested class mixture only. Recompute the 15% selector, token budget, entropy matching, and final classifications on each resulting batch. Every evaluated batch contains all 18 labels. Ranges across repeats describe sensitivity; rows and models overlap.",
+  "cases": {
+    "all": [
+      {
+        "repeat": 0,
+        "rows": 2699,
+        "glm_share": 0.11115227862171174,
+        "selected_per_fold": [
+          81,
+          81,
+          81,
+          80,
+          81
+        ],
+        "ba": {
+          "control": 0.6757022122793935,
+          "corrected": 0.6805369127516779,
+          "token": 0.6842505592841164,
+          "atlas4_late": 0.6916430524484216
+        },
+        "token_minus_corrected": 0.0037136465324384416,
+        "corrected_minus_control": 0.004834700472284403,
+        "atlas4_minus_token": 0.007392493164305236
+      }
+    ],
+    "glm_rare": [
+      {
+        "repeat": 0,
+        "rows": 2499,
+        "glm_share": 0.040016006402561026,
+        "selected_per_fold": [
+          75,
+          75,
+          75,
+          74,
+          75
+        ],
+        "ba": {
+          "control": 0.6849614715386527,
+          "corrected": 0.6886900323141935,
+          "token": 0.6905518269947799,
+          "atlas4_late": 0.6953517275664927
+        },
+        "token_minus_corrected": 0.0018617946805864483,
+        "corrected_minus_control": 0.0037285607755407346,
+        "atlas4_minus_token": 0.004799900571712756
+      },
+      {
+        "repeat": 1,
+        "rows": 2499,
+        "glm_share": 0.040016006402561026,
+        "selected_per_fold": [
+          75,
+          75,
+          75,
+          74,
+          75
+        ],
+        "ba": {
+          "control": 0.6827392493164306,
+          "corrected": 0.6898011434253045,
+          "token": 0.6938851603281133,
+          "atlas4_late": 0.6990554312701964
+        },
+        "token_minus_corrected": 0.004084016902808796,
+        "corrected_minus_control": 0.007061894108873923,
+        "atlas4_minus_token": 0.0051702709420831106
+      },
+      {
+        "repeat": 2,
+        "rows": 2499,
+        "glm_share": 0.040016006402561026,
+        "selected_per_fold": [
+          75,
+          75,
+          75,
+          74,
+          75
+        ],
+        "ba": {
+          "control": 0.6749614715386527,
+          "corrected": 0.6831344767586378,
+          "token": 0.6883296047725578,
+          "atlas4_late": 0.6927616206810838
+        },
+        "token_minus_corrected": 0.00519512801391997,
+        "corrected_minus_control": 0.008173005219985097,
+        "atlas4_minus_token": 0.0044320159085260435
+      },
+      {
+        "repeat": 3,
+        "rows": 2499,
+        "glm_share": 0.040016006402561026,
+        "selected_per_fold": [
+          75,
+          75,
+          75,
+          74,
+          75
+        ],
+        "ba": {
+          "control": 0.6727392493164306,
+          "corrected": 0.6772085508327119,
+          "token": 0.6824036788466319,
+          "atlas4_late": 0.6901690280884911
+        },
+        "token_minus_corrected": 0.00519512801391997,
+        "corrected_minus_control": 0.004469301516281332,
+        "atlas4_minus_token": 0.007765349241859232
+      },
+      {
+        "repeat": 4,
+        "rows": 2499,
+        "glm_share": 0.040016006402561026,
+        "selected_per_fold": [
+          75,
+          75,
+          75,
+          74,
+          75
+        ],
+        "ba": {
+          "control": 0.6705170270942084,
+          "corrected": 0.6753566989808601,
+          "token": 0.6816629381058911,
+          "atlas4_late": 0.6901690280884911
+        },
+        "token_minus_corrected": 0.006306239125030921,
+        "corrected_minus_control": 0.004839671886651797,
+        "atlas4_minus_token": 0.008506089982600051
+      },
+      {
+        "repeat": 5,
+        "rows": 2499,
+        "glm_share": 0.040016006402561026,
+        "selected_per_fold": [
+          75,
+          75,
+          75,
+          74,
+          75
+        ],
+        "ba": {
+          "control": 0.6771836937608751,
+          "corrected": 0.6831344767586378,
+          "token": 0.6849962714392244,
+          "atlas4_late": 0.6923912503107135
+        },
+        "token_minus_corrected": 0.0018617946805865593,
+        "corrected_minus_control": 0.005950782997762749,
+        "atlas4_minus_token": 0.0073949788714891
+      }
+    ],
+    "glm_frequent": [
+      {
+        "repeat": 0,
+        "rows": 1979,
+        "glm_share": 0.15159171298635674,
+        "selected_per_fold": [
+          59,
+          59,
+          59,
+          59,
+          59
+        ],
+        "ba": {
+          "control": 0.6808964183964183,
+          "corrected": 0.6852604802604803,
+          "token": 0.6887199837199838,
+          "atlas4_late": 0.6956888481888481
+        },
+        "token_minus_corrected": 0.0034595034595035212,
+        "corrected_minus_control": 0.004364061864061908,
+        "atlas4_minus_token": 0.006968864468864355
+      },
+      {
+        "repeat": 1,
+        "rows": 1979,
+        "glm_share": 0.15159171298635674,
+        "selected_per_fold": [
+          59,
+          59,
+          59,
+          59,
+          59
+        ],
+        "ba": {
+          "control": 0.6692867317867318,
+          "corrected": 0.6715191290191291,
+          "token": 0.6751373626373627,
+          "atlas4_late": 0.6820960520960521
+        },
+        "token_minus_corrected": 0.003618233618233546,
+        "corrected_minus_control": 0.0022323972323973207,
+        "atlas4_minus_token": 0.006958689458689382
+      },
+      {
+        "repeat": 2,
+        "rows": 1979,
+        "glm_share": 0.15159171298635674,
+        "selected_per_fold": [
+          59,
+          59,
+          59,
+          59,
+          59
+        ],
+        "ba": {
+          "control": 0.6655575905575906,
+          "corrected": 0.6683241758241758,
+          "token": 0.673005698005698,
+          "atlas4_late": 0.6791229141229141
+        },
+        "token_minus_corrected": 0.00468152218152218,
+        "corrected_minus_control": 0.002766585266585242,
+        "atlas4_minus_token": 0.006117216117216162
+      },
+      {
+        "repeat": 3,
+        "rows": 1979,
+        "glm_share": 0.15159171298635674,
+        "selected_per_fold": [
+          59,
+          59,
+          59,
+          59,
+          59
+        ],
+        "ba": {
+          "control": 0.6720706145706146,
+          "corrected": 0.6769739519739519,
+          "token": 0.681539479039479,
+          "atlas4_late": 0.6884930809930809
+        },
+        "token_minus_corrected": 0.004565527065527042,
+        "corrected_minus_control": 0.004903337403337371,
+        "atlas4_minus_token": 0.006953601953601951
+      },
+      {
+        "repeat": 4,
+        "rows": 1979,
+        "glm_share": 0.15159171298635674,
+        "selected_per_fold": [
+          59,
+          59,
+          59,
+          59,
+          59
+        ],
+        "ba": {
+          "control": 0.6681980056980057,
+          "corrected": 0.672032967032967,
+          "token": 0.6751170126170126,
+          "atlas4_late": 0.6798056573056573
+        },
+        "token_minus_corrected": 0.003084045584045625,
+        "corrected_minus_control": 0.0038349613349613065,
+        "atlas4_minus_token": 0.004688644688644716
+      },
+      {
+        "repeat": 5,
+        "rows": 1979,
+        "glm_share": 0.15159171298635674,
+        "selected_per_fold": [
+          59,
+          59,
+          59,
+          59,
+          59
+        ],
+        "ba": {
+          "control": 0.6830229955229954,
+          "corrected": 0.6873870573870574,
+          "token": 0.6903123728123728,
+          "atlas4_late": 0.6953083028083028
+        },
+        "token_minus_corrected": 0.002925315425315378,
+        "corrected_minus_control": 0.004364061864062019,
+        "atlas4_minus_token": 0.004995929995930015
+      }
+    ],
+    "random_mix": [
+      {
+        "repeat": 0,
+        "rows": 1844,
+        "glm_share": 0.10845986984815618,
+        "selected_per_fold": [
+          55,
+          55,
+          55,
+          55,
+          55
+        ],
+        "ba": {
+          "control": 0.6708699318360395,
+          "corrected": 0.6755124280450878,
+          "token": 0.6806320769147366,
+          "atlas4_late": 0.6867120252165714
+        },
+        "token_minus_corrected": 0.005119648869648774,
+        "corrected_minus_control": 0.00464249620904833,
+        "atlas4_minus_token": 0.006079948301834781
+      },
+      {
+        "repeat": 1,
+        "rows": 2120,
+        "glm_share": 0.11320754716981132,
+        "selected_per_fold": [
+          63,
+          63,
+          63,
+          63,
+          63
+        ],
+        "ba": {
+          "control": 0.6730052231718898,
+          "corrected": 0.678049192399767,
+          "token": 0.6802097606522893,
+          "atlas4_late": 0.6873588701676374
+        },
+        "token_minus_corrected": 0.0021605682525223102,
+        "corrected_minus_control": 0.005043969227877199,
+        "atlas4_minus_token": 0.007149109515348084
+      },
+      {
+        "repeat": 2,
+        "rows": 2085,
+        "glm_share": 0.11990407673860912,
+        "selected_per_fold": [
+          62,
+          62,
+          62,
+          62,
+          62
+        ],
+        "ba": {
+          "control": 0.6697837827146572,
+          "corrected": 0.6737950479747147,
+          "token": 0.6777662413903527,
+          "atlas4_late": 0.6843502958575116
+        },
+        "token_minus_corrected": 0.003971193415638008,
+        "corrected_minus_control": 0.004011265260057462,
+        "atlas4_minus_token": 0.0065840544671589285
+      },
+      {
+        "repeat": 3,
+        "rows": 2094,
+        "glm_share": 0.11700095510983763,
+        "selected_per_fold": [
+          62,
+          62,
+          62,
+          62,
+          62
+        ],
+        "ba": {
+          "control": 0.6774028596001905,
+          "corrected": 0.6827196815925217,
+          "token": 0.6878838251751718,
+          "atlas4_late": 0.69396079468855
+        },
+        "token_minus_corrected": 0.005164143582650049,
+        "corrected_minus_control": 0.005316821992331189,
+        "atlas4_minus_token": 0.0060769695133782164
+      },
+      {
+        "repeat": 4,
+        "rows": 2119,
+        "glm_share": 0.10854176498348278,
+        "selected_per_fold": [
+          63,
+          63,
+          63,
+          63,
+          63
+        ],
+        "ba": {
+          "control": 0.6780420711420327,
+          "corrected": 0.6843530388150076,
+          "token": 0.688033521383436,
+          "atlas4_late": 0.6929416726591868
+        },
+        "token_minus_corrected": 0.003680482568428345,
+        "corrected_minus_control": 0.006310967672974899,
+        "atlas4_minus_token": 0.004908151275750838
+      },
+      {
+        "repeat": 5,
+        "rows": 2185,
+        "glm_share": 0.11441647597254005,
+        "selected_per_fold": [
+          65,
+          65,
+          65,
+          65,
+          65
+        ],
+        "ba": {
+          "control": 0.6761123488664228,
+          "corrected": 0.6815112329488818,
+          "token": 0.6846602131510021,
+          "atlas4_late": 0.6918557910001649
+        },
+        "token_minus_corrected": 0.0031489802021202884,
+        "corrected_minus_control": 0.005398884082459032,
+        "atlas4_minus_token": 0.007195577849162804
+      }
+    ]
+  },
+  "optional_atlas_protocol": "Also rerank the hardest quarter by its four highest model sources; compute the whole late ATLAS stage after resampling, including the batch-dependent low-margin gate. Use only the original single-passage Qwen OOF scores so topic calibration cannot embed removed rows."
+}

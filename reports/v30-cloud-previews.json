@@ -15,5 +15,23 @@
     "output_sha256": "2d26e7de920e646e14db358bafe001e292800b4fed1d3c19c077d5eae204e9ba",
     "glm_selected_rows": 0,
     "inference": "Qwen/Llama and native five-fold, GSQ27B, 25 GLM segments and both tokenizers checked. Public preview size triggers upstream fallback for the GLM likelihood pass."
+  },
+  "team_paired_glm": {
+    "gpu": "2 x T4",
+    "source_inputs": 45,
+    "output_columns": [
+      "id",
+      "model"
+    ],
+    "version_role": "Private preview of the team paired-token GLM candidate",
+    "notebook_version": 371492434,
+    "status": "Successfully ran",
+    "runtime_seconds": 2033.8,
+    "notebook_sha256": "48a1e47d327476f0fea03ff093e9d96514c494e81ac59663f43d381e404d1275",
+    "output_rows": 3,
+    "output_sha256": "2d26e7de920e646e14db358bafe001e292800b4fed1d3c19c077d5eae204e9ba",
+    "glm_selected_rows": 0,
+    "same_as_control_on_preview": true,
+    "inference": "All initial ensemble members completed. The 25 segment and tokenizer checks passed, and corrected post-GLM routing was enabled. The public three-row batch did not start the likelihood work."
   }
 }

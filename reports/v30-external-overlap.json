@@ -1,0 +1,353 @@
+{
+  "conclusion": "The 270 passages are not independent validation data for the whole Alex V30 system. Its active pretrained SVC4 uses supervised texts from a release containing an identical canonical prompt fingerprint for all 270, and 233 rows match its public stable passage IDs and the exact local text in the later release. No nonempty known-prompt-disjoint subset remains.",
+  "cohorts": {
+    "pilot": 54,
+    "confirmation": 216,
+    "total": 270
+  },
+  "public_sources": {
+    "v30": "https://www.kaggle.com/code/alexchilton/name-that-llm-0-702-all-public-what-failed?scriptVersionId=370591902",
+    "actual_core_manifest": "https://www.kaggle.com/datasets/lightningv08/ntl-olmo2-native24-final-inference-assets/versions/22",
+    "actual_core_source": "https://www.kaggle.com/datasets/crtproduction/name-that-llm-open-pool/versions/13",
+    "local_open_pool": "https://www.kaggle.com/datasets/crtproduction/name-that-llm-open-pool/versions/17",
+    "nishant_v4": "https://www.kaggle.com/datasets/nishantdahal/ntl-handwriting-blend/versions/1",
+    "nuri_q14_v4": "https://www.kaggle.com/datasets/nuridudak/ntl-q14-lora-v4/versions/1",
+    "dhruv_v5_artifacts": "https://www.kaggle.com/datasets/dhruvtibarewal/nlm-l24-adapters-v5/versions/1",
+    "dhruv_v5_pool": "https://www.kaggle.com/datasets/dhruvtibarewal/nlm-matched-clean/versions/3",
+    "chen_native": "https://www.kaggle.com/code/concyclics/0-679?scriptVersionId=365653660"
+  },
+  "verified_release_alignment": {
+    "public_open_pool_v17_version_id": 22123604,
+    "local_v17_md5_matches_public_etag": "cfa8c5ff0220b4f4e5f6608d48454a44",
+    "v17_rows": 226191,
+    "v13_rows": 190588,
+    "v13_ids_resolved_into_v17": 190304,
+    "all_resolved_ids_match_model_wordcount_source_and_native_prompt_group": true,
+    "v13_rows_not_text_resolved_locally": 284,
+    "v13_text_membership_basis": "Exact raw local passage lookup in v17 plus the unique unchanged public identifier, class, source, word count and native and canonical prompt keys in v13. Not an exhaustive raw-byte checksum of all v13 passages.",
+    "v13_v17_confirmed_matches": {
+      "pilot": 51,
+      "confirmation": 182,
+      "total": 233
+    },
+    "all_v13_rows_have_false_regen_flag": true,
+    "v4_rows_linked_to_local_text_and_true_model_by_author_fingerprint": 61680,
+    "v4_dataset_credit_sources_shared_with_holdout": {
+      "pilot": 48,
+      "confirmation": 166,
+      "total": 214
+    },
+    "v4_fingerprint": "x + first 11 hex digits of SHA-1 of the original UTF-8 text, verified on all 34,940 rows of original pool. All v4 fingerprint matches also agree on class and word count."
+  },
+  "active_components": [
+    {
+      "component": "Precomputed SVC4 / ntl666-prefit (positive weight; a.prefit_core -> core_votes -> LP.update).",
+      "status": "confirmed included",
+      "fit_rows": 193287,
+      "source_rows": {
+        "official": 2699,
+        "matched_clean": 24443,
+        "pool": 166145
+      },
+      "source_weights": {
+        "official": [
+          1.0
+        ],
+        "matched_clean": [
+          0.5
+        ],
+        "pool": [
+          0.35
+        ]
+      },
+      "same_passage": {
+        "pilot": 51,
+        "confirmation": 182,
+        "total": 233
+      },
+      "same_canonical_prompt": {
+        "pilot": 54,
+        "confirmation": 216,
+        "total": 270
+      }
+    },
+    {
+      "component": "Precomputed TF-IDF LR and distorted-text LR / ntl666-prefit.",
+      "status": "subset membership verified from ordered published selection hash",
+      "fit_rows": 27142,
+      "external_rows": 24443,
+      "selection_ids_sha256_matches_author": "280cb92e160e12376317c04d2f675a605b803fdb49bff500ae63b142400d28d4",
+      "same_passage": {
+        "pilot": 6,
+        "confirmation": 27,
+        "total": 33
+      },
+      "same_canonical_prompt": {
+        "pilot": 43,
+        "confirmation": 169,
+        "total": 212
+      }
+    },
+    {
+      "component": "Qwen3-14B handwriting member of n14b_clean (adapter mix share 0.28), Qwen2.5-14B and DeBERTa-large.",
+      "status": "confirmed training-corpus membership",
+      "training_pool_rows": 75783,
+      "same_passage": {
+        "pilot": 48,
+        "confirmation": 157,
+        "total": 205
+      },
+      "known_same_prompt_lower_bound": {
+        "pilot": 50,
+        "confirmation": 172,
+        "total": 222
+      },
+      "unresolved_prompt_coverage_note": "Not every pool v4 row maps to the local canonical prompt registry; additionally matched author-native Arx keys."
+    },
+    {
+      "component": "Dhruv q14v5, q8v5, ll8v5 five-fold and all-data adapters.",
+      "status": "partial lineage; adapter card says 120k pool, candidate corpus has 119899 rows. No row-level training receipt ties these adapter checkpoints to the projected file.",
+      "candidate_pool_dataset_level_mirror_same_passages": {
+        "pilot": 50,
+        "confirmation": 182,
+        "total": 232
+      },
+      "candidate_pool_dataset_level_mirror_same_prompt": {
+        "pilot": 53,
+        "confirmation": 193,
+        "total": 246
+      },
+      "original_publisher_source_in_candidate_v5_file": {
+        "pilot": 51,
+        "confirmation": 182,
+        "total": 233
+      },
+      "unknown_exact_training_membership_rows": {
+        "pilot": 54,
+        "confirmation": 216,
+        "total": 270
+      }
+    },
+    {
+      "component": "Nuri Qwen3-14B (72% share of n14b_clean).",
+      "status": "unverified membership",
+      "receipt": "Author meta.json specifies a separate 193k stage-one corpus including 99k public generations from October 24–25, then full official fine tuning.",
+      "unknown_exact_training_membership_rows": {
+        "pilot": 54,
+        "confirmation": 216,
+        "total": 270
+      }
+    },
+    {
+      "component": "Native five-fold Qwen3-Embedding-8B and clustering.",
+      "status": "unverified external warm-up row membership",
+      "receipt": "Native study reports 196190 external rows and the SHA256 of its data manifest. Its public OOF split excludes validation prompts at the official fine-tuning stage; the local checkpoint metadata does not contain IDs from the warm-up corpus.",
+      "unknown_exact_training_membership_rows": {
+        "pilot": 54,
+        "confirmation": 216,
+        "total": 270
+      }
+    },
+    {
+      "component": "Qwen3.8-27B GSQ, native ensemble share 0.03.",
+      "status": "unverified membership",
+      "receipt": "Active inference asset path gsq120k-trained; a name is insufficient to deduce its complete training membership.",
+      "unknown_exact_training_membership_rows": {
+        "pilot": 54,
+        "confirmation": 216,
+        "total": 270
+      }
+    },
+    {
+      "component": "V30 Gaussian supervised group readout on official training features, marginal class prior, sibling residual, original GLM likelihood classifier, and our 76-feature GLM replacement.",
+      "status": "confirmed no external-text overlap in their direct supervised official fit",
+      "official_training_rows": 2699,
+      "same_normalized_text": {
+        "pilot": 0,
+        "confirmation": 0,
+        "total": 0
+      },
+      "note": "This only clears their direct training texts. Gaussian inputs inherit upstream adapter exposure. Pretraining membership of the base language models is outside this audit."
+    }
+  ],
+  "runtime_prepared_inputs": {
+    "eagerly_materialized_open_pool": 226191,
+    "same_text": {
+      "pilot": 54,
+      "confirmation": 216,
+      "total": 270
+    },
+    "eagerly_materialized_weighted_extra": 24443,
+    "selected_same_passage": {
+      "pilot": 8,
+      "confirmation": 28,
+      "total": 36
+    },
+    "selected_same_prompt": {
+      "pilot": 44,
+      "confirmation": 165,
+      "total": 209
+    },
+    "inference_command": "The V30 infer.py call supplies --prefit_core and disables freshly fitted SVC/TF-IDF/distort via zero weights. The call supplies neither --extra nor --pool. Eager pool materialization is separate from the actual earlier fitting of the active immutable core."
+  },
+  "inactive_or_distinct_assets": "ATLAS mode is off; the complementary stack weight is zero. An attached but unused SVC fit with 244374 rows is a different cache from the active 193287-row SVC4. The mounted Nishant original two-LoRA 34940-row pool is distinct from the handwriting heads.",
+  "audit_masks": {
+    "v13_text_id": {
+      "pilot": 51,
+      "confirmation": 182,
+      "total": 233
+    },
+    "v13_prompt": {
+      "pilot": 54,
+      "confirmation": 216,
+      "total": 270
+    },
+    "prefit_sample_text": {
+      "pilot": 6,
+      "confirmation": 27,
+      "total": 33
+    },
+    "prefit_sample_prompt": {
+      "pilot": 43,
+      "confirmation": 169,
+      "total": 212
+    },
+    "nishant_v4_text": {
+      "pilot": 48,
+      "confirmation": 157,
+      "total": 205
+    },
+    "nishant_v4_prompt": {
+      "pilot": 50,
+      "confirmation": 172,
+      "total": 222
+    },
+    "dhruv_mirror_text": {
+      "pilot": 50,
+      "confirmation": 182,
+      "total": 232
+    },
+    "dhruv_mirror_prompt": {
+      "pilot": 53,
+      "confirmation": 193,
+      "total": 246
+    },
+    "dhruv_v5_native_source_present": {
+      "pilot": 51,
+      "confirmation": 182,
+      "total": 233
+    },
+    "runtime_prepared_extra_text": {
+      "pilot": 8,
+      "confirmation": 28,
+      "total": 36
+    },
+    "runtime_prepared_extra_prompt": {
+      "pilot": 44,
+      "confirmation": 165,
+      "total": 209
+    }
+  },
+  "local_normalized_corpus_checks": {
+    "train.csv": {
+      "rows": 2699,
+      "nfkc_casefold_whitespace_sha256_hits": {
+        "pilot": 0,
+        "confirmation": 0,
+        "total": 0
+      }
+    },
+    "ntl_proxy_generations.csv": {
+      "rows": 834,
+      "nfkc_casefold_whitespace_sha256_hits": {
+        "pilot": 0,
+        "confirmation": 0,
+        "total": 0
+      }
+    },
+    "claude-extra.csv": {
+      "rows": 4998,
+      "nfkc_casefold_whitespace_sha256_hits": {
+        "pilot": 0,
+        "confirmation": 0,
+        "total": 0
+      }
+    },
+    "willrice-original-calls.jsonl": {
+      "rows": 12308,
+      "nfkc_casefold_whitespace_sha256_hits": {
+        "pilot": 0,
+        "confirmation": 0,
+        "total": 0
+      }
+    },
+    "passages_clean.csv": {
+      "rows": 5070,
+      "nfkc_casefold_whitespace_sha256_hits": {
+        "pilot": 0,
+        "confirmation": 0,
+        "total": 0
+      }
+    },
+    "passages.csv": {
+      "rows": 15226,
+      "nfkc_casefold_whitespace_sha256_hits": {
+        "pilot": 0,
+        "confirmation": 0,
+        "total": 0
+      }
+    },
+    "ntl_extra_passages_claude.csv": {
+      "rows": 4998,
+      "nfkc_casefold_whitespace_sha256_hits": {
+        "pilot": 0,
+        "confirmation": 0,
+        "total": 0
+      }
+    },
+    "nishant_pool_v1": {
+      "rows": 34940,
+      "nfkc_casefold_whitespace_sha256_hits": {
+        "pilot": 0,
+        "confirmation": 0,
+        "total": 0
+      },
+      "sha1_id_algorithm_verified_on_all_34940_rows": true
+    }
+  },
+  "subsets": {
+    "no_documented_identical_passage_in_known_checked_components": {
+      "pilot": 3,
+      "confirmation": 34,
+      "total": 37
+    },
+    "no_known_passage_and_no_known_prompt_in_checked_components": {
+      "pilot": 0,
+      "confirmation": 0,
+      "total": 0
+    },
+    "v13_SVC4_prompt_disjoint": {
+      "pilot": 0,
+      "confirmation": 0,
+      "total": 0
+    },
+    "verified_independent_of_whole_v30": {
+      "pilot": 0,
+      "confirmation": 0,
+      "total": 0
+    },
+    "candidate_unknown_membership_labels": {
+      "gemini-3.7-flash": 15,
+      "kimi-k3": 6,
+      "glm-5.3": 6,
+      "glm-5.3-flash": 6,
+      "claude-fable-5": 4
+    }
+  },
+  "limitations": [
+    "Canonical prompt matches are public registry fingerprints; they establish shared prompt identity at that registry resolution, not uniqueness of semantic meaning.",
+    "The 37 remaining same-passage negatives are not certified clean: 284 historical rows lack local v17 text matches, some fitted corpora lack released row-level provenance and every candidate prompt is known in a fitted core.",
+    "Nishant source-pool membership establishes eligibility/exposure in the documented first-stage corpus, not a per-optimizer-step row receipt.",
+    "A label-blind diagnostic that combines only the separately audited original Nishant two-Qwen checkpoint and official-trained GLM heads is a component-level comparison, not independent evidence for V30 leaderboard gains. No self-trained/full V30 ranking should use this as blind confirmation."
+  ]
+}
