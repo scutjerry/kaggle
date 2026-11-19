@@ -30,6 +30,18 @@ CHEN Han 公开了 Qwen3-Embedding-8B 的官方训练集折外预测。2,699 行
 
 另外尝试了根据输出字数推断模型及按缩写、标点使用机会建模。两种修正一起只用官方语料拟合，自有基线五折从 0.46118 到 0.46415。在 216 篇公开外部文章上，使用轻量标记分类器的对照从 0.20370 降到 0.19444，暂不进入提交。[语料来源、各类召回与外部确认](reports/source-response-experiments.json)
 
+### 把 GLM 的文本似然传到最终分类
+
+原方案只保留部分 GLM 分类结果。第二个候选让末端分类器读取已经算好的两种 GLM 的文本似然，改动一处参数，推理次数相同。我们用 José Padilla 公布的逐词元似然及 CHEN Han 的折外预测测试这一变化，按原始五个训练折重新拟合 GLM 分类头和风格分类器。[GLM 似然来源](https://www.kaggle.com/code/estopadilla/ntl-glm-likelihood-train) · [候选文件哈希及小批量验证](reports/glm-corrected-candidate.json)
+
+| 同一批 2,699 篇文章的验证条件 | 原末端处理 | 传入 GLM 似然 | 再加同系列重排 |
+| --- | ---: | ---: | ---: |
+| 单篇 Qwen 分数 | 0.67570 | 0.68054 | 0.68054 |
+| 同一批内每题最多两篇 | 0.68237 | 0.68608 | 0.68830 |
+| 同一题的回答集中在同一批 | 0.70793 | 0.71017 | 0.71202 |
+
+单篇条件下，传入似然纠正 17 篇、改错 4 篇，五折都上升。进步主要来自区分 Claude 与 GLM，两种 GLM 的平均召回从 0.5833 降到 0.5700。三种条件共用相同文章和 Qwen 基础模型，隐藏集的题目密度未知。表中分数仅用于候选排序。[完整对照与按题目重采样区间](reports/glm-sibling-factorial.json) · [各类别召回](reports/glm-cross-fit-plain.json)
+
 ## 实验说明
 
 两套 Qwen 适配器均已用官方 2,699 行全量微调。表中保留本队实测成绩；作者报告其原方案公榜为 0.592。我们继承两套 Qwen 的输出、词法分类器和融合，新增 15% 权重的文本近邻校准。本队预览在两张 T4 上实际运行两套模型并生成三行输出。[作者 Notebook](https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool) · [公开权重与数据来源](https://www.kaggle.com/datasets/nishantdahal/ntl-two-stage-lora/versions/1)

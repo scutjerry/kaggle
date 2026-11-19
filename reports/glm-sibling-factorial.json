@@ -1,0 +1,174 @@
+{
+  "protocol": "Fold-refit two GLM likelihood heads and the two writing-style experts using only other official prompt folds. GLM-5.3 and Flash features are reproduced from the upstream raw token log-likelihoods. Keep the original 15% selection and 160-token maximum. Initial probabilities come from one native Qwen component. Evaluate the original final routing, reroute the post-GLM scores, then add the exact same sibling gate to the rerouted scores.",
+  "source": "https://www.kaggle.com/code/estopadilla/ntl-glm-likelihood-train",
+  "native_qwen": {
+    "plain": {
+      "v30_routing": {
+        "comparison": "v30_routing",
+        "balanced_accuracy": 0.6757022122793935,
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_prompt_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "fold_delta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "glm_corrected": {
+        "comparison": "v30_routing",
+        "balanced_accuracy": 0.6805369127516779,
+        "changed": 52,
+        "corrected": 17,
+        "regressed": 4,
+        "delta_95pct_prompt_bootstrap": [
+          0.0015015015015015015,
+          0.008518518518518517
+        ],
+        "fold_delta": [
+          0.00925925925925919,
+          0.0037037037037035425,
+          0.0018518518518518823,
+          0.005619412515964206,
+          0.0037037037037037646
+        ]
+      },
+      "both": {
+        "comparison": "glm_corrected",
+        "balanced_accuracy": 0.6805369127516778,
+        "changed": 66,
+        "corrected": 25,
+        "regressed": 25,
+        "delta_95pct_prompt_bootstrap": [
+          -0.005185185185185185,
+          0.005170483402865953
+        ],
+        "fold_delta": [
+          -0.0018518518518518823,
+          -0.0037037037037035425,
+          0.0,
+          0.007407407407407529,
+          -0.0018518518518517713
+        ]
+      }
+    },
+    "text-cluster": {
+      "v30_routing": {
+        "comparison": "v30_routing",
+        "balanced_accuracy": 0.7079343773303505,
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_prompt_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "fold_delta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "glm_corrected": {
+        "comparison": "v30_routing",
+        "balanced_accuracy": 0.7101690280884912,
+        "changed": 43,
+        "corrected": 10,
+        "regressed": 4,
+        "delta_95pct_prompt_bootstrap": [
+          -0.0003703703703703704,
+          0.0052075565498384295
+        ],
+        "fold_delta": [
+          0.007407407407407307,
+          0.0037037037037036535,
+          0.0,
+          1.1102230246251565e-16,
+          0.0
+        ]
+      },
+      "both": {
+        "comparison": "glm_corrected",
+        "balanced_accuracy": 0.712020879940343,
+        "changed": 57,
+        "corrected": 22,
+        "regressed": 17,
+        "delta_95pct_prompt_bootstrap": [
+          -0.002251206248999755,
+          0.006296296296296296
+        ],
+        "fold_delta": [
+          0.0018518518518519933,
+          0.0037037037037037646,
+          0.0037037037037036535,
+          0.0018518518518516602,
+          -0.0018518518518517713
+        ]
+      }
+    },
+    "sparse2-text-cluster": {
+      "v30_routing": {
+        "comparison": "v30_routing",
+        "balanced_accuracy": 0.6823713646532439,
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_prompt_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "fold_delta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "glm_corrected": {
+        "comparison": "v30_routing",
+        "balanced_accuracy": 0.6860850111856823,
+        "changed": 45,
+        "corrected": 13,
+        "regressed": 3,
+        "delta_95pct_prompt_bootstrap": [
+          0.0007606381892096178,
+          0.006701701701701702
+        ],
+        "fold_delta": [
+          0.0037037037037037646,
+          0.007407407407407418,
+          -0.0018518518518518823,
+          0.005619412515964206,
+          0.0037037037037036535
+        ]
+      },
+      "both": {
+        "comparison": "glm_corrected",
+        "balanced_accuracy": 0.6883047477007209,
+        "changed": 70,
+        "corrected": 29,
+        "regressed": 23,
+        "delta_95pct_prompt_bootstrap": [
+          -0.003333395476012926,
+          0.008145662440964454
+        ],
+        "fold_delta": [
+          -0.0018518518518518823,
+          0.0018518518518518823,
+          0.005555555555555647,
+          0.0037037037037037646,
+          0.0018518518518518823
+        ]
+      }
+    }
+  }
+}

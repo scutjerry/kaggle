@@ -1,0 +1,32 @@
+{
+  "candidate": "name-that-llm-v30-glm-corrected.ipynb",
+  "sha256": "3980a6de78033cbfaeba71bb2f6e6532be24b485dbc711d519007ed73bf1313c",
+  "bytes": 269519,
+  "base": "public70_alex_v30_real_inference.ipynb",
+  "base_sha256": "24512442b260ad7ab14ae7fc60ede66638746b7cff0e6e61fe3b17493a1f875a",
+  "code_change": "Final apply_postprocessing(corrected=True)",
+  "changed_cell_zero_based": 33,
+  "source_cells": 34,
+  "short_batch_cpu_test": [
+    {
+      "rows": 3,
+      "n_selected": 0,
+      "fallback": "fallback_s10",
+      "aligned_logits": true
+    },
+    {
+      "rows": 49,
+      "n_selected": 7,
+      "fallback": "fallback_s10",
+      "aligned_logits": true
+    },
+    {
+      "rows": 333,
+      "n_selected": 49,
+      "fallback": "fallback_s10",
+      "aligned_logits": true
+    }
+  ],
+  "cloud_full_run": "pending",
+  "score_proxy": "Chen five-fold Qwen8 OOF with out-of-fold supervised heads"
+}
