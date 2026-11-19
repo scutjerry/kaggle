@@ -1,0 +1,75 @@
+{
+  "observed_date_beijing": "2026-11-20",
+  "metric": "Public Balanced Accuracy on each author's version-linked submission; these are not the team's scores.",
+  "public_versions": [
+    {
+      "version_id": 371206226,
+      "url": "https://www.kaggle.com/code/lightningv08/0-704-glm-fable-routing-qwen3-8-27b-lora?scriptVersionId=371206226",
+      "source_sha256": "c6c5cb3118602882fee24d4fb42fd42123b7b13f0977efa2f90f04b89e288b99",
+      "author_submission_id": 58531533,
+      "author_public_score": 0.704,
+      "version_date": "2026-11-19T00:01:58.040Z",
+      "code_cells": 29,
+      "mount_count": 45,
+      "ordered_mounts_sha256": "bb581658db6ead35fa2712d6fee4f262bfc1f1071e66c7b654cac0e71880060a",
+      "notebook_file_docker_image_version": 31508,
+      "kaggle_version_runtime_image": 31508
+    },
+    {
+      "version_id": 371401730,
+      "url": "https://www.kaggle.com/code/evgendvorkin/name-that-llm-deep-forensic-eda-with-analogie?scriptVersionId=371401730",
+      "source_sha256": "177f7610d29cd8dbc34a3aebb2818988c667cae3893191d84fda7cce2e6bc8bd",
+      "author_submission_id": 58557943,
+      "author_public_score": 0.704,
+      "version_date": "2026-11-19T11:35:19.580Z",
+      "code_cells": 35,
+      "mount_count": 45,
+      "ordered_mounts_sha256": "b196e77936073ff804848e65d34f262f12f51c7eb7579d2d095e56119c18e7c5",
+      "notebook_file_docker_image_version": 31508,
+      "kaggle_version_runtime_image": 31481
+    },
+    {
+      "version_id": 371341961,
+      "url": "https://www.kaggle.com/code/mzishran/name-that-llm-how-the-ensemble-predicts?scriptVersionId=371341961",
+      "source_sha256": "d0f9f2b8ec57b4c32ed4ed9640c31c51679167135e03a2b41d4ef28fc8c5758c",
+      "author_submission_id": 58552855,
+      "author_public_score": 0.703,
+      "version_date": "2026-11-19T08:36:25.610Z",
+      "code_cells": 30,
+      "mount_count": 45,
+      "ordered_mounts_sha256": "b196e77936073ff804848e65d34f262f12f51c7eb7579d2d095e56119c18e7c5",
+      "notebook_file_docker_image_version": 31508,
+      "kaggle_version_runtime_image": 31523
+    },
+    {
+      "version_id": 371406176,
+      "url": "https://www.kaggle.com/code/bill123987/ntl706w?scriptVersionId=371406176",
+      "source_sha256": "e6423c37328128db864c2c4c033e5ae3dde4ab4ce08c2b9bdaa3f211e8f6f0ae",
+      "author_submission_id": 58558588,
+      "author_public_score": 0.704,
+      "version_date": "2026-11-19T11:50:03.863Z",
+      "code_cells": 31,
+      "mount_count": 45,
+      "ordered_mounts_sha256": "199d362592e35370834b44ae898b26089bf41b6c10af79af7e71f30b9f23b7db",
+      "notebook_file_docker_image_version": 31508,
+      "kaggle_version_runtime_image": 31508
+    }
+  ],
+  "comparison": {
+    "shared_fable_recipe": {
+      "versions": [
+        371206226,
+        371401730,
+        371341961
+      ],
+      "identical_inference_code_cells": 29,
+      "differences": "The second notebook adds six exploratory analysis cells before inference. The third adds one plot after inference. All three mount the same 45 immutable input versions, with different recorded orders and runtime images.",
+      "details": "A capped Fable probability contributes to the GLM selection score, select qualifying Fable wins again after both GLM likelihoods, and use 0.15 as the final typography penalty."
+    },
+    "bill_recipe": {
+      "version": 371406176,
+      "code_change": "Versus Alex V30, two changed lines in one of the 31 code cells. GLM weight is multiplied by 1.25 and overall label-change guard is relaxed from 0.25 to 0.32. At most 15% of all rows can change at that stage.",
+      "mount_change": "Public Open Pool V17 (22123604) becomes V18 (22385546), plus ordering changes. The fixed path prepares the open pool but does not pass its row files to the active, prefit core classifier."
+    }
+  }
+}
