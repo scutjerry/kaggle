@@ -1,0 +1,255 @@
+{
+  "protocol": "Study the two earlier 18-source balanced cohorts after recovering their raw logits. Compare no, half and full global balancing with the fixed V30 projection and the variance-based alternative. All arms retain identical 15% neighbor adjustment. Separately compare the actual small-batch final labels and the 15% eligible-row GLM proxy; the real minimum of 50 rows prevents the GLM pass on these small cohorts. The external scores apply to the isolated component combination.",
+  "raw_sha256": "e720f64816e6f2f1444c0e786bcc59ac35870c1726313693634f0369d4e3115c",
+  "cloud_probability_sha256": "80eed6ce38c852002fb96fc5472a2d506e4d743c57c2f12c6cced75c196ed032",
+  "cohorts": {
+    "pilot": {
+      "rows": 54,
+      "adaptive_rho": 0.35,
+      "cloud_replay_max_error": 5.551115123125783e-16,
+      "prior_run_max_probability_difference": 0.0,
+      "glm_proxy_rows": 8,
+      "variants": {
+        "no_marginal": {
+          "qwen_only": {
+            "correct": 30,
+            "ba": 0.5555555555555556,
+            "changed_vs_fixed_v30": 2,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 1
+          },
+          "small_batch": {
+            "correct": 30,
+            "ba": 0.5555555555555556,
+            "changed_vs_fixed_v30": 1,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 1
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 31,
+            "ba": 0.574074074074074,
+            "changed_vs_fixed_v30": 1,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 1
+          }
+        },
+        "half_marginal": {
+          "qwen_only": {
+            "correct": 32,
+            "ba": 0.5925925925925926,
+            "changed_vs_fixed_v30": 3,
+            "corrected_vs_fixed_v30": 1,
+            "regressed_vs_fixed_v30": 0
+          },
+          "small_batch": {
+            "correct": 32,
+            "ba": 0.5925925925925926,
+            "changed_vs_fixed_v30": 4,
+            "corrected_vs_fixed_v30": 1,
+            "regressed_vs_fixed_v30": 0
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 33,
+            "ba": 0.6111111111111112,
+            "changed_vs_fixed_v30": 2,
+            "corrected_vs_fixed_v30": 1,
+            "regressed_vs_fixed_v30": 0
+          }
+        },
+        "deployed_qwen": {
+          "qwen_only": {
+            "correct": 34,
+            "ba": 0.6296296296296295,
+            "changed_vs_fixed_v30": 7,
+            "corrected_vs_fixed_v30": 3,
+            "regressed_vs_fixed_v30": 0
+          },
+          "small_batch": {
+            "correct": 34,
+            "ba": 0.6296296296296295,
+            "changed_vs_fixed_v30": 7,
+            "corrected_vs_fixed_v30": 3,
+            "regressed_vs_fixed_v30": 0
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 36,
+            "ba": 0.6666666666666666,
+            "changed_vs_fixed_v30": 7,
+            "corrected_vs_fixed_v30": 4,
+            "regressed_vs_fixed_v30": 0
+          }
+        },
+        "v30_marginal_on_dual_qwen": {
+          "qwen_only": {
+            "correct": 31,
+            "ba": 0.574074074074074,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          },
+          "small_batch": {
+            "correct": 31,
+            "ba": 0.574074074074074,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 32,
+            "ba": 0.5925925925925926,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          }
+        },
+        "adaptive_v30_exploratory": {
+          "qwen_only": {
+            "correct": 31,
+            "ba": 0.574074074074074,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          },
+          "small_batch": {
+            "correct": 31,
+            "ba": 0.574074074074074,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 32,
+            "ba": 0.5925925925925926,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          }
+        }
+      }
+    },
+    "confirmation": {
+      "rows": 216,
+      "adaptive_rho": 0.35,
+      "cloud_replay_max_error": 6.661338147750939e-16,
+      "prior_run_max_probability_difference": 0.0,
+      "glm_proxy_rows": 32,
+      "variants": {
+        "no_marginal": {
+          "qwen_only": {
+            "correct": 97,
+            "ba": 0.449074074074074,
+            "changed_vs_fixed_v30": 3,
+            "corrected_vs_fixed_v30": 2,
+            "regressed_vs_fixed_v30": 1
+          },
+          "small_batch": {
+            "correct": 97,
+            "ba": 0.449074074074074,
+            "changed_vs_fixed_v30": 2,
+            "corrected_vs_fixed_v30": 1,
+            "regressed_vs_fixed_v30": 1
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 106,
+            "ba": 0.49074074074074087,
+            "changed_vs_fixed_v30": 2,
+            "corrected_vs_fixed_v30": 1,
+            "regressed_vs_fixed_v30": 1
+          }
+        },
+        "half_marginal": {
+          "qwen_only": {
+            "correct": 97,
+            "ba": 0.449074074074074,
+            "changed_vs_fixed_v30": 11,
+            "corrected_vs_fixed_v30": 5,
+            "regressed_vs_fixed_v30": 4
+          },
+          "small_batch": {
+            "correct": 97,
+            "ba": 0.449074074074074,
+            "changed_vs_fixed_v30": 13,
+            "corrected_vs_fixed_v30": 5,
+            "regressed_vs_fixed_v30": 5
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 105,
+            "ba": 0.4861111111111111,
+            "changed_vs_fixed_v30": 14,
+            "corrected_vs_fixed_v30": 5,
+            "regressed_vs_fixed_v30": 6
+          }
+        },
+        "deployed_qwen": {
+          "qwen_only": {
+            "correct": 93,
+            "ba": 0.4305555555555556,
+            "changed_vs_fixed_v30": 25,
+            "corrected_vs_fixed_v30": 8,
+            "regressed_vs_fixed_v30": 11
+          },
+          "small_batch": {
+            "correct": 94,
+            "ba": 0.4351851851851853,
+            "changed_vs_fixed_v30": 25,
+            "corrected_vs_fixed_v30": 8,
+            "regressed_vs_fixed_v30": 11
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 103,
+            "ba": 0.47685185185185186,
+            "changed_vs_fixed_v30": 28,
+            "corrected_vs_fixed_v30": 9,
+            "regressed_vs_fixed_v30": 12
+          }
+        },
+        "v30_marginal_on_dual_qwen": {
+          "qwen_only": {
+            "correct": 96,
+            "ba": 0.4444444444444444,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          },
+          "small_batch": {
+            "correct": 97,
+            "ba": 0.449074074074074,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 106,
+            "ba": 0.49074074074074087,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          }
+        },
+        "adaptive_v30_exploratory": {
+          "qwen_only": {
+            "correct": 96,
+            "ba": 0.4444444444444444,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          },
+          "small_batch": {
+            "correct": 97,
+            "ba": 0.449074074074074,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          },
+          "paired_glm_15pct_proxy": {
+            "correct": 106,
+            "ba": 0.49074074074074087,
+            "changed_vs_fixed_v30": 0,
+            "corrected_vs_fixed_v30": 0,
+            "regressed_vs_fixed_v30": 0
+          }
+        }
+      }
+    }
+  }
+}

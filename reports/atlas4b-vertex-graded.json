@@ -1,0 +1,73 @@
+{
+  "passages": 3396,
+  "prompts": 1698,
+  "two_candidate_top1": {
+    "per_label": {
+      "gemini-3.7-flash": {
+        "rows": 1698,
+        "correct": 813,
+        "recall": 0.4787985865724382,
+        "predicted_counts": {
+          "gemini-3.7-flash": 813,
+          "gemini-3.8-flash": 885
+        }
+      },
+      "gemini-3.8-flash": {
+        "rows": 1698,
+        "correct": 990,
+        "recall": 0.5830388692579506,
+        "predicted_counts": {
+          "gemini-3.7-flash": 708,
+          "gemini-3.8-flash": 990
+        }
+      }
+    },
+    "balanced_recall": 0.5309187279151943,
+    "both_passages_top1_correct": 395,
+    "both_passages_top1_wrong": 290,
+    "rows_with_top_tie": 0
+  },
+  "four_candidate_top1": {
+    "per_label": {
+      "gemini-3.7-flash": {
+        "rows": 1698,
+        "correct": 484,
+        "recall": 0.2850412249705536,
+        "predicted_counts": {
+          "gemini-3.1-pro-preview": 263,
+          "gemini-3.6-flash": 366,
+          "gemini-3.7-flash": 484,
+          "gemini-3.8-flash": 585
+        }
+      },
+      "gemini-3.8-flash": {
+        "rows": 1698,
+        "correct": 669,
+        "recall": 0.39399293286219084,
+        "predicted_counts": {
+          "gemini-3.1-pro-preview": 240,
+          "gemini-3.6-flash": 325,
+          "gemini-3.7-flash": 464,
+          "gemini-3.8-flash": 669
+        }
+      }
+    },
+    "balanced_recall": 0.33951707891637223,
+    "both_passages_top1_correct": 160,
+    "both_passages_top1_wrong": 705,
+    "rows_with_top_tie": 0
+  },
+  "paired_ordering": {
+    "correct": 941,
+    "inverted": 757,
+    "ties": 0,
+    "strict_correct_fraction": 0.5541813898704359,
+    "tie_half_credit_fraction": 0.5541813898704359,
+    "definition": "Within each prompt compare LL(3.7)-LL(3.8) for the 3.7 response versus the 3.8 response. Pair identity is only used here after prediction."
+  },
+  "tie_break_top1": "First maximum in the fixed order 3.1, 3.6, 3.7, 3.8 (or 3.7,3.8 for the pair).",
+  "scope": "Single-source two-label component diagnostic with four possible Gemini outputs. No interpretation as an 18-label or whole-V30 leaderboard metric.",
+  "input_sha256": "74c3194f18ed4724d1f0887569c079535aa9e8d3ad2ea26c8b4db4f722d36f87",
+  "targets_sha256": "78a4361d5436a34f281e5b385e1c5c02704f795f8a33e3d14fce2c3a87f73278",
+  "scores_sha256": "b6dc1013c8a3dec35bdbd03e519d0659186c33db5a7ae1b8c88dd8f133944abe"
+}
