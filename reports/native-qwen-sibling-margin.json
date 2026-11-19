@@ -1,0 +1,116 @@
+{
+  "protocol": "Official marker model retrained in each exact native OOF fold. Compare a fixed 5% arithmetic marker blend against moving mass between two sibling models only when the native log-odds margin is below 1 and marker odds support the runner-up by at least 1.5. Fixed log-odds correction 0.20, evidence clipped at 2.0. Native single component only; no full-ensemble OOF is assumed.",
+  "native_table": "official-qwen8-plain-oof.parquet",
+  "official": {
+    "rows": 2699,
+    "gate_active": 260,
+    "metrics": {
+      "raw": {
+        "baseline": {
+          "balanced_accuracy": 0.6516355953268704,
+          "changes": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "delta_ba_95pct_prompt_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "folds": {
+            "0": 0.6259259259259259,
+            "1": 0.6740740740740742,
+            "2": 0.6407407407407407,
+            "3": 0.6433588761174969,
+            "4": 0.674074074074074
+          }
+        },
+        "fixed_5pct": {
+          "balanced_accuracy": 0.6523738503604276,
+          "changes": 16,
+          "corrected": 7,
+          "regressed": 5,
+          "delta_ba_95pct_prompt_bootstrap": [
+            -0.001851851851851852,
+            0.003330847626149639
+          ],
+          "folds": {
+            "0": 0.624074074074074,
+            "1": 0.6759259259259259,
+            "2": 0.6425925925925926,
+            "3": 0.6396551724137932,
+            "4": 0.6796296296296296
+          }
+        },
+        "sibling_gate": {
+          "balanced_accuracy": 0.6523763360676113,
+          "changes": 73,
+          "corrected": 28,
+          "regressed": 26,
+          "delta_ba_95pct_prompt_bootstrap": [
+            -0.004095451155853839,
+            0.005936319881525359
+          ],
+          "folds": {
+            "0": 0.624074074074074,
+            "1": 0.6722222222222223,
+            "2": 0.6407407407407407,
+            "3": 0.6433588761174969,
+            "4": 0.6814814814814816
+          }
+        }
+      },
+      "with_published_typography": {
+        "baseline": {
+          "balanced_accuracy": 0.6512652249565002,
+          "changes": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "delta_ba_95pct_prompt_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "folds": {
+            "0": 0.6259259259259259,
+            "1": 0.6740740740740742,
+            "2": 0.6407407407407407,
+            "3": 0.6433588761174969,
+            "4": 0.6722222222222222
+          }
+        },
+        "fixed_5pct": {
+          "balanced_accuracy": 0.6520034799900571,
+          "changes": 16,
+          "corrected": 7,
+          "regressed": 5,
+          "delta_ba_95pct_prompt_bootstrap": [
+            -0.001851851851851852,
+            0.003330847626149639
+          ],
+          "folds": {
+            "0": 0.624074074074074,
+            "1": 0.6759259259259259,
+            "2": 0.6425925925925926,
+            "3": 0.6396551724137932,
+            "4": 0.6777777777777778
+          }
+        },
+        "sibling_gate": {
+          "balanced_accuracy": 0.6520059656972408,
+          "changes": 73,
+          "corrected": 28,
+          "regressed": 26,
+          "delta_ba_95pct_prompt_bootstrap": [
+            -0.004095451155853839,
+            0.005936319881525359
+          ],
+          "folds": {
+            "0": 0.624074074074074,
+            "1": 0.6722222222222223,
+            "2": 0.6407407407407407,
+            "3": 0.6433588761174969,
+            "4": 0.6796296296296296
+          }
+        }
+      }
+    }
+  }
+}

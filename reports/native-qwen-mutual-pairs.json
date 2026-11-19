@@ -1,0 +1,106 @@
+{
+  "baseline_ba": 0.6516355953268704,
+  "source": "official-qwen8-plain-oof.parquet",
+  "protocol": "Native Qwen plain grouped OOF, seed 7786 + author fold, 1/3/18 passages per prompt. Only text and probabilities determine mutual nearest neighbors. Downweight a shared class with strength up to 0.6 as cosine rises from 0.30 to 0.55. Real competition groups and their mix are unknown.",
+  "conditions": {
+    "1": {
+      "matches": {
+        "pairs": 1,
+        "same_prompt": 0,
+        "same_label": 0
+      },
+      "near15": {
+        "balanced_accuracy": 0.6516355953268704,
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "folds": {
+          "0": 0.6259259259259259,
+          "1": 0.6740740740740742,
+          "2": 0.6407407407407407,
+          "3": 0.6433588761174969,
+          "4": 0.674074074074074
+        }
+      },
+      "mutual": {
+        "balanced_accuracy": 0.6516355953268704,
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "folds": {
+          "0": 0.6259259259259259,
+          "1": 0.6740740740740742,
+          "2": 0.6407407407407407,
+          "3": 0.6433588761174969,
+          "4": 0.674074074074074
+        }
+      }
+    },
+    "3": {
+      "matches": {
+        "pairs": 352,
+        "same_prompt": 351,
+        "same_label": 1
+      },
+      "near15": {
+        "balanced_accuracy": 0.6523763360676113,
+        "changed": 6,
+        "corrected": 3,
+        "regressed": 1,
+        "folds": {
+          "0": 0.6259259259259259,
+          "1": 0.6777777777777778,
+          "2": 0.6388888888888888,
+          "3": 0.6452107279693488,
+          "4": 0.674074074074074
+        }
+      },
+      "mutual": {
+        "balanced_accuracy": 0.6523763360676113,
+        "changed": 3,
+        "corrected": 2,
+        "regressed": 0,
+        "folds": {
+          "0": 0.6259259259259259,
+          "1": 0.6759259259259259,
+          "2": 0.6407407407407407,
+          "3": 0.6452107279693488,
+          "4": 0.674074074074074
+        }
+      }
+    },
+    "18": {
+      "matches": {
+        "pairs": 431,
+        "same_prompt": 431,
+        "same_label": 0
+      },
+      "near15": {
+        "balanced_accuracy": 0.6553392990305742,
+        "changed": 20,
+        "corrected": 13,
+        "regressed": 3,
+        "folds": {
+          "0": 0.6259259259259259,
+          "1": 0.6740740740740742,
+          "2": 0.6425925925925926,
+          "3": 0.6489144316730524,
+          "4": 0.6851851851851852
+        }
+      },
+      "mutual": {
+        "balanced_accuracy": 0.6542281879194632,
+        "changed": 16,
+        "corrected": 10,
+        "regressed": 3,
+        "folds": {
+          "0": 0.6277777777777778,
+          "1": 0.6759259259259259,
+          "2": 0.6407407407407407,
+          "3": 0.6489144316730524,
+          "4": 0.6777777777777777
+        }
+      }
+    }
+  }
+}

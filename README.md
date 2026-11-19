@@ -24,6 +24,12 @@
 
 混合语料 ModernBERT 训练完成了五折。以 18% 权重加入 v5 后，平衡准确率由 0.44859 降至 0.44081，五折中只有一折上升，本轮未晋级。[逐折指标](reports/mixed40-v5-comparison.json)
 
+CHEN Han 公开了 Qwen3-Embedding-8B 的官方训练集折外预测。2,699 行的顺序、18 个类别和五个训练折均已核对，每个验证题目都与对应训练折分离。只用单篇文本的分类头平衡准确率为 **0.65164**。加入 5% 的写作标记后为 0.65237。只在同系列两个候选接近时重排为 0.65238，纠正 28 篇、改错 26 篇，按题目重采样的差值区间跨过零。[原作者固定版本](https://www.kaggle.com/code/concyclics/0-679?scriptVersionId=365653660) · [固定权重与同系列重排实验](reports/native-qwen-sibling-margin.json)
+
+在同一组折外预测上，我们用文本相似度寻找互为最近邻的文章，轻微降低两篇同时来自同一型号的概率。每题保留一篇时预测不变；每题三篇时从 0.65164 到 0.65238；完整题组上达到 0.65423。隐藏集的题组大小未知。[逐折分数、匹配数量与误判变化](reports/native-qwen-mutual-pairs.json)
+
+另外尝试了根据输出字数推断模型及按缩写、标点使用机会建模。两种修正一起只用官方语料拟合，自有基线五折从 0.46118 到 0.46415。在 216 篇公开外部文章上，使用轻量标记分类器的对照从 0.20370 降到 0.19444，暂不进入提交。[语料来源、各类召回与外部确认](reports/source-response-experiments.json)
+
 ## 实验说明
 
 两套 Qwen 适配器均已用官方 2,699 行全量微调。表中保留本队实测成绩；作者报告其原方案公榜为 0.592。我们继承两套 Qwen 的输出、词法分类器和融合，新增 15% 权重的文本近邻校准。本队预览在两张 T4 上实际运行两套模型并生成三行输出。[作者 Notebook](https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool) · [公开权重与数据来源](https://www.kaggle.com/datasets/nishantdahal/ntl-two-stage-lora/versions/1)
