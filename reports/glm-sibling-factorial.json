@@ -97,27 +97,27 @@
       },
       "both": {
         "comparison": "glm_corrected",
-        "balanced_accuracy": 0.712020879940343,
-        "changed": 57,
-        "corrected": 22,
+        "balanced_accuracy": 0.712393736017897,
+        "changed": 58,
+        "corrected": 23,
         "regressed": 17,
         "delta_95pct_prompt_bootstrap": [
-          -0.002251206248999755,
-          0.006296296296296296
+          -0.001851851851851852,
+          0.006301362604214955
         ],
         "fold_delta": [
           0.0018518518518519933,
           0.0037037037037037646,
           0.0037037037037036535,
           0.0018518518518516602,
-          -0.0018518518518517713
+          1.1102230246251565e-16
         ]
       }
     },
     "sparse2-text-cluster": {
       "v30_routing": {
         "comparison": "v30_routing",
-        "balanced_accuracy": 0.6823713646532439,
+        "balanced_accuracy": 0.6823738503604276,
         "changed": 0,
         "corrected": 0,
         "regressed": 0,
@@ -135,17 +135,17 @@
       },
       "glm_corrected": {
         "comparison": "v30_routing",
-        "balanced_accuracy": 0.6860850111856823,
-        "changed": 45,
+        "balanced_accuracy": 0.685714640815312,
+        "changed": 46,
         "corrected": 13,
-        "regressed": 3,
+        "regressed": 4,
         "delta_95pct_prompt_bootstrap": [
-          0.0007606381892096178,
-          0.006701701701701702
+          0.00037037037037037046,
+          0.006666666666666666
         ],
         "fold_delta": [
-          0.0037037037037037646,
-          0.007407407407407418,
+          0.0037037037037036535,
+          0.005555555555555536,
           -0.0018518518518518823,
           0.005619412515964206,
           0.0037037037037036535
@@ -153,7 +153,7 @@
       },
       "both": {
         "comparison": "glm_corrected",
-        "balanced_accuracy": 0.6883047477007209,
+        "balanced_accuracy": 0.6879343773303506,
         "changed": 70,
         "corrected": 29,
         "regressed": 23,
