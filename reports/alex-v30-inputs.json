@@ -1,0 +1,246 @@
+{
+  "parent": "https://www.kaggle.com/code/alexchilton/name-that-llm-0-702-all-public-what-failed?scriptVersionId=370591902",
+  "source_sha256": "9a001e97f8f929c630219302c13f0c770f99423df7e01f7d4d3affaf4ba9c9fe",
+  "private_notebook_sha256": "24512442b260ad7ab14ae7fc60ede66638746b7cff0e6e61fe3b17493a1f875a",
+  "public_score": 0.702,
+  "source_version": 30,
+  "resources": {
+    "datasetDataSources": [
+      "jamesliebel/glm53-iq3xxs-segs-a-mirror",
+      "jamesliebel/glm53-iq3xxs-segs-b-mirror",
+      "jamesliebel/glm53-flash-iq3xxs-segs-mirror",
+      "dhruvtibarewal/nlm-l24-adapters",
+      "lightningv08/ntl-olmo2-native24-final-inference-assets",
+      "crtproduction/name-that-llm-open-pool",
+      "seyitkaangunes/ntl-extra-api-passages",
+      "abdullah1afify/ntl-generations",
+      "dophuchung/ntl-proxy-generations",
+      "zbigniewkirchner/ntl-qwen3-8b-lora-claude-head",
+      "dhruvtibarewal/nlm-matched-clean",
+      "dhruvtibarewal/nlm-offline-wheels",
+      "josephadamski91/ntl-atlas-qwen3-8b-v1",
+      "lucasboesen/ntl-free-proxy-generations",
+      "nuridudak/ntl-q14-lora",
+      "nuridudak/ntl-q14-lora-v4",
+      "kirilltym/ntl-spectral-style-heads-paired-4404",
+      "nuridudak/ntl-svc-prefit-pool-v4n",
+      "dhruvtibarewal/nlm-enc-v5",
+      "nuridudak/ntl-two-stage-encoders",
+      "nishantdahal/ntl-two-stage-lora",
+      "nishantdahal/ntl-handwriting-blend",
+      "dhruvtibarewal/nlm-l24-adapters-v5",
+      "prvsiyan/prvsiyans-extended-name-that-llm-dataset",
+      "bbucxi/qwen35-9b-safetensors",
+      "pjmathematician/ultrabert-380m-ntl"
+    ],
+    "modelDataSources": [
+      "alexchilton/llama-3-1-8b-base/Transformers/default/1",
+      "qwen-lm/qwen-3/Transformers/14b/1",
+      "qwen-lm/qwen-3/Transformers/8b/1",
+      "qwen-lm/qwen-3/Transformers/8b-base/1",
+      "qwen-lm/qwen-3/Transformers/4b-base/1",
+      "qwen-lm/qwen-3/Transformers/14b-base/1",
+      "qwen-lm/qwen-3-embedding/Transformers/8b/1",
+      "qwen-lm/qwen2.5/Transformers/7b/1",
+      "qwen-lm/qwen2.5/Transformers/14b/1"
+    ],
+    "kernelDataSources": [
+      "lucasboesen/name-that-llm-glm4-9b-trunc25",
+      "lucasboesen/name-that-llm-extract-encoders2",
+      "lucasboesen/name-that-llm-electra-large-weights",
+      "lucasboesen/name-that-llm-desklib-weights",
+      "lucasboesen/name-that-llm-train-lora24-s7",
+      "lucasboesen/name-that-llm-train-tokattn",
+      "lucasboesen/name-that-llm-train-tokattn2",
+      "vnton37nguyn/ntl-train-lora-qwen25-instyle",
+      "estopadilla/ntl-glm-likelihood-train"
+    ],
+    "competitionDataSources": [
+      "name-that-llm"
+    ],
+    "dockerImage": "gcr.io/kaggle-private-byod/python@sha256:de153e6d303881930c51286216393d56f56b26458d0661350305a1e8144eea01"
+  },
+  "pinned_sources": [
+    {
+      "sourceType": "competition",
+      "sourceId": 170484
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21641030
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21641805
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21639905
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21062729
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21817814
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 22123604
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20819121
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21651586
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20847146
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20831302
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21145399
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20858502
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21011978
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21535348
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21152540
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21251556
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21156661
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21367646
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21227404
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21130411
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20934027
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21119693
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 21203279
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 22012644
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 18975315
+    },
+    {
+      "sourceType": "datasetVersion",
+      "sourceId": 20736096
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358683059
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358745836
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358758062
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358770408
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358911769
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358928013
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 358948428
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 359652568
+    },
+    {
+      "sourceType": "kernelVersion",
+      "sourceId": 368461538
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 1041713
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363140
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363135
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363139
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363149
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 363153
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 426337
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166265
+    },
+    {
+      "sourceType": "modelInstanceVersion",
+      "sourceId": 166254
+    }
+  ],
+  "docker_image_id": 31508
+}

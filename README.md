@@ -16,6 +16,14 @@
 
 11 月 19 日北京时间 21:55:19，双 Qwen 版本成为本队第五次正式提交，距上次提交 3 小时 55 分 03 秒。Kaggle 显示该次评测成功，公榜为 **0.593**，比此前本队最佳分数提高 0.174，比首次提交提高 0.209。仓库收录 **136** 个本地实验。
 
+## 目标 0.700 的实验
+
+本队正在复现 Alex Chilton 的 V30。Kaggle 在作者的固定版本上显示公榜 0.702。本队派生版在公开样例上也运行模型，并保留完整评分规模上的模型、权重和后处理。45 项依赖从 Kaggle 原资源挂载。[作者 V30](https://www.kaggle.com/code/alexchilton/name-that-llm-0-702-all-public-what-failed?scriptVersionId=370591902) · [固定输入及代码哈希](reports/alex-v30-inputs.json)
+
+在自有 v6 模型上，加入 V30 的三条排版规则后，按题目分组的五折平衡准确率从 0.46489 升至 0.46674。在四套已有预测上，一次性应用所有规则和按训练折学习惩罚力度均未超过作者原有顺序，暂时保留原顺序。该实验只评估末端规则。[折内训练和配对比较](reports/typography-rule-overlap.json)
+
+混合语料 ModernBERT 训练完成了五折。以 18% 权重加入 v5 后，平衡准确率由 0.44859 降至 0.44081，五折中只有一折上升，本轮未晋级。[逐折指标](reports/mixed40-v5-comparison.json)
+
 ## 实验说明
 
 两套 Qwen 适配器均已用官方 2,699 行全量微调。表中保留本队实测成绩；作者报告其原方案公榜为 0.592。我们继承两套 Qwen 的输出、词法分类器和融合，新增 15% 权重的文本近邻校准。本队预览在两张 T4 上实际运行两套模型并生成三行输出。[作者 Notebook](https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool) · [公开权重与数据来源](https://www.kaggle.com/datasets/nishantdahal/ntl-two-stage-lora/versions/1)
