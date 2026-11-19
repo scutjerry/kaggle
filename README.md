@@ -54,6 +54,8 @@ CHEN Han 公开了 Qwen3-Embedding-8B 的官方训练集折外预测。2,699 行
 
 我们还改变了验证批次中各类文章的比例。分别减少 GLM、提高 GLM 的相对占比，以及随机改变 18 类比例，每种情形抽取六次，并对每个样本批次重新选取最需要计算 GLM 似然的文章。逐词元候选在 18 次配对比较中均上升，差值范围为 0.00186 至 0.00631。这些实验复用了官方训练文章，公榜仍需本队直接提交验证。[五折数据](reports/glm-token-contrast.json) · [类别占比测试](reports/glm-prevalence-stress.json)
 
+逐词元候选已经过 480 篇真实词元分数的推理重放。72 篇被选中，调换输入文件行序和底模类别顺序后，最终 Parquet 仍与独立计算一致。另做了固定计算量的选文实验，将不确定性纳入排序，单篇条件只多判对 3 篇，密集题组净少判对 2 篇，交付版保留按 GLM 概率排序。[部署核验和文件哈希](reports/glm-token-deployment.json) · [选文策略对照](reports/glm-selection-policy.json)
+
 ## 实验说明
 
 两套 Qwen 适配器均已用官方 2,699 行全量微调。表中保留本队实测成绩；作者报告其原方案公榜为 0.592。我们继承两套 Qwen 的输出、词法分类器和融合，新增 15% 权重的文本近邻校准。本队预览在两张 T4 上实际运行两套模型并生成三行输出。[作者 Notebook](https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool) · [公开权重与数据来源](https://www.kaggle.com/datasets/nishantdahal/ntl-two-stage-lora/versions/1)

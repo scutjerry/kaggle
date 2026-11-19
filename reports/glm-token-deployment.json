@@ -1,0 +1,60 @@
+{
+  "notebook": "name-that-llm-v30-glm-token-contrast.ipynb",
+  "bytes": 280142,
+  "sha256": "48a1e47d327476f0fea03ff093e9d96514c494e81ac59663f43d381e404d1275",
+  "parent_sha256": "3980a6de78033cbfaeba71bb2f6e6532be24b485dbc711d519007ed73bf1313c",
+  "changed_cells_zero_based": [
+    26,
+    27,
+    28
+  ],
+  "sources": 45,
+  "stage_gpu_passes_per_scored_batch": 2,
+  "features": 76,
+  "paired_features": 22,
+  "labels": 18,
+  "full_fit_rows": 2699,
+  "max_tokens": 160,
+  "class_weight": "balanced",
+  "regularization_C": 0.05,
+  "verified_training_source": {
+    "max_full_feature_error": {
+      "flash": 2.62455749577839e-07,
+      "glm53": 2.4505004891928195e-07
+    },
+    "max_truncated_mean_error": 2.42446551723674e-09,
+    "max_truncated_scale_error": 1.329550552986447e-09
+  },
+  "feature_source": "https://www.kaggle.com/code/estopadilla/ntl-glm-likelihood-train/versions/3",
+  "validation": "CPU replay of real cached token scores and the exact deployment postprocessing. Hidden leaderboard unscored.",
+  "deployment_replay": {
+    "short_batches": [
+      {
+        "rows": 3,
+        "selected": 0
+      },
+      {
+        "rows": 49,
+        "selected": 7
+      },
+      {
+        "rows": 333,
+        "selected": 49
+      }
+    ],
+    "rows": 480,
+    "selected": 72,
+    "rows_over_160_training_tokens": 27,
+    "replay_calls": [
+      "flash",
+      "glm53"
+    ],
+    "mismatching_token_rejected": true,
+    "noncontiguous_shuffled_rows": true,
+    "reversed_csv_row_order": true,
+    "reversed_base_class_order": true,
+    "output_parquet_equal_reference": true,
+    "max_member_log_probability_error": 8.881784197001252e-16,
+    "max_stage_logit_error": 1.7763568394002505e-15
+  }
+}

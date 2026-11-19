@@ -1,0 +1,254 @@
+{
+  "protocol": "All arms keep the paired-token GLM head, corrected final routing, 15% maximum coverage, 90000 estimated positions and minimum 50 selected rows. The original selector ranks by GLM+Flash mass. The uncertainty selector multiplies mass by 0.25+0.75*(1-max class probability). Reserve keeps the highest 10% by GLM mass and fills the remaining 5% by uncertainty. Each policy selects using probabilities and text length only.",
+  "cohorts": {
+    "plain": {
+      "original": {
+        "ba": 0.6842505592841164,
+        "rows_scored": 404,
+        "new_rows": 0,
+        "scored_glm": 241,
+        "estimated_token_positions_by_fold": [
+          11573,
+          10255,
+          11488,
+          10888,
+          11109
+        ],
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "paired_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "uncertainty": {
+        "ba": 0.6853616703952274,
+        "rows_scored": 404,
+        "new_rows": 17,
+        "scored_glm": 239,
+        "estimated_token_positions_by_fold": [
+          11548,
+          10139,
+          11443,
+          10793,
+          11027
+        ],
+        "changed": 9,
+        "corrected": 4,
+        "regressed": 1,
+        "paired_delta_95pct": [
+          -0.0003703703703703704,
+          0.002962962962962963
+        ],
+        "fold_deltas": [
+          0.0018518518518518823,
+          0.0018518518518517713,
+          0.0,
+          0.0,
+          0.0018518518518518823
+        ]
+      },
+      "reserve": {
+        "ba": 0.6853616703952274,
+        "rows_scored": 404,
+        "new_rows": 17,
+        "scored_glm": 239,
+        "estimated_token_positions_by_fold": [
+          11548,
+          10139,
+          11443,
+          10793,
+          11027
+        ],
+        "changed": 9,
+        "corrected": 4,
+        "regressed": 1,
+        "paired_delta_95pct": [
+          -0.0003703703703703704,
+          0.002962962962962963
+        ],
+        "fold_deltas": [
+          0.0018518518518518823,
+          0.0018518518518517713,
+          0.0,
+          0.0,
+          0.0018518518518518823
+        ]
+      }
+    },
+    "sparse2-text-cluster": {
+      "original": {
+        "ba": 0.6897961720109371,
+        "rows_scored": 404,
+        "new_rows": 0,
+        "scored_glm": 241,
+        "estimated_token_positions_by_fold": [
+          11505,
+          10474,
+          11401,
+          10615,
+          11519
+        ],
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "paired_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "uncertainty": {
+        "ba": 0.6901690280884912,
+        "rows_scored": 404,
+        "new_rows": 16,
+        "scored_glm": 238,
+        "estimated_token_positions_by_fold": [
+          11409,
+          10382,
+          11507,
+          10668,
+          11264
+        ],
+        "changed": 7,
+        "corrected": 2,
+        "regressed": 1,
+        "paired_delta_95pct": [
+          -0.0007407407407407408,
+          0.001851851851851852
+        ],
+        "fold_deltas": [
+          0.0018518518518517713,
+          0.0018518518518518823,
+          -0.0018518518518517713,
+          0.0,
+          0.0
+        ]
+      },
+      "reserve": {
+        "ba": 0.6901690280884912,
+        "rows_scored": 404,
+        "new_rows": 16,
+        "scored_glm": 238,
+        "estimated_token_positions_by_fold": [
+          11409,
+          10382,
+          11507,
+          10668,
+          11264
+        ],
+        "changed": 7,
+        "corrected": 2,
+        "regressed": 1,
+        "paired_delta_95pct": [
+          -0.0007407407407407408,
+          0.001851851851851852
+        ],
+        "fold_deltas": [
+          0.0018518518518517713,
+          0.0018518518518518823,
+          -0.0018518518518517713,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "text-cluster": {
+      "original": {
+        "ba": 0.7149987571464081,
+        "rows_scored": 404,
+        "new_rows": 0,
+        "scored_glm": 248,
+        "estimated_token_positions_by_fold": [
+          11648,
+          10514,
+          11478,
+          10724,
+          11048
+        ],
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "paired_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "uncertainty": {
+        "ba": 0.7142555306984838,
+        "rows_scored": 404,
+        "new_rows": 14,
+        "scored_glm": 241,
+        "estimated_token_positions_by_fold": [
+          11488,
+          10366,
+          11454,
+          10727,
+          10950
+        ],
+        "changed": 11,
+        "corrected": 3,
+        "regressed": 5,
+        "paired_delta_95pct": [
+          -0.002962962962962963,
+          0.0011111111111111111
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0018518518518518823,
+          -0.0018518518518517713,
+          -0.0018518518518518823,
+          -0.0018518518518519933
+        ]
+      },
+      "reserve": {
+        "ba": 0.7142555306984838,
+        "rows_scored": 404,
+        "new_rows": 14,
+        "scored_glm": 241,
+        "estimated_token_positions_by_fold": [
+          11488,
+          10366,
+          11454,
+          10727,
+          10950
+        ],
+        "changed": 11,
+        "corrected": 3,
+        "regressed": 5,
+        "paired_delta_95pct": [
+          -0.002962962962962963,
+          0.0011111111111111111
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0018518518518518823,
+          -0.0018518518518517713,
+          -0.0018518518518518823,
+          -0.0018518518518519933
+        ]
+      }
+    }
+  }
+}
