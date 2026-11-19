@@ -14,23 +14,29 @@
   "scored_public_history": [
     {
       "version": "v1",
-      "score": 0.384
+      "score": 0.384,
+      "accepted_at": "2026-11-19T16:50:50+08:00"
     },
     {
       "version": "v2",
-      "score": 0.4
+      "score": 0.4,
+      "accepted_at": "2026-11-19T17:29:22+08:00"
     },
     {
       "version": "v3",
-      "score": 0.419
+      "score": 0.419,
+      "accepted_at": "2026-11-19T17:41:04+08:00"
     },
     {
       "version": "v4",
-      "score": 0.414
+      "score": 0.414,
+      "accepted_at": "2026-11-19T18:00:16+08:00"
     },
     {
       "version": "Two-stage Qwen + text-neighbor calibration",
-      "score": 0.593
+      "score": 0.593,
+      "accepted_at": "2026-11-19T21:55:19+08:00"
     }
-  ]
+  ],
+  "interval_policy_effective_after_attempt": 4
 }
