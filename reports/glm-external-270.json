@@ -1,0 +1,937 @@
+{
+  "protocol": "Two small published-text cohorts checked against the original deployed Nishant dual-Qwen base. Fit V30's typography/sibling model on official training data. Also evaluate both supervised GLM heads standalone. Report actual small-batch fallback and a 15% deployment-size proxy, which ignores the minimum 50 selected rows solely for this private comparison. The confirmation cohort is source-skewed. All 270 public prompt fingerprints occur in a supervised V30 component. The interpretation is limited to the tested component combination.",
+  "qwen_sha256": "80eed6ce38c852002fb96fc5472a2d506e4d743c57c2f12c6cced75c196ed032",
+  "glm_sha256": "e0bc3e3ad00416b8bffd5d01a9633cd4bc54274069f7a49a481fedf374aab713",
+  "cohorts": {
+    "pilot": {
+      "rows": 54,
+      "glm_rows_for_15pct_proxy": 8,
+      "scores": {
+        "qwen": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "correct": 34,
+            "recall": {
+              "claude-fable-5": 0.0,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.6-flash": 0.6666666666666666,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6296296296296295
+          },
+          "served_id": {
+            "rows": 51,
+            "classes": 17,
+            "correct": 32,
+            "recall": {
+              "claude-fable-5": 0.0,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6274509803921569
+          }
+        },
+        "v30_actual_small_batch": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "correct": 34,
+            "recall": {
+              "claude-fable-5": 0.0,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.6-flash": 0.6666666666666666,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6296296296296295
+          },
+          "served_id": {
+            "rows": 51,
+            "classes": 17,
+            "correct": 32,
+            "recall": {
+              "claude-fable-5": 0.0,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6274509803921569
+          }
+        },
+        "corrected_actual_small_batch": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "correct": 34,
+            "recall": {
+              "claude-fable-5": 0.0,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.6-flash": 0.6666666666666666,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6296296296296295
+          },
+          "served_id": {
+            "rows": 51,
+            "classes": 17,
+            "correct": 32,
+            "recall": {
+              "claude-fable-5": 0.0,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6274509803921569
+          }
+        },
+        "original_likelihood_alone": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "correct": 7,
+            "recall": {
+              "claude-fable-5": 0.3333333333333333,
+              "claude-opus-4-6": 0.0,
+              "claude-opus-4-8": 0.0,
+              "claude-opus-5": 0.0,
+              "claude-sonnet-5": 0.0,
+              "gemini-3.1-pro-preview": 0.3333333333333333,
+              "gemini-3.6-flash": 0.3333333333333333,
+              "gemini-3.7-flash": 0.0,
+              "gemini-3.8-flash": 0.3333333333333333,
+              "glm-5.3": 0.3333333333333333,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 0.3333333333333333,
+              "gpt-5.6-luna": 0.0,
+              "gpt-5.6-sol": 0.0,
+              "gpt-5.6-terra": 0.3333333333333333,
+              "gpt-6-astra": 0.0,
+              "kimi-k3": 0.0,
+              "qwen3.8-max": 0.0
+            },
+            "balanced_accuracy": 0.12962962962962962
+          },
+          "served_id": {
+            "rows": 51,
+            "classes": 17,
+            "correct": 6,
+            "recall": {
+              "claude-fable-5": 0.3333333333333333,
+              "claude-opus-4-6": 0.0,
+              "claude-opus-4-8": 0.0,
+              "claude-opus-5": 0.0,
+              "claude-sonnet-5": 0.0,
+              "gemini-3.1-pro-preview": 0.3333333333333333,
+              "gemini-3.7-flash": 0.0,
+              "gemini-3.8-flash": 0.3333333333333333,
+              "glm-5.3": 0.3333333333333333,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 0.3333333333333333,
+              "gpt-5.6-luna": 0.0,
+              "gpt-5.6-sol": 0.0,
+              "gpt-5.6-terra": 0.3333333333333333,
+              "gpt-6-astra": 0.0,
+              "kimi-k3": 0.0,
+              "qwen3.8-max": 0.0
+            },
+            "balanced_accuracy": 0.11764705882352941
+          }
+        },
+        "paired_likelihood_alone": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "correct": 8,
+            "recall": {
+              "claude-fable-5": 0.3333333333333333,
+              "claude-opus-4-6": 0.0,
+              "claude-opus-4-8": 0.0,
+              "claude-opus-5": 0.0,
+              "claude-sonnet-5": 0.0,
+              "gemini-3.1-pro-preview": 0.3333333333333333,
+              "gemini-3.6-flash": 0.3333333333333333,
+              "gemini-3.7-flash": 0.0,
+              "gemini-3.8-flash": 0.3333333333333333,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 0.0,
+              "gpt-5.6-luna": 0.0,
+              "gpt-5.6-sol": 0.0,
+              "gpt-5.6-terra": 0.3333333333333333,
+              "gpt-6-astra": 0.0,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.0
+            },
+            "balanced_accuracy": 0.14814814814814814
+          },
+          "served_id": {
+            "rows": 51,
+            "classes": 17,
+            "correct": 7,
+            "recall": {
+              "claude-fable-5": 0.3333333333333333,
+              "claude-opus-4-6": 0.0,
+              "claude-opus-4-8": 0.0,
+              "claude-opus-5": 0.0,
+              "claude-sonnet-5": 0.0,
+              "gemini-3.1-pro-preview": 0.3333333333333333,
+              "gemini-3.7-flash": 0.0,
+              "gemini-3.8-flash": 0.3333333333333333,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.0,
+              "gpt-5.5": 0.0,
+              "gpt-5.6-luna": 0.0,
+              "gpt-5.6-sol": 0.0,
+              "gpt-5.6-terra": 0.3333333333333333,
+              "gpt-6-astra": 0.0,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.0
+            },
+            "balanced_accuracy": 0.1372549019607843
+          }
+        },
+        "original_15pct_proxy": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "correct": 36,
+            "recall": {
+              "claude-fable-5": 0.3333333333333333,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.6-flash": 0.6666666666666666,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6666666666666666
+          },
+          "served_id": {
+            "rows": 51,
+            "classes": 17,
+            "correct": 34,
+            "recall": {
+              "claude-fable-5": 0.3333333333333333,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6666666666666666
+          }
+        },
+        "v30_15pct_proxy": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "correct": 35,
+            "recall": {
+              "claude-fable-5": 0.0,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.6-flash": 0.6666666666666666,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6481481481481481
+          },
+          "served_id": {
+            "rows": 51,
+            "classes": 17,
+            "correct": 33,
+            "recall": {
+              "claude-fable-5": 0.0,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6470588235294117
+          }
+        },
+        "paired_15pct_proxy": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "correct": 36,
+            "recall": {
+              "claude-fable-5": 0.3333333333333333,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.6-flash": 0.6666666666666666,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6666666666666666
+          },
+          "served_id": {
+            "rows": 51,
+            "classes": 17,
+            "correct": 34,
+            "recall": {
+              "claude-fable-5": 0.3333333333333333,
+              "claude-opus-4-6": 1.0,
+              "claude-opus-4-8": 1.0,
+              "claude-opus-5": 1.0,
+              "claude-sonnet-5": 0.6666666666666666,
+              "gemini-3.1-pro-preview": 1.0,
+              "gemini-3.7-flash": 0.3333333333333333,
+              "gemini-3.8-flash": 0.6666666666666666,
+              "glm-5.3": 0.6666666666666666,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 1.0,
+              "gpt-5.6-luna": 0.6666666666666666,
+              "gpt-5.6-sol": 0.3333333333333333,
+              "gpt-5.6-terra": 0.6666666666666666,
+              "gpt-6-astra": 0.6666666666666666,
+              "kimi-k3": 0.3333333333333333,
+              "qwen3.8-max": 0.6666666666666666
+            },
+            "balanced_accuracy": 0.6666666666666666
+          }
+        }
+      },
+      "predeclared_paired_differences": {
+        "paired_15pct_proxy_minus_original_15pct_proxy": {
+          "balanced_accuracy_delta": 0.0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "changed_inside_selected": 0,
+          "delta_95pct_within_class_resampling": [
+            0.0,
+            0.0
+          ]
+        },
+        "original_15pct_proxy_minus_v30_15pct_proxy": {
+          "balanced_accuracy_delta": 0.01851851851851849,
+          "changed": 2,
+          "corrected": 1,
+          "regressed": 0,
+          "changed_inside_selected": 2,
+          "delta_95pct_within_class_resampling": [
+            0.0,
+            0.05555555555555555
+          ]
+        },
+        "paired_15pct_proxy_minus_qwen": {
+          "balanced_accuracy_delta": 0.03703703703703709,
+          "changed": 5,
+          "corrected": 2,
+          "regressed": 0,
+          "changed_inside_selected": 4,
+          "delta_95pct_within_class_resampling": [
+            0.0,
+            0.07407407407407407
+          ]
+        }
+      }
+    },
+    "confirmation": {
+      "rows": 216,
+      "glm_rows_for_15pct_proxy": 32,
+      "scores": {
+        "qwen": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "correct": 93,
+            "recall": {
+              "claude-fable-5": 0.4166666666666667,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.6-flash": 0.4166666666666667,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.08333333333333333,
+              "glm-5.3-flash": 0.16666666666666666,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.4166666666666667,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.4305555555555556
+          },
+          "served_id": {
+            "rows": 204,
+            "classes": 17,
+            "correct": 88,
+            "recall": {
+              "claude-fable-5": 0.4166666666666667,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.08333333333333333,
+              "glm-5.3-flash": 0.16666666666666666,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.4166666666666667,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.4313725490196078
+          }
+        },
+        "v30_actual_small_batch": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "correct": 94,
+            "recall": {
+              "claude-fable-5": 0.4166666666666667,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.6-flash": 0.4166666666666667,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.08333333333333333,
+              "glm-5.3-flash": 0.16666666666666666,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.4351851851851853
+          },
+          "served_id": {
+            "rows": 204,
+            "classes": 17,
+            "correct": 89,
+            "recall": {
+              "claude-fable-5": 0.4166666666666667,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.08333333333333333,
+              "glm-5.3-flash": 0.16666666666666666,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.4362745098039215
+          }
+        },
+        "corrected_actual_small_batch": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "correct": 94,
+            "recall": {
+              "claude-fable-5": 0.4166666666666667,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.6-flash": 0.4166666666666667,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.08333333333333333,
+              "glm-5.3-flash": 0.16666666666666666,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.4351851851851853
+          },
+          "served_id": {
+            "rows": 204,
+            "classes": 17,
+            "correct": 89,
+            "recall": {
+              "claude-fable-5": 0.4166666666666667,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.08333333333333333,
+              "glm-5.3-flash": 0.16666666666666666,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.4362745098039215
+          }
+        },
+        "original_likelihood_alone": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "correct": 33,
+            "recall": {
+              "claude-fable-5": 0.08333333333333333,
+              "claude-opus-4-6": 0.3333333333333333,
+              "claude-opus-4-8": 0.0,
+              "claude-opus-5": 0.08333333333333333,
+              "claude-sonnet-5": 0.08333333333333333,
+              "gemini-3.1-pro-preview": 0.25,
+              "gemini-3.6-flash": 0.0,
+              "gemini-3.7-flash": 0.0,
+              "gemini-3.8-flash": 0.4166666666666667,
+              "glm-5.3": 0.5833333333333334,
+              "glm-5.3-flash": 0.25,
+              "gpt-5.5": 0.16666666666666666,
+              "gpt-5.6-luna": 0.0,
+              "gpt-5.6-sol": 0.0,
+              "gpt-5.6-terra": 0.08333333333333333,
+              "gpt-6-astra": 0.08333333333333333,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.16666666666666666
+            },
+            "balanced_accuracy": 0.1527777777777778
+          },
+          "served_id": {
+            "rows": 204,
+            "classes": 17,
+            "correct": 33,
+            "recall": {
+              "claude-fable-5": 0.08333333333333333,
+              "claude-opus-4-6": 0.3333333333333333,
+              "claude-opus-4-8": 0.0,
+              "claude-opus-5": 0.08333333333333333,
+              "claude-sonnet-5": 0.08333333333333333,
+              "gemini-3.1-pro-preview": 0.25,
+              "gemini-3.7-flash": 0.0,
+              "gemini-3.8-flash": 0.4166666666666667,
+              "glm-5.3": 0.5833333333333334,
+              "glm-5.3-flash": 0.25,
+              "gpt-5.5": 0.16666666666666666,
+              "gpt-5.6-luna": 0.0,
+              "gpt-5.6-sol": 0.0,
+              "gpt-5.6-terra": 0.08333333333333333,
+              "gpt-6-astra": 0.08333333333333333,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.16666666666666666
+            },
+            "balanced_accuracy": 0.16176470588235295
+          }
+        },
+        "paired_likelihood_alone": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "correct": 37,
+            "recall": {
+              "claude-fable-5": 0.16666666666666666,
+              "claude-opus-4-6": 0.16666666666666666,
+              "claude-opus-4-8": 0.08333333333333333,
+              "claude-opus-5": 0.08333333333333333,
+              "claude-sonnet-5": 0.16666666666666666,
+              "gemini-3.1-pro-preview": 0.25,
+              "gemini-3.6-flash": 0.08333333333333333,
+              "gemini-3.7-flash": 0.0,
+              "gemini-3.8-flash": 0.16666666666666666,
+              "glm-5.3": 0.75,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 0.16666666666666666,
+              "gpt-5.6-luna": 0.08333333333333333,
+              "gpt-5.6-sol": 0.0,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.16666666666666666,
+              "kimi-k3": 0.08333333333333333,
+              "qwen3.8-max": 0.16666666666666666
+            },
+            "balanced_accuracy": 0.17129629629629628
+          },
+          "served_id": {
+            "rows": 204,
+            "classes": 17,
+            "correct": 36,
+            "recall": {
+              "claude-fable-5": 0.16666666666666666,
+              "claude-opus-4-6": 0.16666666666666666,
+              "claude-opus-4-8": 0.08333333333333333,
+              "claude-opus-5": 0.08333333333333333,
+              "claude-sonnet-5": 0.16666666666666666,
+              "gemini-3.1-pro-preview": 0.25,
+              "gemini-3.7-flash": 0.0,
+              "gemini-3.8-flash": 0.16666666666666666,
+              "glm-5.3": 0.75,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 0.16666666666666666,
+              "gpt-5.6-luna": 0.08333333333333333,
+              "gpt-5.6-sol": 0.0,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.16666666666666666,
+              "kimi-k3": 0.08333333333333333,
+              "qwen3.8-max": 0.16666666666666666
+            },
+            "balanced_accuracy": 0.1764705882352941
+          }
+        },
+        "original_15pct_proxy": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "correct": 101,
+            "recall": {
+              "claude-fable-5": 0.5,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.6-flash": 0.4166666666666667,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.5,
+              "glm-5.3-flash": 0.25,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.46759259259259267
+          },
+          "served_id": {
+            "rows": 204,
+            "classes": 17,
+            "correct": 96,
+            "recall": {
+              "claude-fable-5": 0.5,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.5,
+              "glm-5.3-flash": 0.25,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.47058823529411764
+          }
+        },
+        "v30_15pct_proxy": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "correct": 100,
+            "recall": {
+              "claude-fable-5": 0.4166666666666667,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.6-flash": 0.4166666666666667,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.5,
+              "glm-5.3-flash": 0.25,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.462962962962963
+          },
+          "served_id": {
+            "rows": 204,
+            "classes": 17,
+            "correct": 95,
+            "recall": {
+              "claude-fable-5": 0.4166666666666667,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.5,
+              "glm-5.3-flash": 0.25,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.16666666666666666,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.4656862745098039
+          }
+        },
+        "paired_15pct_proxy": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "correct": 103,
+            "recall": {
+              "claude-fable-5": 0.5,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.6-flash": 0.4166666666666667,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.5,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.25,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.47685185185185186
+          },
+          "served_id": {
+            "rows": 204,
+            "classes": 17,
+            "correct": 98,
+            "recall": {
+              "claude-fable-5": 0.5,
+              "claude-opus-4-6": 0.5,
+              "claude-opus-4-8": 0.4166666666666667,
+              "claude-opus-5": 0.75,
+              "claude-sonnet-5": 0.5,
+              "gemini-3.1-pro-preview": 0.5,
+              "gemini-3.7-flash": 0.16666666666666666,
+              "gemini-3.8-flash": 0.8333333333333334,
+              "glm-5.3": 0.5,
+              "glm-5.3-flash": 0.3333333333333333,
+              "gpt-5.5": 0.5833333333333334,
+              "gpt-5.6-luna": 0.3333333333333333,
+              "gpt-5.6-sol": 0.5,
+              "gpt-5.6-terra": 0.16666666666666666,
+              "gpt-6-astra": 0.8333333333333334,
+              "kimi-k3": 0.25,
+              "qwen3.8-max": 0.5
+            },
+            "balanced_accuracy": 0.48039215686274506
+          }
+        }
+      },
+      "predeclared_paired_differences": {
+        "paired_15pct_proxy_minus_original_15pct_proxy": {
+          "balanced_accuracy_delta": 0.00925925925925919,
+          "changed": 3,
+          "corrected": 2,
+          "regressed": 0,
+          "changed_inside_selected": 3,
+          "delta_95pct_within_class_resampling": [
+            0.0,
+            0.023148148148148147
+          ]
+        },
+        "original_15pct_proxy_minus_v30_15pct_proxy": {
+          "balanced_accuracy_delta": 0.00462962962962965,
+          "changed": 5,
+          "corrected": 1,
+          "regressed": 0,
+          "changed_inside_selected": 5,
+          "delta_95pct_within_class_resampling": [
+            0.0,
+            0.013888888888888888
+          ]
+        },
+        "paired_15pct_proxy_minus_qwen": {
+          "balanced_accuracy_delta": 0.04629629629629628,
+          "changed": 17,
+          "corrected": 10,
+          "regressed": 0,
+          "changed_inside_selected": 15,
+          "delta_95pct_within_class_resampling": [
+            0.023148148148148147,
+            0.07407407407407407
+          ]
+        }
+      }
+    }
+  }
+}
