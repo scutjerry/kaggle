@@ -13,7 +13,7 @@
 | v5 · v4 与额外训练的 ModernBERT 融合 | 0.4486 | 尚无公榜分 |
 | v6 · v3 与文本近邻校准 | 0.4612 | 尚无公榜分 |
 
-Kaggle 提交页已确认 v4 公榜分为 **0.414**，提交时间为北京时间 2026-11-19 18:00:16。此次迭代的两小时提交间隔至 20:00:16。已评分版本中，v3 以 **0.419** 居首，比 v4 高 0.005，比首次提交高 0.035。当前收录 **128** 个本地实验。
+Kaggle 提交页已确认 v4 公榜分为 **0.414**，提交时间为北京时间 2026-11-19 18:00:16。此次迭代的两小时提交间隔至 20:00:16。已评分版本中，v3 以 **0.419** 居首，比 v4 高 0.005，比首次提交高 0.035。当前收录 **135** 个本地实验。
 
 ## 实验说明
 
@@ -37,24 +37,39 @@ v5 的新编码器用每类 40 条外部样本补充训练，固定融合权重�
 
 另两项对照同以 v4 + Extra40 的 0.44859 为基准。对易混淆型号做成对重排得到 0.44600，加入段落内部重复模式得到 0.44229。成对重排的二级模型复用了折外预测，报告保留了该验证设计的限制。[成对重排](results/v5-confusion-pairs/comparison.json) · [段落重复模式](results/passage-recurrence-v5-08/comparison.json)
 
+### 冻结表示与外部语料对照
+
+用同批相近段落估计共同的主题表示，再对冻结 ModernBERT 向量做中心化。完整批次中，v3 从 0.43821 提升至 0.44636，五折均有改善；v6 从 0.46118 提升至 0.46489，三折提高、一折持平、一折下降。每题约三段时，v3 从 0.43303 提升至 0.43488，v6 维持 0.43933。各小批次都重新计算了适用的上游校准。[逐折对照](results/frozen-twins-v6-full/comparison.json) · [方法来源](https://huggingface.co/datasets/yauwes/name-that-llm-sota-artifacts)
+
+将文本近邻的校准改成三轮成对消息传递后，完整批次从 v6 的 0.46118 降至 0.45304，稀疏批次从 0.43933 降至 0.43674。[消息传递对照](results/v7-soft-topic-messages/comparison.json)
+
+在 v5 上以 10% 权重融合相同架构的线性分类器，纯官方数据得到 0.44230，补入 Will Rice 数据后为 0.44491，v5 基线为 0.44859。抽取的 3,620 段外部文本中，3,481 段能映射到题目。与既有补充数据的可映射题目去重后，仅余三个样本、两个不同题目。Maniceet 数据卡记录 7,753 段、十个型号，原始文件下载返回 HTTP 403，本轮训练使用量为零。[来源审计和逐折结果](reports/external-source-controls-v5.json) · [Will Rice 数据](https://www.kaggle.com/datasets/willrice/name-that-llm-openrouter-harvest) · [Maniceet 数据卡](https://www.kaggle.com/datasets/maniceet/name-that-llm-openrouter-openai-generations)
+
 ## 全部本地五折结果
 
 | 实验 | Balanced Accuracy | 折 1 | 折 2 | 折 3 | 折 4 | 折 5 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [`frozen-twins-v6-full`](results/frozen-twins-v6-full) | 0.4649 | 0.4519 | 0.4574 | 0.4522 | 0.4889 | 0.4741 |
 | [`v5-v3-text-neighbor-calibration`](results/v5-v3-text-neighbor-calibration) | 0.4638 | 0.4519 | 0.4426 | 0.4485 | 0.4926 | 0.4833 |
 | [`v5-text-neighbor-calibration`](results/v5-text-neighbor-calibration) | 0.4616 | 0.4463 | 0.4537 | 0.4522 | 0.4796 | 0.4759 |
 | [`v3-text-neighbor-calibration`](results/v3-text-neighbor-calibration) | 0.4612 | 0.4481 | 0.4444 | 0.4541 | 0.4852 | 0.4741 |
+| [`v7-soft-topic-messages`](results/v7-soft-topic-messages) | 0.4530 | 0.4500 | 0.4370 | 0.4356 | 0.4796 | 0.4630 |
 | [`extra40-v4-blend-18`](results/extra40-v4-blend-18) | 0.4486 | 0.4500 | 0.4389 | 0.4281 | 0.4704 | 0.4556 |
+| [`frozen-twins-v3-full`](results/frozen-twins-v3-full) | 0.4464 | 0.4333 | 0.4333 | 0.4337 | 0.4685 | 0.4630 |
 | [`v5-confusion-pairs`](results/v5-confusion-pairs) | 0.4460 | 0.4389 | 0.4389 | 0.4318 | 0.4741 | 0.4463 |
+| [`source-control-v5-willrice`](results/source-control-v5-willrice) | 0.4449 | 0.4519 | 0.4370 | 0.4245 | 0.4648 | 0.4463 |
 | [`topic-style-length-gate`](results/topic-style-length-gate) | 0.4445 | 0.4407 | 0.4426 | 0.4244 | 0.4704 | 0.4444 |
 | [`topic-style-v4-blend-8`](results/topic-style-v4-blend-8) | 0.4445 | 0.4407 | 0.4426 | 0.4244 | 0.4704 | 0.4444 |
 | [`extra40 + postlb-paired-frozen-cal (v3)`](results/hourly-encoder/s42-extra40-ep3/on-postlb-paired-frozen-cal) | 0.4430 | 0.4463 | 0.4333 | 0.4170 | 0.4667 | 0.4519 |
+| [`source-control-v5-official`](results/source-control-v5-official) | 0.4423 | 0.4426 | 0.4278 | 0.4282 | 0.4556 | 0.4574 |
 | [`passage-recurrence-v5-08`](results/passage-recurrence-v5-08) | 0.4423 | 0.4370 | 0.4352 | 0.4225 | 0.4685 | 0.4481 |
 | [`topic-style-v4-blend-16`](results/topic-style-v4-blend-16) | 0.4404 | 0.4352 | 0.4426 | 0.4151 | 0.4667 | 0.4426 |
+| [`frozen-twins-v6-thin`](results/frozen-twins-v6-thin) | 0.4393 | 0.4352 | 0.4278 | 0.4151 | 0.4741 | 0.4444 |
 | [`postlb-frozen-disc-length-6`](results/postlb-frozen-disc-length-6) | 0.4389 | 0.4278 | 0.4352 | 0.4151 | 0.4611 | 0.4556 |
 | [`harvest-v3-blend-10`](results/harvest-v3-blend-10) | 0.4382 | 0.4259 | 0.4315 | 0.4245 | 0.4648 | 0.4444 |
 | [`postlb-paired-frozen-cal`](results/postlb-paired-frozen-cal) | 0.4382 | 0.4296 | 0.4278 | 0.4188 | 0.4630 | 0.4519 |
 | [`harvest-v3-control-blend-10`](results/harvest-v3-control-blend-10) | 0.4349 | 0.4296 | 0.4259 | 0.4208 | 0.4537 | 0.4444 |
+| [`frozen-twins-v3-thin`](results/frozen-twins-v3-thin) | 0.4349 | 0.4278 | 0.4241 | 0.4132 | 0.4667 | 0.4426 |
 | [`harvest-v3-control-blend-20`](results/harvest-v3-control-blend-20) | 0.4301 | 0.4463 | 0.4204 | 0.4190 | 0.4426 | 0.4222 |
 | [`harvest-v3-blend-20`](results/harvest-v3-blend-20) | 0.4294 | 0.4259 | 0.4148 | 0.4192 | 0.4519 | 0.4352 |
 | [`postlb-paired-cal`](results/postlb-paired-cal) | 0.4286 | 0.4259 | 0.4130 | 0.4153 | 0.4556 | 0.4333 |

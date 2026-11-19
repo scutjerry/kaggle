@@ -1,0 +1,128 @@
+{
+  "checked_on": "2026-11-19",
+  "maniceet": {
+    "source": "https://www.kaggle.com/maniceet/name-that-llm-openrouter-openai-generations",
+    "creator": "Maniceet Sahay",
+    "reported_passages": 7753,
+    "reported_model_labels": 10,
+    "declared_license": "CC BY 4.0",
+    "raw_download_http_status": 403,
+    "version_verified": false,
+    "raw_file_verified": false,
+    "validated_training_rows": 0,
+    "source_corpus_hits_in_local_aggregate": 0
+  },
+  "willrice": {
+    "source": "https://www.kaggle.com/datasets/willrice/name-that-llm-openrouter-harvest",
+    "reference_sources": [
+      "https://www.kaggle.com/datasets/seyitkaangunes/ntl-extra-api-passages",
+      "https://www.kaggle.com/datasets/prvsiyan/prvsiyans-extended-name-that-llm-dataset"
+    ],
+    "raw_api_calls": 12308,
+    "accepted_after_filter": 9853,
+    "selected_by_label": {
+      "gemini-3.6-flash": 360,
+      "kimi-k3": 360,
+      "gpt-5.5": 360,
+      "gpt-6-astra": 360,
+      "glm-5.3-flash": 360,
+      "glm-5.3": 360,
+      "gpt-5.6-sol": 360,
+      "gpt-5.6-terra": 360,
+      "gemini-3.8-flash": 360,
+      "gpt-5.6-luna": 360,
+      "gemini-3.1-pro-preview": 20
+    },
+    "normalized_text_overlap": {
+      "official": 0,
+      "prvsiyan_extended_all": 0,
+      "seyit_claude_all": 0
+    },
+    "total_reference_pool_rows": 226191,
+    "prompt_reuse": {
+      "raw_candidate_rows": 3620,
+      "mapped_rows": 3481,
+      "reference_unique_texts": 10068,
+      "reference_texts_with_prompt_mapping": 5565,
+      "reference_mapped_prompts": 1214,
+      "candidates_after_prompt_filter": 3,
+      "near_reference_texts": 0,
+      "distinct_prompts_before_label_minimum": 2,
+      "minimum_prompts_per_label": 12,
+      "distinct_prompts": 0,
+      "note": "Only mapped source prompts can be compared. The strict new-prompt arm had no class meeting the fixed minimum."
+    }
+  },
+  "classification": {
+    "reference": "v5",
+    "blend_fraction": 0.1,
+    "official": {
+      "pooled": {
+        "baseline": 0.4485906040268456,
+        "blend": 0.44230425055928413,
+        "delta": -0.006286353467561456
+      },
+      "folds": [
+        {
+          "baseline": 0.44999999999999996,
+          "blend": 0.4425925925925926,
+          "delta": -0.007407407407407363
+        },
+        {
+          "baseline": 0.4388888888888889,
+          "blend": 0.4277777777777778,
+          "delta": -0.011111111111111072
+        },
+        {
+          "baseline": 0.4280970625798212,
+          "blend": 0.42822477650063856,
+          "delta": 0.00012771392081734056
+        },
+        {
+          "baseline": 0.4703703703703704,
+          "blend": 0.4555555555555555,
+          "delta": -0.014814814814814892
+        },
+        {
+          "baseline": 0.4555555555555555,
+          "blend": 0.4574074074074075,
+          "delta": 0.0018518518518519933
+        }
+      ]
+    },
+    "willrice": {
+      "pooled": {
+        "baseline": 0.4485906040268456,
+        "blend": 0.4449092716877952,
+        "delta": -0.0036813323390503805
+      },
+      "folds": [
+        {
+          "baseline": 0.44999999999999996,
+          "blend": 0.45185185185185195,
+          "delta": 0.0018518518518519933
+        },
+        {
+          "baseline": 0.4388888888888889,
+          "blend": 0.43703703703703706,
+          "delta": -0.0018518518518518268
+        },
+        {
+          "baseline": 0.4280970625798212,
+          "blend": 0.42452107279693485,
+          "delta": -0.0035759897828863685
+        },
+        {
+          "baseline": 0.4703703703703704,
+          "blend": 0.46481481481481485,
+          "delta": -0.005555555555555536
+        },
+        {
+          "baseline": 0.4555555555555555,
+          "blend": 0.4462962962962963,
+          "delta": -0.00925925925925919
+        }
+      ]
+    }
+  }
+}
