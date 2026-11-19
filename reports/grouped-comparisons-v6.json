@@ -1,0 +1,43 @@
+{
+  "metric": "18-class balanced accuracy",
+  "resampling_unit": "official prompt_id",
+  "paired_draws": 10000,
+  "random_seed": 8169,
+  "prompt_count": 150,
+  "comparisons": [
+    {
+      "baseline": "postlb-paired-frozen-cal",
+      "candidate": "topic-style-v4-blend-8",
+      "delta": 0.006301267710663684,
+      "percentile_interval_95": [
+        -0.00036281179138321985,
+        0.012962962962962963
+      ],
+      "corrected": 46,
+      "regressed": 29
+    },
+    {
+      "baseline": "postlb-paired-frozen-cal",
+      "candidate": "v3-text-neighbor-calibration",
+      "delta": 0.022975391498881434,
+      "percentile_interval_95": [
+        0.014814814814814815,
+        0.031496395724583647
+      ],
+      "corrected": 91,
+      "regressed": 29
+    },
+    {
+      "baseline": "v3-text-neighbor-calibration",
+      "candidate": "frozen-twins-v6-full",
+      "delta": 0.003706189410887397,
+      "percentile_interval_95": [
+        -0.0022122793934874468,
+        0.01
+      ],
+      "corrected": 37,
+      "regressed": 27
+    }
+  ],
+  "scope": "Conditional on these fixed grouped OOF predictions. The bootstrap does not rerun training or candidate selection."
+}
