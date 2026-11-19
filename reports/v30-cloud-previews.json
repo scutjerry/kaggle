@@ -70,5 +70,42 @@
     "output_sha256": "2d26e7de920e646e14db358bafe001e292800b4fed1d3c19c077d5eae204e9ba",
     "same_as_control_on_preview": true,
     "inference": "All initial members completed; three sample rows kept the original final labels. Adaptive projection on larger public batches is checked separately."
+  },
+  "adaptive_atlas_four_prefixes": {
+    "version_role": "Team V6 private rerun of the three official preview rows",
+    "gpu": "2 x T4",
+    "notebook_version": 371573851,
+    "notebook_sha256": "b8d687476653102929f6fb8017735280aa4ab7f2baeb819217a96156561a9cca",
+    "status": "Successfully ran",
+    "runtime_seconds": 1913.3,
+    "source_inputs": 46,
+    "download_sha256": "08a896f6c90e02b8b20096a1641fe7c2e71b6ca9188029564ac92ecfac729f92",
+    "cloud_source_hash": "a2c54b1707f5188db5514012cf393407c80ad6e5f8da3fdbe0e72ce96f8f654e",
+    "source_cells": 37,
+    "output_rows": 3,
+    "output_columns": [
+      "id",
+      "model"
+    ],
+    "output_sha256": "2d26e7de920e646e14db358bafe001e292800b4fed1d3c19c077d5eae204e9ba",
+    "glm_selected_rows": 0,
+    "atlas": {
+      "rows": 3,
+      "eligible": 0,
+      "used": 0,
+      "status": "kept_glm",
+      "reason": "empty quarter"
+    },
+    "atlas_receipt_sha256": "e3f7e705b105f930b127e5e000922bf0ef5663152e7371992c9267d6f5b6d3df",
+    "six_primary_completed": true,
+    "gsq_rows": 3,
+    "native_folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "team_public_score": null
   }
 }
