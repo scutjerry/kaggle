@@ -1,0 +1,245 @@
+{
+  "plain": {
+    "folds": [
+      {
+        "fold": 0,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      },
+      {
+        "fold": 1,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      },
+      {
+        "fold": 2,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      },
+      {
+        "fold": 3,
+        "rows": 539,
+        "glm_v4_v9": [
+          80,
+          80
+        ],
+        "atlas_prefix_likelihoods": 536
+      },
+      {
+        "fold": 4,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      }
+    ],
+    "comparisons": {
+      "v9": {
+        "before_ba": 0.6890653740989312,
+        "delta_ba": 0.007024608501118523,
+        "rows": 2699,
+        "classes": 18,
+        "ba": 0.6960899826000497,
+        "correct": 1879,
+        "corrected": 68,
+        "regressed": 49,
+        "changed": 158,
+        "paired_95pct": [
+          -0.00040045750448435084,
+          0.014437049465572959
+        ]
+      },
+      "v4": {
+        "before_ba": 0.6916430524484216,
+        "delta_ba": 0.0044469301516281146,
+        "rows": 2699,
+        "classes": 18,
+        "ba": 0.6960899826000497,
+        "correct": 1879,
+        "corrected": 13,
+        "regressed": 1,
+        "changed": 26,
+        "paired_95pct": [
+          0.0018543375590355457,
+          0.007052532123960696
+        ]
+      }
+    }
+  },
+  "sparse2-text-cluster": {
+    "folds": [
+      {
+        "fold": 0,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      },
+      {
+        "fold": 1,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      },
+      {
+        "fold": 2,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      },
+      {
+        "fold": 3,
+        "rows": 539,
+        "glm_v4_v9": [
+          80,
+          80
+        ],
+        "atlas_prefix_likelihoods": 536
+      },
+      {
+        "fold": 4,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      }
+    ],
+    "comparisons": {
+      "v9": {
+        "before_ba": 0.6905319413373106,
+        "delta_ba": 0.007029579915485806,
+        "rows": 2699,
+        "classes": 18,
+        "ba": 0.6975615212527964,
+        "correct": 1883,
+        "corrected": 61,
+        "regressed": 42,
+        "changed": 145,
+        "paired_95pct": [
+          -0.00039031817051951345,
+          0.014074074074074076
+        ]
+      },
+      "v4": {
+        "before_ba": 0.6953417847377579,
+        "delta_ba": 0.002219736515038484,
+        "rows": 2699,
+        "classes": 18,
+        "ba": 0.6975615212527964,
+        "correct": 1883,
+        "corrected": 10,
+        "regressed": 4,
+        "changed": 20,
+        "paired_95pct": [
+          -0.00037537537537537537,
+          0.004817300521998509
+        ]
+      }
+    }
+  },
+  "text-cluster": {
+    "folds": [
+      {
+        "fold": 0,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      },
+      {
+        "fold": 1,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      },
+      {
+        "fold": 2,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      },
+      {
+        "fold": 3,
+        "rows": 539,
+        "glm_v4_v9": [
+          80,
+          80
+        ],
+        "atlas_prefix_likelihoods": 536
+      },
+      {
+        "fold": 4,
+        "rows": 540,
+        "glm_v4_v9": [
+          81,
+          81
+        ],
+        "atlas_prefix_likelihoods": 540
+      }
+    ],
+    "comparisons": {
+      "v9": {
+        "before_ba": 0.7161098682575192,
+        "delta_ba": 0.0033184190902311173,
+        "rows": 2699,
+        "classes": 18,
+        "ba": 0.7194282873477503,
+        "correct": 1942,
+        "corrected": 50,
+        "regressed": 41,
+        "changed": 130,
+        "paired_95pct": [
+          -0.0034035285285285276,
+          0.010353032562764108
+        ]
+      },
+      "v4": {
+        "before_ba": 0.7164727815063386,
+        "delta_ba": 0.0029555058414116875,
+        "rows": 2699,
+        "classes": 18,
+        "ba": 0.7194282873477503,
+        "correct": 1942,
+        "corrected": 17,
+        "regressed": 9,
+        "changed": 36,
+        "paired_95pct": [
+          -0.0004007247042961327,
+          0.006296296296296296
+        ]
+      }
+    }
+  }
+}

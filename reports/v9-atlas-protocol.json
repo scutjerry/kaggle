@@ -1,0 +1,10 @@
+{
+  "protocol": "Use the fixed V30 projection and the existing V9 Fable selection, paired 76-feature likelihood head, 1.25 weight and final corrected style. Compare V9 plus the existing pre-GLM four-prefix 10% ATLAS adjustment with each of V9 alone and V4 (V3 plus the identical ATLAS adjustment). No parameter search. Promote only when macro recall is at least as good as each control on all three official OOF cohorts and on both frozen external metrics (12 observed classes and 8 classes with at least 20 rows), with at least one strict gain over each control in each data source. External primary comparison uses genuine GLM on the 1,360-text fixed projection and actual 340x4 ATLAS scores. Adaptive projection is reported separately as a sensitivity analysis. These are component comparisons with previously inspected cohorts; no hidden-score inference.",
+  "sha256": "8752cef8bf34a29fa94dbceab66e4cec8e23f5bb0e54e9e45bb18e119fcd07d5",
+  "candidate_sources": {
+    "v3": "48a1e47d327476f0fea03ff093e9d96514c494e81ac59663f43d381e404d1275",
+    "v4": "57f93ccc4ea0301a38bccecf9fd743099bde4369ec9c85488be6bf8ce681b07e",
+    "v9": "f5d7468e682757c88a7e6417ca6b67b712f4874d5d4b436c848e99ca7a9996a9"
+  },
+  "reference_cloud_protocol_sha256": "1f918bb2f29461de87425525c7329a0e75e8955797439d31ff65bfd352558694"
+}

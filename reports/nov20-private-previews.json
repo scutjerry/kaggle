@@ -1,0 +1,59 @@
+{
+  "scope": "Private runs on the three public preview texts. No formal team score is measured here.",
+  "checked": [
+    {
+      "local_name": "V29 dynamic-budget control",
+      "private_preview_id": 371540160,
+      "preview_status": "Successfully ran",
+      "preview_runtime_seconds": 3814.2,
+      "preview_verified_rows": 3,
+      "preview_output_sha256": "2d26e7de920e646e14db358bafe001e292800b4fed1d3c19c077d5eae204e9ba",
+      "preview_glm_selected_rows": 0,
+      "preview_core": "All main ensemble members completed; GSQ 27B scored 3 rows; native folds 0 through 4 completed.",
+      "preview_optional_component": "Complementary stack worker failed to find model weights in the mounted base_config directory. The main ensemble logged COMP SKIPPED and wrote its normal fallback predictions.",
+      "verified_uploaded_sha256": "3a9f697474b9449c06f2218e0228f3fc59c819e7e59783e1aada95a7c2e482a6"
+    },
+    {
+      "local_name": "V8 Vlad V12 Fable routing",
+      "private_preview_id": 371551411,
+      "preview_status": "Successfully ran",
+      "preview_runtime_seconds": 1875.8,
+      "preview_verified_rows": 3,
+      "preview_output_sha256": "2d26e7de920e646e14db358bafe001e292800b4fed1d3c19c077d5eae204e9ba",
+      "preview_glm_selected_rows": 0,
+      "preview_members": [
+        "q14v5",
+        "q8v5",
+        "ll8v5",
+        "n14b_clean",
+        "q25_14",
+        "deb"
+      ],
+      "preview_native_completed_folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "preview_gsq27b_scored_rows": 3,
+      "preview_scored_aligned_classes": 18,
+      "preview_apex": {
+        "strength": 0.1,
+        "post_glm_evidence": false,
+        "forbidden_probability_multiplier": 0.15,
+        "changed": 0
+      },
+      "verified_uploaded_sha256": "9beea3ebf86ef70a8fc8f280230ca8f6192daaafb506ae8b782d8598ca1e9bfb",
+      "verified_cloud_cell_source_hash": "23507bb080dfa6ed3c252c71209293e72a2c3f26a567288b189ab7e654441b4c",
+      "verified_cloud_cells": 34,
+      "verified_cloud_pinned_input_set": {
+        "count": 45,
+        "missing": [],
+        "additional": [],
+        "reordered_positions": 33
+      },
+      "runtime_image_display": "Latest Container Image"
+    }
+  ]
+}
