@@ -42,6 +42,18 @@ CHEN Han 公开了 Qwen3-Embedding-8B 的官方训练集折外预测。2,699 行
 
 单篇条件下，传入似然纠正 17 篇、改错 4 篇，五折都上升。进步主要来自区分 Claude 与 GLM，两种 GLM 的平均召回从 0.5833 降到 0.5700。三种条件共用相同文章和 Qwen 基础模型，隐藏集的题目密度未知。表中分数仅用于候选排序。[完整对照与按题目重采样区间](reports/glm-sibling-factorial.json) · [各类别召回](reports/glm-cross-fit-plain.json)
 
+### 比较两个 GLM 对同一个词元的判断
+
+我们核对了 GLM-5.3 与 Flash 的 395,382 个词元 ID、段落边界和前缀长度。原有分类头先分别汇总两个模型的似然；新分类头增加 22 个统计量，直接比较两个模型在同一位置赋给实际词元的概率，包括概率差的分位数、高难度词元的差值，以及两者首选词元不一致的比例。新增特征复用已有的两次前向计算。每折的分类头只用另外四折训练。[逐词元源数据](https://www.kaggle.com/code/estopadilla/ntl-glm-likelihood-train/versions/3)
+
+| 验证条件 | 已传入 GLM 似然 | 增加逐词元比较 | 纠正 / 改错 |
+| --- | ---: | ---: | ---: |
+| 单篇 | 0.68054 | 0.68425 | 21 / 11 |
+| 每题最多两篇 | 0.68571 | 0.68980 | 22 / 11 |
+| 同题集中 | 0.71017 | 0.71500 | 19 / 6 |
+
+我们还改变了验证批次中各类文章的比例。分别减少 GLM、提高 GLM 的相对占比，以及随机改变 18 类比例，每种情形抽取六次，并对每个样本批次重新选取最需要计算 GLM 似然的文章。逐词元候选在 18 次配对比较中均上升，差值范围为 0.00186 至 0.00631。这些实验复用了官方训练文章，公榜仍需本队直接提交验证。[五折数据](reports/glm-token-contrast.json) · [类别占比测试](reports/glm-prevalence-stress.json)
+
 ## 实验说明
 
 两套 Qwen 适配器均已用官方 2,699 行全量微调。表中保留本队实测成绩；作者报告其原方案公榜为 0.592。我们继承两套 Qwen 的输出、词法分类器和融合，新增 15% 权重的文本近邻校准。本队预览在两张 T4 上实际运行两套模型并生成三行输出。[作者 Notebook](https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool) · [公开权重与数据来源](https://www.kaggle.com/datasets/nishantdahal/ntl-two-stage-lora/versions/1)

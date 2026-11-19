@@ -1,0 +1,183 @@
+{
+  "protocol": "Fit the same C=.05 class-balanced GLM head per outer prompt fold. Extend the original 54 features with 22 token-aligned GLM-5.3 vs Flash features. Compare the original head, a 50/50 log-score mixture, and the expanded head. All arms use corrected final routing, the same 15% row filter and both published scorers. Three cohorts share 2699 underlying rows.",
+  "token_alignment": "395382 token IDs, offsets and prefix lengths matched exactly before cutting to 160.",
+  "sources": [
+    "https://www.kaggle.com/code/estopadilla/ntl-glm-likelihood-train/versions/3",
+    "https://www.kaggle.com/code/concyclics/0-679?scriptVersionId=365653660"
+  ],
+  "head_only": {
+    "original": {
+      "balanced_accuracy": 0.19339796172010937,
+      "log_loss": 2.498727334811854
+    },
+    "half": {
+      "balanced_accuracy": 0.2048769574944072,
+      "log_loss": 2.4499143818027056
+    },
+    "token": {
+      "balanced_accuracy": 0.20340044742729307,
+      "log_loss": 2.442899095584781
+    }
+  },
+  "combined": {
+    "plain": {
+      "original": {
+        "ba": 0.6805369127516779,
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_prompt_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "half": {
+        "ba": 0.6827616206810838,
+        "changed": 25,
+        "corrected": 11,
+        "regressed": 5,
+        "delta_95pct_prompt_bootstrap": [
+          -0.0003703703703703703,
+          0.005185185185185185
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0037037037037037646,
+          0.0018518518518517713,
+          0.007471264367816088,
+          -0.0018518518518517713
+        ]
+      },
+      "token": {
+        "ba": 0.6842505592841164,
+        "changed": 49,
+        "corrected": 21,
+        "regressed": 11,
+        "delta_95pct_prompt_bootstrap": [
+          -0.00037037037037037046,
+          0.0077779642058165566
+        ],
+        "fold_deltas": [
+          0.0037037037037036535,
+          0.0018518518518519933,
+          0.0018518518518517713,
+          0.011174968071519853,
+          0.0
+        ]
+      }
+    },
+    "text-cluster": {
+      "original": {
+        "ba": 0.7101690280884912,
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_prompt_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "half": {
+        "ba": 0.7127690778026348,
+        "changed": 21,
+        "corrected": 10,
+        "regressed": 3,
+        "delta_95pct_prompt_bootstrap": [
+          0.0,
+          0.005555555555555556
+        ],
+        "fold_deltas": [
+          0.0018518518518519933,
+          0.0018518518518519933,
+          0.0,
+          0.0037037037037036535,
+          0.005555555555555536
+        ]
+      },
+      "token": {
+        "ba": 0.7149987571464081,
+        "changed": 39,
+        "corrected": 19,
+        "regressed": 6,
+        "delta_95pct_prompt_bootstrap": [
+          0.0011160825254784986,
+          0.008543543543543542
+        ],
+        "fold_deltas": [
+          0.005555555555555647,
+          0.0,
+          -0.0018518518518518823,
+          0.013090676883780294,
+          0.007407407407407529
+        ]
+      }
+    },
+    "sparse2-text-cluster": {
+      "original": {
+        "ba": 0.685714640815312,
+        "changed": 0,
+        "corrected": 0,
+        "regressed": 0,
+        "delta_95pct_prompt_bootstrap": [
+          0.0,
+          0.0
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "half": {
+        "ba": 0.6871961222967935,
+        "changed": 24,
+        "corrected": 10,
+        "regressed": 6,
+        "delta_95pct_prompt_bootstrap": [
+          -0.0007432885906040269,
+          0.003711224647466258
+        ],
+        "fold_deltas": [
+          -0.0018518518518518823,
+          0.0018518518518518823,
+          0.0,
+          0.0018518518518518823,
+          0.005555555555555536
+        ]
+      },
+      "token": {
+        "ba": 0.6897961720109371,
+        "changed": 47,
+        "corrected": 22,
+        "regressed": 11,
+        "delta_95pct_prompt_bootstrap": [
+          0.0003703703703703704,
+          0.0077852970420084515
+        ],
+        "fold_deltas": [
+          0.0018518518518518823,
+          0.0,
+          0.0037037037037036535,
+          0.00932311621966797,
+          0.005555555555555536
+        ]
+      }
+    }
+  }
+}
