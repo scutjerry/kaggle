@@ -7,8 +7,9 @@
     "previous_accepted_at": "2026-11-19T18:00:16+08:00",
     "interval_seconds": 14103,
     "attempt_number": 5,
-    "kaggle_status": "Notebook Running",
-    "public_score": null
+    "kaggle_status": "Succeeded",
+    "public_score": 0.593,
+    "notebook_sha256": "f4ccfe3aa6850186e63a3396b9b30a49c2e9d52016792bc2132cbd545cb9c9bc"
   },
   "scored_public_history": [
     {
@@ -26,6 +27,10 @@
     {
       "version": "v4",
       "score": 0.414
+    },
+    {
+      "version": "Two-stage Qwen + text-neighbor calibration",
+      "score": 0.593
     }
   ]
 }
