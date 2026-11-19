@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "extra_per_label": 40,
+  "epochs": 3,
+  "schedule_epochs": 4,
+  "seed_per_fold": "seed + fold",
+  "train_microbatch": 2,
+  "predict_batch": 4,
+  "effective_batch": 8,
+  "blend_fraction": 0.18,
+  "baselines": {
+    "hybrid-modernbert": {
+      "baseline": 0.4100695998011435,
+      "blend": 0.41785732040765594,
+      "delta": 0.007787720606512449
+    },
+    "postlb-paired-frozen-cal": {
+      "baseline": 0.4382078051205568,
+      "blend": 0.44304250559284125,
+      "delta": 0.004834700472284459
+    }
+  }
+}

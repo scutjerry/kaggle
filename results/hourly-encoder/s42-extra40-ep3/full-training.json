@@ -1,0 +1,12 @@
+{
+  "seed": 42,
+  "fit_rows": 3419,
+  "external_rows": 720,
+  "epochs": 3,
+  "schedule_epochs": 4,
+  "train_microbatch": 2,
+  "effective_batch": 8,
+  "predict_batch": 4,
+  "preview_rows_verified_after_reload": 3,
+  "blend_fraction": 0.18
+}

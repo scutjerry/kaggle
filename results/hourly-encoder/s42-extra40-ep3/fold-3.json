@@ -1,0 +1,16 @@
+{
+  "n_valid": 539,
+  "standalone": 0.3556194125159642,
+  "baselines": {
+    "hybrid-modernbert": {
+      "baseline": 0.3837803320561941,
+      "blend": 0.392911877394636,
+      "delta": 0.009131545338441904
+    },
+    "postlb-paired-frozen-cal": {
+      "baseline": 0.4187739463601532,
+      "blend": 0.4169859514687101,
+      "delta": -0.001787994891443101
+    }
+  }
+}

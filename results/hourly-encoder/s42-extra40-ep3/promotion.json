@@ -1,0 +1,8 @@
+{
+  "reference": "postlb-paired-frozen-cal",
+  "minimum_delta": 0.003,
+  "minimum_folds": 3,
+  "improved_folds": 3,
+  "observed_delta": 0.004834700472284459,
+  "eligible": true
+}

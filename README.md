@@ -7,11 +7,12 @@
 | 版本 | 本地五折 Balanced Accuracy | Kaggle 公榜 |
 | --- | ---: | ---: |
 | v1 · 初次提交 | 0.4101 | 0.384 |
-| v2 · Paired Style | 0.4286 | **0.400** |
-| v3 · 冻结 ModernBERT 特征融合 | 0.4382 | 待测 |
-| v4 · 加入题目相关的写作风格 | **0.4445** | 待测 |
+| v2 · Paired Style | 0.4286 | 0.400 |
+| v3 · 冻结 ModernBERT 特征融合 | 0.4382 | **0.419** |
+| v4 · 加入题目相关的写作风格 | 0.4445 | 已提交，待评分 |
+| v5 · v4 与额外训练的 ModernBERT 融合 | **0.4486** | 尚无公榜分 |
 
-赛事提交页显示，v2 的公榜分比 v1 提升 0.016。当前共有 **118** 个本地实验，各目录包含五折分数、逐类召回率和混淆矩阵。
+v3 的公榜分比 v2 提升 0.019，比首次提交提升 0.035。当前共有 **121** 个本地实验，各目录包含五折分数、逐类召回率和混淆矩阵。
 
 ## 实验说明
 
@@ -21,11 +22,15 @@
 
 本轮还对照了冻结表示的判别分类器和 Will Rice 发布的原始 API 语料。后者经路由、文本长度和重复检查后，抽取 3,620 条加入轻量分类器，按 10% 融入 v3 后得分为 0.43824。同样权重的纯官方训练数据对照为 0.43489。[Will Rice 原始语料](https://www.kaggle.com/datasets/willrice/name-that-llm-openrouter-harvest)
 
+v5 的新编码器用每类 40 条外部样本补充训练，固定融合权重为 18%。分别与 v1、v3、v4 融合，五折分数为 0.41786、0.44304 和 0.44859。v5 对应 v4 融合方案，相对 v4 提高 0.00408，五折中三折提高、一折持平、一折下降，达到预设的 0.003 总分增幅及三折改善门槛。[v1 与 v3 的对照](results/hourly-encoder/s42-extra40-ep3/complete.json) · [v4 与 v5 的逐折对照](results/extra40-v4-blend-18/comparison.json)
+
 ## 全部本地五折结果
 
 | 实验 | Balanced Accuracy | 折 1 | 折 2 | 折 3 | 折 4 | 折 5 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [`extra40-v4-blend-18`](results/extra40-v4-blend-18) | 0.4486 | 0.4500 | 0.4389 | 0.4281 | 0.4704 | 0.4556 |
 | [`topic-style-v4-blend-8`](results/topic-style-v4-blend-8) | 0.4445 | 0.4407 | 0.4426 | 0.4244 | 0.4704 | 0.4444 |
+| [`extra40 + postlb-paired-frozen-cal (v3)`](results/hourly-encoder/s42-extra40-ep3/on-postlb-paired-frozen-cal) | 0.4430 | 0.4463 | 0.4333 | 0.4170 | 0.4667 | 0.4519 |
 | [`topic-style-v4-blend-16`](results/topic-style-v4-blend-16) | 0.4404 | 0.4352 | 0.4426 | 0.4151 | 0.4667 | 0.4426 |
 | [`postlb-frozen-disc-length-6`](results/postlb-frozen-disc-length-6) | 0.4389 | 0.4278 | 0.4352 | 0.4151 | 0.4611 | 0.4556 |
 | [`harvest-v3-blend-10`](results/harvest-v3-blend-10) | 0.4382 | 0.4259 | 0.4315 | 0.4245 | 0.4648 | 0.4444 |
@@ -42,6 +47,7 @@
 | [`postlb-paired`](results/postlb-paired) | 0.4208 | 0.4204 | 0.3981 | 0.4059 | 0.4537 | 0.4259 |
 | [`markers-adapter-5`](results/markers-adapter-5) | 0.4182 | 0.4019 | 0.3981 | 0.4061 | 0.4722 | 0.4130 |
 | [`markers-v2-12-cal-50`](results/markers-v2-12-cal-50) | 0.4179 | 0.4111 | 0.4056 | 0.4025 | 0.4630 | 0.4074 |
+| [`extra40 + hybrid-modernbert (v1)`](results/hourly-encoder/s42-extra40-ep3/on-hybrid-modernbert) | 0.4179 | 0.4222 | 0.4019 | 0.3929 | 0.4574 | 0.4148 |
 | [`markers-v2-12`](results/markers-v2-12) | 0.4156 | 0.4093 | 0.4056 | 0.3968 | 0.4630 | 0.4037 |
 | [`markers-v2-syntax-marker-10`](results/markers-v2-syntax-marker-10) | 0.4152 | 0.4111 | 0.3963 | 0.3930 | 0.4537 | 0.4222 |
 | [`seq-v2-corpus-fusion-15`](results/seq-v2-corpus-fusion-15) | 0.4145 | 0.4241 | 0.3981 | 0.4003 | 0.4352 | 0.4148 |
