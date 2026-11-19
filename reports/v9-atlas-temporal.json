@@ -1,0 +1,249 @@
+{
+  "scope": "verified real dual GLM and ATLAS",
+  "physical_rows": 217,
+  "replay": {
+    "v30_fixed": {
+      "rows_equal": 1360,
+      "prefix_likelihoods": 1360,
+      "applied": {
+        "rows": 1360,
+        "eligible": 340,
+        "used": 340,
+        "status": "applied",
+        "changed": 128
+      },
+      "deadline_preserved_parent_output_bytes": true
+    },
+    "v30_adaptive": {
+      "rows_equal": 1360,
+      "prefix_likelihoods": 1360,
+      "applied": {
+        "rows": 1360,
+        "eligible": 340,
+        "used": 340,
+        "status": "applied",
+        "changed": 117
+      },
+      "deadline_preserved_parent_output_bytes": true
+    }
+  },
+  "metrics": {
+    "all_12": {
+      "rows": 1360,
+      "classes": 12,
+      "metrics": {
+        "v30_fixed_v9": {
+          "ba": 0.6558602883977475,
+          "accuracy": 0.6360294117647042
+        },
+        "v30_fixed_v4": {
+          "ba": 0.6979479322997637,
+          "accuracy": 0.6624999999999982
+        },
+        "v30_fixed_v9_atlas": {
+          "ba": 0.6967143796681847,
+          "accuracy": 0.660294117647057
+        },
+        "v30_adaptive_v9": {
+          "ba": 0.6626430021033266,
+          "accuracy": 0.6492647058823512
+        },
+        "v30_adaptive_v4": {
+          "ba": 0.7066382876062215,
+          "accuracy": 0.6764705882352919
+        },
+        "v30_adaptive_v9_atlas": {
+          "ba": 0.7020278165894226,
+          "accuracy": 0.6698529411764684
+        }
+      },
+      "comparisons": {
+        "v30_fixed_v9_to_v30_fixed_v9_atlas": {
+          "before_ba": 0.6558602883977475,
+          "after_ba": 0.6967143796681847,
+          "delta_ba": 0.040854091270437265,
+          "delta_ba_ci95": [
+            0.013985179211475749,
+            0.07357737643452682
+          ],
+          "before_accuracy": 0.6360294117647042,
+          "after_accuracy": 0.660294117647057,
+          "delta_accuracy": 0.024264705882352855,
+          "delta_accuracy_ci95": [
+            0.012499999999999956,
+            0.03676470588235281
+          ],
+          "changed": 128,
+          "corrected": 56,
+          "regressed": 23
+        },
+        "v30_fixed_v4_to_v30_fixed_v9_atlas": {
+          "before_ba": 0.6979479322997637,
+          "after_ba": 0.6967143796681847,
+          "delta_ba": -0.0012335526315789824,
+          "delta_ba_ci95": [
+            -0.0030701754385965563,
+            0.0006030701754385914
+          ],
+          "before_accuracy": 0.6624999999999982,
+          "after_accuracy": 0.660294117647057,
+          "delta_accuracy": -0.0022058823529411686,
+          "delta_accuracy_ci95": [
+            -0.0051470588235293935,
+            0.0007352941176470562
+          ],
+          "changed": 15,
+          "corrected": 1,
+          "regressed": 4
+        },
+        "v30_adaptive_v9_to_v30_adaptive_v9_atlas": {
+          "before_ba": 0.6626430021033266,
+          "after_ba": 0.7020278165894226,
+          "delta_ba": 0.03938481448609599,
+          "delta_ba_ci95": [
+            0.01287049981919066,
+            0.07158058287708029
+          ],
+          "before_accuracy": 0.6492647058823512,
+          "after_accuracy": 0.6698529411764684,
+          "delta_accuracy": 0.02058823529411724,
+          "delta_accuracy_ci95": [
+            0.008823529411764675,
+            0.03308823529411753
+          ],
+          "changed": 117,
+          "corrected": 50,
+          "regressed": 22
+        },
+        "v30_adaptive_v4_to_v30_adaptive_v9_atlas": {
+          "before_ba": 0.7066382876062215,
+          "after_ba": 0.7020278165894226,
+          "delta_ba": -0.0046104710167989005,
+          "delta_ba_ci95": [
+            -0.008027498003739832,
+            -0.0015181506029340232
+          ],
+          "before_accuracy": 0.6764705882352919,
+          "after_accuracy": 0.6698529411764684,
+          "delta_accuracy": -0.006617647058823506,
+          "delta_accuracy_ci95": [
+            -0.0117647058823529,
+            -0.0022058823529411686
+          ],
+          "changed": 17,
+          "corrected": 1,
+          "regressed": 10
+        }
+      }
+    },
+    "at_least_20": {
+      "rows": 1333,
+      "classes": 8,
+      "metrics": {
+        "v30_fixed_v9": {
+          "ba": 0.649374848181036,
+          "accuracy": 0.6361590397599369
+        },
+        "v30_fixed_v4": {
+          "ba": 0.6767920283197758,
+          "accuracy": 0.6616654163540853
+        },
+        "v30_fixed_v9_atlas": {
+          "ba": 0.6749416993724076,
+          "accuracy": 0.6594148537134251
+        },
+        "v30_adaptive_v9": {
+          "ba": 0.6595489187394047,
+          "accuracy": 0.6496624156038978
+        },
+        "v30_adaptive_v4": {
+          "ba": 0.6898275612794629,
+          "accuracy": 0.6759189797449315
+        },
+        "v30_adaptive_v9_atlas": {
+          "ba": 0.6829118547542645,
+          "accuracy": 0.6691672918229511
+        }
+      },
+      "comparisons": {
+        "v30_fixed_v9_to_v30_fixed_v9_atlas": {
+          "before_ba": 0.649374848181036,
+          "after_ba": 0.6749416993724076,
+          "delta_ba": 0.025566851191371587,
+          "delta_ba_ci95": [
+            0.011687479905663078,
+            0.04213858495602079
+          ],
+          "before_accuracy": 0.6361590397599369,
+          "after_accuracy": 0.6594148537134251,
+          "delta_accuracy": 0.02325581395348819,
+          "delta_accuracy_ci95": [
+            0.01123405851462847,
+            0.03600900225056247
+          ],
+          "changed": 125,
+          "corrected": 54,
+          "regressed": 23
+        },
+        "v30_fixed_v4_to_v30_fixed_v9_atlas": {
+          "before_ba": 0.6767920283197758,
+          "after_ba": 0.6749416993724076,
+          "delta_ba": -0.0018503289473682516,
+          "delta_ba_ci95": [
+            -0.004605263157894779,
+            0.0009046052631579427
+          ],
+          "before_accuracy": 0.6616654163540853,
+          "after_accuracy": 0.6594148537134251,
+          "delta_accuracy": -0.0022505626406601476,
+          "delta_accuracy_ci95": [
+            -0.005251312828207122,
+            0.0007501875468867159
+          ],
+          "changed": 15,
+          "corrected": 1,
+          "regressed": 4
+        },
+        "v30_adaptive_v9_to_v30_adaptive_v9_atlas": {
+          "before_ba": 0.6595489187394047,
+          "after_ba": 0.6829118547542645,
+          "delta_ba": 0.023362936014859836,
+          "delta_ba_ci95": [
+            0.010050531111389654,
+            0.03935783982175242
+          ],
+          "before_accuracy": 0.6496624156038978,
+          "after_accuracy": 0.6691672918229511,
+          "delta_accuracy": 0.01950487621905328,
+          "delta_accuracy_ci95": [
+            0.0075018754688671585,
+            0.03150787696924218
+          ],
+          "changed": 115,
+          "corrected": 48,
+          "regressed": 22
+        },
+        "v30_adaptive_v4_to_v30_adaptive_v9_atlas": {
+          "before_ba": 0.6898275612794629,
+          "after_ba": 0.6829118547542645,
+          "delta_ba": -0.006915706525198351,
+          "delta_ba_ci95": [
+            -0.012041247005609637,
+            -0.0022772259044011476
+          ],
+          "before_accuracy": 0.6759189797449315,
+          "after_accuracy": 0.6691672918229511,
+          "delta_accuracy": -0.006751687921980443,
+          "delta_accuracy_ci95": [
+            -0.012003000750187454,
+            -0.0022505626406601476
+          ],
+          "changed": 17,
+          "corrected": 1,
+          "regressed": 10
+        }
+      }
+    }
+  },
+  "cloud_likelihood_sha256": "c3114ff3beec37b68c404f6c7d181b0654357ca2a480578b161b43aa4b249c1e"
+}

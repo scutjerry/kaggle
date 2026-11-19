@@ -1,0 +1,56 @@
+{
+  "V8": {
+    "source_version": 371206226,
+    "private_version": 371551411,
+    "author_notebook_sha256": "c6c5cb3118602882fee24d4fb42fd42123b7b13f0977efa2f90f04b89e288b99",
+    "team_upload_sha256": "9beea3ebf86ef70a8fc8f280230ca8f6192daaafb506ae8b782d8598ca1e9bfb",
+    "cloud_source_hash": "23507bb080dfa6ed3c252c71209293e72a2c3f26a567288b189ab7e654441b4c",
+    "ordered_inference_cells_with_equal_normalized_trees": 29,
+    "exact_text_before_specialization": 24,
+    "ordered_inference_trees_sha256": "41c340b58b96a8fd73c65b03d0f869caab25d0ea57bf4fb7e5f8ee96cd4d25a1",
+    "source_plotting_omitted": [],
+    "preflight_operations": [
+      "_mounted",
+      "_opt.items",
+      "bool",
+      "fnmatch.filter",
+      "glob.glob",
+      "len",
+      "os.path.isdir",
+      "os.path.join",
+      "os.walk",
+      "p.replace",
+      "print"
+    ],
+    "assumptions": "Hidden batch has at least 50 rows, or the rerun flag is present and there are at least 18 rows. The preflight verifies the required resources and the final cell checks output alignment. File paths and subprocess commands are retained.",
+    "scope": "Python syntax-tree equivalence along the declared inference path and same fixed input manifest. Host mounts, execution environment, stochasticity, hardware timing and private hidden score are not observable through this test."
+  },
+  "V7": {
+    "source_version": 371406176,
+    "private_version": 371559085,
+    "author_notebook_sha256": "e6423c37328128db864c2c4c033e5ae3dde4ab4ce08c2b9bdaa3f211e8f6f0ae",
+    "team_upload_sha256": "0766a6a628dfad42211a37c2c189fc9854b873774caf98fcb20e78a9a035e3ee",
+    "cloud_source_hash": "eae9f30f0fa5fc6cad9631af17d3d9f5cb95cfd6bc026f8679b4c2f97696fce0",
+    "ordered_inference_cells_with_equal_normalized_trees": 29,
+    "exact_text_before_specialization": 24,
+    "ordered_inference_trees_sha256": "2aa9e089054a4f4b08804f0c71f16c157ba61829dc7c955af83142d9f8fe1f8d",
+    "source_plotting_omitted": [
+      "Historical public-score plotting cell"
+    ],
+    "preflight_operations": [
+      "_mounted",
+      "_opt.items",
+      "bool",
+      "fnmatch.filter",
+      "glob.glob",
+      "len",
+      "os.path.isdir",
+      "os.path.join",
+      "os.walk",
+      "p.replace",
+      "print"
+    ],
+    "assumptions": "Hidden batch has at least 50 rows, or the rerun flag is present and there are at least 18 rows. The preflight verifies the required resources and the final cell checks output alignment. File paths and subprocess commands are retained.",
+    "scope": "Python syntax-tree equivalence along the declared inference path and same fixed input manifest. Host mounts, execution environment, stochasticity, hardware timing and private hidden score are not observable through this test."
+  }
+}

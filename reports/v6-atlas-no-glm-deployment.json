@@ -1,0 +1,216 @@
+{
+  "notebook_sha256": "8b299ef56b16666b7036f758e3dd2565190d94a809d77f670c5c5b1e8586bc32",
+  "builder_sha256": "a081c1a094083d5a161ec34811ae36242536e546a8347bda0efb682424977d08",
+  "bytes": 221945,
+  "base_sha256": "b8d687476653102929f6fb8017735280aa4ab7f2baeb819217a96156561a9cca",
+  "comparison_sha256": "4ac702fb278827c5caa7252dcccc09296c33f4b1843d6b7276e9671ed989ccce",
+  "code_cells": 24,
+  "input_versions": [
+    {
+      "sourceId": 170484,
+      "sourceType": "competition"
+    },
+    {
+      "sourceId": 21062729,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21817814,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 22123604,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 20819121,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21651586,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 20847146,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 20831302,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21145399,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 20858502,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21011978,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21535348,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21152540,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21251556,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21156661,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21367646,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21227404,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21130411,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 20934027,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21119693,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 21203279,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 22012644,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 18975315,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 20736096,
+      "sourceType": "datasetVersion"
+    },
+    {
+      "sourceId": 358683059,
+      "sourceType": "kernelVersion"
+    },
+    {
+      "sourceId": 358745836,
+      "sourceType": "kernelVersion"
+    },
+    {
+      "sourceId": 358758062,
+      "sourceType": "kernelVersion"
+    },
+    {
+      "sourceId": 358770408,
+      "sourceType": "kernelVersion"
+    },
+    {
+      "sourceId": 358911769,
+      "sourceType": "kernelVersion"
+    },
+    {
+      "sourceId": 358928013,
+      "sourceType": "kernelVersion"
+    },
+    {
+      "sourceId": 358948428,
+      "sourceType": "kernelVersion"
+    },
+    {
+      "sourceId": 359652568,
+      "sourceType": "kernelVersion"
+    },
+    {
+      "sourceId": 1041713,
+      "sourceType": "modelInstanceVersion"
+    },
+    {
+      "sourceId": 363140,
+      "sourceType": "modelInstanceVersion"
+    },
+    {
+      "sourceId": 363135,
+      "sourceType": "modelInstanceVersion"
+    },
+    {
+      "sourceId": 363139,
+      "sourceType": "modelInstanceVersion"
+    },
+    {
+      "sourceId": 363149,
+      "sourceType": "modelInstanceVersion"
+    },
+    {
+      "sourceId": 363153,
+      "sourceType": "modelInstanceVersion"
+    },
+    {
+      "sourceId": 426337,
+      "sourceType": "modelInstanceVersion"
+    },
+    {
+      "sourceId": 166265,
+      "sourceType": "modelInstanceVersion"
+    },
+    {
+      "sourceId": 166254,
+      "sourceType": "modelInstanceVersion"
+    },
+    {
+      "sourceId": 21159757,
+      "sourceType": "datasetVersion"
+    }
+  ],
+  "removed_exclusive_assets": {
+    "21641030": "glm53-iq3xxs-segs-a-mirror",
+    "21641805": "glm53-iq3xxs-segs-b-mirror",
+    "21639905": "glm53-flash-iq3xxs-segs-mirror",
+    "368461538": "ntl-glm-likelihood-train"
+  },
+  "docker_image": 31508,
+  "cpu_file_replay": {
+    "real": {
+      "status": "applied",
+      "reason": null,
+      "worker_calls": 1,
+      "ids_and_predictions_equal": 216,
+      "used": 54,
+      "style_bytes_preserved": false
+    },
+    "error": {
+      "status": "kept_style",
+      "reason": "RuntimeError",
+      "worker_calls": 1,
+      "ids_and_predictions_equal": 216,
+      "used": 0,
+      "style_bytes_preserved": true
+    },
+    "timeout": {
+      "status": "kept_style",
+      "reason": "remaining time",
+      "worker_calls": 0,
+      "ids_and_predictions_equal": 216,
+      "used": 0,
+      "style_bytes_preserved": true
+    },
+    "three_rows": {
+      "reason": "empty quarter",
+      "style_bytes_preserved": true
+    }
+  },
+  "full_system_cloud_run": false
+}
