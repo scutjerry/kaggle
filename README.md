@@ -2,21 +2,37 @@
 
 对官方训练集的 2,699 段文本按 `prompt_id` 做固定五折分组。每次用四折训练，在持出的新题目上预测，汇总全部折外预测计算 18 类平均召回率。下表是本地 Balanced Accuracy，Kaggle 公榜和私榜以赛事评分为准。
 
-首次参赛提交的截图显示 Kaggle 公榜分为 **0.384**。截图没有提供模型版本。
+## Kaggle 提交成绩
 
-已记录 **106** 个本地候选。各目录包含五折分数、逐类召回率和混淆矩阵。
+| 版本 | 本地五折 Balanced Accuracy | Kaggle 公榜 |
+| --- | ---: | ---: |
+| v1 · 初次提交 | 0.4101 | 0.384 |
+| v2 · Paired Style | 0.4286 | **0.400** |
+| v3 · 冻结 ModernBERT 特征融合 | 0.4382 | 待测 |
+| v4 · 加入题目相关的写作风格 | **0.4445** | 待测 |
 
-## 首次公榜后的迭代
+赛事提交页显示，v2 的公榜分比 v1 提升 0.016。当前共有 **118** 个本地实验，各目录包含五折分数、逐类召回率和混淆矩阵。
 
-前一轮最佳本地分数为 0.4101。本轮在原模型上依次融合写作标记和外部语料词形分类器，得到 0.4208。依据同一批预测的类别分布做轻量校准后得到 0.4286，再加入冻结 ModernBERT 各层的词元均值和标准差特征，最高达到 **0.4382**。三个候选的线上成绩待验证。
+## 实验说明
 
-相对前一轮本地最佳模型，0.4382 的版本改对 230 条，另有 154 条由正确变为错误，净增 76 条。将各验证折拆成六个小批次后得分 0.4378。按题目成组重采样 3,000 次，本地分差的 95% 百分位区间为 +0.0148 至 +0.0411。该区间描述固定预测在这批题目上的波动。[三版压力测试](results/postlb-paired-cal/stress.json)
+从 v1 出发，加入写作标记和外部语料词形分类器后，本地五折得分达到 0.4208。v2 根据同批预测的类别分布做轻量校准。v3 再加入冻结 ModernBERT 各层的词元均值和标准差特征。v4 通过相似训练题目估计一段文字通常具备的写作风格，把实际风格与该预期的差值用于分类。新分支以 8% 的权重与 v3 融合。
+
+将 v3 的各验证折拆成六个小批次后，得分为 0.4378。相对于 v1 的本地预测，v3 改对 230 条，另有 154 条由正确变错，净增 76 条。按题目成组重采样 3,000 次，分差的 95% 百分位区间为 +0.0148 至 +0.0411。该区间描述固定预测在这批题目上的波动。[压力测试](results/postlb-paired-cal/stress.json)
+
+本轮还对照了冻结表示的判别分类器和 Will Rice 发布的原始 API 语料。后者经路由、文本长度和重复检查后，抽取 3,620 条加入轻量分类器，按 10% 融入 v3 后得分为 0.43824。同样权重的纯官方训练数据对照为 0.43489。[Will Rice 原始语料](https://www.kaggle.com/datasets/willrice/name-that-llm-openrouter-harvest)
 
 ## 全部本地五折结果
 
 | 实验 | Balanced Accuracy | 折 1 | 折 2 | 折 3 | 折 4 | 折 5 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [`topic-style-v4-blend-8`](results/topic-style-v4-blend-8) | 0.4445 | 0.4407 | 0.4426 | 0.4244 | 0.4704 | 0.4444 |
+| [`topic-style-v4-blend-16`](results/topic-style-v4-blend-16) | 0.4404 | 0.4352 | 0.4426 | 0.4151 | 0.4667 | 0.4426 |
+| [`postlb-frozen-disc-length-6`](results/postlb-frozen-disc-length-6) | 0.4389 | 0.4278 | 0.4352 | 0.4151 | 0.4611 | 0.4556 |
+| [`harvest-v3-blend-10`](results/harvest-v3-blend-10) | 0.4382 | 0.4259 | 0.4315 | 0.4245 | 0.4648 | 0.4444 |
 | [`postlb-paired-frozen-cal`](results/postlb-paired-frozen-cal) | 0.4382 | 0.4296 | 0.4278 | 0.4188 | 0.4630 | 0.4519 |
+| [`harvest-v3-control-blend-10`](results/harvest-v3-control-blend-10) | 0.4349 | 0.4296 | 0.4259 | 0.4208 | 0.4537 | 0.4444 |
+| [`harvest-v3-control-blend-20`](results/harvest-v3-control-blend-20) | 0.4301 | 0.4463 | 0.4204 | 0.4190 | 0.4426 | 0.4222 |
+| [`harvest-v3-blend-20`](results/harvest-v3-blend-20) | 0.4294 | 0.4259 | 0.4148 | 0.4192 | 0.4519 | 0.4352 |
 | [`postlb-paired-cal`](results/postlb-paired-cal) | 0.4286 | 0.4259 | 0.4130 | 0.4153 | 0.4556 | 0.4333 |
 | [`markers-frozen-ext-30`](results/markers-frozen-ext-30) | 0.4282 | 0.4148 | 0.4056 | 0.4281 | 0.4611 | 0.4315 |
 | [`markers-frozen-ext-15`](results/markers-frozen-ext-15) | 0.4245 | 0.4130 | 0.4074 | 0.4059 | 0.4648 | 0.4315 |
@@ -95,11 +111,14 @@
 | [`seq-v2-corpus`](results/seq-v2-corpus) | 0.3689 | 0.3648 | 0.3926 | 0.3596 | 0.3667 | 0.3611 |
 | [`separate`](results/separate) | 0.3645 | 0.3648 | 0.3704 | 0.3596 | 0.3667 | 0.3611 |
 | [`tree-hybrid`](results/tree-hybrid) | 0.3619 | 0.3500 | 0.3556 | 0.3521 | 0.3963 | 0.3556 |
+| [`frozen-disc-pooled`](results/frozen-disc-pooled) | 0.3608 | 0.3593 | 0.3333 | 0.3562 | 0.3833 | 0.3722 |
 | [`wide`](results/wide) | 0.3567 | 0.3611 | 0.3463 | 0.3335 | 0.3833 | 0.3593 |
 | [`glm-augment-25`](results/glm-augment-25) | 0.3548 | 0.3630 | 0.3444 | 0.3315 | 0.3870 | 0.3481 |
 | [`glm-augment-50`](results/glm-augment-50) | 0.3522 | 0.3574 | 0.3389 | 0.3315 | 0.3833 | 0.3500 |
 | [`blend`](results/blend) | 0.3493 | 0.3574 | 0.3500 | 0.3353 | 0.3667 | 0.3370 |
 | [`frozen-external-v2`](results/frozen-external-v2) | 0.3471 | 0.3296 | 0.3296 | 0.3354 | 0.3630 | 0.3778 |
+| [`frozen-disc-length`](results/frozen-disc-length) | 0.3445 | 0.3222 | 0.3185 | 0.3580 | 0.3574 | 0.3667 |
+| [`topic-style-v4`](results/topic-style-v4) | 0.3378 | 0.3426 | 0.3204 | 0.3280 | 0.3519 | 0.3463 |
 | [`style`](results/style) | 0.3374 | 0.3556 | 0.3315 | 0.3242 | 0.3556 | 0.3204 |
 | [`frozen-moments-v2`](results/frozen-moments-v2) | 0.3337 | 0.3296 | 0.3111 | 0.3169 | 0.3574 | 0.3537 |
 | [`nb-svm`](results/nb-svm) | 0.3275 | 0.3389 | 0.3074 | 0.3225 | 0.3556 | 0.3130 |
@@ -117,7 +136,9 @@
 | [`boundaries`](results/boundaries) | 0.2801 | 0.2667 | 0.2667 | 0.2946 | 0.2815 | 0.2907 |
 | [`contrast-v2-phrase-solo`](results/contrast-v2-phrase-solo) | 0.2711 | 0.2630 | 0.2648 | 0.2593 | 0.2833 | 0.2852 |
 | [`typography`](results/typography) | 0.2552 | 0.2296 | 0.2556 | 0.2817 | 0.2741 | 0.2352 |
+| [`harvest-v3-control-raw`](results/harvest-v3-control-raw) | 0.2463 | 0.2352 | 0.2648 | 0.2580 | 0.2185 | 0.2556 |
 | [`seq-v2-length`](results/seq-v2-length) | 0.2456 | 0.2593 | 0.2611 | 0.2114 | 0.2574 | 0.2389 |
+| [`harvest-v3-raw`](results/harvest-v3-raw) | 0.2405 | 0.2463 | 0.2500 | 0.2363 | 0.2389 | 0.2315 |
 | [`markers-v2-syntax-standalone`](results/markers-v2-syntax-standalone) | 0.2293 | 0.2000 | 0.2370 | 0.2278 | 0.2241 | 0.2574 |
 | [`style-tree`](results/style-tree) | 0.2226 | 0.2204 | 0.1963 | 0.2409 | 0.2500 | 0.2056 |
 | [`contrast-v2-bpe-solo`](results/contrast-v2-bpe-solo) | 0.2037 | 0.2000 | 0.2056 | 0.1928 | 0.2056 | 0.2148 |
