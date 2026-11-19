@@ -1,0 +1,56 @@
+{
+  "candidate_sha256": "113505e3437ae627d76c2741d96d46a9311bd6769d2c2bd6d4c1d73f119da28f",
+  "candidate_bytes": 276614,
+  "original_sha256": "9beea3ebf86ef70a8fc8f280230ca8f6192daaafb506ae8b782d8598ca1e9bfb",
+  "scope": "Linux CPU only. Real official texts, real cached OOF probabilities and dual GLM token features. The native GPU binary is replaced; the published stage selection, head, style and parquet are real.",
+  "phase_tests": {
+    "completed": {
+      "status": "completed",
+      "phase": "glm53",
+      "outside_process_untouched": true,
+      "final_style_changed_after_glm": 6,
+      "labels_equal_to_reference": 334,
+      "logit_values_equal_to_reference": 6012
+    },
+    "flash": {
+      "status": "time_limit",
+      "phase": "flash",
+      "outside_process_untouched": true,
+      "sigterm_ignoring_child_and_grandchild_reaped": true,
+      "labels_equal_to_reference": 334,
+      "logit_values_equal_to_reference": 6012
+    },
+    "glm53": {
+      "status": "time_limit",
+      "phase": "glm53",
+      "outside_process_untouched": true,
+      "sigterm_ignoring_child_and_grandchild_reaped": true,
+      "labels_equal_to_reference": 334,
+      "logit_values_equal_to_reference": 6012
+    },
+    "expired": {
+      "status": "expired_before_start",
+      "phase": "setup",
+      "outside_process_untouched": true,
+      "labels_equal_to_reference": 334,
+      "logit_values_equal_to_reference": 6012
+    },
+    "error": {
+      "non_timeout_error_propagated": true,
+      "prior_qwen_output_preserved": true
+    },
+    "three_row_style": {
+      "status": "expired_before_start",
+      "ids_aligned": true,
+      "label_changes": 1
+    },
+    "mismatched_snapshot": {
+      "rejected": true
+    }
+  },
+  "min_selection_reached": 50,
+  "fallback_final_label_changes_from_plain_qwen": 0,
+  "formal_deadline_policy": "8h45m from first executed cell, 15min left against competition 9h; same shared cutoff for setup and both scorers.",
+  "formal_rule": "https://www.kaggle.com/competitions/name-that-llm/overview/abstract",
+  "cloud_execution": "not run; reserve for actual formal timeout"
+}

@@ -1,0 +1,688 @@
+{
+  "protocol_sha256": "71edf71c37e46e7d656a58058d0c855ff9f0fc83aa89b99b074d76f5f10b5d1f",
+  "scorer_sha256": "70eb954f91bf35acb1a4a6048ff995f65255525db1b81f9d78ee77f483b833c9",
+  "source_sha256": "196215b9d69cb81bcf57c10d322bdda02a2458e425b6ce53b6f40c9a4b3a7ee3",
+  "source_submission_id": 58557171,
+  "source_public_score": 0.702,
+  "source_fixed_url": "https://www.kaggle.com/code/hanifnoerrofiq/ntl-openai-prior-1119?scriptVersionId=371392031",
+  "v8_sha256": "9beea3ebf86ef70a8fc8f280230ca8f6192daaafb506ae8b782d8598ca1e9bfb",
+  "source_threshold_selftest": {
+    "19": {
+      "rows": 20,
+      "eligible_predictions": 19,
+      "threshold_passed": false,
+      "changes": 0,
+      "predicted_counts_before": [
+        19,
+        0,
+        0
+      ],
+      "predicted_counts_after": [
+        19,
+        0,
+        0
+      ]
+    },
+    "20": {
+      "rows": 21,
+      "eligible_predictions": 20,
+      "threshold_passed": true,
+      "changes": 1,
+      "predicted_counts_before": [
+        20,
+        0,
+        0
+      ],
+      "predicted_counts_after": [
+        19,
+        1,
+        0
+      ]
+    }
+  },
+  "official": {
+    "plain": {
+      "rows": 2699,
+      "classes": 18,
+      "base_ba": 0.6783022619935372,
+      "trio_ba": 0.6786726323639075,
+      "delta_ba": 0.00037037037037035425,
+      "base_accuracy": 0.6783994071878473,
+      "trio_accuracy": 0.6787699147832531,
+      "corrected": 1,
+      "regressed": 0,
+      "wrong_to_wrong": 0,
+      "changed": 1,
+      "paired_ba_delta_95pct": [
+        0.0,
+        0.0011111111111111111
+      ],
+      "gates": [
+        {
+          "fold": 0,
+          "rows": 540,
+          "eligible_predictions": 81,
+          "threshold_passed": true,
+          "changes": 1,
+          "predicted_counts_before": [
+            33,
+            24,
+            24
+          ],
+          "predicted_counts_after": [
+            32,
+            25,
+            24
+          ],
+          "glm_selected": 81
+        },
+        {
+          "fold": 1,
+          "rows": 540,
+          "eligible_predictions": 84,
+          "threshold_passed": true,
+          "changes": 0,
+          "predicted_counts_before": [
+            34,
+            26,
+            24
+          ],
+          "predicted_counts_after": [
+            34,
+            26,
+            24
+          ],
+          "glm_selected": 81
+        },
+        {
+          "fold": 2,
+          "rows": 540,
+          "eligible_predictions": 84,
+          "threshold_passed": true,
+          "changes": 0,
+          "predicted_counts_before": [
+            29,
+            28,
+            27
+          ],
+          "predicted_counts_after": [
+            29,
+            28,
+            27
+          ],
+          "glm_selected": 81
+        },
+        {
+          "fold": 3,
+          "rows": 539,
+          "eligible_predictions": 91,
+          "threshold_passed": true,
+          "changes": 0,
+          "predicted_counts_before": [
+            19,
+            36,
+            36
+          ],
+          "predicted_counts_after": [
+            19,
+            36,
+            36
+          ],
+          "glm_selected": 80
+        },
+        {
+          "fold": 4,
+          "rows": 540,
+          "eligible_predictions": 97,
+          "threshold_passed": true,
+          "changes": 0,
+          "predicted_counts_before": [
+            29,
+            31,
+            37
+          ],
+          "predicted_counts_after": [
+            29,
+            31,
+            37
+          ],
+          "glm_selected": 81
+        }
+      ],
+      "by_true_trio_label": {
+        "gpt-5.6-luna": {
+          "count": 150,
+          "base_correct": 96,
+          "trio_correct": 96,
+          "base_recall": 0.64,
+          "trio_recall": 0.64
+        },
+        "gpt-5.6-sol": {
+          "count": 150,
+          "base_correct": 87,
+          "trio_correct": 88,
+          "base_recall": 0.58,
+          "trio_recall": 0.5866666666666667
+        },
+        "gpt-5.6-terra": {
+          "count": 150,
+          "base_correct": 93,
+          "trio_correct": 93,
+          "base_recall": 0.62,
+          "trio_recall": 0.62
+        }
+      }
+    },
+    "sparse": {
+      "rows": 2699,
+      "classes": 18,
+      "base_ba": 0.6831220482227194,
+      "trio_ba": 0.6838627889634601,
+      "delta_ba": 0.0007407407407407085,
+      "base_accuracy": 0.6832160059281215,
+      "trio_accuracy": 0.683957021118933,
+      "corrected": 2,
+      "regressed": 0,
+      "wrong_to_wrong": 2,
+      "changed": 4,
+      "paired_ba_delta_95pct": [
+        0.0,
+        0.001851851851851852
+      ],
+      "gates": [
+        {
+          "fold": 0,
+          "rows": 540,
+          "eligible_predictions": 80,
+          "threshold_passed": true,
+          "changes": 1,
+          "predicted_counts_before": [
+            29,
+            23,
+            28
+          ],
+          "predicted_counts_after": [
+            28,
+            23,
+            29
+          ],
+          "glm_selected": 81
+        },
+        {
+          "fold": 1,
+          "rows": 540,
+          "eligible_predictions": 85,
+          "threshold_passed": true,
+          "changes": 1,
+          "predicted_counts_before": [
+            33,
+            28,
+            24
+          ],
+          "predicted_counts_after": [
+            32,
+            28,
+            25
+          ],
+          "glm_selected": 81
+        },
+        {
+          "fold": 2,
+          "rows": 540,
+          "eligible_predictions": 88,
+          "threshold_passed": true,
+          "changes": 0,
+          "predicted_counts_before": [
+            30,
+            30,
+            28
+          ],
+          "predicted_counts_after": [
+            30,
+            30,
+            28
+          ],
+          "glm_selected": 81
+        },
+        {
+          "fold": 3,
+          "rows": 539,
+          "eligible_predictions": 90,
+          "threshold_passed": true,
+          "changes": 2,
+          "predicted_counts_before": [
+            21,
+            33,
+            36
+          ],
+          "predicted_counts_after": [
+            23,
+            32,
+            35
+          ],
+          "glm_selected": 80
+        },
+        {
+          "fold": 4,
+          "rows": 540,
+          "eligible_predictions": 91,
+          "threshold_passed": true,
+          "changes": 0,
+          "predicted_counts_before": [
+            24,
+            32,
+            35
+          ],
+          "predicted_counts_after": [
+            24,
+            32,
+            35
+          ],
+          "glm_selected": 81
+        }
+      ],
+      "by_true_trio_label": {
+        "gpt-5.6-luna": {
+          "count": 150,
+          "base_correct": 95,
+          "trio_correct": 96,
+          "base_recall": 0.6333333333333333,
+          "trio_recall": 0.64
+        },
+        "gpt-5.6-sol": {
+          "count": 150,
+          "base_correct": 89,
+          "trio_correct": 89,
+          "base_recall": 0.5933333333333334,
+          "trio_recall": 0.5933333333333334
+        },
+        "gpt-5.6-terra": {
+          "count": 150,
+          "base_correct": 98,
+          "trio_correct": 99,
+          "base_recall": 0.6533333333333333,
+          "trio_recall": 0.66
+        }
+      }
+    },
+    "dense": {
+      "rows": 2699,
+      "classes": 18,
+      "base_ba": 0.7090529455630127,
+      "trio_ba": 0.7090529455630127,
+      "delta_ba": 0.0,
+      "base_accuracy": 0.7091515376065209,
+      "trio_accuracy": 0.7091515376065209,
+      "corrected": 1,
+      "regressed": 1,
+      "wrong_to_wrong": 0,
+      "changed": 2,
+      "paired_ba_delta_95pct": [
+        -0.0011111111111111111,
+        0.0011111111111111111
+      ],
+      "gates": [
+        {
+          "fold": 0,
+          "rows": 540,
+          "eligible_predictions": 85,
+          "threshold_passed": true,
+          "changes": 1,
+          "predicted_counts_before": [
+            34,
+            24,
+            27
+          ],
+          "predicted_counts_after": [
+            33,
+            25,
+            27
+          ],
+          "glm_selected": 81
+        },
+        {
+          "fold": 1,
+          "rows": 540,
+          "eligible_predictions": 84,
+          "threshold_passed": true,
+          "changes": 0,
+          "predicted_counts_before": [
+            34,
+            26,
+            24
+          ],
+          "predicted_counts_after": [
+            34,
+            26,
+            24
+          ],
+          "glm_selected": 81
+        },
+        {
+          "fold": 2,
+          "rows": 540,
+          "eligible_predictions": 88,
+          "threshold_passed": true,
+          "changes": 0,
+          "predicted_counts_before": [
+            29,
+            31,
+            28
+          ],
+          "predicted_counts_after": [
+            29,
+            31,
+            28
+          ],
+          "glm_selected": 81
+        },
+        {
+          "fold": 3,
+          "rows": 539,
+          "eligible_predictions": 90,
+          "threshold_passed": true,
+          "changes": 1,
+          "predicted_counts_before": [
+            20,
+            32,
+            38
+          ],
+          "predicted_counts_after": [
+            21,
+            32,
+            37
+          ],
+          "glm_selected": 80
+        },
+        {
+          "fold": 4,
+          "rows": 540,
+          "eligible_predictions": 96,
+          "threshold_passed": true,
+          "changes": 0,
+          "predicted_counts_before": [
+            29,
+            32,
+            35
+          ],
+          "predicted_counts_after": [
+            29,
+            32,
+            35
+          ],
+          "glm_selected": 81
+        }
+      ],
+      "by_true_trio_label": {
+        "gpt-5.6-luna": {
+          "count": 150,
+          "base_correct": 101,
+          "trio_correct": 101,
+          "base_recall": 0.6733333333333333,
+          "trio_recall": 0.6733333333333333
+        },
+        "gpt-5.6-sol": {
+          "count": 150,
+          "base_correct": 95,
+          "trio_correct": 95,
+          "base_recall": 0.6333333333333333,
+          "trio_recall": 0.6333333333333333
+        },
+        "gpt-5.6-terra": {
+          "count": 150,
+          "base_correct": 101,
+          "trio_correct": 101,
+          "base_recall": 0.6733333333333333,
+          "trio_recall": 0.6733333333333333
+        }
+      }
+    }
+  },
+  "external": {
+    "pilot54": {
+      "actual_min50": {
+        "rows": 54,
+        "classes": 18,
+        "base_ba": 0.574074074074074,
+        "trio_ba": 0.574074074074074,
+        "delta_ba": 0.0,
+        "base_accuracy": 0.5740740740740741,
+        "trio_accuracy": 0.5740740740740741,
+        "corrected": 0,
+        "regressed": 0,
+        "wrong_to_wrong": 0,
+        "changed": 0,
+        "paired_ba_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "gates": [
+          {
+            "rows": 54,
+            "eligible_predictions": 7,
+            "threshold_passed": false,
+            "changes": 0,
+            "predicted_counts_before": [
+              3,
+              1,
+              3
+            ],
+            "predicted_counts_after": [
+              3,
+              1,
+              3
+            ],
+            "glm_selected": 0
+          }
+        ],
+        "by_true_trio_label": {
+          "gpt-5.6-luna": {
+            "count": 3,
+            "base_correct": 2,
+            "trio_correct": 2,
+            "base_recall": 0.6666666666666666,
+            "trio_recall": 0.6666666666666666
+          },
+          "gpt-5.6-sol": {
+            "count": 3,
+            "base_correct": 1,
+            "trio_correct": 1,
+            "base_recall": 0.3333333333333333,
+            "trio_recall": 0.3333333333333333
+          },
+          "gpt-5.6-terra": {
+            "count": 3,
+            "base_correct": 2,
+            "trio_correct": 2,
+            "base_recall": 0.6666666666666666,
+            "trio_recall": 0.6666666666666666
+          }
+        }
+      },
+      "size_proxy": {
+        "rows": 54,
+        "classes": 18,
+        "base_ba": 0.5925925925925926,
+        "trio_ba": 0.5925925925925926,
+        "delta_ba": 0.0,
+        "base_accuracy": 0.5925925925925926,
+        "trio_accuracy": 0.5925925925925926,
+        "corrected": 0,
+        "regressed": 0,
+        "wrong_to_wrong": 0,
+        "changed": 0,
+        "paired_ba_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "gates": [
+          {
+            "rows": 54,
+            "eligible_predictions": 7,
+            "threshold_passed": false,
+            "changes": 0,
+            "predicted_counts_before": [
+              3,
+              1,
+              3
+            ],
+            "predicted_counts_after": [
+              3,
+              1,
+              3
+            ],
+            "glm_selected": 8
+          }
+        ],
+        "by_true_trio_label": {
+          "gpt-5.6-luna": {
+            "count": 3,
+            "base_correct": 2,
+            "trio_correct": 2,
+            "base_recall": 0.6666666666666666,
+            "trio_recall": 0.6666666666666666
+          },
+          "gpt-5.6-sol": {
+            "count": 3,
+            "base_correct": 1,
+            "trio_correct": 1,
+            "base_recall": 0.3333333333333333,
+            "trio_recall": 0.3333333333333333
+          },
+          "gpt-5.6-terra": {
+            "count": 3,
+            "base_correct": 2,
+            "trio_correct": 2,
+            "base_recall": 0.6666666666666666,
+            "trio_recall": 0.6666666666666666
+          }
+        }
+      }
+    },
+    "confirmation216": {
+      "actual_min50": {
+        "rows": 216,
+        "classes": 18,
+        "base_ba": 0.449074074074074,
+        "trio_ba": 0.449074074074074,
+        "delta_ba": 0.0,
+        "base_accuracy": 0.44907407407407407,
+        "trio_accuracy": 0.44907407407407407,
+        "corrected": 0,
+        "regressed": 0,
+        "wrong_to_wrong": 0,
+        "changed": 0,
+        "paired_ba_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "gates": [
+          {
+            "rows": 216,
+            "eligible_predictions": 27,
+            "threshold_passed": true,
+            "changes": 0,
+            "predicted_counts_before": [
+              14,
+              8,
+              5
+            ],
+            "predicted_counts_after": [
+              14,
+              8,
+              5
+            ],
+            "glm_selected": 0
+          }
+        ],
+        "by_true_trio_label": {
+          "gpt-5.6-luna": {
+            "count": 12,
+            "base_correct": 5,
+            "trio_correct": 5,
+            "base_recall": 0.4166666666666667,
+            "trio_recall": 0.4166666666666667
+          },
+          "gpt-5.6-sol": {
+            "count": 12,
+            "base_correct": 5,
+            "trio_correct": 5,
+            "base_recall": 0.4166666666666667,
+            "trio_recall": 0.4166666666666667
+          },
+          "gpt-5.6-terra": {
+            "count": 12,
+            "base_correct": 2,
+            "trio_correct": 2,
+            "base_recall": 0.16666666666666666,
+            "trio_recall": 0.16666666666666666
+          }
+        }
+      },
+      "size_proxy": {
+        "rows": 216,
+        "classes": 18,
+        "base_ba": 0.4768518518518518,
+        "trio_ba": 0.4768518518518518,
+        "delta_ba": 0.0,
+        "base_accuracy": 0.47685185185185186,
+        "trio_accuracy": 0.47685185185185186,
+        "corrected": 0,
+        "regressed": 0,
+        "wrong_to_wrong": 0,
+        "changed": 0,
+        "paired_ba_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "gates": [
+          {
+            "rows": 216,
+            "eligible_predictions": 27,
+            "threshold_passed": true,
+            "changes": 0,
+            "predicted_counts_before": [
+              14,
+              8,
+              5
+            ],
+            "predicted_counts_after": [
+              14,
+              8,
+              5
+            ],
+            "glm_selected": 32
+          }
+        ],
+        "by_true_trio_label": {
+          "gpt-5.6-luna": {
+            "count": 12,
+            "base_correct": 5,
+            "trio_correct": 5,
+            "base_recall": 0.4166666666666667,
+            "trio_recall": 0.4166666666666667
+          },
+          "gpt-5.6-sol": {
+            "count": 12,
+            "base_correct": 5,
+            "trio_correct": 5,
+            "base_recall": 0.4166666666666667,
+            "trio_recall": 0.4166666666666667
+          },
+          "gpt-5.6-terra": {
+            "count": 12,
+            "base_correct": 2,
+            "trio_correct": 2,
+            "base_recall": 0.16666666666666666,
+            "trio_recall": 0.16666666666666666
+          }
+        }
+      }
+    }
+  },
+  "temporal": {
+    "status": "waiting_for_real_dual_glm",
+    "measurements": {}
+  },
+  "decision": "hold_no_submission"
+}

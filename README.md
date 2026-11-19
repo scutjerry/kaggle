@@ -20,6 +20,10 @@
 
 11 月 20 日浏览 300 个竞赛公开 Notebook 的记录，核对 67 个固定版本的得分，逐一匹配 Kaggle 获分提交的版本 ID。Vlad 的 V12 获得 **0.704**，另外两个账号使用相同的 29 个推理代码单元及同一组 45 项版本化输入，分别获得 **0.704** 和 **0.703**。他们添加的绘图单元、输入列表排列和实际运行镜像有所不同。Vlad 的这版提高了难分的 Fable 与 GLM 文章进入似然计算的优先级，并在足够强的 GLM 证据支持 Fable 时保留判决。其后续 V16 实际为 0.702。[Vlad V12](https://www.kaggle.com/code/lightningv08/0-704-glm-fable-routing-qwen3-8-27b-lora?scriptVersionId=371206226) · [Evgen V35](https://www.kaggle.com/code/evgendvorkin/name-that-llm-deep-forensic-eda-with-analogie?scriptVersionId=371401730) · [mzishran V2](https://www.kaggle.com/code/mzishran/name-that-llm-how-the-ensemble-predicts?scriptVersionId=371341961) · [检索范围与逐版本核对](reports/refresh-summary.json)
 
+又抽查了 39 个固定版本，先比源码与挂载，再查成绩，抽样允许纳入低分或没有成绩的作品。七版具有完整的 V12 推理代码和相同的 45 项输入，四版能将具体提交编号与四个不同队伍的公榜记录对应，其中三队得 0.704，一队得 0.703。另外两版有提交编号但没有公开分数，一版已取消。样本中另有两份大型 Notebook 未能完整读取。[逐项核对方法及抽样范围](reports/recipe-selection-audit.json) · [新增核实的固定版本](https://www.kaggle.com/code/areebbb/0-702-read-the-fingerprints?scriptVersionId=371446251)
+
+北京时间 04:35，官方赛事 Code 按历史最高分降序展示的前 100 本公开作品中，最高为 0.704，94 本至少达到 0.700。另选八个固定版本逐个核对提交编号、源码和挂载，其中包括调整 GPT-5.6 三个子型号的后处理，以及两份采用不同编码器组合的方案。此统计只覆盖公开 Notebook。[赛事 Code](https://www.kaggle.com/competitions/name-that-llm/code) · [分数分布和八个固定版本](reports/best-score-structure-audit.json)
+
 Bill 的 V1 独立取得 **0.704**，提交编号为 58558588。与 Alex V30 对比，31 个代码单元中只有两行变化，其中一行把两路 GLM 的融合权重提高 25%。另一行放宽预测改变比例检查，原有最多 15% 的选文上限已经比两个阈值都低。两个 Notebook 均挂载 45 项资源，公开语料版本从 V17 更新到 V18。代码会读取这份语料，但启用已拟合分类器时，训练程序没有接收准备好的语料路径。[Bill V1](https://www.kaggle.com/code/bill123987/ntl706w?scriptVersionId=371406176) · [四笔获分提交、源码与挂载哈希](reports/public-704-recipes.json)
 
 | 单个 Qwen 组件与原 54 维 GLM 的折外复核 | 单篇 | 每题最多两篇 | 同题集中 |
@@ -35,7 +39,13 @@ Bill 的 V1 独立取得 **0.704**，提交编号为 58558588。与 Alex V30 对
 
 本队第八版沿用 Vlad 固定 V12 的 45 项输入，本地文件记录了作者的镜像版本 31508。用真实缓存分数核对 333、334 和 540 篇三个批次时，分别有 0、50 和 81 篇进入 GLM，本队交付文件与原程序的全部最终类别逐篇一致。第九版在本队 76 维逐词元模型上合用了提高权重和 Fable 优先选文，保留现有末端风格规则。单篇、稀疏和密集验证分别从 0.68425、0.68980、0.71500 变为 0.68907、0.69053、0.71611。密集情况下仅提高权重得 0.71649，高于两者合用。第九版是本队本地候选。[第八版实际推理入口与阈值验证](reports/vlad-v12-fable-deployment.json) · [第九版四组比较](reports/v3-fable-weight-factorial.json)
 
-第八版私有运行 371551411 使用双 T4，1,875.8 秒后成功。云端 34 个单元的源码和 45 个输入版本均经核对，页面将镜像显示为 Latest Container Image。六个主模型、GSQ 27B 和原生五折都完成了推理。下载的 Parquet 与官方样例三个 ID 顺序一致，模型名均在 18 个允许类别内。三篇样例的批次太小，GLM 选中零篇。另一份动态预算备选 V29（371540160）完成了主流程，耗时 3,814.2 秒，其额外分类器读到只有配置文件的目录后跳过。[两个私有运行的核验记录](reports/nov20-private-previews.json)
+第八版私有运行 371551411 使用双 T4，1,875.8 秒后成功。第七版 Bill 的私有版本 371559085 用时 1,897.8 秒。两份云端 Notebook 的 34 个单元源码与各自交付文件相符，45 个输入版本逐项核对通过，均包含 Open Pool V18。六个主模型、GSQ 27B 和原生五折都完成了推理。两份下载的 Parquet 均含顺序正确的三个官方样例 ID，预测均在 18 个允许类别内，文件哈希相同。三篇样例的批次太小，GLM 选中零篇。第八版运行页将镜像显示为 Latest Container Image。另一份动态预算备选 V29（371540160）完成了主流程，耗时 3,814.2 秒，其额外分类器读到只有配置文件的目录后跳过。[三个私有运行的核验记录](reports/nov20-private-previews.json)
+
+赛事规定 GPU Notebook 最长运行九小时。对恰好 4,000 篇输入，第八版的原程序会让两路 GLM 各处理 520 至 600 篇，具体数量随文本长度变化。90,000 的限制按字符估算词元位置。两路顺序执行，共用剩余比赛时间，程序没有超时回退。现有双 T4 记录只能用于分阶段估算，完整隐藏集耗时尚待正式评测。在 V29 上，已用本地小型 Qwen 模型重现另一个权重目录定位故障，完整修正后的辅助分支仍待验证。[赛事运行要求](https://www.kaggle.com/competitions/name-that-llm/overview/abstract) · [第八版行数与耗时核算](reports/v8-4000-runtime-audit.json) · [V29 权重定位](reports/v29-complementary-checkpoint.json)
+
+为应对正式评测出现超时的情形，另制作了一份第八版后备。若上游已落盘且 GLM 在 8 小时 45 分钟前未完成，后备会结束 GLM 子进程，在已有结果上执行原末端分类。Linux CPU 回放使用 334 篇真实缓存文本，正常路径的 50 篇选段、6,012 个分数和 334 项预测均与原版相同。两次分别模拟 Flash 和 GLM-5.3 超时，均完成了收尾。本轮正式首选仍是已经通过 Kaggle 私跑的原第八版。[正常与超时路径的逐项验证](reports/v8-deadline-fallback.json)
+
+Hanif 的 0.702 版本在原判为 GPT-5.6 三个子型号的文章达到 20 篇时调整它们的相对分数。固定第八版其余步骤，只启停作者这一段代码，单篇、稀疏同题、密集同题三组的平衡准确率增量分别为 +0.00037、+0.00074、0。216 篇外部确认样本中有 27 篇达到筛选条件，校准执行后没有改变预测。该改动暂缓提交。[固定版本](https://www.kaggle.com/code/hanifnoerrofiq/ntl-openai-prior-1119?scriptVersionId=371392031) · [配对实验与判断条件](reports/trio-marginal-comparison.json)
 
 在第九版后接入第四版的 ATLAS 步骤，固定对低置信四分之一文章的前四个来源做 10% 条件融合。按题目分组的五折实验中，单篇、稀疏同题、密集同题三种场景分别达到 0.69609、0.69756、0.71943。对照第九版单独使用，分别改对 68、61、50 篇，改错 49、42、41 篇。这三组重用同一批 2,699 篇文章和单个 Qwen 组件，官方隐藏集尚待验证。按本轮预先固定的条件，还要与第四版比较，并在外部 1,360 篇的两项指标上验证。[固定比较条件](reports/v9-atlas-protocol.json) · [折外改对、改错及抽样区间](reports/v9-atlas-oof.json)
 

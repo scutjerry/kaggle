@@ -1,0 +1,22 @@
+{
+  "private_preview_version": 371540160,
+  "parent_notebook_sha256": "3a9f697474b9449c06f2218e0228f3fc59c819e7e59783e1aada95a7c2e482a6",
+  "status": "Main inference completed. Optional complementary stack skipped.",
+  "first_checkpoint_error_seconds": 2210.2,
+  "missing_stack_output_report_seconds": 3318.2,
+  "total_runtime_seconds": 3814.2,
+  "cause": "The optional loader takes the first sorted config matching qwen3 and hidden size 4096. In the cloud layout this returned an adapter-side 24-layer config directory containing no base weights.",
+  "adapter_declared_base": {
+    "pinned_model_instance_version": 363140,
+    "layers": 36,
+    "hidden_size": 4096,
+    "shards": 5,
+    "shard_bytes": 16381516776
+  },
+  "isolated_check": "Replayed the actual file selection. A separate repair checks the adapter-declared base, config, index, file sizes and tokenizer. The real truncation loader reproduced the weight error on a config-only tiny Qwen3 and ran on four local tiny CPU weight shards. Full-scale corrected-branch runtime and score are unmeasured.",
+  "references": {
+    "fixed_parent": "https://www.kaggle.com/code/alexchilton/name-that-llm-0-701-all-public-what-failed?scriptVersionId=370092394",
+    "assets": "https://www.kaggle.com/datasets/lightningv08/ntl-olmo2-native24-final-inference-assets/versions/22",
+    "base": "https://www.kaggle.com/models/qwen-lm/qwen-3/Transformers/8b-base/1"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "candidate_sha256": "9beea3ebf86ef70a8fc8f280230ca8f6192daaafb506ae8b782d8598ca1e9bfb",
+  "V8_source_cells_0based": {
+    "runner": 26,
+    "stage": 27,
+    "configuration": 28,
+    "command": 30,
+    "postprocess": 33
+  },
+  "at_4000": {
+    "priority": "GLM-pair probability mass + 0.35 * min(Fable probability, GLM-pair mass), stable descending.",
+    "coverage_max": 600,
+    "selected_each_model_possible_inclusive": [
+      520,
+      600
+    ],
+    "cost_estimate": "13 + min(160, characters * 1.05 * tok_per_char)",
+    "tok_per_char": 0.19383936500423704,
+    "estimated_position_cap_each_model": 90000,
+    "max_estimated_positions_per_passage": 173,
+    "longest_520_estimate": 89960,
+    "longest_521_estimate": 90133,
+    "all_600_fit_if_first600_estimated_mean_at_most": 150,
+    "absolute_true_positions_at_600_if_proxy_underestimates": 103800,
+    "min50": "At N<=333 the 15% row cap is below 50; no passes. At N>=334 the 90k estimate permits at least the first 50 even if all long; if resources and previous stages succeed both passes start. No skip based on elapsed time.",
+    "tests_using_published_selector": [
+      {
+        "passages": 3,
+        "chars_each": 600,
+        "selected_before_minimum": 0,
+        "actually_scored_each": 0
+      },
+      {
+        "passages": 333,
+        "chars_each": 999,
+        "selected_before_minimum": 49,
+        "actually_scored_each": 0
+      },
+      {
+        "passages": 334,
+        "chars_each": 999,
+        "selected_before_minimum": 50,
+        "actually_scored_each": 50
+      },
+      {
+        "passages": 4000,
+        "chars_each": 500,
+        "selected_before_minimum": 600,
+        "actually_scored_each": 600
+      },
+      {
+        "passages": 4000,
+        "chars_each": 600,
+        "selected_before_minimum": 600,
+        "actually_scored_each": 600
+      },
+      {
+        "passages": 4000,
+        "chars_each": 700,
+        "selected_before_minimum": 578,
+        "actually_scored_each": 578
+      },
+      {
+        "passages": 4000,
+        "chars_each": 4000,
+        "selected_before_minimum": 520,
+        "actually_scored_each": 520
+      }
+    ]
+  },
+  "actual_time_handling": {
+    "cap_is_per_model": true,
+    "model_order": [
+      "flash",
+      "glm53"
+    ],
+    "same_selected_ids_both": true,
+    "per_pass_timeout_seconds": {
+      "flash": null,
+      "glm53": null
+    },
+    "check_remaining_after_flash": false,
+    "wallclock_reserve_for_finalization_seconds": null,
+    "on_nonzero_exit": "Raises from v1_stage; outer check=True aborts before the normal success path; no fallback to one pass.",
+    "initialization_retry": "Early failures before context can halve sequence batch from 8 down to 1; a retry does not bound wall time.",
+    "finalization_condition": "Whatever external hard limit applies must have time left after upstream work for tokenizer setup, both physical passes, CPU head/style and parquet. V8 does not calculate this condition."
+  },
+  "measured_two_T4": {
+    "V8_371551411": {
+      "passages": 3,
+      "actual_glm_rows": 0,
+      "whole_notebook_seconds": 1875.8
+    },
+    "team_V4_371529552": {
+      "passages": 360,
+      "selected": 54,
+      "actual_positions_each": 6581,
+      "estimated_positions": 6821,
+      "models": "Same segmented scorers, different row ranking and head; additional ATLAS after GLM",
+      "core_seconds": 2805.472530909,
+      "glm_binary_tokenizer_setup_seconds": 184.93945279700029,
+      "flash_seconds": 445.50770183199984,
+      "glm53_seconds": 1075.1811085489999,
+      "glm_total_seconds": 1522.6591258559997,
+      "kaggle_whole_seconds": 4925.0,
+      "receipt_sha256": "e10df76274d2c3f94b612bf328b665037dae33a538e6067d7bd86228bd0a9532"
+    },
+    "team_dual_glm_371497531": {
+      "passages": 270,
+      "selected_and_scored_each": 270,
+      "whole_notebook_s": 3379.8,
+      "max_tokens": 160,
+      "actual_positions_each": null,
+      "scope": "GLM-only diagnostic, includes setup and both heads; no upstream ensemble."
+    },
+    "jose_368207525": {
+      "passages": 2699,
+      "positions_per_model": 430469,
+      "max_text_tokens": 320,
+      "pack": false,
+      "seq_batch": 8,
+      "flash_seconds": 5366.535341501236,
+      "glm53_seconds": 9958.106705188751,
+      "timing_sha256": [
+        "73a368fdd639cd61260cd0cdb919eedbbccc854561e72bf5bc2aaaa824a91837",
+        "64d11229d51bfd465d877b580f12f425495f728eb78eb2935e09838e83417fb3"
+      ]
+    },
+    "jose_368344742": {
+      "passages": 300,
+      "actual_positions_each": 47773,
+      "max_text_tokens": 320,
+      "flash_unpacked_seconds": 886,
+      "glm53_PACKED_ubatch_div2_seconds": 1666,
+      "caution": "GLM53 here used a different GPU packing mode from V8. Excluded from the interpolation."
+    }
+  },
+  "illustrative_only": {
+    "two_anchor_per_model_interpolation": [
+      {
+        "assumed_actual_token_positions_each_model": 75000,
+        "flash_minutes": 20.7,
+        "glm53_minutes": 41.8,
+        "pair_minutes": 62.5
+      },
+      {
+        "assumed_actual_token_positions_each_model": 90000,
+        "flash_minutes": 23.6,
+        "glm53_minutes": 47.1,
+        "pair_minutes": 70.6
+      },
+      {
+        "assumed_actual_token_positions_each_model": 103800,
+        "flash_minutes": 26.2,
+        "glm53_minutes": 51.9,
+        "pair_minutes": 78.1
+      }
+    ],
+    "method": "Interpolate in actual token positions between observed 6,581 (team V4 54) and 430,469 (Jose 2,699). V3 cut at 320; V8 cuts at 160. Per-pass estimates exclude upstream ensemble, tokenizer setup and finalization. No knowledge of hidden text lengths; these are neither bounds nor confidence intervals.",
+    "alternative_row_scaled_270_notebook_minutes_520_to_600": [
+      108.5,
+      125.2
+    ],
+    "row_sensitivity_scope": "Simple count scaling of the entire standalone 270 diagnostic. Counts fixed overhead again per row, ignores text lengths and throughput changes; do not add this scenario to the per-model interpolation.",
+    "whole_hidden_total_hours": null,
+    "core_4000_hours": null,
+    "scope": "No actual full-4,000 V8 run in these receipts. I/O and chunking, upstream model activations, lengths and outside hard limit may change the outcome.",
+    "decision": "The confirmed 3-row V8 preview supports trying V8 but cannot validate either full GLM pass. V7 or V1 inheriting the same static two-pass stage does not supply a runtime safeguard. Observe formal elapsed time and status before deciding whether a variant with an explicit deadline is worth a new slot.",
+    "conditional_clock_example": {
+      "assumed_external_limit_minutes_for_example": 540,
+      "actual_token_positions_each_assumed": 90000,
+      "two_pass_interpolation_minutes": 70.6,
+      "latest_elapsed_minutes_at_start_of_first_likelihood_pass_before_any_finalization_margin": 469.4,
+      "latest_elapsed_minutes_before_tokenizer_setup_if_it_takes_same_184_94s_as_V4": 466.3,
+      "interpretation": "Conditional arithmetic only, not the current competition rule or a safety margin. Even under these assumptions, for a nine-hour limit, beginning the first physical pass after approximately 7h49m cannot fit the modeled work; setup and finalization need additional headroom. An earlier start does not guarantee completion."
+    }
+  }
+}

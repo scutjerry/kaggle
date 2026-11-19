@@ -1,0 +1,210 @@
+{
+  "protocol": "Public competition Code index sorted by documented descending historical best; fixed-version review of contrasting mount sets or explicit architecture differences. The eight fixed versions are a purposive sample.",
+  "snapshot_utc": "2026-11-19T20:35:34+00:00",
+  "competition_code": "https://www.kaggle.com/competitions/name-that-llm/code",
+  "ordering_documentation": "https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels.md",
+  "native_list_request": {
+    "competitionId": 170484,
+    "sortBy": "SCORE_DESCENDING",
+    "pageSize": 25,
+    "pages": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "query_accounting": {
+    "api_and_source_attempts": 22,
+    "documentation_lookups": 1,
+    "failed_or_truncated_attempts": 2,
+    "api_bytes_read": 7087883,
+    "notes": "The anonymous legacy REST list returned HTTP 401. One over-size native response was discarded before using 25 records per page."
+  },
+  "coverage": {
+    "total_distinct_listed": 100,
+    "monotonic_descending": true,
+    "minimum_in_sample": 0.699,
+    "maximum_in_sample": 0.704,
+    "historical_best_at_least_0700": 94,
+    "qualified_histogram": {
+      "0.704": 4,
+      "0.703": 1,
+      "0.702": 47,
+      "0.701": 31,
+      "0.700": 11
+    },
+    "listed_mount_overlap_with_vlad_v12_371206226": [
+      {
+        "mount_count": 37,
+        "shared": 35,
+        "notebooks": 1
+      },
+      {
+        "mount_count": 45,
+        "shared": 44,
+        "notebooks": 61
+      },
+      {
+        "mount_count": 45,
+        "shared": 45,
+        "notebooks": 30
+      },
+      {
+        "mount_count": 46,
+        "shared": 44,
+        "notebooks": 2
+      }
+    ],
+    "fixed_source_reviews": 8,
+    "records_per_page": [
+      25,
+      25,
+      25,
+      25
+    ]
+  },
+  "source_checks": [
+    {
+      "rank": 8,
+      "public_url": "https://www.kaggle.com/code/pablodiegoo/name-that-llm-starter-notebook?scriptVersionId=371273779",
+      "fixed_version": 371273779,
+      "version_number": 22,
+      "submission_id": 58543349,
+      "submission_source_version": 371273779,
+      "score": "0.702",
+      "mounts": 37,
+      "mount_overlap_with_vlad_v12": 35,
+      "mount_set_sha256": "7aad3766ad44e6aa32c7be49c6c642963e405edd646b052e8b3281ee1518e3f5",
+      "docker_image": 31481,
+      "code_cells": 13,
+      "source_bytes": 1067955,
+      "source_sha256": "e89ed1db2272f5e97971ad92e869283480e3c52b4cd5a1517ba58f16f9e7420b",
+      "code_review": "Reorganized multi-stage Qwen/LoRA/native Q8/GSQ pipeline with GLM and typography. Two optional stack/rollback switches are disabled. Source contains missing-asset fallback paths."
+    },
+    {
+      "rank": 30,
+      "public_url": "https://www.kaggle.com/code/dailconcierge/name-that-llm-orbit-v24a-prompt-group?scriptVersionId=370845333",
+      "fixed_version": 370845333,
+      "version_number": 1,
+      "submission_id": 58489036,
+      "submission_source_version": 370845333,
+      "score": "0.702",
+      "mounts": 45,
+      "mount_overlap_with_vlad_v12": 44,
+      "mount_set_sha256": "0a406e08505a407aafd955c3e676fd83d447d33fce31effe5a24d217a9b3a2c2",
+      "docker_image": 31508,
+      "code_cells": 34,
+      "source_bytes": 367997,
+      "source_sha256": "207339039adad89e380ecc62a687f429299036bf10f913fce59dd7c5f1a6c4ad",
+      "code_review": "Adds one-to-one assignment inside inferred groups of 18, gated by a minimum number of groups and group coverage of at least one half. The structure of the hidden competition batch and actual activation are unknown."
+    },
+    {
+      "rank": 38,
+      "public_url": "https://www.kaggle.com/code/feiyu26/ntl-0702-comp-stack?scriptVersionId=370939709",
+      "fixed_version": 370939709,
+      "version_number": 1,
+      "submission_id": 58500382,
+      "submission_source_version": 370939709,
+      "score": "0.702",
+      "mounts": 45,
+      "mount_overlap_with_vlad_v12": 44,
+      "mount_set_sha256": "0a406e08505a407aafd955c3e676fd83d447d33fce31effe5a24d217a9b3a2c2",
+      "docker_image": 31508,
+      "code_cells": 31,
+      "source_bytes": 323785,
+      "source_sha256": "390be1a038ad218409c1f7ba2d7ab6800742fbf1ca7af789b32bde34e0452e30",
+      "code_review": "Adds a frozen encoder classifier ensemble using comp_stack.py outside fast-commit mode and passes comp_w=0.15 to infer.py. The auxiliary subprocess can fail or time out; hidden branch execution is unavailable."
+    },
+    {
+      "rank": 50,
+      "public_url": "https://www.kaggle.com/code/hanifnoerrofiq/ntl-openai-prior-1119?scriptVersionId=371392031",
+      "fixed_version": 371392031,
+      "version_number": 1,
+      "submission_id": 58557171,
+      "submission_source_version": 371392031,
+      "score": "0.702",
+      "mounts": 45,
+      "mount_overlap_with_vlad_v12": 45,
+      "mount_set_sha256": "df5319482e6955106ec6c63ab1ea1d2c3688a204c651c26b6a13ed36e64f5165",
+      "docker_image": 31508,
+      "code_cells": 31,
+      "source_bytes": 274286,
+      "source_sha256": "196215b9d69cb81bcf57c10d322bdda02a2458e425b6ce53b6f40c9a4b3a7ee3",
+      "code_review": "Adds a within-family GPT-5.6 Luna/Sol/Terra marginal correction at the final write. At least 20 preclassified siblings are needed. Current prediction gets a 0.05 margin, sibling counts are smoothed with 5, and the log-marginal adjustment uses strength 0.55 with an absolute 0.30 cap. No extra model forward pass."
+    },
+    {
+      "rank": 53,
+      "public_url": "https://www.kaggle.com/code/prvsiyan/the-prompt-is-not-the-author?scriptVersionId=370210105",
+      "fixed_version": 370210105,
+      "version_number": 41,
+      "submission_id": 58431844,
+      "submission_source_version": 370210105,
+      "score": "0.701",
+      "mounts": 45,
+      "mount_overlap_with_vlad_v12": 44,
+      "mount_set_sha256": "0a406e08505a407aafd955c3e676fd83d447d33fce31effe5a24d217a9b3a2c2",
+      "docker_image": 31508,
+      "code_cells": 25,
+      "source_bytes": 342198,
+      "source_sha256": "926e79144ded79098ceb79816baa875bd09c012a72ee4ed297a757d243f133fb",
+      "code_review": "Shared Qwen lineage and a comp-stack blend at 0.15. No separate structural gain established."
+    },
+    {
+      "rank": 73,
+      "public_url": "https://www.kaggle.com/code/liuzewen123/ntl-0701-ptmod?scriptVersionId=370509230",
+      "fixed_version": 370509230,
+      "version_number": 2,
+      "submission_id": 58454522,
+      "submission_source_version": 370509230,
+      "score": "0.701",
+      "mounts": 46,
+      "mount_overlap_with_vlad_v12": 44,
+      "mount_set_sha256": "ebf910c4f625066d65e091bf0892a31ac3cb08599c6f3542bb0c942f19f69611",
+      "docker_image": 31508,
+      "code_cells": 29,
+      "source_bytes": 357442,
+      "source_sha256": "b608e612e5c15307643e4c1dd3e0f202019b408c2d7ede810b1a8c948bcaa024",
+      "code_review": "Adds a fine-tuned ModernBERT single-text scorer from ntl-modernbert-pool-ft-1e4-ep3. Source sets its local model weight to 0.25, temperature to 0.5, maximum length to 192."
+    },
+    {
+      "rank": 78,
+      "public_url": "https://www.kaggle.com/code/huanansu/ntl-a701-plus-q8-companion?scriptVersionId=370847462",
+      "fixed_version": 370847462,
+      "version_number": 1,
+      "submission_id": 58489452,
+      "submission_source_version": 370847462,
+      "score": "0.701",
+      "mounts": 46,
+      "mount_overlap_with_vlad_v12": 44,
+      "mount_set_sha256": "b7e2a4b0c58660089c8973adafeec40048ffa39e924445569277d3c6c36a76b9",
+      "docker_image": 31508,
+      "code_cells": 27,
+      "source_bytes": 335380,
+      "source_sha256": "5c5e25dc397a2f0277566bfe3df5f666a8f3e87a7c876d3720757f1ab996bf07",
+      "code_review": "Adds a Qwen3-8B LoRA companion from ntllm-qwen8b-v2 and passes comp_w=0.10. A failed optional companion can be skipped."
+    },
+    {
+      "rank": 84,
+      "public_url": "https://www.kaggle.com/code/lumibee/ntl-kiro-v45-adaptive-family-apex?scriptVersionId=370058699",
+      "fixed_version": 370058699,
+      "version_number": 1,
+      "submission_id": 58405300,
+      "submission_source_version": 370058699,
+      "score": "0.700",
+      "mounts": 45,
+      "mount_overlap_with_vlad_v12": 44,
+      "mount_set_sha256": "0a406e08505a407aafd955c3e676fd83d447d33fce31effe5a24d217a9b3a2c2",
+      "docker_image": 31508,
+      "code_cells": 24,
+      "source_bytes": 264137,
+      "source_sha256": "a0be94159a0474b954e99a6c97c6a62219c70d602e6bb374dea2fcccd09218d6",
+      "code_review": "Family / typography postprocessing shares the reference backbone; independent architecture effect not established."
+    }
+  ],
+  "interpretation": [
+    "No public Code-index item with reported historical best at least 0.705 appeared above the 0.699 cutoff in this snapshot. This search cannot bound the full competition leaderboard or private entries.",
+    "The overlap histogram uses each listed version. The eight individual source checks align the fixed-version submission ID, script-version ID, attached input version IDs and public source bytes. Optional components may have fallen back; a whole-run score does not identify a component's gain.",
+    "The public index totalCount field returned zero alongside nonempty pages. Overall population size is unknown. We did not download model weights or rerun the public notebooks."
+  ]
+}

@@ -14,6 +14,50 @@
       "verified_uploaded_sha256": "3a9f697474b9449c06f2218e0228f3fc59c819e7e59783e1aada95a7c2e482a6"
     },
     {
+      "local_name": "V7 Bill V1 GLM weight 1.25",
+      "private_preview_id": 371559085,
+      "preview_status": "Successfully ran",
+      "preview_runtime_seconds": 1897.8,
+      "preview_verified_rows": 3,
+      "preview_output_sha256": "2d26e7de920e646e14db358bafe001e292800b4fed1d3c19c077d5eae204e9ba",
+      "preview_glm_selected_rows": 0,
+      "preview_members": [
+        "q14v5",
+        "q8v5",
+        "ll8v5",
+        "n14b_clean",
+        "q25_14",
+        "deb"
+      ],
+      "preview_native_completed_folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "preview_gsq27b_scored_rows": 3,
+      "preview_scored_aligned_classes": 18,
+      "preview_apex": {
+        "strength": 0.1,
+        "post_glm_evidence": false,
+        "forbidden_probability_multiplier": 0.05,
+        "changed": 0
+      },
+      "verified_uploaded_sha256": "0766a6a628dfad42211a37c2c189fc9854b873774caf98fcb20e78a9a035e3ee",
+      "verified_cloud_cell_source_hash": "eae9f30f0fa5fc6cad9631af17d3d9f5cb95cfd6bc026f8679b4c2f97696fce0",
+      "verified_cloud_cells": 34,
+      "verified_cloud_pinned_input_set": {
+        "count": 45,
+        "missing": [],
+        "additional": [],
+        "reordered_positions": 33,
+        "open_pool_v18_dataset_version": 22385546
+      },
+      "platform_download_sha256": "324870741d736c058b7e337b4711082b3d2f087f95737485643bd1374ed3ae9c",
+      "platform_download_size": 331087
+    },
+    {
       "local_name": "V8 Vlad V12 Fable routing",
       "private_preview_id": 371551411,
       "preview_status": "Successfully ran",
@@ -53,7 +97,9 @@
         "additional": [],
         "reordered_positions": 33
       },
-      "runtime_image_display": "Latest Container Image"
+      "runtime_image_display": "Latest Container Image",
+      "platform_download_sha256": "45ea2d44b06a67e891e8f216f01d5e6361b569b9a63585417e21cf022381a7c8",
+      "platform_download_size": 330826
     }
   ]
 }
