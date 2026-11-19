@@ -56,6 +56,10 @@ CHEN Han 公开了 Qwen3-Embedding-8B 的官方训练集折外预测。2,699 行
 
 逐词元候选已经过 480 篇真实词元分数的推理重放。72 篇被选中，调换输入文件行序和底模类别顺序后，最终 Parquet 仍与独立计算一致。另做了固定计算量的选文实验，将不确定性纳入排序，单篇条件只多判对 3 篇，密集题组净少判对 2 篇，交付版保留按 GLM 概率排序。[部署核验和文件哈希](reports/glm-token-deployment.json) · [选文策略对照](reports/glm-selection-policy.json)
 
+同样的估算计算预算下，将每篇上限由 160 词元降到 128 或 96，分别扩大到最多 18% 或 21% 的文章，并按新的词元长度重训分类头。128 词元只改善了单篇条件，96 词元三组均下降，保留 160。逐折实测词元位置另列，GPU 耗时仍需平台记录。[截断长度、覆盖率和实际位置数](reports/glm-coverage.json)
+
+本队公榜 0.593 双 Qwen 的第二次私有外部诊断返回了 270 篇文章的完整概率。单独测试同系列重排，小样本 54 篇从 34 篇判对变为 35 篇，但 216 篇确认样本从 93 篇判对降到 92 篇。排版规则在两组上均未提高平衡准确率。外部语料的生成来源与官方测试可能不同。[双 Qwen 的独立外部对照](reports/paired-qwen-external-followup.json)
+
 ## 实验说明
 
 两套 Qwen 适配器均已用官方 2,699 行全量微调。表中保留本队实测成绩；作者报告其原方案公榜为 0.592。我们继承两套 Qwen 的输出、词法分类器和融合，新增 15% 权重的文本近邻校准。本队预览在两张 T4 上实际运行两套模型并生成三行输出。[作者 Notebook](https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool) · [公开权重与数据来源](https://www.kaggle.com/datasets/nishantdahal/ntl-two-stage-lora/versions/1)

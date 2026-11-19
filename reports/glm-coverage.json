@@ -1,0 +1,2075 @@
+{
+  "protocol": "Three prespecified heads and coverage caps. The same Qwen8 splits, GLM mass ordering, corrected residual, class-balanced C=.05 and entropy reference are used throughout. Each batch is capped by the estimated positions consumed by its original selection, including 13 prefix tokens per row per model. Actual positions use both published tokenizer streams. These are CPU reruns, not measured GPU durations.",
+  "feature_source": "https://www.kaggle.com/code/estopadilla/ntl-glm-likelihood-train/versions/3",
+  "hard_cap_per_forward": 90000,
+  "arms": {
+    "160": 0.15,
+    "128": 0.18,
+    "96": 0.21
+  },
+  "head_only": {
+    "160": {
+      "ba": 0.20340044742729307,
+      "logloss": 2.442899095584781
+    },
+    "128": {
+      "ba": 0.1830325627641064,
+      "logloss": 2.4832407612488816
+    },
+    "96": {
+      "ba": 0.17969922943077307,
+      "logloss": 2.5533373299899487
+    }
+  },
+  "cohorts": {
+    "plain": {
+      "160": {
+        "ba": 0.6842505592841164,
+        "delta_ba": 0.0,
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "delta95": [
+          0.0,
+          0.0
+        ],
+        "selected": 404,
+        "selected_true_glm": 241,
+        "glm_macro": 0.5833333333333334,
+        "actual_both_scorers_total": 110012,
+        "estimated_both_scorers_total": 110625.60538637235,
+        "per_fold": [
+          {
+            "selected": 81,
+            "estimated_per_scorer": 11572.522929194047,
+            "actual_per_scorer": 11467,
+            "actual_both_scorers": 22934,
+            "estimated_both_scorers": 23145.045858388094,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11572.522929194047,
+            "fold": 0,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 81,
+            "estimated_per_scorer": 10254.935486340444,
+            "actual_per_scorer": 10330,
+            "actual_both_scorers": 20660,
+            "estimated_both_scorers": 20509.87097268089,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10254.935486340444,
+            "fold": 1,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 81,
+            "estimated_per_scorer": 11488.008681769448,
+            "actual_per_scorer": 11368,
+            "actual_both_scorers": 22736,
+            "estimated_both_scorers": 22976.017363538896,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11488.008681769448,
+            "fold": 2,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 80,
+            "estimated_per_scorer": 10888.090170462081,
+            "actual_per_scorer": 10842,
+            "actual_both_scorers": 21684,
+            "estimated_both_scorers": 21776.180340924162,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10888.090170462081,
+            "fold": 3,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 539,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 80,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 81,
+            "estimated_per_scorer": 11109.245425420153,
+            "actual_per_scorer": 10999,
+            "actual_both_scorers": 21998,
+            "estimated_both_scorers": 22218.490850840306,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11109.245425420153,
+            "fold": 4,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          }
+        ],
+        "added": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "removed": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "retained": {
+          "rows": 404,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "unchanged_selection_excluded": {
+          "rows": 2295,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "changes": {
+          "rows": 2699,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        }
+      },
+      "128": {
+        "ba": 0.6860974397216009,
+        "delta_ba": 0.0018468804374844883,
+        "fold_deltas": [
+          0.0037037037037037646,
+          0.0018518518518517713,
+          -0.0037037037037036535,
+          0.001787994891443212,
+          0.005555555555555536
+        ],
+        "delta95": [
+          -0.002222222222222222,
+          0.0059259259259259265
+        ],
+        "selected": 456,
+        "selected_true_glm": 255,
+        "glm_macro": 0.5966666666666667,
+        "actual_both_scorers_total": 109822,
+        "estimated_both_scorers_total": 110237.47130005127,
+        "per_fold": [
+          {
+            "selected": 92,
+            "estimated_per_scorer": 11559.848994761353,
+            "actual_per_scorer": 11493,
+            "actual_both_scorers": 22986,
+            "estimated_both_scorers": 23119.697989522705,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11572.522929194047,
+            "fold": 0,
+            "added": 11,
+            "removed": 0,
+            "actual_per_scorer_delta": 26,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 12,
+              "corrected": 6,
+              "regressed": 4,
+              "net": 2
+            },
+            "added_changes": {
+              "rows": 11,
+              "changed": 5,
+              "corrected": 4,
+              "regressed": 1,
+              "net": 3
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 7,
+              "corrected": 2,
+              "regressed": 3,
+              "net": -1
+            }
+          },
+          {
+            "selected": 89,
+            "estimated_per_scorer": 10227.831544270302,
+            "actual_per_scorer": 10272,
+            "actual_both_scorers": 20544,
+            "estimated_both_scorers": 20455.663088540605,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10254.935486340444,
+            "fold": 1,
+            "added": 8,
+            "removed": 0,
+            "actual_per_scorer_delta": -58,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 6,
+              "corrected": 3,
+              "regressed": 2,
+              "net": 1
+            },
+            "added_changes": {
+              "rows": 8,
+              "changed": 3,
+              "corrected": 2,
+              "regressed": 1,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 3,
+              "corrected": 1,
+              "regressed": 1,
+              "net": 0
+            }
+          },
+          {
+            "selected": 93,
+            "estimated_per_scorer": 11424.741810003263,
+            "actual_per_scorer": 11360,
+            "actual_both_scorers": 22720,
+            "estimated_both_scorers": 22849.483620006526,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11488.008681769448,
+            "fold": 2,
+            "added": 12,
+            "removed": 0,
+            "actual_per_scorer_delta": -8,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 8,
+              "corrected": 2,
+              "regressed": 4,
+              "net": -2
+            },
+            "added_changes": {
+              "rows": 12,
+              "changed": 3,
+              "corrected": 2,
+              "regressed": 0,
+              "net": 2
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 5,
+              "corrected": 0,
+              "regressed": 4,
+              "net": -4
+            }
+          },
+          {
+            "selected": 91,
+            "estimated_per_scorer": 10857.132278433353,
+            "actual_per_scorer": 10827,
+            "actual_both_scorers": 21654,
+            "estimated_both_scorers": 21714.264556866707,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10888.090170462081,
+            "fold": 3,
+            "added": 11,
+            "removed": 0,
+            "actual_per_scorer_delta": -15,
+            "passage_changes": {
+              "rows": 539,
+              "changed": 9,
+              "corrected": 4,
+              "regressed": 3,
+              "net": 1
+            },
+            "added_changes": {
+              "rows": 11,
+              "changed": 3,
+              "corrected": 2,
+              "regressed": 0,
+              "net": 2
+            },
+            "retained_changes": {
+              "rows": 80,
+              "changed": 6,
+              "corrected": 2,
+              "regressed": 3,
+              "net": -1
+            }
+          },
+          {
+            "selected": 91,
+            "estimated_per_scorer": 11049.181022557363,
+            "actual_per_scorer": 10959,
+            "actual_both_scorers": 21918,
+            "estimated_both_scorers": 22098.362045114725,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11109.245425420153,
+            "fold": 4,
+            "added": 10,
+            "removed": 0,
+            "actual_per_scorer_delta": -40,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 8,
+              "corrected": 5,
+              "regressed": 2,
+              "net": 3
+            },
+            "added_changes": {
+              "rows": 10,
+              "changed": 2,
+              "corrected": 1,
+              "regressed": 0,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 6,
+              "corrected": 4,
+              "regressed": 2,
+              "net": 2
+            }
+          }
+        ],
+        "added": {
+          "rows": 52,
+          "changed": 16,
+          "corrected": 11,
+          "regressed": 2,
+          "net": 9
+        },
+        "removed": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "retained": {
+          "rows": 404,
+          "changed": 27,
+          "corrected": 9,
+          "regressed": 13,
+          "net": -4
+        },
+        "unchanged_selection_excluded": {
+          "rows": 2243,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "changes": {
+          "rows": 2699,
+          "changed": 43,
+          "corrected": 20,
+          "regressed": 15,
+          "net": 5
+        }
+      },
+      "96": {
+        "ba": 0.6809197116579666,
+        "delta_ba": -0.003330847626149769,
+        "fold_deltas": [
+          0.0,
+          -0.0037037037037037646,
+          -0.0018518518518517713,
+          -0.012962962962962954,
+          0.0018518518518518823
+        ],
+        "delta95": [
+          -0.008518518518518519,
+          0.001851851851851852
+        ],
+        "selected": 545,
+        "selected_true_glm": 270,
+        "glm_macro": 0.5766666666666667,
+        "actual_both_scorers_total": 109696,
+        "estimated_both_scorers_total": 110279.88304020597,
+        "per_fold": [
+          {
+            "selected": 112,
+            "estimated_per_scorer": 11537.943216476806,
+            "actual_per_scorer": 11437,
+            "actual_both_scorers": 22874,
+            "estimated_both_scorers": 23075.88643295361,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11572.522929194047,
+            "fold": 0,
+            "added": 31,
+            "removed": 0,
+            "actual_per_scorer_delta": -30,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 20,
+              "corrected": 7,
+              "regressed": 7,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 31,
+              "changed": 8,
+              "corrected": 4,
+              "regressed": 3,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 12,
+              "corrected": 3,
+              "regressed": 4,
+              "net": -1
+            }
+          },
+          {
+            "selected": 104,
+            "estimated_per_scorer": 10192.03966613958,
+            "actual_per_scorer": 10219,
+            "actual_both_scorers": 20438,
+            "estimated_both_scorers": 20384.07933227916,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10254.935486340444,
+            "fold": 1,
+            "added": 23,
+            "removed": 0,
+            "actual_per_scorer_delta": -111,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 15,
+              "corrected": 3,
+              "regressed": 5,
+              "net": -2
+            },
+            "added_changes": {
+              "rows": 23,
+              "changed": 6,
+              "corrected": 2,
+              "regressed": 1,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 9,
+              "corrected": 1,
+              "regressed": 4,
+              "net": -3
+            }
+          },
+          {
+            "selected": 112,
+            "estimated_per_scorer": 11455.980551581451,
+            "actual_per_scorer": 11354,
+            "actual_both_scorers": 22708,
+            "estimated_both_scorers": 22911.961103162903,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11488.008681769448,
+            "fold": 2,
+            "added": 31,
+            "removed": 0,
+            "actual_per_scorer_delta": -14,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 17,
+              "corrected": 6,
+              "regressed": 7,
+              "net": -1
+            },
+            "added_changes": {
+              "rows": 31,
+              "changed": 5,
+              "corrected": 3,
+              "regressed": 0,
+              "net": 3
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 12,
+              "corrected": 3,
+              "regressed": 7,
+              "net": -4
+            }
+          },
+          {
+            "selected": 108,
+            "estimated_per_scorer": 10845.210762167026,
+            "actual_per_scorer": 10801,
+            "actual_both_scorers": 21602,
+            "estimated_both_scorers": 21690.42152433405,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10888.090170462081,
+            "fold": 3,
+            "added": 28,
+            "removed": 0,
+            "actual_per_scorer_delta": -41,
+            "passage_changes": {
+              "rows": 539,
+              "changed": 17,
+              "corrected": 2,
+              "regressed": 9,
+              "net": -7
+            },
+            "added_changes": {
+              "rows": 28,
+              "changed": 5,
+              "corrected": 1,
+              "regressed": 2,
+              "net": -1
+            },
+            "retained_changes": {
+              "rows": 80,
+              "changed": 12,
+              "corrected": 1,
+              "regressed": 7,
+              "net": -6
+            }
+          },
+          {
+            "selected": 109,
+            "estimated_per_scorer": 11108.767323738119,
+            "actual_per_scorer": 11037,
+            "actual_both_scorers": 22074,
+            "estimated_both_scorers": 22217.534647476237,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11109.245425420153,
+            "fold": 4,
+            "added": 28,
+            "removed": 0,
+            "actual_per_scorer_delta": 38,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 17,
+              "corrected": 7,
+              "regressed": 6,
+              "net": 1
+            },
+            "added_changes": {
+              "rows": 28,
+              "changed": 6,
+              "corrected": 3,
+              "regressed": 2,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 11,
+              "corrected": 4,
+              "regressed": 4,
+              "net": 0
+            }
+          }
+        ],
+        "added": {
+          "rows": 141,
+          "changed": 30,
+          "corrected": 13,
+          "regressed": 8,
+          "net": 5
+        },
+        "removed": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "retained": {
+          "rows": 404,
+          "changed": 56,
+          "corrected": 12,
+          "regressed": 26,
+          "net": -14
+        },
+        "unchanged_selection_excluded": {
+          "rows": 2154,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "changes": {
+          "rows": 2699,
+          "changed": 86,
+          "corrected": 25,
+          "regressed": 34,
+          "net": -9
+        }
+      }
+    },
+    "sparse2": {
+      "160": {
+        "ba": 0.6897961720109371,
+        "delta_ba": 0.0,
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "delta95": [
+          0.0,
+          0.0
+        ],
+        "selected": 404,
+        "selected_true_glm": 241,
+        "glm_macro": 0.5966666666666667,
+        "actual_both_scorers_total": 110506,
+        "estimated_both_scorers_total": 111027.47372646464,
+        "per_fold": [
+          {
+            "selected": 81,
+            "estimated_per_scorer": 11504.901782429566,
+            "actual_per_scorer": 11405,
+            "actual_both_scorers": 22810,
+            "estimated_both_scorers": 23009.803564859132,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11504.901782429566,
+            "fold": 0,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 81,
+            "estimated_per_scorer": 10473.60125444173,
+            "actual_per_scorer": 10546,
+            "actual_both_scorers": 21092,
+            "estimated_both_scorers": 20947.20250888346,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10473.60125444173,
+            "fold": 1,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 81,
+            "estimated_per_scorer": 11401.1008024698,
+            "actual_per_scorer": 11303,
+            "actual_both_scorers": 22606,
+            "estimated_both_scorers": 22802.2016049396,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11401.1008024698,
+            "fold": 2,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 80,
+            "estimated_per_scorer": 10615.081536381853,
+            "actual_per_scorer": 10570,
+            "actual_both_scorers": 21140,
+            "estimated_both_scorers": 21230.163072763706,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10615.081536381853,
+            "fold": 3,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 539,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 80,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 81,
+            "estimated_per_scorer": 11519.051487509367,
+            "actual_per_scorer": 11429,
+            "actual_both_scorers": 22858,
+            "estimated_both_scorers": 23038.102975018734,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11519.051487509367,
+            "fold": 4,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          }
+        ],
+        "added": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "removed": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "retained": {
+          "rows": 404,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "unchanged_selection_excluded": {
+          "rows": 2295,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "changes": {
+          "rows": 2699,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        }
+      },
+      "128": {
+        "ba": 0.6897986577181209,
+        "delta_ba": 2.485707183752517e-06,
+        "fold_deltas": [
+          0.007407407407407307,
+          0.0018518518518518823,
+          -0.0018518518518516602,
+          -0.0019157088122605526,
+          -0.005555555555555536
+        ],
+        "delta95": [
+          -0.004074074074074075,
+          0.004074074074074074
+        ],
+        "selected": 455,
+        "selected_true_glm": 255,
+        "glm_macro": 0.6033333333333333,
+        "actual_both_scorers_total": 110282,
+        "estimated_both_scorers_total": 110584.57809630354,
+        "per_fold": [
+          {
+            "selected": 93,
+            "estimated_per_scorer": 11483.76589664705,
+            "actual_per_scorer": 11395,
+            "actual_both_scorers": 22790,
+            "estimated_both_scorers": 22967.5317932941,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11504.901782429566,
+            "fold": 0,
+            "added": 12,
+            "removed": 0,
+            "actual_per_scorer_delta": -10,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 13,
+              "corrected": 7,
+              "regressed": 3,
+              "net": 4
+            },
+            "added_changes": {
+              "rows": 12,
+              "changed": 5,
+              "corrected": 4,
+              "regressed": 1,
+              "net": 3
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 8,
+              "corrected": 3,
+              "regressed": 2,
+              "net": 1
+            }
+          },
+          {
+            "selected": 89,
+            "estimated_per_scorer": 10358.049180319053,
+            "actual_per_scorer": 10401,
+            "actual_both_scorers": 20802,
+            "estimated_both_scorers": 20716.098360638105,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10473.60125444173,
+            "fold": 1,
+            "added": 8,
+            "removed": 0,
+            "actual_per_scorer_delta": -145,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 9,
+              "corrected": 5,
+              "regressed": 4,
+              "net": 1
+            },
+            "added_changes": {
+              "rows": 8,
+              "changed": 2,
+              "corrected": 1,
+              "regressed": 1,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 7,
+              "corrected": 4,
+              "regressed": 3,
+              "net": 1
+            }
+          },
+          {
+            "selected": 92,
+            "estimated_per_scorer": 11382.005026731065,
+            "actual_per_scorer": 11324,
+            "actual_both_scorers": 22648,
+            "estimated_both_scorers": 22764.01005346213,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11401.1008024698,
+            "fold": 2,
+            "added": 11,
+            "removed": 0,
+            "actual_per_scorer_delta": 21,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 11,
+              "corrected": 3,
+              "regressed": 4,
+              "net": -1
+            },
+            "added_changes": {
+              "rows": 11,
+              "changed": 4,
+              "corrected": 2,
+              "regressed": 1,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 7,
+              "corrected": 1,
+              "regressed": 3,
+              "net": -2
+            }
+          },
+          {
+            "selected": 88,
+            "estimated_per_scorer": 10586.492412572743,
+            "actual_per_scorer": 10573,
+            "actual_both_scorers": 21146,
+            "estimated_both_scorers": 21172.984825145486,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10615.081536381853,
+            "fold": 3,
+            "added": 8,
+            "removed": 0,
+            "actual_per_scorer_delta": 3,
+            "passage_changes": {
+              "rows": 539,
+              "changed": 8,
+              "corrected": 3,
+              "regressed": 4,
+              "net": -1
+            },
+            "added_changes": {
+              "rows": 8,
+              "changed": 2,
+              "corrected": 1,
+              "regressed": 0,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 80,
+              "changed": 6,
+              "corrected": 2,
+              "regressed": 4,
+              "net": -2
+            }
+          },
+          {
+            "selected": 93,
+            "estimated_per_scorer": 11481.976531881855,
+            "actual_per_scorer": 11448,
+            "actual_both_scorers": 22896,
+            "estimated_both_scorers": 22963.95306376371,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11519.051487509367,
+            "fold": 4,
+            "added": 12,
+            "removed": 0,
+            "actual_per_scorer_delta": 19,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 7,
+              "corrected": 1,
+              "regressed": 4,
+              "net": -3
+            },
+            "added_changes": {
+              "rows": 12,
+              "changed": 2,
+              "corrected": 0,
+              "regressed": 1,
+              "net": -1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 5,
+              "corrected": 1,
+              "regressed": 3,
+              "net": -2
+            }
+          }
+        ],
+        "added": {
+          "rows": 51,
+          "changed": 15,
+          "corrected": 8,
+          "regressed": 4,
+          "net": 4
+        },
+        "removed": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "retained": {
+          "rows": 404,
+          "changed": 33,
+          "corrected": 11,
+          "regressed": 15,
+          "net": -4
+        },
+        "unchanged_selection_excluded": {
+          "rows": 2244,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "changes": {
+          "rows": 2699,
+          "changed": 48,
+          "corrected": 19,
+          "regressed": 19,
+          "net": 0
+        }
+      },
+      "96": {
+        "ba": 0.6846060154113845,
+        "delta_ba": -0.005190156599552576,
+        "fold_deltas": [
+          0.0018518518518517713,
+          -0.0018518518518518823,
+          0.0,
+          -0.01858237547892716,
+          -0.007407407407407418
+        ],
+        "delta95": [
+          -0.010020078803635852,
+          -0.00037037037037037084
+        ],
+        "selected": 544,
+        "selected_true_glm": 272,
+        "glm_macro": 0.58,
+        "actual_both_scorers_total": 109964,
+        "estimated_both_scorers_total": 110543.31724987361,
+        "per_fold": [
+          {
+            "selected": 111,
+            "estimated_per_scorer": 11437.7650165478,
+            "actual_per_scorer": 11345,
+            "actual_both_scorers": 22690,
+            "estimated_both_scorers": 22875.5300330956,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11504.901782429566,
+            "fold": 0,
+            "added": 30,
+            "removed": 0,
+            "actual_per_scorer_delta": -60,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 15,
+              "corrected": 6,
+              "regressed": 5,
+              "net": 1
+            },
+            "added_changes": {
+              "rows": 30,
+              "changed": 7,
+              "corrected": 4,
+              "regressed": 3,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 8,
+              "corrected": 2,
+              "regressed": 2,
+              "net": 0
+            }
+          },
+          {
+            "selected": 106,
+            "estimated_per_scorer": 10411.46438547236,
+            "actual_per_scorer": 10417,
+            "actual_both_scorers": 20834,
+            "estimated_both_scorers": 20822.92877094472,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10473.60125444173,
+            "fold": 1,
+            "added": 25,
+            "removed": 0,
+            "actual_per_scorer_delta": -129,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 13,
+              "corrected": 4,
+              "regressed": 5,
+              "net": -1
+            },
+            "added_changes": {
+              "rows": 25,
+              "changed": 3,
+              "corrected": 2,
+              "regressed": 1,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 10,
+              "corrected": 2,
+              "regressed": 4,
+              "net": -2
+            }
+          },
+          {
+            "selected": 111,
+            "estimated_per_scorer": 11396.031602895775,
+            "actual_per_scorer": 11300,
+            "actual_both_scorers": 22600,
+            "estimated_both_scorers": 22792.06320579155,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11401.1008024698,
+            "fold": 2,
+            "added": 30,
+            "removed": 0,
+            "actual_per_scorer_delta": -3,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 18,
+              "corrected": 6,
+              "regressed": 6,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 30,
+              "changed": 5,
+              "corrected": 2,
+              "regressed": 0,
+              "net": 2
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 13,
+              "corrected": 4,
+              "regressed": 6,
+              "net": -2
+            }
+          },
+          {
+            "selected": 105,
+            "estimated_per_scorer": 10577.71186421838,
+            "actual_per_scorer": 10527,
+            "actual_both_scorers": 21054,
+            "estimated_both_scorers": 21155.42372843676,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10615.081536381853,
+            "fold": 3,
+            "added": 25,
+            "removed": 0,
+            "actual_per_scorer_delta": -43,
+            "passage_changes": {
+              "rows": 539,
+              "changed": 16,
+              "corrected": 1,
+              "regressed": 11,
+              "net": -10
+            },
+            "added_changes": {
+              "rows": 25,
+              "changed": 3,
+              "corrected": 0,
+              "regressed": 1,
+              "net": -1
+            },
+            "retained_changes": {
+              "rows": 80,
+              "changed": 13,
+              "corrected": 1,
+              "regressed": 10,
+              "net": -9
+            }
+          },
+          {
+            "selected": 111,
+            "estimated_per_scorer": 11448.685755802488,
+            "actual_per_scorer": 11393,
+            "actual_both_scorers": 22786,
+            "estimated_both_scorers": 22897.371511604975,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11519.051487509367,
+            "fold": 4,
+            "added": 30,
+            "removed": 0,
+            "actual_per_scorer_delta": -36,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 15,
+              "corrected": 3,
+              "regressed": 7,
+              "net": -4
+            },
+            "added_changes": {
+              "rows": 30,
+              "changed": 5,
+              "corrected": 0,
+              "regressed": 2,
+              "net": -2
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 10,
+              "corrected": 3,
+              "regressed": 5,
+              "net": -2
+            }
+          }
+        ],
+        "added": {
+          "rows": 140,
+          "changed": 23,
+          "corrected": 8,
+          "regressed": 7,
+          "net": 1
+        },
+        "removed": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "retained": {
+          "rows": 404,
+          "changed": 54,
+          "corrected": 12,
+          "regressed": 27,
+          "net": -15
+        },
+        "unchanged_selection_excluded": {
+          "rows": 2155,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "changes": {
+          "rows": 2699,
+          "changed": 77,
+          "corrected": 20,
+          "regressed": 34,
+          "net": -14
+        }
+      }
+    },
+    "dense": {
+      "160": {
+        "ba": 0.7149987571464081,
+        "delta_ba": 0.0,
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "delta95": [
+          0.0,
+          0.0
+        ],
+        "selected": 404,
+        "selected_true_glm": 248,
+        "glm_macro": 0.62,
+        "actual_both_scorers_total": 110230,
+        "estimated_both_scorers_total": 110825.16358120972,
+        "per_fold": [
+          {
+            "selected": 81,
+            "estimated_per_scorer": 11648.488860621965,
+            "actual_per_scorer": 11576,
+            "actual_both_scorers": 23152,
+            "estimated_both_scorers": 23296.97772124393,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11648.488860621965,
+            "fold": 0,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 81,
+            "estimated_per_scorer": 10514.283149030618,
+            "actual_per_scorer": 10572,
+            "actual_both_scorers": 21144,
+            "estimated_both_scorers": 21028.566298061236,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10514.283149030618,
+            "fold": 1,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 81,
+            "estimated_per_scorer": 11478.491453230497,
+            "actual_per_scorer": 11349,
+            "actual_both_scorers": 22698,
+            "estimated_both_scorers": 22956.982906460995,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11478.491453230497,
+            "fold": 2,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 80,
+            "estimated_per_scorer": 10723.563737006478,
+            "actual_per_scorer": 10682,
+            "actual_both_scorers": 21364,
+            "estimated_both_scorers": 21447.127474012956,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10723.563737006478,
+            "fold": 3,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 539,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 80,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          },
+          {
+            "selected": 81,
+            "estimated_per_scorer": 11047.754590715303,
+            "actual_per_scorer": 10936,
+            "actual_both_scorers": 21872,
+            "estimated_both_scorers": 22095.509181430607,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11047.754590715303,
+            "fold": 4,
+            "added": 0,
+            "removed": 0,
+            "actual_per_scorer_delta": 0,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "added_changes": {
+              "rows": 0,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            }
+          }
+        ],
+        "added": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "removed": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "retained": {
+          "rows": 404,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "unchanged_selection_excluded": {
+          "rows": 2295,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "changes": {
+          "rows": 2699,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        }
+      },
+      "128": {
+        "ba": 0.7135098185433757,
+        "delta_ba": -0.0014889386030324525,
+        "fold_deltas": [
+          -0.005555555555555536,
+          -0.0037037037037036535,
+          0.0018518518518518823,
+          -0.0019157088122605526,
+          0.0018518518518518823
+        ],
+        "delta95": [
+          -0.005185185185185185,
+          0.0022222222222222222
+        ],
+        "selected": 455,
+        "selected_true_glm": 256,
+        "glm_macro": 0.6266666666666667,
+        "actual_both_scorers_total": 109678,
+        "estimated_both_scorers_total": 110042.09081354947,
+        "per_fold": [
+          {
+            "selected": 94,
+            "estimated_per_scorer": 11613.571673318056,
+            "actual_per_scorer": 11521,
+            "actual_both_scorers": 23042,
+            "estimated_both_scorers": 23227.143346636112,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11648.488860621965,
+            "fold": 0,
+            "added": 13,
+            "removed": 0,
+            "actual_per_scorer_delta": -55,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 12,
+              "corrected": 3,
+              "regressed": 6,
+              "net": -3
+            },
+            "added_changes": {
+              "rows": 13,
+              "changed": 4,
+              "corrected": 1,
+              "regressed": 2,
+              "net": -1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 8,
+              "corrected": 2,
+              "regressed": 4,
+              "net": -2
+            }
+          },
+          {
+            "selected": 90,
+            "estimated_per_scorer": 10490.31854160616,
+            "actual_per_scorer": 10540,
+            "actual_both_scorers": 21080,
+            "estimated_both_scorers": 20980.63708321232,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10514.283149030618,
+            "fold": 1,
+            "added": 9,
+            "removed": 0,
+            "actual_per_scorer_delta": -32,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 11,
+              "corrected": 2,
+              "regressed": 4,
+              "net": -2
+            },
+            "added_changes": {
+              "rows": 9,
+              "changed": 5,
+              "corrected": 2,
+              "regressed": 1,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 6,
+              "corrected": 0,
+              "regressed": 3,
+              "net": -3
+            }
+          },
+          {
+            "selected": 91,
+            "estimated_per_scorer": 11339.675306125375,
+            "actual_per_scorer": 11268,
+            "actual_both_scorers": 22536,
+            "estimated_both_scorers": 22679.35061225075,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11478.491453230497,
+            "fold": 2,
+            "added": 10,
+            "removed": 0,
+            "actual_per_scorer_delta": -81,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 8,
+              "corrected": 2,
+              "regressed": 1,
+              "net": 1
+            },
+            "added_changes": {
+              "rows": 10,
+              "changed": 3,
+              "corrected": 1,
+              "regressed": 1,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 5,
+              "corrected": 1,
+              "regressed": 0,
+              "net": 1
+            }
+          },
+          {
+            "selected": 90,
+            "estimated_per_scorer": 10655.47994112353,
+            "actual_per_scorer": 10650,
+            "actual_both_scorers": 21300,
+            "estimated_both_scorers": 21310.95988224706,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10723.563737006478,
+            "fold": 3,
+            "added": 10,
+            "removed": 0,
+            "actual_per_scorer_delta": -32,
+            "passage_changes": {
+              "rows": 539,
+              "changed": 7,
+              "corrected": 3,
+              "regressed": 4,
+              "net": -1
+            },
+            "added_changes": {
+              "rows": 10,
+              "changed": 2,
+              "corrected": 1,
+              "regressed": 1,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 80,
+              "changed": 5,
+              "corrected": 2,
+              "regressed": 3,
+              "net": -1
+            }
+          },
+          {
+            "selected": 90,
+            "estimated_per_scorer": 10921.999944601615,
+            "actual_per_scorer": 10860,
+            "actual_both_scorers": 21720,
+            "estimated_both_scorers": 21843.99988920323,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11047.754590715303,
+            "fold": 4,
+            "added": 9,
+            "removed": 0,
+            "actual_per_scorer_delta": -76,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 6,
+              "corrected": 3,
+              "regressed": 2,
+              "net": 1
+            },
+            "added_changes": {
+              "rows": 9,
+              "changed": 0,
+              "corrected": 0,
+              "regressed": 0,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 6,
+              "corrected": 3,
+              "regressed": 2,
+              "net": 1
+            }
+          }
+        ],
+        "added": {
+          "rows": 51,
+          "changed": 14,
+          "corrected": 5,
+          "regressed": 5,
+          "net": 0
+        },
+        "removed": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "retained": {
+          "rows": 404,
+          "changed": 30,
+          "corrected": 8,
+          "regressed": 12,
+          "net": -4
+        },
+        "unchanged_selection_excluded": {
+          "rows": 2244,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "changes": {
+          "rows": 2699,
+          "changed": 44,
+          "corrected": 13,
+          "regressed": 17,
+          "net": -4
+        }
+      },
+      "96": {
+        "ba": 0.7112975391498881,
+        "delta_ba": -0.003701217996520012,
+        "fold_deltas": [
+          -0.007407407407407307,
+          -0.0037037037037036535,
+          0.0037037037037037646,
+          -0.014878671775223618,
+          0.0037037037037036535
+        ],
+        "delta95": [
+          -0.008888888888888889,
+          0.0014814814814814814
+        ],
+        "selected": 545,
+        "selected_true_glm": 275,
+        "glm_macro": 0.61,
+        "actual_both_scorers_total": 109948,
+        "estimated_both_scorers_total": 110528.6046563328,
+        "per_fold": [
+          {
+            "selected": 112,
+            "estimated_per_scorer": 11579.670303238921,
+            "actual_per_scorer": 11480,
+            "actual_both_scorers": 22960,
+            "estimated_both_scorers": 23159.340606477843,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11648.488860621965,
+            "fold": 0,
+            "added": 31,
+            "removed": 0,
+            "actual_per_scorer_delta": -96,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 18,
+              "corrected": 4,
+              "regressed": 8,
+              "net": -4
+            },
+            "added_changes": {
+              "rows": 31,
+              "changed": 5,
+              "corrected": 2,
+              "regressed": 1,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 13,
+              "corrected": 2,
+              "regressed": 7,
+              "net": -5
+            }
+          },
+          {
+            "selected": 107,
+            "estimated_per_scorer": 10509.20020940231,
+            "actual_per_scorer": 10524,
+            "actual_both_scorers": 21048,
+            "estimated_both_scorers": 21018.40041880462,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10514.283149030618,
+            "fold": 1,
+            "added": 26,
+            "removed": 0,
+            "actual_per_scorer_delta": -48,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 15,
+              "corrected": 4,
+              "regressed": 6,
+              "net": -2
+            },
+            "added_changes": {
+              "rows": 26,
+              "changed": 7,
+              "corrected": 3,
+              "regressed": 2,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 8,
+              "corrected": 1,
+              "regressed": 4,
+              "net": -3
+            }
+          },
+          {
+            "selected": 112,
+            "estimated_per_scorer": 11477.01106820276,
+            "actual_per_scorer": 11372,
+            "actual_both_scorers": 22744,
+            "estimated_both_scorers": 22954.02213640552,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11478.491453230497,
+            "fold": 2,
+            "added": 31,
+            "removed": 0,
+            "actual_per_scorer_delta": 23,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 16,
+              "corrected": 5,
+              "regressed": 3,
+              "net": 2
+            },
+            "added_changes": {
+              "rows": 31,
+              "changed": 4,
+              "corrected": 1,
+              "regressed": 0,
+              "net": 1
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 12,
+              "corrected": 4,
+              "regressed": 3,
+              "net": 1
+            }
+          },
+          {
+            "selected": 106,
+            "estimated_per_scorer": 10668.190512892223,
+            "actual_per_scorer": 10627,
+            "actual_both_scorers": 21254,
+            "estimated_both_scorers": 21336.381025784445,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 10723.563737006478,
+            "fold": 3,
+            "added": 26,
+            "removed": 0,
+            "actual_per_scorer_delta": -55,
+            "passage_changes": {
+              "rows": 539,
+              "changed": 17,
+              "corrected": 2,
+              "regressed": 10,
+              "net": -8
+            },
+            "added_changes": {
+              "rows": 26,
+              "changed": 5,
+              "corrected": 0,
+              "regressed": 1,
+              "net": -1
+            },
+            "retained_changes": {
+              "rows": 80,
+              "changed": 12,
+              "corrected": 2,
+              "regressed": 9,
+              "net": -7
+            }
+          },
+          {
+            "selected": 108,
+            "estimated_per_scorer": 11030.230234430184,
+            "actual_per_scorer": 10971,
+            "actual_both_scorers": 21942,
+            "estimated_both_scorers": 22060.46046886037,
+            "hard_cap_per_scorer": 90000,
+            "reference_estimated_budget_per_scorer": 11047.754590715303,
+            "fold": 4,
+            "added": 27,
+            "removed": 0,
+            "actual_per_scorer_delta": 35,
+            "passage_changes": {
+              "rows": 540,
+              "changed": 14,
+              "corrected": 6,
+              "regressed": 4,
+              "net": 2
+            },
+            "added_changes": {
+              "rows": 27,
+              "changed": 6,
+              "corrected": 3,
+              "regressed": 3,
+              "net": 0
+            },
+            "retained_changes": {
+              "rows": 81,
+              "changed": 8,
+              "corrected": 3,
+              "regressed": 1,
+              "net": 2
+            }
+          }
+        ],
+        "added": {
+          "rows": 141,
+          "changed": 27,
+          "corrected": 9,
+          "regressed": 7,
+          "net": 2
+        },
+        "removed": {
+          "rows": 0,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "retained": {
+          "rows": 404,
+          "changed": 53,
+          "corrected": 12,
+          "regressed": 24,
+          "net": -12
+        },
+        "unchanged_selection_excluded": {
+          "rows": 2154,
+          "changed": 0,
+          "corrected": 0,
+          "regressed": 0,
+          "net": 0
+        },
+        "changes": {
+          "rows": 2699,
+          "changed": 80,
+          "corrected": 21,
+          "regressed": 31,
+          "net": -10
+        }
+      }
+    }
+  }
+}

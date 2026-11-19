@@ -179,5 +179,391 @@
         ]
       }
     }
+  },
+  "per_label": {
+    "plain": {
+      "claude-fable-5": {
+        "rows": 149,
+        "original_recall": 0.44966442953020136,
+        "token_recall": 0.47651006711409394,
+        "corrected": 6,
+        "regressed": 2
+      },
+      "claude-opus-4-6": {
+        "rows": 150,
+        "original_recall": 0.8333333333333334,
+        "token_recall": 0.8333333333333334,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "claude-opus-4-8": {
+        "rows": 150,
+        "original_recall": 0.7266666666666667,
+        "token_recall": 0.7333333333333333,
+        "corrected": 1,
+        "regressed": 0
+      },
+      "claude-opus-5": {
+        "rows": 150,
+        "original_recall": 0.8666666666666667,
+        "token_recall": 0.88,
+        "corrected": 2,
+        "regressed": 0
+      },
+      "claude-sonnet-5": {
+        "rows": 150,
+        "original_recall": 0.7266666666666667,
+        "token_recall": 0.72,
+        "corrected": 0,
+        "regressed": 1
+      },
+      "gemini-3.1-pro-preview": {
+        "rows": 150,
+        "original_recall": 0.8866666666666667,
+        "token_recall": 0.8866666666666667,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gemini-3.6-flash": {
+        "rows": 150,
+        "original_recall": 0.74,
+        "token_recall": 0.74,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gemini-3.7-flash": {
+        "rows": 150,
+        "original_recall": 0.5,
+        "token_recall": 0.5,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gemini-3.8-flash": {
+        "rows": 150,
+        "original_recall": 0.6133333333333333,
+        "token_recall": 0.6133333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "glm-5.3": {
+        "rows": 150,
+        "original_recall": 0.5666666666666667,
+        "token_recall": 0.5733333333333334,
+        "corrected": 5,
+        "regressed": 4
+      },
+      "glm-5.3-flash": {
+        "rows": 150,
+        "original_recall": 0.5733333333333334,
+        "token_recall": 0.5933333333333334,
+        "corrected": 7,
+        "regressed": 4
+      },
+      "gpt-5.5": {
+        "rows": 150,
+        "original_recall": 0.68,
+        "token_recall": 0.68,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-5.6-luna": {
+        "rows": 150,
+        "original_recall": 0.64,
+        "token_recall": 0.64,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-5.6-sol": {
+        "rows": 150,
+        "original_recall": 0.58,
+        "token_recall": 0.58,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-5.6-terra": {
+        "rows": 150,
+        "original_recall": 0.62,
+        "token_recall": 0.62,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-6-astra": {
+        "rows": 150,
+        "original_recall": 0.8666666666666667,
+        "token_recall": 0.8666666666666667,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "kimi-k3": {
+        "rows": 150,
+        "original_recall": 0.5733333333333334,
+        "token_recall": 0.5733333333333334,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "qwen3.8-max": {
+        "rows": 150,
+        "original_recall": 0.8066666666666666,
+        "token_recall": 0.8066666666666666,
+        "corrected": 0,
+        "regressed": 0
+      }
+    },
+    "text-cluster": {
+      "claude-fable-5": {
+        "rows": 149,
+        "original_recall": 0.4563758389261745,
+        "token_recall": 0.4966442953020134,
+        "corrected": 7,
+        "regressed": 1
+      },
+      "claude-opus-4-6": {
+        "rows": 150,
+        "original_recall": 0.8666666666666667,
+        "token_recall": 0.8666666666666667,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "claude-opus-4-8": {
+        "rows": 150,
+        "original_recall": 0.7733333333333333,
+        "token_recall": 0.7733333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "claude-opus-5": {
+        "rows": 150,
+        "original_recall": 0.88,
+        "token_recall": 0.8866666666666667,
+        "corrected": 1,
+        "regressed": 0
+      },
+      "claude-sonnet-5": {
+        "rows": 150,
+        "original_recall": 0.78,
+        "token_recall": 0.7866666666666666,
+        "corrected": 1,
+        "regressed": 0
+      },
+      "gemini-3.1-pro-preview": {
+        "rows": 150,
+        "original_recall": 0.9133333333333333,
+        "token_recall": 0.9133333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gemini-3.6-flash": {
+        "rows": 150,
+        "original_recall": 0.7666666666666667,
+        "token_recall": 0.7666666666666667,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gemini-3.7-flash": {
+        "rows": 150,
+        "original_recall": 0.48,
+        "token_recall": 0.48,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gemini-3.8-flash": {
+        "rows": 150,
+        "original_recall": 0.6533333333333333,
+        "token_recall": 0.6533333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "glm-5.3": {
+        "rows": 150,
+        "original_recall": 0.58,
+        "token_recall": 0.6133333333333333,
+        "corrected": 6,
+        "regressed": 1
+      },
+      "glm-5.3-flash": {
+        "rows": 150,
+        "original_recall": 0.6266666666666667,
+        "token_recall": 0.6266666666666667,
+        "corrected": 4,
+        "regressed": 4
+      },
+      "gpt-5.5": {
+        "rows": 150,
+        "original_recall": 0.72,
+        "token_recall": 0.72,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-5.6-luna": {
+        "rows": 150,
+        "original_recall": 0.6733333333333333,
+        "token_recall": 0.6733333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-5.6-sol": {
+        "rows": 150,
+        "original_recall": 0.6333333333333333,
+        "token_recall": 0.6333333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-5.6-terra": {
+        "rows": 150,
+        "original_recall": 0.6733333333333333,
+        "token_recall": 0.6733333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-6-astra": {
+        "rows": 150,
+        "original_recall": 0.8733333333333333,
+        "token_recall": 0.8733333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "kimi-k3": {
+        "rows": 150,
+        "original_recall": 0.6133333333333333,
+        "token_recall": 0.6133333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "qwen3.8-max": {
+        "rows": 150,
+        "original_recall": 0.82,
+        "token_recall": 0.82,
+        "corrected": 0,
+        "regressed": 0
+      }
+    },
+    "sparse2-text-cluster": {
+      "claude-fable-5": {
+        "rows": 149,
+        "original_recall": 0.42953020134228187,
+        "token_recall": 0.44966442953020136,
+        "corrected": 4,
+        "regressed": 1
+      },
+      "claude-opus-4-6": {
+        "rows": 150,
+        "original_recall": 0.8733333333333333,
+        "token_recall": 0.8733333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "claude-opus-4-8": {
+        "rows": 150,
+        "original_recall": 0.7266666666666667,
+        "token_recall": 0.7266666666666667,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "claude-opus-5": {
+        "rows": 150,
+        "original_recall": 0.8866666666666667,
+        "token_recall": 0.88,
+        "corrected": 0,
+        "regressed": 1
+      },
+      "claude-sonnet-5": {
+        "rows": 150,
+        "original_recall": 0.74,
+        "token_recall": 0.7333333333333333,
+        "corrected": 0,
+        "regressed": 1
+      },
+      "gemini-3.1-pro-preview": {
+        "rows": 150,
+        "original_recall": 0.9,
+        "token_recall": 0.9,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gemini-3.6-flash": {
+        "rows": 150,
+        "original_recall": 0.74,
+        "token_recall": 0.74,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gemini-3.7-flash": {
+        "rows": 150,
+        "original_recall": 0.5,
+        "token_recall": 0.5,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gemini-3.8-flash": {
+        "rows": 150,
+        "original_recall": 0.6,
+        "token_recall": 0.6,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "glm-5.3": {
+        "rows": 150,
+        "original_recall": 0.5666666666666667,
+        "token_recall": 0.6133333333333333,
+        "corrected": 9,
+        "regressed": 2
+      },
+      "glm-5.3-flash": {
+        "rows": 150,
+        "original_recall": 0.56,
+        "token_recall": 0.58,
+        "corrected": 8,
+        "regressed": 5
+      },
+      "gpt-5.5": {
+        "rows": 150,
+        "original_recall": 0.7,
+        "token_recall": 0.7,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-5.6-luna": {
+        "rows": 150,
+        "original_recall": 0.6333333333333333,
+        "token_recall": 0.6333333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-5.6-sol": {
+        "rows": 150,
+        "original_recall": 0.5933333333333334,
+        "token_recall": 0.5933333333333334,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-5.6-terra": {
+        "rows": 150,
+        "original_recall": 0.6533333333333333,
+        "token_recall": 0.6533333333333333,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "gpt-6-astra": {
+        "rows": 150,
+        "original_recall": 0.8533333333333334,
+        "token_recall": 0.8533333333333334,
+        "corrected": 0,
+        "regressed": 0
+      },
+      "kimi-k3": {
+        "rows": 150,
+        "original_recall": 0.5733333333333334,
+        "token_recall": 0.5733333333333334,
+        "corrected": 1,
+        "regressed": 1
+      },
+      "qwen3.8-max": {
+        "rows": 150,
+        "original_recall": 0.8133333333333334,
+        "token_recall": 0.8133333333333334,
+        "corrected": 0,
+        "regressed": 0
+      }
+    }
   }
 }
