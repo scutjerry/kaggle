@@ -1,0 +1,57 @@
+{
+  "reference": "v3 with full class-marginal projection and 15% text-neighbor correction",
+  "baseline": 0.4437708177976634,
+  "candidate": 0.44265970668655236,
+  "delta": -0.0011111111111110628,
+  "improved_folds": 2,
+  "folds": [
+    {
+      "fold": 1,
+      "baseline": 0.43148148148148147,
+      "candidate": 0.437037037037037,
+      "delta": 0.005555555555555536
+    },
+    {
+      "fold": 2,
+      "baseline": 0.437037037037037,
+      "candidate": 0.43333333333333335,
+      "delta": -0.0037037037037036535
+    },
+    {
+      "fold": 3,
+      "baseline": 0.42994891443167305,
+      "candidate": 0.4317369093231162,
+      "delta": 0.0017879948914431565
+    },
+    {
+      "fold": 4,
+      "baseline": 0.461111111111111,
+      "candidate": 0.461111111111111,
+      "delta": 0.0
+    },
+    {
+      "fold": 5,
+      "baseline": 0.4592592592592593,
+      "candidate": 0.44999999999999996,
+      "delta": -0.009259259259259356
+    }
+  ],
+  "thin": 0.4304349987571464,
+  "thin_baseline": 0.426728809346259,
+  "thin_delta": 0.003706189410887406,
+  "single_baseline": 0.43820531941337315,
+  "single": 0.43820531941337315,
+  "single_delta": 0.0,
+  "stress_method": "Recompute both the upstream v3 calibration and topic-neighbor correction per sub-batch",
+  "skew_mean_delta": 0.0006342144483702488,
+  "skew_delta_percentiles": [
+    -0.010900882357966294,
+    0.0008525699893612015,
+    0.011891913388123499
+  ],
+  "eligible": false,
+  "baseline_fraction": 1.0,
+  "candidate_fraction": 0.5,
+  "model_scope": "Fixed v3 ModernBERT ensemble OOF. The released Qwen models were not evaluated here.",
+  "source": "https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool"
+}

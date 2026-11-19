@@ -12,10 +12,15 @@
 | v4 · 加入题目相关的写作风格 | 0.4445 | 0.414 |
 | v5 · v4 与额外训练的 ModernBERT 融合 | 0.4486 | 尚无公榜分 |
 | v6 · v3 与文本近邻校准 | 0.4612 | 尚无公榜分 |
+| 双 Qwen · 两阶段 LoRA 与文本近邻校准 | 无独立同折分数 | 已提交，隐藏集运行中 |
 
-Kaggle 提交页已确认 v4 公榜分为 **0.414**，提交时间为北京时间 2026-11-19 18:00:16。此次迭代的两小时提交间隔至 20:00:16。已评分版本中，v3 以 **0.419** 居首，比 v4 高 0.005，比首次提交高 0.035。当前收录 **135** 个本地实验。
+11 月 19 日北京时间 21:55:19，双 Qwen 版本成为本队第五次正式提交，距上次提交 3 小时 55 分 03 秒。前四次中 v3 的公榜分最高，为 0.419。仓库收录 **136** 个本地实验。
 
 ## 实验说明
+
+两套 Qwen 适配器均已用官方 2,699 行全量微调。表中保留本队实测成绩；作者报告其原方案公榜为 0.592。我们继承两套 Qwen 的输出、词法分类器和融合，新增 15% 权重的文本近邻校准。本队预览在两张 T4 上实际运行两套模型并生成三行输出。[作者 Notebook](https://www.kaggle.com/code/nishantdahal/two-stage-lora-on-the-public-pool) · [公开权重与数据来源](https://www.kaggle.com/datasets/nishantdahal/ntl-two-stage-lora/versions/1)
+
+我们也在自有 v3 的折外预测上比较了两档类别分布校准强度。把强度减半时，完整批次的平衡准确率从 0.44377 降至 0.44266，每题约三段时从 0.42673 升至 0.43043。该对照保留两种设备无关的轻量后处理用于独立语料验证。[逐折与类别比例变化测试](results/v3-marginal-half-vs-full/comparison.json)
 
 从 v1 出发，加入写作标记和外部语料词形分类器后，本地五折得分达到 0.4208。v2 根据同批预测的类别分布做轻量校准。v3 再加入冻结 ModernBERT 各层的词元均值和标准差特征。v4 通过相似训练题目估计一段文字通常具备的写作风格，把实际风格与该预期的差值用于分类。新分支以 8% 的权重与 v3 融合。
 
@@ -61,6 +66,7 @@ v5 的新编码器用每类 40 条外部样本补充训练，固定融合权重�
 | [`topic-style-length-gate`](results/topic-style-length-gate) | 0.4445 | 0.4407 | 0.4426 | 0.4244 | 0.4704 | 0.4444 |
 | [`topic-style-v4-blend-8`](results/topic-style-v4-blend-8) | 0.4445 | 0.4407 | 0.4426 | 0.4244 | 0.4704 | 0.4444 |
 | [`extra40 + postlb-paired-frozen-cal (v3)`](results/hourly-encoder/s42-extra40-ep3/on-postlb-paired-frozen-cal) | 0.4430 | 0.4463 | 0.4333 | 0.4170 | 0.4667 | 0.4519 |
+| [`v3-marginal-half-vs-full`](results/v3-marginal-half-vs-full) | 0.4427 | 0.4370 | 0.4333 | 0.4317 | 0.4611 | 0.4500 |
 | [`source-control-v5-official`](results/source-control-v5-official) | 0.4423 | 0.4426 | 0.4278 | 0.4282 | 0.4556 | 0.4574 |
 | [`passage-recurrence-v5-08`](results/passage-recurrence-v5-08) | 0.4423 | 0.4370 | 0.4352 | 0.4225 | 0.4685 | 0.4481 |
 | [`topic-style-v4-blend-16`](results/topic-style-v4-blend-16) | 0.4404 | 0.4352 | 0.4426 | 0.4151 | 0.4667 | 0.4426 |
