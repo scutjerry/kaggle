@@ -1,0 +1,229 @@
+{
+  "sources": {
+    "atlas": "https://www.kaggle.com/datasets/harshitakumari256/ntl-atlas-bundle/versions/1",
+    "atlas_inference": "https://www.kaggle.com/code/harshitakumari256/ntl-atlas-qwen3-4b-peft-inference?scriptVersionId=361750379",
+    "nishant": "https://www.kaggle.com/datasets/nishantdahal/ntl-two-stage-lora/versions/1",
+    "vertex": "https://www.kaggle.com/datasets/davidpiln/ntl-vertex-gemini-gen/versions/2",
+    "proxy": "https://www.kaggle.com/datasets/dhananjayk2609/ntl-panel-gap-passages-kaggle-benchmarks/versions/5",
+    "z": "https://www.kaggle.com/datasets/zeminglii/ntl-own-exact-route-generations/versions/2",
+    "prompt_dependency": "https://www.kaggle.com/datasets/crtproduction/name-that-llm-open-pool/versions/11",
+    "glm": "https://www.kaggle.com/code/estopadilla/ntl-glm-likelihood-train"
+  },
+  "atlas": {
+    "dataset_v1_created_utc": "2026-10-24T03:01:35.047Z",
+    "adapter_file_created_utc": "2026-10-24T03:01:45.307Z",
+    "adapter_file_bytes": 518202304,
+    "weight_digest_verified": false,
+    "license": "CC BY-SA 4.0",
+    "base": "Qwen3-4B-Base frozen; 18 prefixes and source-conditioned LoRA",
+    "stage1": "Publisher reports ~34.9k public single-paragraph passages; exact roots, row IDs, and snapshot hash not disclosed in the four released files. Source code accepts arbitrary roots. Identical filtering and approximate size do not establish identity with Nishant V1.",
+    "stage2": "Publisher reports three epochs on the 2699 official rows. Released OOF IDs and decoded labels all match official train; OOF does not identify stage-one rows."
+  },
+  "270": {
+    "source_breakdown": {
+      "arxitekton/ntl-claude-gen-v1": {
+        "rows": 203,
+        "first_published": "2026-10-20T02:44:45.743Z",
+        "labels": {
+          "claude-fable-5": 5,
+          "claude-opus-4-6": 15,
+          "claude-opus-4-8": 15,
+          "claude-opus-5": 15,
+          "claude-sonnet-5": 15,
+          "gemini-3.1-pro-preview": 15,
+          "gemini-3.8-flash": 15,
+          "glm-5.3": 9,
+          "glm-5.3-flash": 9,
+          "gpt-5.5": 15,
+          "gpt-5.6-luna": 15,
+          "gpt-5.6-sol": 15,
+          "gpt-5.6-terra": 15,
+          "gpt-6-astra": 15,
+          "kimi-k3": 6,
+          "qwen3.8-max": 9
+        }
+      },
+      "arxitekton/ntl-claude-gen-v2": {
+        "rows": 11,
+        "first_published": "2026-10-20T18:03:06.677Z",
+        "labels": {
+          "claude-fable-5": 2,
+          "kimi-k3": 3,
+          "qwen3.8-max": 6
+        }
+      },
+      "chosunghwan/ntl-gemini-new-prompts": {
+        "rows": 15,
+        "first_published": "2026-10-21T05:07:14.143Z",
+        "labels": {
+          "gemini-3.6-flash": 15
+        }
+      },
+      "tadeuhayashida/ntl-claude-fable-5-generations": {
+        "rows": 4,
+        "first_published": "2026-10-20T20:04:58.93Z",
+        "labels": {
+          "claude-fable-5": 4
+        }
+      },
+      "zeminglii/ntl-own-exact-route-generations": {
+        "rows": 37,
+        "first_published": "2026-11-02T03:16:26.923Z",
+        "labels": {
+          "claude-fable-5": 4,
+          "gemini-3.7-flash": 15,
+          "glm-5.3": 6,
+          "glm-5.3-flash": 6,
+          "kimi-k3": 6
+        }
+      }
+    },
+    "already_public_pre_cutoff": 233,
+    "pre_cutoff_membership_of_atlas_stage1": "unknown",
+    "post_cutoff_by_row_timestamp": 0,
+    "z_publisher_workflow_only": {
+      "rows": 37,
+      "counts": {
+        "claude-fable-5": 4,
+        "gemini-3.7-flash": 15,
+        "glm-5.3": 6,
+        "glm-5.3-flash": 6,
+        "kimi-k3": 6
+      },
+      "canonical_groups": 37,
+      "prompt_v11_release_utc": "2026-10-30T07:53:21.983Z",
+      "evidence": "Publisher selected gaps in the V11 snapshot before generating. All 37 match original text, label, served ID and canonical prompt. Source CSV has no call date; the 37 are dated by workflow inference only. Some prompt bodies may have existed before V11."
+    },
+    "exact_matches_to_official_or_nishant_pool": 0,
+    "matched_known_training_prompt_groups": 0,
+    "same_prompt_vs_full_atlas_stage1": "unknown"
+  },
+  "proxy": {
+    "source_rows": 2103,
+    "rows": 1360,
+    "labels": {
+      "claude-opus-4-6": 160,
+      "claude-opus-4-8": 124,
+      "claude-opus-5": 190,
+      "claude-sonnet-5": 130,
+      "gemini-3.1-pro-preview": 238,
+      "gemini-3.6-flash": 228,
+      "gemini-3.8-flash": 239,
+      "gpt-5.5": 11,
+      "gpt-5.6-luna": 7,
+      "gpt-5.6-sol": 7,
+      "gpt-5.6-terra": 2,
+      "gpt-6-astra": 24
+    },
+    "prompt_groups": 1360,
+    "date_counts": {
+      "2026-11-09": 350,
+      "2026-11-10": 372,
+      "2026-11-11": 308,
+      "2026-11-13": 330
+    },
+    "input_and_target_sha256": {
+      "component-diagnostic-input.parquet": "680de01174bb89a8dd03c329dfe56084a6c0790b64dd26376df462435f5e2d4a",
+      "component-diagnostic-targets.parquet": "bf1a0cff813799b76e5d13f948cb6f9fb7a8611ec2454fba0242744fe2b7f32d"
+    },
+    "source_rejoin_rows": 1360,
+    "labels_from": "Per-row publisher run_date and Kaggle proxy slug; no independent served-model receipt. Gemini reasoning may differ from official. Terra has two rows.",
+    "exact_matches_to_official_or_nishant_pool": 0,
+    "known_training_prompt_groups_matched": 0,
+    "near_text_matches_jaccard_080_from_frozen_source_audit": 0,
+    "shared_document_or_prompt_with_270": 0,
+    "exact_matches_in_v17": 960,
+    "stable_passage_ids_in_v30_svc4_v13": 0,
+    "prompt_groups_in_v30_svc4_v13": 1109,
+    "targets_missing": [
+      "claude-fable-5",
+      "gemini-3.7-flash",
+      "glm-5.3",
+      "glm-5.3-flash",
+      "kimi-k3",
+      "qwen3.8-max"
+    ]
+  },
+  "vertex": {
+    "source_bytes": {
+      "bytes": 7219188,
+      "sha256": "0664d2b18367451a66c36f024e230922abb4d02993273042dc29e49e6125711c",
+      "rows": 4900,
+      "original_columns": [
+        "id",
+        "label",
+        "arm",
+        "prompt_style",
+        "prompt_id",
+        "topic",
+        "domain",
+        "task_type",
+        "prompt",
+        "target_words",
+        "user_message",
+        "text",
+        "n_words",
+        "passes_pool_filters",
+        "model_version",
+        "finish_reason",
+        "in_tokens",
+        "out_tokens",
+        "thought_tokens",
+        "timestamp"
+      ]
+    },
+    "license": "Attribution 4.0 International (CC BY 4.0)",
+    "source_dates_utc": [
+      "2026-10-27T19:21:21+00:00",
+      "2026-10-28T10:05:28+00:00"
+    ],
+    "source_rows_matching_label_and_model_version": 4900,
+    "scope": "Publisher-exported per-call Vertex timestamp/model_version/STOP and usage. No cryptographically attested provider receipt; single source, Gemini 3.7/3.8 only.",
+    "filter_counts": {
+      "source_total": 4900,
+      "joined_local_open_pool_by_normalized_text": 4187,
+      "own_prompt_arms_A_C": 3924,
+      "single_paragraph_40_250_english_screen": 3875,
+      "source_flags_and_official_max_similarity_below_035": 3875,
+      "exclude_known_document_and_canonical_prompt_matches": 3859,
+      "exclude_near_passages": 3818
+    },
+    "final_rows": 3396,
+    "class_counts": {
+      "gemini-3.7-flash": 1698,
+      "gemini-3.8-flash": 1698
+    },
+    "paired_prompts": 1698,
+    "final_utc_range": [
+      "2026-10-27T19:21:21+00:00",
+      "2026-10-28T10:04:53+00:00"
+    ],
+    "final_maximum_fivegram_containment": 0.12195121951219512,
+    "final_maximum_shared_fivegrams": 6,
+    "paired_request": "Within each group both labels have the identical normalized full user message and prompt body.",
+    "prompt_provenance": "A/C contain newly authored prompts. Publisher used 25 examples from a reconstructed official prompt bank to author prompts, screened for topic/similarity. Arm B reuses upstream requests and is excluded.",
+    "exact_matches_to_official_or_nishant_pool": 0,
+    "known_training_prompt_groups_matched": 0,
+    "shared_document_or_prompt_with_270_or_proxy": 0,
+    "stable_passage_ids_in_v30_svc4_v13": 3396,
+    "prompt_groups_in_v30_svc4_v13": 1698,
+    "sha256": {
+      "vertex-paired-input.private.parquet": "74c3194f18ed4724d1f0887569c079535aa9e8d3ad2ea26c8b4db4f722d36f87",
+      "vertex-paired-targets.private.parquet": "78a4361d5436a34f281e5b385e1c5c02704f795f8a33e3d14fce2c3a87f73278"
+    }
+  },
+  "known_training_reference": {
+    "unique_texts": 37639,
+    "known_canonical_groups": 1885,
+    "rows_mapped_to_canonical_groups": 30179,
+    "limitations": "Unknown earlier prompt wording and equivalent prompts are possible for all three panels. Time only excludes prior access to these generated responses; even an identical normalized string could in principle have been produced independently. ATLAS stage-one prompt overlap cannot be measured."
+  },
+  "other_local_call_records": {
+    "extended_source_post_cutoff_by_split_and_route": {
+      "new2_proxy": 952,
+      "train_regen_nonproxy": 1726
+    },
+    "exclusion": "Post-cutoff records from this archive either use the proxy or regenerated official prompts."
+  },
+  "use": "Keep the two-label direct Vertex paired test, the 12-label proxy diagnostic, and the original 270 separate. Report per-label recall over all 18 possible outputs. Any conditional Gemini-only forced choice is a separate exploratory measure. Ineligible as an independent whole-V30 benchmark; no leaderboard inference."
+}
