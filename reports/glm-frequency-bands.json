@@ -1,0 +1,312 @@
+{
+  "design": "One prespecified 86-feature head: count token types in the outer training texts up to 160 tokens, remove the entire own prompt for every training row, and use only training counts while looking up validation tokens. Bands: unseen, 1-15, 16-127, 128+. Each contributes pooled-prior-shrunk relative mean log-likelihood ratio and win rate, plus two high-vs-other contrasts. Eight pseudo-tokens. Baseline retains its 76 features. Same class-balanced C=.05, fold-local fit, row selection, entropy matching and corrected routing in both arms.",
+  "source": "https://www.kaggle.com/code/estopadilla/ntl-glm-likelihood-train/versions/3",
+  "per_fold_lookup": [
+    {
+      "training_tokens": 262684,
+      "training_types": 15733,
+      "fit_excluding_own_prompt_band_counts": [
+        12756,
+        55548,
+        76001,
+        118379
+      ],
+      "validation_band_counts": [
+        2647,
+        13507,
+        19461,
+        29320
+      ],
+      "fold": 0
+    },
+    {
+      "training_tokens": 262438,
+      "training_types": 15717,
+      "fit_excluding_own_prompt_band_counts": [
+        12775,
+        55850,
+        77928,
+        115885
+      ],
+      "validation_band_counts": [
+        2782,
+        12802,
+        19479,
+        30118
+      ],
+      "fold": 1
+    },
+    {
+      "training_tokens": 260703,
+      "training_types": 15388,
+      "fit_excluding_own_prompt_band_counts": [
+        11646,
+        55105,
+        77153,
+        116799
+      ],
+      "validation_band_counts": [
+        3747,
+        14572,
+        18913,
+        29684
+      ],
+      "fold": 2
+    },
+    {
+      "training_tokens": 263700,
+      "training_types": 15719,
+      "fit_excluding_own_prompt_band_counts": [
+        12054,
+        55895,
+        77131,
+        118620
+      ],
+      "validation_band_counts": [
+        3202,
+        13836,
+        18369,
+        28512
+      ],
+      "fold": 3
+    },
+    {
+      "training_tokens": 260951,
+      "training_types": 15598,
+      "fit_excluding_own_prompt_band_counts": [
+        12538,
+        55289,
+        76318,
+        116806
+      ],
+      "validation_band_counts": [
+        3125,
+        14627,
+        19524,
+        29392
+      ],
+      "fold": 4
+    }
+  ],
+  "sample_size": 2699,
+  "distinct_prompts": 150,
+  "head_only": {
+    "reference": {
+      "ba": 0.20340044742729307,
+      "logloss": 2.442899095584781
+    },
+    "frequency": {
+      "ba": 0.2008003977131494,
+      "logloss": 2.4574735263778713
+    }
+  },
+  "cohorts": {
+    "plain": {
+      "corrected": 6,
+      "regressed": 6,
+      "changed": 22,
+      "ba_control": 0.6842505592841164,
+      "ba_frequency": 0.6842480735769327,
+      "delta_ba": -2.4857071836414946e-06,
+      "delta95_prompt_bootstrap": [
+        -0.00259756400695998,
+        0.0025925925925925925
+      ],
+      "folds": [
+        {
+          "corrected": 2,
+          "regressed": 2,
+          "changed": 7,
+          "ba_control": 0.661111111111111,
+          "ba_frequency": 0.661111111111111,
+          "fold": 0,
+          "delta": 0.0
+        },
+        {
+          "corrected": 0,
+          "regressed": 1,
+          "changed": 3,
+          "ba_control": 0.6962962962962964,
+          "ba_frequency": 0.6944444444444444,
+          "fold": 1,
+          "delta": -0.0018518518518519933
+        },
+        {
+          "corrected": 2,
+          "regressed": 2,
+          "changed": 6,
+          "ba_control": 0.6722222222222222,
+          "ba_frequency": 0.6722222222222222,
+          "fold": 2,
+          "delta": 0.0
+        },
+        {
+          "corrected": 0,
+          "regressed": 1,
+          "changed": 3,
+          "ba_control": 0.6823116219667944,
+          "ba_frequency": 0.6803959131545338,
+          "fold": 3,
+          "delta": -0.0019157088122605526
+        },
+        {
+          "corrected": 2,
+          "regressed": 0,
+          "changed": 3,
+          "ba_control": 0.7092592592592593,
+          "ba_frequency": 0.712962962962963,
+          "fold": 4,
+          "delta": 0.0037037037037037646
+        }
+      ],
+      "glm_recall": {
+        "glm-5.3": {
+          "reference": 0.5733333333333334,
+          "frequency": 0.5666666666666667
+        },
+        "glm-5.3-flash": {
+          "reference": 0.5933333333333334,
+          "frequency": 0.6
+        }
+      }
+    },
+    "sparse2": {
+      "corrected": 5,
+      "regressed": 10,
+      "changed": 22,
+      "ba_control": 0.6897961720109371,
+      "ba_frequency": 0.6879368630375341,
+      "delta_ba": -0.0018593089734030288,
+      "delta95_prompt_bootstrap": [
+        -0.004459459459459459,
+        0.0007332836191896596
+      ],
+      "folds": [
+        {
+          "corrected": 1,
+          "regressed": 2,
+          "changed": 5,
+          "ba_control": 0.6537037037037037,
+          "ba_frequency": 0.6518518518518518,
+          "fold": 0,
+          "delta": -0.0018518518518518823
+        },
+        {
+          "corrected": 1,
+          "regressed": 1,
+          "changed": 2,
+          "ba_control": 0.7055555555555556,
+          "ba_frequency": 0.7055555555555556,
+          "fold": 1,
+          "delta": 0.0
+        },
+        {
+          "corrected": 2,
+          "regressed": 2,
+          "changed": 6,
+          "ba_control": 0.6833333333333332,
+          "ba_frequency": 0.6833333333333332,
+          "fold": 2,
+          "delta": 0.0
+        },
+        {
+          "corrected": 0,
+          "regressed": 3,
+          "changed": 4,
+          "ba_control": 0.6897190293742018,
+          "ba_frequency": 0.6840357598978289,
+          "fold": 3,
+          "delta": -0.005683269476372876
+        },
+        {
+          "corrected": 1,
+          "regressed": 2,
+          "changed": 5,
+          "ba_control": 0.7166666666666667,
+          "ba_frequency": 0.7148148148148148,
+          "fold": 4,
+          "delta": -0.0018518518518518823
+        }
+      ],
+      "glm_recall": {
+        "glm-5.3": {
+          "reference": 0.6133333333333333,
+          "frequency": 0.5933333333333334
+        },
+        "glm-5.3-flash": {
+          "reference": 0.58,
+          "frequency": 0.5866666666666667
+        }
+      }
+    },
+    "dense": {
+      "corrected": 4,
+      "regressed": 4,
+      "changed": 18,
+      "ba_control": 0.7149987571464081,
+      "ba_frequency": 0.7149987571464081,
+      "delta_ba": 0.0,
+      "delta95_prompt_bootstrap": [
+        -0.0018756000898858011,
+        0.0022222222222222222
+      ],
+      "folds": [
+        {
+          "corrected": 0,
+          "regressed": 1,
+          "changed": 3,
+          "ba_control": 0.6999999999999998,
+          "ba_frequency": 0.6981481481481481,
+          "fold": 0,
+          "delta": -0.0018518518518517713
+        },
+        {
+          "corrected": 0,
+          "regressed": 1,
+          "changed": 3,
+          "ba_control": 0.7203703703703703,
+          "ba_frequency": 0.7185185185185186,
+          "fold": 1,
+          "delta": -0.0018518518518517713
+        },
+        {
+          "corrected": 3,
+          "regressed": 0,
+          "changed": 4,
+          "ba_control": 0.6944444444444444,
+          "ba_frequency": 0.7,
+          "fold": 2,
+          "delta": 0.005555555555555536
+        },
+        {
+          "corrected": 0,
+          "regressed": 2,
+          "changed": 5,
+          "ba_control": 0.7157726692209452,
+          "ba_frequency": 0.7120051085568327,
+          "fold": 3,
+          "delta": -0.003767560664112435
+        },
+        {
+          "corrected": 1,
+          "regressed": 0,
+          "changed": 3,
+          "ba_control": 0.7444444444444445,
+          "ba_frequency": 0.7462962962962963,
+          "fold": 4,
+          "delta": 0.0018518518518518823
+        }
+      ],
+      "glm_recall": {
+        "glm-5.3": {
+          "reference": 0.6133333333333333,
+          "frequency": 0.6066666666666667
+        },
+        "glm-5.3-flash": {
+          "reference": 0.6266666666666667,
+          "frequency": 0.6333333333333333
+        }
+      }
+    }
+  }
+}
