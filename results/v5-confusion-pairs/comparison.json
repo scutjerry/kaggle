@@ -1,0 +1,64 @@
+{
+  "reference": "extra40-v4-blend-18",
+  "cutoff": 0.85,
+  "mix": 0.4,
+  "branches": [
+    "modernbert-standalone",
+    "frozen-external-v2",
+    "markers-v2-standalone",
+    "seq-v2-corpus",
+    "topic-style-v4",
+    "extra40"
+  ],
+  "limitation": "Level-two grouped cross-fit reuses fixed level-one OOF predictions. The level-one models that generated meta-training rows may have seen other outer folds, and the reference ensemble was selected on these folds. This is not a nested or independent estimate.",
+  "folds": [
+    {
+      "fold": 1,
+      "pairs": 32,
+      "base": 0.44999999999999996,
+      "blend": 0.4388888888888889,
+      "delta": -0.011111111111111072,
+      "corrected": 3,
+      "regressed": 9
+    },
+    {
+      "fold": 2,
+      "pairs": 32,
+      "base": 0.4388888888888889,
+      "blend": 0.4388888888888889,
+      "delta": 0.0,
+      "corrected": 8,
+      "regressed": 8
+    },
+    {
+      "fold": 3,
+      "pairs": 32,
+      "base": 0.4280970625798212,
+      "blend": 0.4318007662835248,
+      "delta": 0.003703703703703598,
+      "corrected": 8,
+      "regressed": 6
+    },
+    {
+      "fold": 4,
+      "pairs": 32,
+      "base": 0.4703703703703704,
+      "blend": 0.4740740740740741,
+      "delta": 0.003703703703703709,
+      "corrected": 4,
+      "regressed": 2
+    },
+    {
+      "fold": 5,
+      "pairs": 31,
+      "base": 0.4555555555555555,
+      "blend": 0.4462962962962963,
+      "delta": -0.00925925925925919,
+      "corrected": 4,
+      "regressed": 9
+    }
+  ],
+  "base": 0.4485906040268456,
+  "score": 0.4460004971414367,
+  "delta": -0.0025901068854088938
+}

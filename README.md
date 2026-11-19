@@ -9,10 +9,11 @@
 | v1 · 初次提交 | 0.4101 | 0.384 |
 | v2 · Paired Style | 0.4286 | 0.400 |
 | v3 · 冻结 ModernBERT 特征融合 | 0.4382 | **0.419** |
-| v4 · 加入题目相关的写作风格 | 0.4445 | 已提交，待评分 |
-| v5 · v4 与额外训练的 ModernBERT 融合 | **0.4486** | 尚无公榜分 |
+| v4 · 加入题目相关的写作风格 | 0.4445 | 0.414 |
+| v5 · v4 与额外训练的 ModernBERT 融合 | 0.4486 | 尚无公榜分 |
+| v6 · v3 与文本近邻校准 | 0.4612 | 尚无公榜分 |
 
-v3 的公榜分比 v2 提升 0.019，比首次提交提升 0.035。当前共有 **121** 个本地实验，各目录包含五折分数、逐类召回率和混淆矩阵。
+Kaggle 提交页已确认 v4 公榜分为 **0.414**，提交时间为北京时间 2026-11-19 18:00:16。此次迭代的两小时提交间隔至 20:00:16。已评分版本中，v3 以 **0.419** 居首，比 v4 高 0.005，比首次提交高 0.035。当前收录 **128** 个本地实验。
 
 ## 实验说明
 
@@ -24,13 +25,31 @@ v3 的公榜分比 v2 提升 0.019，比首次提交提升 0.035。当前共有 
 
 v5 的新编码器用每类 40 条外部样本补充训练，固定融合权重为 18%。分别与 v1、v3、v4 融合，五折分数为 0.41786、0.44304 和 0.44859。v5 对应 v4 融合方案，相对 v4 提高 0.00408，五折中三折提高、一折持平、一折下降，达到预设的 0.003 总分增幅及三折改善门槛。[v1 与 v3 的对照](results/hourly-encoder/s42-extra40-ep3/complete.json) · [v4 与 v5 的逐折对照](results/extra40-v4-blend-18/comparison.json)
 
+### 文本近邻校准
+
+取同一批次中词语最相近的段落，若许多相似段落都被高置信度判为同一个模型，则轻微下调该模型的概率。每折仅用训练文本构建词表。把每个验证折拆成六个小批次后，三条基线仍有增益，但改善幅度比完整批次小。
+
+| 基线 | 原五折 | 完整批次校准 | 稀疏批次校准 | 提升折数 |
+| --- | ---: | ---: | ---: | ---: |
+| [v3（本轮 v6）](results/v3-text-neighbor-calibration/comparison.json) | 0.43821 | 0.46118 | 0.44229 | 5/5 |
+| [v3 + 18% Extra40](results/v5-v3-text-neighbor-calibration/comparison.json) | 0.44304 | 0.46378 | 0.44564 | 5/5 |
+| [v4 + 18% Extra40](results/v5-text-neighbor-calibration/comparison.json) | 0.44859 | 0.46156 | 0.45082 | 4/5 |
+
+另两项对照同以 v4 + Extra40 的 0.44859 为基准。对易混淆型号做成对重排得到 0.44600，加入段落内部重复模式得到 0.44229。成对重排的二级模型复用了折外预测，报告保留了该验证设计的限制。[成对重排](results/v5-confusion-pairs/comparison.json) · [段落重复模式](results/passage-recurrence-v5-08/comparison.json)
+
 ## 全部本地五折结果
 
 | 实验 | Balanced Accuracy | 折 1 | 折 2 | 折 3 | 折 4 | 折 5 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [`v5-v3-text-neighbor-calibration`](results/v5-v3-text-neighbor-calibration) | 0.4638 | 0.4519 | 0.4426 | 0.4485 | 0.4926 | 0.4833 |
+| [`v5-text-neighbor-calibration`](results/v5-text-neighbor-calibration) | 0.4616 | 0.4463 | 0.4537 | 0.4522 | 0.4796 | 0.4759 |
+| [`v3-text-neighbor-calibration`](results/v3-text-neighbor-calibration) | 0.4612 | 0.4481 | 0.4444 | 0.4541 | 0.4852 | 0.4741 |
 | [`extra40-v4-blend-18`](results/extra40-v4-blend-18) | 0.4486 | 0.4500 | 0.4389 | 0.4281 | 0.4704 | 0.4556 |
+| [`v5-confusion-pairs`](results/v5-confusion-pairs) | 0.4460 | 0.4389 | 0.4389 | 0.4318 | 0.4741 | 0.4463 |
+| [`topic-style-length-gate`](results/topic-style-length-gate) | 0.4445 | 0.4407 | 0.4426 | 0.4244 | 0.4704 | 0.4444 |
 | [`topic-style-v4-blend-8`](results/topic-style-v4-blend-8) | 0.4445 | 0.4407 | 0.4426 | 0.4244 | 0.4704 | 0.4444 |
 | [`extra40 + postlb-paired-frozen-cal (v3)`](results/hourly-encoder/s42-extra40-ep3/on-postlb-paired-frozen-cal) | 0.4430 | 0.4463 | 0.4333 | 0.4170 | 0.4667 | 0.4519 |
+| [`passage-recurrence-v5-08`](results/passage-recurrence-v5-08) | 0.4423 | 0.4370 | 0.4352 | 0.4225 | 0.4685 | 0.4481 |
 | [`topic-style-v4-blend-16`](results/topic-style-v4-blend-16) | 0.4404 | 0.4352 | 0.4426 | 0.4151 | 0.4667 | 0.4426 |
 | [`postlb-frozen-disc-length-6`](results/postlb-frozen-disc-length-6) | 0.4389 | 0.4278 | 0.4352 | 0.4151 | 0.4611 | 0.4556 |
 | [`harvest-v3-blend-10`](results/harvest-v3-blend-10) | 0.4382 | 0.4259 | 0.4315 | 0.4245 | 0.4648 | 0.4444 |
@@ -145,6 +164,7 @@ v5 的新编码器用每类 40 条外部样本补充训练，固定融合权重�
 | [`harvest-v3-control-raw`](results/harvest-v3-control-raw) | 0.2463 | 0.2352 | 0.2648 | 0.2580 | 0.2185 | 0.2556 |
 | [`seq-v2-length`](results/seq-v2-length) | 0.2456 | 0.2593 | 0.2611 | 0.2114 | 0.2574 | 0.2389 |
 | [`harvest-v3-raw`](results/harvest-v3-raw) | 0.2405 | 0.2463 | 0.2500 | 0.2363 | 0.2389 | 0.2315 |
+| [`passage-recurrence-solo`](results/passage-recurrence-solo) | 0.2315 | 0.2056 | 0.2296 | 0.2446 | 0.2407 | 0.2370 |
 | [`markers-v2-syntax-standalone`](results/markers-v2-syntax-standalone) | 0.2293 | 0.2000 | 0.2370 | 0.2278 | 0.2241 | 0.2574 |
 | [`style-tree`](results/style-tree) | 0.2226 | 0.2204 | 0.1963 | 0.2409 | 0.2500 | 0.2056 |
 | [`contrast-v2-bpe-solo`](results/contrast-v2-bpe-solo) | 0.2037 | 0.2000 | 0.2056 | 0.1928 | 0.2056 | 0.2148 |
