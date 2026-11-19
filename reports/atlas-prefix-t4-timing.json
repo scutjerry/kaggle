@@ -1,0 +1,39 @@
+{
+  "dataset": "80 unique official train rows, each scored by both methods",
+  "actual_wall_s_including_spawn_load_warm_and_both_methods": 166.09877294000003,
+  "measured_two_gpu_speedup_full18_over_top4": 4.349191038375041,
+  "methods": {
+    "full18": {
+      "rows": 64,
+      "two_gpu_measured_wall_s": 59.74000930786133,
+      "passages_per_s": 1.0713088387747889,
+      "text_tokens_per_s": 139.83928186132167,
+      "source_text_tokens_per_s": 2517.10707350379,
+      "max_allocated_bytes_one_gpu": 9604617728,
+      "projected_compute_s_for_1000_similar_rows_excluding_load": 933.4376454353333
+    },
+    "top4": {
+      "rows": 64,
+      "two_gpu_measured_wall_s": 13.735889911651611,
+      "passages_per_s": 4.659326800931284,
+      "text_tokens_per_s": 608.1877514840617,
+      "source_text_tokens_per_s": 2432.7510059362467,
+      "max_allocated_bytes_one_gpu": 8981679616,
+      "projected_compute_s_for_1000_similar_rows_excluding_load": 214.62327986955643
+    }
+  },
+  "max_abs_error": 0.003118753433227539,
+  "outside_dtype_tolerance": 0,
+  "dtype": "torch.float16",
+  "atol": 0.01,
+  "rtol": 0.002,
+  "scope": "Full18 includes the author scorer\u2019s clipped S overhead. Four-prefix uses LL only. Projected wall time excludes other V30 stages.",
+  "cloud_notebook_version": 371505276,
+  "kaggle_total_wall_seconds": 189.5,
+  "public_training_texts_only": true,
+  "source_private_archive_sha256": "debd12859490999e024adfa7b4ab9d4e7e4b3bce9c2fca16857e323206c468a5",
+  "load_seconds_by_gpu": [
+    71.339144904,
+    71.352226306
+  ]
+}
