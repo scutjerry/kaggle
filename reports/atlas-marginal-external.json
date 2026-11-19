@@ -1,0 +1,4385 @@
+{
+  "private_notebook_version": 371537560,
+  "runtime_seconds": 229.5,
+  "accelerator": "2 x Tesla T4",
+  "unique_physical_prefix_requests": 2024,
+  "physical_passages_and_quartets": 506,
+  "logical_prefix_scores": 3256,
+  "unique_external_texts_scored": 452,
+  "grading_sha256": "585336546df3eb7e56899f16140a865fbd41c8a1ee28c63c4105bfed15d2ac16",
+  "likelihood_parquet_sha256": "8416b6c9f91ce48f89b79c1f1db20063a7ff5bb471fc5b3588839f21e91a3cbb",
+  "frozen_request_map_sha256": "08a7e33c9b6b22c409c86932d8edb2671ed9ee7a7397326c5e066815cef17c2c",
+  "source_scope": "Single-component evaluations. The 1360 passages were generated after the original dual-Qwen and ATLAS releases, with labels recorded by their publisher. The adaptive rule was selected after earlier evaluation on these same texts. The full V30 SVC4 supervised pool matches 233 of 270 smaller-cohort texts and all 270 prompt fingerprints. The handwriting ensemble member separately matches 205 texts.",
+  "rules": "V4/V6 placement: fix the pre-ATLAS GLM gate, temperature, likelihood weight and post-GLM logits for a projection. Add only the 10% top-four delta relative to the pre-GLM base, then rerun corrected style. Actual min 50 bypasses GLM for both small batches. Proxy selects floor(0.15*N) without the minimum, comparing original 54 and paired 76 classifiers. Legacy uncorrected label routing is outside this V4 comparison. No GLM supplied for 1360.",
+  "bootstrap": "3000 paired bootstrap draws among unique prompts within each observed true class; macro recall class-balanced; ordinary accuracy keeps observed class proportions. Both intervals concern the delta.",
+  "projection_equality": {
+    "component": {
+      "base_bitwise_equal": false,
+      "atlas_bitwise_equal": false,
+      "base_max_abs_logp_difference": 1.5612023245051674,
+      "atlas_max_abs_logp_difference": 1.5612023245051674
+    },
+    "pilot": {
+      "base_bitwise_equal": true,
+      "atlas_bitwise_equal": true,
+      "base_max_abs_logp_difference": 0.0,
+      "atlas_max_abs_logp_difference": 0.0
+    },
+    "confirmation": {
+      "base_bitwise_equal": true,
+      "atlas_bitwise_equal": true,
+      "base_max_abs_logp_difference": 0.0,
+      "atlas_max_abs_logp_difference": 0.0
+    }
+  },
+  "routing": {
+    "component": {
+      "v30_fixed": {
+        "actual_glm_rows": 0,
+        "proxy_glm_rows": 0,
+        "temperature": null,
+        "weight": null,
+        "glm_state_shared_by_both_arms": true
+      },
+      "v30_adaptive": {
+        "actual_glm_rows": 0,
+        "proxy_glm_rows": 0,
+        "temperature": null,
+        "weight": null,
+        "glm_state_shared_by_both_arms": true
+      }
+    },
+    "pilot": {
+      "v30_fixed": {
+        "actual_glm_rows": 0,
+        "proxy_glm_rows": 8,
+        "temperature": 1.947052901175172,
+        "weight": 0.5135967283664638,
+        "glm_state_shared_by_both_arms": true
+      },
+      "v30_adaptive": {
+        "actual_glm_rows": 0,
+        "proxy_glm_rows": 8,
+        "temperature": 1.947052901175172,
+        "weight": 0.5135967283664638,
+        "glm_state_shared_by_both_arms": true
+      }
+    },
+    "confirmation": {
+      "v30_fixed": {
+        "actual_glm_rows": 0,
+        "proxy_glm_rows": 32,
+        "temperature": 2.266686719150761,
+        "weight": 0.4411725676738693,
+        "glm_state_shared_by_both_arms": true
+      },
+      "v30_adaptive": {
+        "actual_glm_rows": 0,
+        "proxy_glm_rows": 32,
+        "temperature": 2.266686719150761,
+        "weight": 0.4411725676738693,
+        "glm_state_shared_by_both_arms": true
+      }
+    }
+  },
+  "cohorts": {
+    "component": {
+      "v30_fixed": {
+        "qwen": {
+          "all": {
+            "rows": 1360,
+            "classes": 12,
+            "before_ba": 0.668211401298003,
+            "after_ba": 0.714316952600737,
+            "delta_ba": 0.04610555130273397,
+            "before_acc": 0.6588235294117647,
+            "after_acc": 0.6911764705882353,
+            "delta_acc": 0.03235294117647059,
+            "changed": 133,
+            "corrected": 67,
+            "regressed": 23,
+            "delta_ba_95pct": [
+              0.01784494985742404,
+              0.07773866510077533
+            ],
+            "delta_acc_95pct": [
+              0.019117647058823527,
+              0.045588235294117645
+            ],
+            "by_class": {
+              "claude-opus-4-6": {
+                "rows": 160,
+                "before_correct": 118,
+                "after_correct": 121
+              },
+              "claude-opus-4-8": {
+                "rows": 124,
+                "before_correct": 58,
+                "after_correct": 66
+              },
+              "claude-opus-5": {
+                "rows": 190,
+                "before_correct": 152,
+                "after_correct": 156
+              },
+              "claude-sonnet-5": {
+                "rows": 130,
+                "before_correct": 94,
+                "after_correct": 97
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 238,
+                "before_correct": 196,
+                "after_correct": 198
+              },
+              "gemini-3.6-flash": {
+                "rows": 228,
+                "before_correct": 122,
+                "after_correct": 133
+              },
+              "gemini-3.8-flash": {
+                "rows": 239,
+                "before_correct": 121,
+                "after_correct": 131
+              },
+              "gpt-5.5": {
+                "rows": 11,
+                "before_correct": 9,
+                "after_correct": 9
+              },
+              "gpt-5.6-luna": {
+                "rows": 7,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gpt-5.6-sol": {
+                "rows": 7,
+                "before_correct": 3,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 2,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 24,
+                "before_correct": 18,
+                "after_correct": 19
+              }
+            }
+          },
+          "at_least_20": {
+            "rows": 1333,
+            "classes": 8,
+            "before_ba": 0.66790151753142,
+            "after_ba": 0.7013455587712352,
+            "delta_ba": 0.03344404123981515,
+            "before_acc": 0.6594148537134283,
+            "after_acc": 0.6909227306826706,
+            "delta_acc": 0.03150787696924231,
+            "changed": 130,
+            "corrected": 65,
+            "regressed": 23,
+            "delta_ba_95pct": [
+              0.01811036939631671,
+              0.051088107514585555
+            ],
+            "delta_acc_95pct": [
+              0.01800450112528132,
+              0.045011252813203305
+            ],
+            "by_class": {
+              "claude-opus-4-6": {
+                "rows": 160,
+                "before_correct": 118,
+                "after_correct": 121
+              },
+              "claude-opus-4-8": {
+                "rows": 124,
+                "before_correct": 58,
+                "after_correct": 66
+              },
+              "claude-opus-5": {
+                "rows": 190,
+                "before_correct": 152,
+                "after_correct": 156
+              },
+              "claude-sonnet-5": {
+                "rows": 130,
+                "before_correct": 94,
+                "after_correct": 97
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 238,
+                "before_correct": 196,
+                "after_correct": 198
+              },
+              "gemini-3.6-flash": {
+                "rows": 228,
+                "before_correct": 122,
+                "after_correct": 133
+              },
+              "gemini-3.8-flash": {
+                "rows": 239,
+                "before_correct": 121,
+                "after_correct": 131
+              },
+              "gpt-6-astra": {
+                "rows": 24,
+                "before_correct": 18,
+                "after_correct": 19
+              }
+            }
+          }
+        },
+        "qwen_style": {
+          "all": {
+            "rows": 1360,
+            "classes": 12,
+            "before_ba": 0.6597030307515124,
+            "after_ba": 0.7032843866216001,
+            "delta_ba": 0.04358135587008771,
+            "before_acc": 0.6419117647058824,
+            "after_acc": 0.6705882352941176,
+            "delta_acc": 0.028676470588235293,
+            "changed": 139,
+            "corrected": 63,
+            "regressed": 24,
+            "delta_ba_95pct": [
+              0.014975315111728503,
+              0.07591923823407355
+            ],
+            "delta_acc_95pct": [
+              0.015441176470588232,
+              0.04191176470588236
+            ],
+            "by_class": {
+              "claude-opus-4-6": {
+                "rows": 160,
+                "before_correct": 116,
+                "after_correct": 120
+              },
+              "claude-opus-4-8": {
+                "rows": 124,
+                "before_correct": 59,
+                "after_correct": 65
+              },
+              "claude-opus-5": {
+                "rows": 190,
+                "before_correct": 152,
+                "after_correct": 156
+              },
+              "claude-sonnet-5": {
+                "rows": 130,
+                "before_correct": 93,
+                "after_correct": 95
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 238,
+                "before_correct": 191,
+                "after_correct": 195
+              },
+              "gemini-3.6-flash": {
+                "rows": 228,
+                "before_correct": 112,
+                "after_correct": 122
+              },
+              "gemini-3.8-flash": {
+                "rows": 239,
+                "before_correct": 115,
+                "after_correct": 121
+              },
+              "gpt-5.5": {
+                "rows": 11,
+                "before_correct": 9,
+                "after_correct": 9
+              },
+              "gpt-5.6-luna": {
+                "rows": 7,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gpt-5.6-sol": {
+                "rows": 7,
+                "before_correct": 3,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 2,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 24,
+                "before_correct": 18,
+                "after_correct": 19
+              }
+            }
+          },
+          "at_least_20": {
+            "rows": 1333,
+            "classes": 8,
+            "before_ba": 0.6551389617116841,
+            "after_ba": 0.6847967098025299,
+            "delta_ba": 0.02965774809084587,
+            "before_acc": 0.6421605401350338,
+            "after_acc": 0.6699174793698425,
+            "delta_acc": 0.0277569392348087,
+            "changed": 136,
+            "corrected": 61,
+            "regressed": 24,
+            "delta_ba_95pct": [
+              0.014792499336280794,
+              0.0464549579108166
+            ],
+            "delta_acc_95pct": [
+              0.01425356339084771,
+              0.04126031507876969
+            ],
+            "by_class": {
+              "claude-opus-4-6": {
+                "rows": 160,
+                "before_correct": 116,
+                "after_correct": 120
+              },
+              "claude-opus-4-8": {
+                "rows": 124,
+                "before_correct": 59,
+                "after_correct": 65
+              },
+              "claude-opus-5": {
+                "rows": 190,
+                "before_correct": 152,
+                "after_correct": 156
+              },
+              "claude-sonnet-5": {
+                "rows": 130,
+                "before_correct": 93,
+                "after_correct": 95
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 238,
+                "before_correct": 191,
+                "after_correct": 195
+              },
+              "gemini-3.6-flash": {
+                "rows": 228,
+                "before_correct": 112,
+                "after_correct": 122
+              },
+              "gemini-3.8-flash": {
+                "rows": 239,
+                "before_correct": 115,
+                "after_correct": 121
+              },
+              "gpt-6-astra": {
+                "rows": 24,
+                "before_correct": 18,
+                "after_correct": 19
+              }
+            }
+          }
+        }
+      },
+      "v30_adaptive": {
+        "qwen": {
+          "all": {
+            "rows": 1360,
+            "classes": 12,
+            "before_ba": 0.6806224995639062,
+            "after_ba": 0.7202119547393527,
+            "delta_ba": 0.03958945517544654,
+            "before_acc": 0.6794117647058824,
+            "after_acc": 0.7,
+            "delta_acc": 0.020588235294117647,
+            "changed": 118,
+            "corrected": 54,
+            "regressed": 26,
+            "delta_ba_95pct": [
+              0.01137324236105083,
+              0.07159632962576862
+            ],
+            "delta_acc_95pct": [
+              0.008069852941176476,
+              0.033088235294117654
+            ],
+            "by_class": {
+              "claude-opus-4-6": {
+                "rows": 160,
+                "before_correct": 120,
+                "after_correct": 127
+              },
+              "claude-opus-4-8": {
+                "rows": 124,
+                "before_correct": 60,
+                "after_correct": 67
+              },
+              "claude-opus-5": {
+                "rows": 190,
+                "before_correct": 160,
+                "after_correct": 160
+              },
+              "claude-sonnet-5": {
+                "rows": 130,
+                "before_correct": 97,
+                "after_correct": 97
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 238,
+                "before_correct": 203,
+                "after_correct": 206
+              },
+              "gemini-3.6-flash": {
+                "rows": 228,
+                "before_correct": 125,
+                "after_correct": 132
+              },
+              "gemini-3.8-flash": {
+                "rows": 239,
+                "before_correct": 124,
+                "after_correct": 125
+              },
+              "gpt-5.5": {
+                "rows": 11,
+                "before_correct": 9,
+                "after_correct": 9
+              },
+              "gpt-5.6-luna": {
+                "rows": 7,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gpt-5.6-sol": {
+                "rows": 7,
+                "before_correct": 3,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 2,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 24,
+                "before_correct": 18,
+                "after_correct": 19
+              }
+            }
+          },
+          "at_least_20": {
+            "rows": 1333,
+            "classes": 8,
+            "before_ba": 0.6865181649302747,
+            "after_ba": 0.710188061979159,
+            "delta_ba": 0.023669897048884225,
+            "before_acc": 0.6804201050262566,
+            "after_acc": 0.6999249812453113,
+            "delta_acc": 0.019504876219054765,
+            "changed": 116,
+            "corrected": 52,
+            "regressed": 26,
+            "delta_ba_95pct": [
+              0.00933165919876438,
+              0.03976046321586273
+            ],
+            "delta_acc_95pct": [
+              0.006751687921980495,
+              0.03225806451612903
+            ],
+            "by_class": {
+              "claude-opus-4-6": {
+                "rows": 160,
+                "before_correct": 120,
+                "after_correct": 127
+              },
+              "claude-opus-4-8": {
+                "rows": 124,
+                "before_correct": 60,
+                "after_correct": 67
+              },
+              "claude-opus-5": {
+                "rows": 190,
+                "before_correct": 160,
+                "after_correct": 160
+              },
+              "claude-sonnet-5": {
+                "rows": 130,
+                "before_correct": 97,
+                "after_correct": 97
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 238,
+                "before_correct": 203,
+                "after_correct": 206
+              },
+              "gemini-3.6-flash": {
+                "rows": 228,
+                "before_correct": 125,
+                "after_correct": 132
+              },
+              "gemini-3.8-flash": {
+                "rows": 239,
+                "before_correct": 124,
+                "after_correct": 125
+              },
+              "gpt-6-astra": {
+                "rows": 24,
+                "before_correct": 18,
+                "after_correct": 19
+              }
+            }
+          }
+        },
+        "qwen_style": {
+          "all": {
+            "rows": 1360,
+            "classes": 12,
+            "before_ba": 0.671050760197433,
+            "after_ba": 0.7111898545363897,
+            "delta_ba": 0.04013909433895668,
+            "before_acc": 0.6617647058823529,
+            "after_acc": 0.6830882352941177,
+            "delta_acc": 0.021323529411764706,
+            "changed": 128,
+            "corrected": 56,
+            "regressed": 27,
+            "delta_ba_95pct": [
+              0.012076247378761553,
+              0.07194562839420196
+            ],
+            "delta_acc_95pct": [
+              0.008088235294117646,
+              0.03455882352941176
+            ],
+            "by_class": {
+              "claude-opus-4-6": {
+                "rows": 160,
+                "before_correct": 119,
+                "after_correct": 126
+              },
+              "claude-opus-4-8": {
+                "rows": 124,
+                "before_correct": 60,
+                "after_correct": 67
+              },
+              "claude-opus-5": {
+                "rows": 190,
+                "before_correct": 160,
+                "after_correct": 159
+              },
+              "claude-sonnet-5": {
+                "rows": 130,
+                "before_correct": 94,
+                "after_correct": 95
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 238,
+                "before_correct": 201,
+                "after_correct": 203
+              },
+              "gemini-3.6-flash": {
+                "rows": 228,
+                "before_correct": 116,
+                "after_correct": 123
+              },
+              "gemini-3.8-flash": {
+                "rows": 239,
+                "before_correct": 115,
+                "after_correct": 118
+              },
+              "gpt-5.5": {
+                "rows": 11,
+                "before_correct": 9,
+                "after_correct": 9
+              },
+              "gpt-5.6-luna": {
+                "rows": 7,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gpt-5.6-sol": {
+                "rows": 7,
+                "before_correct": 3,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 2,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 24,
+                "before_correct": 18,
+                "after_correct": 19
+              }
+            }
+          },
+          "at_least_20": {
+            "rows": 1333,
+            "classes": 8,
+            "before_ba": 0.672160555880565,
+            "after_ba": 0.6966549116747145,
+            "delta_ba": 0.02449435579414949,
+            "before_acc": 0.6624156039009752,
+            "after_acc": 0.6826706676669168,
+            "delta_acc": 0.020255063765941484,
+            "changed": 126,
+            "corrected": 54,
+            "regressed": 27,
+            "delta_ba_95pct": [
+              0.009896002193129113,
+              0.04081487055582853
+            ],
+            "delta_acc_95pct": [
+              0.006751687921980496,
+              0.033008252063015754
+            ],
+            "by_class": {
+              "claude-opus-4-6": {
+                "rows": 160,
+                "before_correct": 119,
+                "after_correct": 126
+              },
+              "claude-opus-4-8": {
+                "rows": 124,
+                "before_correct": 60,
+                "after_correct": 67
+              },
+              "claude-opus-5": {
+                "rows": 190,
+                "before_correct": 160,
+                "after_correct": 159
+              },
+              "claude-sonnet-5": {
+                "rows": 130,
+                "before_correct": 94,
+                "after_correct": 95
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 238,
+                "before_correct": 201,
+                "after_correct": 203
+              },
+              "gemini-3.6-flash": {
+                "rows": 228,
+                "before_correct": 116,
+                "after_correct": 123
+              },
+              "gemini-3.8-flash": {
+                "rows": 239,
+                "before_correct": 115,
+                "after_correct": 118
+              },
+              "gpt-6-astra": {
+                "rows": 24,
+                "before_correct": 18,
+                "after_correct": 19
+              }
+            }
+          }
+        }
+      }
+    },
+    "pilot": {
+      "v30_fixed": {
+        "qwen": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "before_ba": 0.574074074074074,
+            "after_ba": 0.537037037037037,
+            "delta_ba": -0.03703703703703698,
+            "before_acc": 0.5740740740740741,
+            "after_acc": 0.5370370370370371,
+            "delta_acc": -0.037037037037037035,
+            "changed": 5,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.6-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 51,
+            "classes": 17,
+            "before_ba": 0.5686274509803921,
+            "after_ba": 0.5294117647058822,
+            "delta_ba": -0.03921568627450989,
+            "before_acc": 0.5686274509803921,
+            "after_acc": 0.5294117647058824,
+            "delta_acc": -0.0392156862745098,
+            "changed": 4,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          }
+        },
+        "corrected_actual_small_batch": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "before_ba": 0.574074074074074,
+            "after_ba": 0.537037037037037,
+            "delta_ba": -0.03703703703703698,
+            "before_acc": 0.5740740740740741,
+            "after_acc": 0.5370370370370371,
+            "delta_acc": -0.037037037037037035,
+            "changed": 6,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.6-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 51,
+            "classes": 17,
+            "before_ba": 0.5686274509803921,
+            "after_ba": 0.5294117647058822,
+            "delta_ba": -0.03921568627450989,
+            "before_acc": 0.5686274509803921,
+            "after_acc": 0.5294117647058824,
+            "delta_acc": -0.0392156862745098,
+            "changed": 5,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          }
+        },
+        "original_15pct_proxy": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "before_ba": 0.5925925925925926,
+            "after_ba": 0.5555555555555556,
+            "delta_ba": -0.03703703703703698,
+            "before_acc": 0.5925925925925926,
+            "after_acc": 0.5555555555555556,
+            "delta_acc": -0.037037037037037035,
+            "changed": 5,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.6-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 51,
+            "classes": 17,
+            "before_ba": 0.588235294117647,
+            "after_ba": 0.5490196078431372,
+            "delta_ba": -0.039215686274509776,
+            "before_acc": 0.5882352941176471,
+            "after_acc": 0.5490196078431373,
+            "delta_acc": -0.0392156862745098,
+            "changed": 5,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          }
+        },
+        "paired_15pct_proxy": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "before_ba": 0.5925925925925926,
+            "after_ba": 0.5555555555555556,
+            "delta_ba": -0.03703703703703698,
+            "before_acc": 0.5925925925925926,
+            "after_acc": 0.5555555555555556,
+            "delta_acc": -0.037037037037037035,
+            "changed": 4,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.6-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 51,
+            "classes": 17,
+            "before_ba": 0.588235294117647,
+            "after_ba": 0.5490196078431372,
+            "delta_ba": -0.039215686274509776,
+            "before_acc": 0.5882352941176471,
+            "after_acc": 0.5490196078431373,
+            "delta_acc": -0.0392156862745098,
+            "changed": 4,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          }
+        }
+      },
+      "v30_adaptive": {
+        "qwen": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "before_ba": 0.574074074074074,
+            "after_ba": 0.537037037037037,
+            "delta_ba": -0.03703703703703698,
+            "before_acc": 0.5740740740740741,
+            "after_acc": 0.5370370370370371,
+            "delta_acc": -0.037037037037037035,
+            "changed": 5,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.6-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 51,
+            "classes": 17,
+            "before_ba": 0.5686274509803921,
+            "after_ba": 0.5294117647058822,
+            "delta_ba": -0.03921568627450989,
+            "before_acc": 0.5686274509803921,
+            "after_acc": 0.5294117647058824,
+            "delta_acc": -0.0392156862745098,
+            "changed": 4,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          }
+        },
+        "corrected_actual_small_batch": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "before_ba": 0.574074074074074,
+            "after_ba": 0.537037037037037,
+            "delta_ba": -0.03703703703703698,
+            "before_acc": 0.5740740740740741,
+            "after_acc": 0.5370370370370371,
+            "delta_acc": -0.037037037037037035,
+            "changed": 6,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.6-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 51,
+            "classes": 17,
+            "before_ba": 0.5686274509803921,
+            "after_ba": 0.5294117647058822,
+            "delta_ba": -0.03921568627450989,
+            "before_acc": 0.5686274509803921,
+            "after_acc": 0.5294117647058824,
+            "delta_acc": -0.0392156862745098,
+            "changed": 5,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          }
+        },
+        "original_15pct_proxy": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "before_ba": 0.5925925925925926,
+            "after_ba": 0.5555555555555556,
+            "delta_ba": -0.03703703703703698,
+            "before_acc": 0.5925925925925926,
+            "after_acc": 0.5555555555555556,
+            "delta_acc": -0.037037037037037035,
+            "changed": 5,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.6-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 51,
+            "classes": 17,
+            "before_ba": 0.588235294117647,
+            "after_ba": 0.5490196078431372,
+            "delta_ba": -0.039215686274509776,
+            "before_acc": 0.5882352941176471,
+            "after_acc": 0.5490196078431373,
+            "delta_acc": -0.0392156862745098,
+            "changed": 5,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          }
+        },
+        "paired_15pct_proxy": {
+          "all": {
+            "rows": 54,
+            "classes": 18,
+            "before_ba": 0.5925925925925926,
+            "after_ba": 0.5555555555555556,
+            "delta_ba": -0.03703703703703698,
+            "before_acc": 0.5925925925925926,
+            "after_acc": 0.5555555555555556,
+            "delta_acc": -0.037037037037037035,
+            "changed": 4,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.07407407407407407,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.6-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 51,
+            "classes": 17,
+            "before_ba": 0.588235294117647,
+            "after_ba": 0.5490196078431372,
+            "delta_ba": -0.039215686274509776,
+            "before_acc": 0.5882352941176471,
+            "after_acc": 0.5490196078431373,
+            "delta_acc": -0.0392156862745098,
+            "changed": 4,
+            "corrected": 0,
+            "regressed": 2,
+            "delta_ba_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "delta_acc_95pct": [
+              -0.0784313725490196,
+              0.0
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 0
+              },
+              "claude-opus-4-6": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "claude-opus-4-8": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-opus-5": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "claude-sonnet-5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 3,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.7-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gemini-3.8-flash": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "glm-5.3-flash": {
+                "rows": 3,
+                "before_correct": 0,
+                "after_correct": 0
+              },
+              "gpt-5.5": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-luna": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-5.6-sol": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "gpt-5.6-terra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 1
+              },
+              "gpt-6-astra": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "kimi-k3": {
+                "rows": 3,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "qwen3.8-max": {
+                "rows": 3,
+                "before_correct": 2,
+                "after_correct": 2
+              }
+            }
+          }
+        }
+      }
+    },
+    "confirmation": {
+      "v30_fixed": {
+        "qwen": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "before_ba": 0.4444444444444444,
+            "after_ba": 0.4722222222222222,
+            "delta_ba": 0.02777777777777779,
+            "before_acc": 0.4444444444444444,
+            "after_acc": 0.4722222222222222,
+            "delta_acc": 0.027777777777777776,
+            "changed": 23,
+            "corrected": 11,
+            "regressed": 5,
+            "delta_ba_95pct": [
+              -0.009259259259259259,
+              0.06481481481481481
+            ],
+            "delta_acc_95pct": [
+              -0.009259259259259259,
+              0.06481481481481481
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 5
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.6-flash": {
+                "rows": 12,
+                "before_correct": 4,
+                "after_correct": 5
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 204,
+            "classes": 17,
+            "before_ba": 0.4509803921568627,
+            "after_ba": 0.4754901960784313,
+            "delta_ba": 0.024509803921568596,
+            "before_acc": 0.45098039215686275,
+            "after_acc": 0.47549019607843135,
+            "delta_acc": 0.024509803921568627,
+            "changed": 22,
+            "corrected": 10,
+            "regressed": 5,
+            "delta_ba_95pct": [
+              -0.009926470588235252,
+              0.058946078431373
+            ],
+            "delta_acc_95pct": [
+              -0.009926470588235252,
+              0.058946078431373
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 5
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          }
+        },
+        "corrected_actual_small_batch": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "before_ba": 0.449074074074074,
+            "after_ba": 0.4722222222222222,
+            "delta_ba": 0.023148148148148195,
+            "before_acc": 0.44907407407407407,
+            "after_acc": 0.4722222222222222,
+            "delta_acc": 0.023148148148148147,
+            "changed": 23,
+            "corrected": 10,
+            "regressed": 5,
+            "delta_ba_95pct": [
+              -0.009259259259259259,
+              0.06018518518518518
+            ],
+            "delta_acc_95pct": [
+              -0.009259259259259259,
+              0.06018518518518518
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 5
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.6-flash": {
+                "rows": 12,
+                "before_correct": 4,
+                "after_correct": 5
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 204,
+            "classes": 17,
+            "before_ba": 0.4558823529411764,
+            "after_ba": 0.4754901960784313,
+            "delta_ba": 0.019607843137254888,
+            "before_acc": 0.45588235294117646,
+            "after_acc": 0.47549019607843135,
+            "delta_acc": 0.0196078431372549,
+            "changed": 22,
+            "corrected": 9,
+            "regressed": 5,
+            "delta_ba_95pct": [
+              -0.014705882352941176,
+              0.05392156862745098
+            ],
+            "delta_acc_95pct": [
+              -0.014705882352941176,
+              0.05392156862745098
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 5
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          }
+        },
+        "original_15pct_proxy": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "before_ba": 0.4861111111111112,
+            "after_ba": 0.5092592592592592,
+            "delta_ba": 0.023148148148147973,
+            "before_acc": 0.4861111111111111,
+            "after_acc": 0.5092592592592593,
+            "delta_acc": 0.023148148148148147,
+            "changed": 18,
+            "corrected": 9,
+            "regressed": 4,
+            "delta_ba_95pct": [
+              -0.009259259259259259,
+              0.05555555555555555
+            ],
+            "delta_acc_95pct": [
+              -0.009259259259259259,
+              0.05555555555555555
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 7
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.6-flash": {
+                "rows": 12,
+                "before_correct": 4,
+                "after_correct": 5
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 6
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 3
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 204,
+            "classes": 17,
+            "before_ba": 0.49509803921568624,
+            "after_ba": 0.5147058823529411,
+            "delta_ba": 0.019607843137254888,
+            "before_acc": 0.4950980392156863,
+            "after_acc": 0.5147058823529411,
+            "delta_acc": 0.0196078431372549,
+            "changed": 17,
+            "corrected": 8,
+            "regressed": 4,
+            "delta_ba_95pct": [
+              -0.014705882352941176,
+              0.05392156862745098
+            ],
+            "delta_acc_95pct": [
+              -0.014705882352941176,
+              0.05392156862745098
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 7
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 6
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 3
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          }
+        },
+        "paired_15pct_proxy": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "before_ba": 0.49074074074074087,
+            "after_ba": 0.5138888888888888,
+            "delta_ba": 0.023148148148147973,
+            "before_acc": 0.49074074074074076,
+            "after_acc": 0.5138888888888888,
+            "delta_acc": 0.023148148148148147,
+            "changed": 20,
+            "corrected": 9,
+            "regressed": 4,
+            "delta_ba_95pct": [
+              -0.009259259259259259,
+              0.05555555555555555
+            ],
+            "delta_acc_95pct": [
+              -0.009259259259259259,
+              0.05555555555555555
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 7
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.6-flash": {
+                "rows": 12,
+                "before_correct": 4,
+                "after_correct": 5
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 6
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 4
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 204,
+            "classes": 17,
+            "before_ba": 0.5,
+            "after_ba": 0.5196078431372548,
+            "delta_ba": 0.019607843137254832,
+            "before_acc": 0.5,
+            "after_acc": 0.5196078431372549,
+            "delta_acc": 0.0196078431372549,
+            "changed": 19,
+            "corrected": 8,
+            "regressed": 4,
+            "delta_ba_95pct": [
+              -0.00980392156862745,
+              0.05392156862745098
+            ],
+            "delta_acc_95pct": [
+              -0.00980392156862745,
+              0.05392156862745098
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 7
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 6
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 4
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          }
+        }
+      },
+      "v30_adaptive": {
+        "qwen": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "before_ba": 0.4444444444444444,
+            "after_ba": 0.4722222222222222,
+            "delta_ba": 0.02777777777777779,
+            "before_acc": 0.4444444444444444,
+            "after_acc": 0.4722222222222222,
+            "delta_acc": 0.027777777777777776,
+            "changed": 23,
+            "corrected": 11,
+            "regressed": 5,
+            "delta_ba_95pct": [
+              -0.009259259259259259,
+              0.06481481481481481
+            ],
+            "delta_acc_95pct": [
+              -0.009259259259259259,
+              0.06481481481481481
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 5
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.6-flash": {
+                "rows": 12,
+                "before_correct": 4,
+                "after_correct": 5
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 204,
+            "classes": 17,
+            "before_ba": 0.4509803921568627,
+            "after_ba": 0.4754901960784313,
+            "delta_ba": 0.024509803921568596,
+            "before_acc": 0.45098039215686275,
+            "after_acc": 0.47549019607843135,
+            "delta_acc": 0.024509803921568627,
+            "changed": 22,
+            "corrected": 10,
+            "regressed": 5,
+            "delta_ba_95pct": [
+              -0.009926470588235252,
+              0.058946078431373
+            ],
+            "delta_acc_95pct": [
+              -0.009926470588235252,
+              0.058946078431373
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 5
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          }
+        },
+        "corrected_actual_small_batch": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "before_ba": 0.449074074074074,
+            "after_ba": 0.4722222222222222,
+            "delta_ba": 0.023148148148148195,
+            "before_acc": 0.44907407407407407,
+            "after_acc": 0.4722222222222222,
+            "delta_acc": 0.023148148148148147,
+            "changed": 23,
+            "corrected": 10,
+            "regressed": 5,
+            "delta_ba_95pct": [
+              -0.009259259259259259,
+              0.06018518518518518
+            ],
+            "delta_acc_95pct": [
+              -0.009259259259259259,
+              0.06018518518518518
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 5
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.6-flash": {
+                "rows": 12,
+                "before_correct": 4,
+                "after_correct": 5
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 204,
+            "classes": 17,
+            "before_ba": 0.4558823529411764,
+            "after_ba": 0.4754901960784313,
+            "delta_ba": 0.019607843137254888,
+            "before_acc": 0.45588235294117646,
+            "after_acc": 0.47549019607843135,
+            "delta_acc": 0.0196078431372549,
+            "changed": 22,
+            "corrected": 9,
+            "regressed": 5,
+            "delta_ba_95pct": [
+              -0.014705882352941176,
+              0.05392156862745098
+            ],
+            "delta_acc_95pct": [
+              -0.014705882352941176,
+              0.05392156862745098
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 5
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 1
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          }
+        },
+        "original_15pct_proxy": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "before_ba": 0.4861111111111112,
+            "after_ba": 0.5092592592592592,
+            "delta_ba": 0.023148148148147973,
+            "before_acc": 0.4861111111111111,
+            "after_acc": 0.5092592592592593,
+            "delta_acc": 0.023148148148148147,
+            "changed": 18,
+            "corrected": 9,
+            "regressed": 4,
+            "delta_ba_95pct": [
+              -0.009259259259259259,
+              0.05555555555555555
+            ],
+            "delta_acc_95pct": [
+              -0.009259259259259259,
+              0.05555555555555555
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 7
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.6-flash": {
+                "rows": 12,
+                "before_correct": 4,
+                "after_correct": 5
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 6
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 3
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 204,
+            "classes": 17,
+            "before_ba": 0.49509803921568624,
+            "after_ba": 0.5147058823529411,
+            "delta_ba": 0.019607843137254888,
+            "before_acc": 0.4950980392156863,
+            "after_acc": 0.5147058823529411,
+            "delta_acc": 0.0196078431372549,
+            "changed": 17,
+            "corrected": 8,
+            "regressed": 4,
+            "delta_ba_95pct": [
+              -0.014705882352941176,
+              0.05392156862745098
+            ],
+            "delta_acc_95pct": [
+              -0.014705882352941176,
+              0.05392156862745098
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 7
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 6
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 3
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          }
+        },
+        "paired_15pct_proxy": {
+          "all": {
+            "rows": 216,
+            "classes": 18,
+            "before_ba": 0.49074074074074087,
+            "after_ba": 0.5138888888888888,
+            "delta_ba": 0.023148148148147973,
+            "before_acc": 0.49074074074074076,
+            "after_acc": 0.5138888888888888,
+            "delta_acc": 0.023148148148148147,
+            "changed": 20,
+            "corrected": 9,
+            "regressed": 4,
+            "delta_ba_95pct": [
+              -0.009259259259259259,
+              0.05555555555555555
+            ],
+            "delta_acc_95pct": [
+              -0.009259259259259259,
+              0.05555555555555555
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 7
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.6-flash": {
+                "rows": 12,
+                "before_correct": 4,
+                "after_correct": 5
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 6
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 4
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          },
+          "strict_served_id": {
+            "rows": 204,
+            "classes": 17,
+            "before_ba": 0.5,
+            "after_ba": 0.5196078431372548,
+            "delta_ba": 0.019607843137254832,
+            "before_acc": 0.5,
+            "after_acc": 0.5196078431372549,
+            "delta_acc": 0.0196078431372549,
+            "changed": 19,
+            "corrected": 8,
+            "regressed": 4,
+            "delta_ba_95pct": [
+              -0.00980392156862745,
+              0.05392156862745098
+            ],
+            "delta_acc_95pct": [
+              -0.00980392156862745,
+              0.05392156862745098
+            ],
+            "by_class": {
+              "claude-fable-5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 7
+              },
+              "claude-opus-4-6": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 8
+              },
+              "claude-opus-4-8": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "claude-opus-5": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 12
+              },
+              "claude-sonnet-5": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gemini-3.1-pro-preview": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 7
+              },
+              "gemini-3.7-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 3
+              },
+              "gemini-3.8-flash": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "glm-5.3": {
+                "rows": 12,
+                "before_correct": 6,
+                "after_correct": 6
+              },
+              "glm-5.3-flash": {
+                "rows": 12,
+                "before_correct": 3,
+                "after_correct": 4
+              },
+              "gpt-5.5": {
+                "rows": 12,
+                "before_correct": 8,
+                "after_correct": 8
+              },
+              "gpt-5.6-luna": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 6
+              },
+              "gpt-5.6-sol": {
+                "rows": 12,
+                "before_correct": 5,
+                "after_correct": 5
+              },
+              "gpt-5.6-terra": {
+                "rows": 12,
+                "before_correct": 2,
+                "after_correct": 2
+              },
+              "gpt-6-astra": {
+                "rows": 12,
+                "before_correct": 11,
+                "after_correct": 11
+              },
+              "kimi-k3": {
+                "rows": 12,
+                "before_correct": 1,
+                "after_correct": 2
+              },
+              "qwen3.8-max": {
+                "rows": 12,
+                "before_correct": 7,
+                "after_correct": 6
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "fixed_vs_adaptive": {
+    "component": {
+      "without": {
+        "qwen": {
+          "different_predictions": 65,
+          "corrected": 33,
+          "regressed": 5
+        },
+        "qwen_style": {
+          "different_predictions": 71,
+          "corrected": 35,
+          "regressed": 8
+        }
+      },
+      "with": {
+        "qwen": {
+          "different_predictions": 56,
+          "corrected": 24,
+          "regressed": 12
+        },
+        "qwen_style": {
+          "different_predictions": 65,
+          "corrected": 28,
+          "regressed": 11
+        }
+      }
+    },
+    "pilot": {
+      "without": {
+        "qwen": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "corrected_actual_small_batch": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "original_15pct_proxy": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "paired_15pct_proxy": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        }
+      },
+      "with": {
+        "qwen": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "corrected_actual_small_batch": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "original_15pct_proxy": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "paired_15pct_proxy": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        }
+      }
+    },
+    "confirmation": {
+      "without": {
+        "qwen": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "corrected_actual_small_batch": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "original_15pct_proxy": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "paired_15pct_proxy": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        }
+      },
+      "with": {
+        "qwen": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "corrected_actual_small_batch": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "original_15pct_proxy": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        },
+        "paired_15pct_proxy": {
+          "different_predictions": 0,
+          "corrected": 0,
+          "regressed": 0
+        }
+      }
+    }
+  }
+}

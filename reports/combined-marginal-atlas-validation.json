@@ -1,0 +1,288 @@
+{
+  "parents": {
+    "V3": "48a1e47d327476f0fea03ff093e9d96514c494e81ac59663f43d381e404d1275",
+    "V4": "57f93ccc4ea0301a38bccecf9fd743099bde4369ec9c85488be6bf8ce681b07e",
+    "V5": "3d928f5de5a594e01dd97c246d8149ae00f2d9fa1deb081af3d4b1ae82194abb"
+  },
+  "sha256": "b8d687476653102929f6fb8017735280aa4ab7f2baeb819217a96156561a9cca",
+  "bytes": 307617,
+  "same_bytes_after_rebuild": true,
+  "changed_cells_from_V4": [
+    0,
+    19
+  ],
+  "cell_ids": [
+    "replication-provenance",
+    "1fae1113"
+  ],
+  "identical_remaining_V4_cells": 35,
+  "attachments": 46,
+  "internet_enabled": false,
+  "extra_model_forward_passes_vs_V4": 0,
+  "static_inspection": {
+    "nbformat": 4,
+    "nbformat_minor": 5,
+    "cell_count": 37,
+    "cpu_projection_cell_sha256": "1c47bed66181eb48d4fffa68325034ebd010a29bcc5b134967edcab802bea362",
+    "optional_stage_cell_sha256": "202287f9c5f17179affdb635c0449509be9d75b5996afaef597faf4912c79c6b",
+    "glm_stage_completed_before_atlas": true,
+    "glm_input_to_atlas": "V1_OUT/'post-glm.npz'",
+    "deadline_hours": 8.75,
+    "accelerator": "nvidiaTeslaT4",
+    "gpu_enabled_field": false,
+    "hardware_note": "V4 carries accelerator=nvidiaTeslaT4 and isGpuEnabled=false in the embedded JSON. The real run requires the T4 x2 session setting used by the verified V4 copy."
+  },
+  "pinned_OOF_summary_sha256": "94419c2e7a47504684d1336865cf4fc7611c68dc55eadf7f60aa07ee736cb123",
+  "inputs": {
+    "data\\train.csv": "40a22ce8d88c5f46feb4637a099db815bef5f713ffe53e89dbe1b7b21de77707",
+    "runs\\public70\\chen\\official-qwen8-plain-oof.parquet": "e2f9f9bbff5ad0196c476a44c763be605884e0eca8eb2cf66ebb791c02e10c23",
+    "runs\\public70\\kimi-source-audit\\atlas-oof_all.parquet": "59088858785c577abc4d8f4f0a007cc3576521ccb9bfd41c22797e6373236798",
+    "runs\\glm-likelihood-evidence\\flash_scores.npz": "3f5ad02226952011137c63051a657d13b122e212c6d47c271d555b174472807c",
+    "runs\\glm-likelihood-evidence\\glm53_scores.npz": "c76a5b28f0357c67967f78d4737bbff400758af1c486acd7a8ad8014d276246b"
+  },
+  "real_fold_replay": {
+    "complete": {
+      "repeats": [
+        {
+          "repeat": 0,
+          "rows": 2699,
+          "v4": 0.6946085011185681,
+          "v6": 0.6946085011185681,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0,
+          "glm_selected_by_fold": [
+            81,
+            81,
+            81,
+            80,
+            81
+          ]
+        }
+      ],
+      "v4_mean": 0.6946085011185681,
+      "v6_mean": 0.6946085011185681,
+      "improved": 0
+    },
+    "moderate_18": {
+      "repeats": [
+        {
+          "repeat": 0,
+          "rows": 1844,
+          "v4": 0.6888358555007331,
+          "v6": 0.6888358555007331,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0,
+          "glm_selected_by_fold": [
+            55,
+            55,
+            55,
+            55,
+            55
+          ]
+        },
+        {
+          "repeat": 1,
+          "rows": 2120,
+          "v4": 0.6906885378038184,
+          "v6": 0.6906885378038184,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0,
+          "glm_selected_by_fold": [
+            63,
+            63,
+            63,
+            63,
+            63
+          ]
+        },
+        {
+          "repeat": 2,
+          "rows": 2085,
+          "v4": 0.6861734611624777,
+          "v6": 0.6861734611624777,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0,
+          "glm_selected_by_fold": [
+            62,
+            62,
+            62,
+            62,
+            62
+          ]
+        },
+        {
+          "repeat": 3,
+          "rows": 2094,
+          "v4": 0.6975043282613234,
+          "v6": 0.6975043282613234,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0,
+          "glm_selected_by_fold": [
+            62,
+            62,
+            62,
+            62,
+            62
+          ]
+        },
+        {
+          "repeat": 4,
+          "rows": 2119,
+          "v4": 0.6949297387305912,
+          "v6": 0.6949297387305912,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0,
+          "glm_selected_by_fold": [
+            63,
+            63,
+            63,
+            63,
+            63
+          ]
+        },
+        {
+          "repeat": 5,
+          "rows": 2185,
+          "v4": 0.6960462653477274,
+          "v6": 0.6960462653477274,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0,
+          "glm_selected_by_fold": [
+            65,
+            65,
+            65,
+            65,
+            65
+          ]
+        }
+      ],
+      "v4_mean": 0.6923630311344452,
+      "v6_mean": 0.6923630311344452,
+      "improved": 0
+    },
+    "imbalanced_12": {
+      "repeats": [
+        {
+          "repeat": 0,
+          "rows": 860,
+          "v4": 0.5967911877394635,
+          "v6": 0.6042792145593869,
+          "corrected": 13,
+          "regressed": 2,
+          "changed": 22,
+          "glm_selected_by_fold": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repeat": 1,
+          "rows": 859,
+          "v4": 0.6535214028139992,
+          "v6": 0.6590325066808332,
+          "corrected": 10,
+          "regressed": 1,
+          "changed": 16,
+          "glm_selected_by_fold": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repeat": 2,
+          "rows": 859,
+          "v4": 0.6286028387321491,
+          "v6": 0.6347606815279229,
+          "corrected": 12,
+          "regressed": 2,
+          "changed": 15,
+          "glm_selected_by_fold": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repeat": 3,
+          "rows": 860,
+          "v4": 0.6123659003831418,
+          "v6": 0.5977322796934866,
+          "corrected": 10,
+          "regressed": 5,
+          "changed": 21,
+          "glm_selected_by_fold": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repeat": 4,
+          "rows": 860,
+          "v4": 0.6678711685823755,
+          "v6": 0.6753591954022987,
+          "corrected": 13,
+          "regressed": 2,
+          "changed": 21,
+          "glm_selected_by_fold": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "repeat": 5,
+          "rows": 860,
+          "v4": 0.6786135057471264,
+          "v6": 0.6837404214559387,
+          "corrected": 12,
+          "regressed": 4,
+          "changed": 20,
+          "glm_selected_by_fold": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "v4_mean": 0.6396276673330425,
+      "v6_mean": 0.6424840498866445,
+      "improved": 5
+    }
+  },
+  "deployed_post_glm_small_batch": {
+    "rows": 360,
+    "true_sources": 14,
+    "rho": 0.16115234682955382,
+    "glm_rows": 54,
+    "atlas_rows": 90,
+    "four_ranked_sources_checked": 360,
+    "glm_atlas_rows_in_common": 28,
+    "max_postglm_plus_atlas_delta_error": 8.881784197001252e-16,
+    "identical_final_labels": 360,
+    "changed_vs_completed_glm": 22,
+    "deadline_and_worker_error_preserved_output_bytes": true
+  },
+  "limits": "Chen five-fold single-Qwen probability proxy and published ATLAS likelihoods are not full private ensemble OOF. The mixed-source study repeats the same 150 official prompts and ATLAS source folds differ from Chen folds. Severe 12-label batches fall below the real 50-row GLM threshold. The local 360-row check tests the exact deployed ATLAS entry, candidate order, routed logits and fallback using archived scores. No complete independent V6 evaluation or leaderboard score is claimed."
+}
