@@ -18,7 +18,7 @@
 
 ## 目标 0.700 的实验
 
-本队正在复现 Alex Chilton 的 V30。Kaggle 在作者的固定版本上显示公榜 0.702。本队派生版在公开样例上也运行模型，并保留完整评分规模上的模型、权重和后处理。45 项依赖从 Kaggle 原资源挂载。[作者 V30](https://www.kaggle.com/code/alexchilton/name-that-llm-0-702-all-public-what-failed?scriptVersionId=370591902) · [固定输入及代码哈希](reports/alex-v30-inputs.json)
+Kaggle 在 Alex Chilton 的固定 V30 上显示作者公榜 0.702。本队派生版在公开样例上也运行模型，并保留完整评分规模上的模型、权重和后处理。45 项依赖从 Kaggle 原资源挂载。本队私有版本 371475859 已在两张 T4 上实际运行 1,868.6 秒，下载的预测文件含三个唯一 ID 和有效的模型名称。小样本未触发 GLM 全量似然阶段。[作者 V30](https://www.kaggle.com/code/alexchilton/name-that-llm-0-702-all-public-what-failed?scriptVersionId=370591902) · [固定输入及代码哈希](reports/alex-v30-inputs.json) · [本队云端预览](reports/v30-cloud-previews.json)
 
 在自有 v6 模型上，加入 V30 的三条排版规则后，按题目分组的五折平衡准确率从 0.46489 升至 0.46674。在四套已有预测上，一次性应用所有规则和按训练折学习惩罚力度均未超过作者原有顺序，暂时保留原顺序。该实验只评估末端规则。[折内训练和配对比较](reports/typography-rule-overlap.json)
 
