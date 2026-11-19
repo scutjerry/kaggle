@@ -1,0 +1,13 @@
+{
+  "source": "Actual exported stage on official training labels and authentic OOF likelihoods. Hidden competition data and GPU timing are outside this replay.",
+  "notebook_sha256": "57f93ccc4ea0301a38bccecf9fd743099bde4369ec9c85488be6bf8ce681b07e",
+  "rows": 2699,
+  "selected_rows": 674,
+  "folds": 5,
+  "deployed_sparse2_balanced_accuracy": 0.6953417847377579,
+  "fallback_checks": [
+    "identical control file after GPU error, incomplete scores and insufficient time",
+    "two live subprocesses stopped on deadline",
+    "all 5 folds match frozen sparse2 replay"
+  ]
+}

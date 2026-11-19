@@ -1,0 +1,429 @@
+{
+  "protocol": "Fixed 10% row-scaled mean-token loglik before GLM probability ranking, entropy normalization, 76-feature fold-trained token fusion and corrected final routing. Also test a single fixed cheap control that only runs ATLAS on the bottom quarter by base top-2 logit margin within each OOF evaluation batch.",
+  "atlas_block_by_chen_fold_rows": [
+    [
+      90,
+      108,
+      90,
+      161,
+      90
+    ],
+    [
+      162,
+      54,
+      162,
+      90,
+      72
+    ],
+    [
+      126,
+      108,
+      72,
+      90,
+      144
+    ],
+    [
+      90,
+      126,
+      126,
+      108,
+      90
+    ],
+    [
+      72,
+      144,
+      90,
+      90,
+      144
+    ]
+  ],
+  "source": "https://www.kaggle.com/datasets/harshitakumari256/ntl-atlas-bundle/versions/1",
+  "cohorts": {
+    "plain": {
+      "token_only": {
+        "balanced_accuracy": 0.6842505592841164,
+        "delta": 0.0,
+        "corrected": 0,
+        "regressed": 0,
+        "changed": 0,
+        "atlas_rows": 0,
+        "glm_selected": 404,
+        "glm_newly_selected": 0,
+        "paired_prompt_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "atlas_all_10pct": {
+        "balanced_accuracy": 0.6894233159333831,
+        "delta": 0.005172756649266752,
+        "corrected": 38,
+        "regressed": 24,
+        "changed": 80,
+        "atlas_rows": 2699,
+        "glm_selected": 404,
+        "glm_newly_selected": 10,
+        "paired_prompt_delta_95pct": [
+          -0.0007407407407407409,
+          0.01074074074074074
+        ],
+        "fold_deltas": [
+          0.0,
+          -0.0018518518518519933,
+          0.007407407407407418,
+          0.01673052362707539,
+          0.0037037037037037646
+        ]
+      },
+      "atlas_lowest_margin_quarter_10pct": {
+        "balanced_accuracy": 0.6909122545364155,
+        "delta": 0.0066616952522990935,
+        "corrected": 37,
+        "regressed": 19,
+        "changed": 73,
+        "atlas_rows": 674,
+        "glm_selected": 404,
+        "glm_newly_selected": 7,
+        "paired_prompt_delta_95pct": [
+          0.0011111111111111115,
+          0.011854337559035545
+        ],
+        "fold_deltas": [
+          0.0037037037037037646,
+          -0.0018518518518519933,
+          0.005555555555555647,
+          0.020498084291187713,
+          0.005555555555555536
+        ]
+      },
+      "atlas_lowest_margin_quarter_top4_10pct": {
+        "balanced_accuracy": 0.6923887646035296,
+        "delta": 0.008138205319413228,
+        "corrected": 71,
+        "regressed": 49,
+        "changed": 166,
+        "atlas_rows": 674,
+        "glm_selected": 404,
+        "glm_newly_selected": 9,
+        "paired_prompt_delta_95pct": [
+          0.0007258264976385785,
+          0.015555555555555557
+        ],
+        "fold_deltas": [
+          0.0,
+          -0.007407407407407418,
+          0.012962962962962954,
+          0.020434227330779042,
+          0.014814814814814836
+        ],
+        "compared_to_full_on_quarter": {
+          "delta": 0.001476510067114134,
+          "corrected": 35,
+          "regressed": 31,
+          "paired_prompt_delta_95pct": [
+            -0.004074074074074074,
+            0.007042008451404424
+          ],
+          "four_prefix_sequences": 2696,
+          "full_prefix_sequences": 12132
+        }
+      },
+      "atlas_top4_after_completed_glm": {
+        "balanced_accuracy": 0.6916430524484216,
+        "delta": 0.007392493164305236,
+        "corrected": 70,
+        "regressed": 50,
+        "changed": 165,
+        "atlas_rows": 674,
+        "glm_selected": 404,
+        "glm_newly_selected": 0,
+        "paired_prompt_delta_95pct": [
+          9.516885736261691e-20,
+          0.014774485136520363
+        ],
+        "fold_deltas": [
+          -0.0018518518518516602,
+          -0.007407407407407418,
+          0.012962962962962954,
+          0.01851851851851849,
+          0.014814814814814836
+        ],
+        "vs_early": {
+          "delta": -0.0007457121551079915,
+          "changed": 4,
+          "corrected": 0,
+          "regressed": 2,
+          "paired_prompt_delta_95pct": [
+            -0.0018642803877703207,
+            0.0
+          ]
+        }
+      }
+    },
+    "text-cluster": {
+      "token_only": {
+        "balanced_accuracy": 0.7149987571464081,
+        "delta": 0.0,
+        "corrected": 0,
+        "regressed": 0,
+        "changed": 0,
+        "atlas_rows": 0,
+        "glm_selected": 404,
+        "glm_newly_selected": 0,
+        "paired_prompt_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "atlas_all_10pct": {
+        "balanced_accuracy": 0.7209197116579666,
+        "delta": 0.005920954511558496,
+        "corrected": 30,
+        "regressed": 14,
+        "changed": 66,
+        "atlas_rows": 2699,
+        "glm_selected": 404,
+        "glm_newly_selected": 10,
+        "paired_prompt_delta_95pct": [
+          0.001103651453124128,
+          0.011111173253790704
+        ],
+        "fold_deltas": [
+          0.007407407407407529,
+          -0.0018518518518516602,
+          0.007407407407407529,
+          0.005555555555555536,
+          0.011111111111111072
+        ]
+      },
+      "atlas_lowest_margin_quarter_10pct": {
+        "balanced_accuracy": 0.7201839423315932,
+        "delta": 0.0051851851851850705,
+        "corrected": 26,
+        "regressed": 12,
+        "changed": 58,
+        "atlas_rows": 674,
+        "glm_selected": 404,
+        "glm_newly_selected": 7,
+        "paired_prompt_delta_95pct": [
+          0.000740740740740741,
+          0.01
+        ],
+        "fold_deltas": [
+          0.007407407407407529,
+          -0.0037037037037036535,
+          0.007407407407407529,
+          0.0018518518518516602,
+          0.012962962962962954
+        ]
+      },
+      "atlas_lowest_margin_quarter_top4_10pct": {
+        "balanced_accuracy": 0.7172135222470792,
+        "delta": 0.00221476510067109,
+        "corrected": 50,
+        "regressed": 44,
+        "changed": 133,
+        "atlas_rows": 674,
+        "glm_selected": 404,
+        "glm_newly_selected": 9,
+        "paired_prompt_delta_95pct": [
+          -0.005185185185185185,
+          0.009624658215262242
+        ],
+        "fold_deltas": [
+          -0.0018518518518517713,
+          -0.014814814814814836,
+          0.011111111111111183,
+          0.0036398467432948722,
+          0.012962962962962954
+        ],
+        "compared_to_full_on_quarter": {
+          "delta": -0.0029704200845139805,
+          "corrected": 25,
+          "regressed": 33,
+          "paired_prompt_delta_95pct": [
+            -0.008577245053272448,
+            0.002955567144325534
+          ],
+          "four_prefix_sequences": 2696,
+          "full_prefix_sequences": 12132
+        }
+      },
+      "atlas_top4_after_completed_glm": {
+        "balanced_accuracy": 0.7164727815063386,
+        "delta": 0.0014740243599304925,
+        "corrected": 48,
+        "regressed": 44,
+        "changed": 131,
+        "atlas_rows": 674,
+        "glm_selected": 404,
+        "glm_newly_selected": 0,
+        "paired_prompt_delta_95pct": [
+          -0.005567984091474024,
+          0.008866569451680236
+        ],
+        "fold_deltas": [
+          1.1102230246251565e-16,
+          -0.01851851851851849,
+          0.011111111111111183,
+          0.0036398467432948722,
+          0.011111111111111183
+        ],
+        "vs_early": {
+          "delta": -0.0007407407407405975,
+          "changed": 8,
+          "corrected": 1,
+          "regressed": 3,
+          "paired_prompt_delta_95pct": [
+            -0.0022222222222222222,
+            0.0007407407407407407
+          ]
+        }
+      }
+    },
+    "sparse2-text-cluster": {
+      "token_only": {
+        "balanced_accuracy": 0.6897961720109371,
+        "delta": 0.0,
+        "corrected": 0,
+        "regressed": 0,
+        "changed": 0,
+        "atlas_rows": 0,
+        "glm_selected": 404,
+        "glm_newly_selected": 0,
+        "paired_prompt_delta_95pct": [
+          0.0,
+          0.0
+        ],
+        "fold_deltas": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "atlas_all_10pct": {
+        "balanced_accuracy": 0.6942331593338305,
+        "delta": 0.0044369873228933265,
+        "corrected": 34,
+        "regressed": 22,
+        "changed": 75,
+        "atlas_rows": 2699,
+        "glm_selected": 404,
+        "glm_newly_selected": 5,
+        "paired_prompt_delta_95pct": [
+          -0.0007531692766592096,
+          0.009604663336806193
+        ],
+        "fold_deltas": [
+          0.0037037037037036535,
+          0.0037037037037036535,
+          0.007407407407407529,
+          0.0054916985951468655,
+          0.0018518518518518823
+        ]
+      },
+      "atlas_lowest_margin_quarter_10pct": {
+        "balanced_accuracy": 0.6934949043002734,
+        "delta": 0.0036987322893362595,
+        "corrected": 31,
+        "regressed": 21,
+        "changed": 69,
+        "atlas_rows": 674,
+        "glm_selected": 404,
+        "glm_newly_selected": 1,
+        "paired_prompt_delta_95pct": [
+          -0.0014966216216216214,
+          0.008883884723649824
+        ],
+        "fold_deltas": [
+          0.0037037037037036535,
+          -0.0018518518518518823,
+          0.009259259259259411,
+          0.007343550446998637,
+          0.0
+        ]
+      },
+      "atlas_lowest_margin_quarter_top4_10pct": {
+        "balanced_accuracy": 0.6942281879194631,
+        "delta": 0.0044320159085259325,
+        "corrected": 62,
+        "regressed": 50,
+        "changed": 152,
+        "atlas_rows": 674,
+        "glm_selected": 404,
+        "glm_newly_selected": 4,
+        "paired_prompt_delta_95pct": [
+          -0.003333333333333333,
+          0.011851851851851851
+        ],
+        "fold_deltas": [
+          0.014814814814814836,
+          -0.0018518518518518823,
+          0.011111111111111294,
+          -0.0001277139208174516,
+          -0.0018518518518518823
+        ],
+        "compared_to_full_on_quarter": {
+          "delta": 0.000733283619189673,
+          "corrected": 34,
+          "regressed": 32,
+          "paired_prompt_delta_95pct": [
+            -0.005220289166717739,
+            0.0070220866839994355
+          ],
+          "four_prefix_sequences": 2696,
+          "full_prefix_sequences": 12132
+        }
+      },
+      "atlas_top4_after_completed_glm": {
+        "balanced_accuracy": 0.6953417847377579,
+        "delta": 0.005545612726820748,
+        "corrected": 62,
+        "regressed": 47,
+        "changed": 149,
+        "atlas_rows": 674,
+        "glm_selected": 404,
+        "glm_newly_selected": 0,
+        "paired_prompt_delta_95pct": [
+          -0.0018544618443947307,
+          0.012918671187966493
+        ],
+        "fold_deltas": [
+          0.014814814814814836,
+          -0.0018518518518518823,
+          0.011111111111111294,
+          0.0036398467432949833,
+          0.0
+        ],
+        "vs_early": {
+          "delta": 0.0011135968182948153,
+          "changed": 3,
+          "corrected": 3,
+          "regressed": 0,
+          "paired_prompt_delta_95pct": [
+            0.0,
+            0.0025925925925925925
+          ]
+        }
+      }
+    }
+  },
+  "shortlist_protocol": "On the same low-margin quarter, request only the four highest baseline classes per passage. Scale just the four available LL scores by their within-shortlist SD and the base full-row SD. Use the fixed 10% mix conditional on the shortlist and preserve its total probability. Counts are source-conditioned sequences, not measured elapsed time.",
+  "late_protocol": "Keep the original token-only GLM selection and entropy weight. Once the complete GLM pass finishes, add just the ATLAS adjustment (four shortlisted prefixes, fixed 10%) to the saved post-GLM logits before the original sibling and typography pass. Allows an optional stage with an exact fallback to token-only predictions."
+}
