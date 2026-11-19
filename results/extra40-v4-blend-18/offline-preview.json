@@ -1,0 +1,12 @@
+{
+  "notebook": "extra40-v5-v4-base",
+  "rows": 96,
+  "official_preview_rows": 3,
+  "parts_verified_by_production_loader": 36,
+  "model_sha256": "9c922d38855ab7a130f17d1218f16affb795ad764295294170d8f1ef93b71d5f",
+  "working_after_execution": [
+    "submission.parquet"
+  ],
+  "id_order_checked": true,
+  "label_set_checked": true
+}
