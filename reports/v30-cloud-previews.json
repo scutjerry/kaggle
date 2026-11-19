@@ -53,5 +53,22 @@
     "atlas_used_rows": 0,
     "atlas_reason": "empty quarter",
     "inference": "Three sample passages give floor(3/4) eligible ATLAS passages. Real four-prefix computation was measured independently in private version 371505276."
+  },
+  "adaptive_marginal": {
+    "version_role": "Private preview of the paired-token GLM candidate with adaptive marginal projection",
+    "gpu": "2 x T4",
+    "source_inputs": 45,
+    "notebook_version": 371526976,
+    "notebook_sha256": "3d928f5de5a594e01dd97c246d8149ae00f2d9fa1deb081af3d4b1ae82194abb",
+    "status": "Successfully ran",
+    "runtime_seconds": 1811.2,
+    "output_rows": 3,
+    "output_columns": [
+      "id",
+      "model"
+    ],
+    "output_sha256": "2d26e7de920e646e14db358bafe001e292800b4fed1d3c19c077d5eae204e9ba",
+    "same_as_control_on_preview": true,
+    "inference": "All initial members completed; three sample rows kept the original final labels. Adaptive projection on larger public batches is checked separately."
   }
 }

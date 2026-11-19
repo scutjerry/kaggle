@@ -1,0 +1,885 @@
+{
+  "experiment": "Pool the identical class-stratified subsamples from all five folds into a single inference batch. Every row is unique, all class heads and style evidence were prompt-held-out, and both selectors use scores only. The only Qwen input is the public CHEN single-passage OOF head, not the 45-input leaderboard ensemble. Selectors operate across predictions from different fitted folds. Other-fold predictions can depend on this fold during their training, so this is a runtime-scale component stress test, not an independent leaderboard estimate. The prior is the prespecified uniform law over 18 labels. No validation class frequencies are fitted or used at inference. Sample membership uses the same frozen simulations as marginal-shift-controls.json. The 12-source simulation is exploratory and can give a handful of texts substantial weight under balanced accuracy.",
+  "code_sha256": "6a2e2012842eac07bf339e9b61b8e9f74b3fc824cd68c9d49bfef81529f94272",
+  "atlas_oof_sha256": "59088858785c577abc4d8f4f0a007cc3576521ccb9bfd41c22797e6373236798",
+  "qwen_oof_sha256": "e2f9f9bbff5ad0196c476a44c763be605884e0eca8eb2cf66ebb791c02e10c23",
+  "runs": {
+    "complete": [
+      {
+        "repeat": 0,
+        "n": 2699,
+        "unique_prompts": 150,
+        "classes": 18,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 404,
+            "atlas_rows": 674,
+            "both_selected": 209
+          },
+          "adaptive": {
+            "rho": 0.35,
+            "glm_rows": 404,
+            "atlas_rows": 674,
+            "both_selected": 209
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6853616703952274,
+            "ba_classes_with_20_rows": 0.6853616703952274,
+            "n_classes_20": 18,
+            "accuracy": 0.6854390515005557,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6938702460850111,
+            "ba_classes_with_20_rows": 0.6938702460850111,
+            "n_classes_20": 18,
+            "accuracy": 0.693960726194887,
+            "corrected": 71,
+            "regressed": 48,
+            "changed": 160
+          },
+          "adaptive_glm": {
+            "ba": 0.6853616703952274,
+            "ba_classes_with_20_rows": 0.6853616703952274,
+            "n_classes_20": 18,
+            "accuracy": 0.6854390515005557,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6938702460850111,
+            "ba_classes_with_20_rows": 0.6938702460850111,
+            "n_classes_20": 18,
+            "accuracy": 0.693960726194887,
+            "corrected": 71,
+            "regressed": 48,
+            "changed": 160
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6938702460850111,
+          "ba_classes_with_20_rows": 0.6938702460850111,
+          "n_classes_20": 18,
+          "accuracy": 0.693960726194887,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0
+        }
+      }
+    ],
+    "moderate_18": [
+      {
+        "repeat": 0,
+        "n": 1844,
+        "unique_prompts": 150,
+        "classes": 18,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 276,
+            "atlas_rows": 461,
+            "both_selected": 143
+          },
+          "adaptive": {
+            "rho": 0.26734765542025435,
+            "glm_rows": 276,
+            "atlas_rows": 461,
+            "both_selected": 142
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6809855202949948,
+            "ba_classes_with_20_rows": 0.6809855202949948,
+            "n_classes_20": 18,
+            "accuracy": 0.6740780911062907,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6878055031607048,
+            "ba_classes_with_20_rows": 0.6878055031607048,
+            "n_classes_20": 18,
+            "accuracy": 0.6800433839479393,
+            "corrected": 45,
+            "regressed": 34,
+            "changed": 110
+          },
+          "adaptive_glm": {
+            "ba": 0.682233226231146,
+            "ba_classes_with_20_rows": 0.682233226231146,
+            "n_classes_20": 18,
+            "accuracy": 0.675704989154013,
+            "corrected": 4,
+            "regressed": 1,
+            "changed": 6
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6884227871113221,
+            "ba_classes_with_20_rows": 0.6884227871113221,
+            "n_classes_20": 18,
+            "accuracy": 0.68058568329718,
+            "corrected": 45,
+            "regressed": 33,
+            "changed": 110
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6884227871113221,
+          "ba_classes_with_20_rows": 0.6884227871113221,
+          "n_classes_20": 18,
+          "accuracy": 0.68058568329718,
+          "corrected": 1,
+          "regressed": 0,
+          "changed": 2
+        }
+      },
+      {
+        "repeat": 1,
+        "n": 2120,
+        "unique_prompts": 150,
+        "classes": 18,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 318,
+            "atlas_rows": 530,
+            "both_selected": 166
+          },
+          "adaptive": {
+            "rho": 0.24402711750283607,
+            "glm_rows": 318,
+            "atlas_rows": 530,
+            "both_selected": 165
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6800486614279717,
+            "ba_classes_with_20_rows": 0.6800486614279717,
+            "n_classes_20": 18,
+            "accuracy": 0.6811320754716981,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6897996489149295,
+            "ba_classes_with_20_rows": 0.6897996489149295,
+            "n_classes_20": 18,
+            "accuracy": 0.6919811320754717,
+            "corrected": 60,
+            "regressed": 37,
+            "changed": 126
+          },
+          "adaptive_glm": {
+            "ba": 0.6798009525595732,
+            "ba_classes_with_20_rows": 0.6798009525595732,
+            "n_classes_20": 18,
+            "accuracy": 0.6811320754716981,
+            "corrected": 2,
+            "regressed": 2,
+            "changed": 4
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6897383462329372,
+            "ba_classes_with_20_rows": 0.6897383462329372,
+            "n_classes_20": 18,
+            "accuracy": 0.6919811320754717,
+            "corrected": 60,
+            "regressed": 37,
+            "changed": 128
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6897383462329372,
+          "ba_classes_with_20_rows": 0.6897383462329372,
+          "n_classes_20": 18,
+          "accuracy": 0.6919811320754717,
+          "corrected": 1,
+          "regressed": 1,
+          "changed": 4
+        }
+      },
+      {
+        "repeat": 2,
+        "n": 2085,
+        "unique_prompts": 150,
+        "classes": 18,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 312,
+            "atlas_rows": 521,
+            "both_selected": 167
+          },
+          "adaptive": {
+            "rho": 0.35,
+            "glm_rows": 312,
+            "atlas_rows": 521,
+            "both_selected": 167
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6803380504525831,
+            "ba_classes_with_20_rows": 0.6803380504525831,
+            "n_classes_20": 18,
+            "accuracy": 0.6877697841726619,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6852364438837563,
+            "ba_classes_with_20_rows": 0.6852364438837563,
+            "n_classes_20": 18,
+            "accuracy": 0.6925659472422062,
+            "corrected": 46,
+            "regressed": 36,
+            "changed": 113
+          },
+          "adaptive_glm": {
+            "ba": 0.6803380504525831,
+            "ba_classes_with_20_rows": 0.6803380504525831,
+            "n_classes_20": 18,
+            "accuracy": 0.6877697841726619,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6852364438837563,
+            "ba_classes_with_20_rows": 0.6852364438837563,
+            "n_classes_20": 18,
+            "accuracy": 0.6925659472422062,
+            "corrected": 46,
+            "regressed": 36,
+            "changed": 113
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6852364438837563,
+          "ba_classes_with_20_rows": 0.6852364438837563,
+          "n_classes_20": 18,
+          "accuracy": 0.6925659472422062,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0
+        }
+      },
+      {
+        "repeat": 3,
+        "n": 2094,
+        "unique_prompts": 150,
+        "classes": 18,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 314,
+            "atlas_rows": 523,
+            "both_selected": 163
+          },
+          "adaptive": {
+            "rho": 0.28600411049090463,
+            "glm_rows": 314,
+            "atlas_rows": 523,
+            "both_selected": 161
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6885137955665962,
+            "ba_classes_with_20_rows": 0.6885137955665962,
+            "n_classes_20": 18,
+            "accuracy": 0.6800382043935053,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6972716818979953,
+            "ba_classes_with_20_rows": 0.6972716818979953,
+            "n_classes_20": 18,
+            "accuracy": 0.6881566380133716,
+            "corrected": 52,
+            "regressed": 35,
+            "changed": 124
+          },
+          "adaptive_glm": {
+            "ba": 0.6885137955665962,
+            "ba_classes_with_20_rows": 0.6885137955665962,
+            "n_classes_20": 18,
+            "accuracy": 0.6800382043935053,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 2
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6966868865763579,
+            "ba_classes_with_20_rows": 0.6966868865763579,
+            "n_classes_20": 18,
+            "accuracy": 0.6876790830945558,
+            "corrected": 52,
+            "regressed": 36,
+            "changed": 126
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6966868865763579,
+          "ba_classes_with_20_rows": 0.6966868865763579,
+          "n_classes_20": 18,
+          "accuracy": 0.6876790830945558,
+          "corrected": 0,
+          "regressed": 1,
+          "changed": 4
+        }
+      },
+      {
+        "repeat": 4,
+        "n": 2119,
+        "unique_prompts": 150,
+        "classes": 18,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 317,
+            "atlas_rows": 529,
+            "both_selected": 162
+          },
+          "adaptive": {
+            "rho": 0.35,
+            "glm_rows": 317,
+            "atlas_rows": 529,
+            "both_selected": 162
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6879625869068753,
+            "ba_classes_with_20_rows": 0.6879625869068753,
+            "n_classes_20": 18,
+            "accuracy": 0.6809815950920245,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6927420967036215,
+            "ba_classes_with_20_rows": 0.6927420967036215,
+            "n_classes_20": 18,
+            "accuracy": 0.686172722982539,
+            "corrected": 52,
+            "regressed": 41,
+            "changed": 128
+          },
+          "adaptive_glm": {
+            "ba": 0.6879625869068753,
+            "ba_classes_with_20_rows": 0.6879625869068753,
+            "n_classes_20": 18,
+            "accuracy": 0.6809815950920245,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6927420967036215,
+            "ba_classes_with_20_rows": 0.6927420967036215,
+            "n_classes_20": 18,
+            "accuracy": 0.686172722982539,
+            "corrected": 52,
+            "regressed": 41,
+            "changed": 128
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6927420967036215,
+          "ba_classes_with_20_rows": 0.6927420967036215,
+          "n_classes_20": 18,
+          "accuracy": 0.686172722982539,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0
+        }
+      },
+      {
+        "repeat": 5,
+        "n": 2185,
+        "unique_prompts": 150,
+        "classes": 18,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 327,
+            "atlas_rows": 546,
+            "both_selected": 170
+          },
+          "adaptive": {
+            "rho": 0.35,
+            "glm_rows": 327,
+            "atlas_rows": 546,
+            "both_selected": 170
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6840071370140404,
+            "ba_classes_with_20_rows": 0.6840071370140404,
+            "n_classes_20": 18,
+            "accuracy": 0.6832951945080091,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6933140380671076,
+            "ba_classes_with_20_rows": 0.6933140380671076,
+            "n_classes_20": 18,
+            "accuracy": 0.6924485125858123,
+            "corrected": 59,
+            "regressed": 39,
+            "changed": 127
+          },
+          "adaptive_glm": {
+            "ba": 0.6840071370140404,
+            "ba_classes_with_20_rows": 0.6840071370140404,
+            "n_classes_20": 18,
+            "accuracy": 0.6832951945080091,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6933140380671076,
+            "ba_classes_with_20_rows": 0.6933140380671076,
+            "n_classes_20": 18,
+            "accuracy": 0.6924485125858123,
+            "corrected": 59,
+            "regressed": 39,
+            "changed": 127
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6933140380671076,
+          "ba_classes_with_20_rows": 0.6933140380671076,
+          "n_classes_20": 18,
+          "accuracy": 0.6924485125858123,
+          "corrected": 0,
+          "regressed": 0,
+          "changed": 0
+        }
+      }
+    ],
+    "imbalanced_12": [
+      {
+        "repeat": 0,
+        "n": 860,
+        "unique_prompts": 150,
+        "classes": 12,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 129,
+            "atlas_rows": 215,
+            "both_selected": 67
+          },
+          "adaptive": {
+            "rho": 0.027059993617853963,
+            "glm_rows": 129,
+            "atlas_rows": 215,
+            "both_selected": 67
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6303711685823755,
+            "ba_classes_with_20_rows": 0.680636288998358,
+            "n_classes_20": 7,
+            "accuracy": 0.6651162790697674,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6216714559386972,
+            "ba_classes_with_20_rows": 0.6942939244663383,
+            "n_classes_20": 7,
+            "accuracy": 0.6767441860465117,
+            "corrected": 20,
+            "regressed": 10,
+            "changed": 52
+          },
+          "adaptive_glm": {
+            "ba": 0.6386039272030651,
+            "ba_classes_with_20_rows": 0.6947495894909689,
+            "n_classes_20": 7,
+            "accuracy": 0.6779069767441861,
+            "corrected": 13,
+            "regressed": 2,
+            "changed": 21
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6310153256704981,
+            "ba_classes_with_20_rows": 0.7103119868637109,
+            "n_classes_20": 7,
+            "accuracy": 0.6918604651162791,
+            "corrected": 30,
+            "regressed": 7,
+            "changed": 56
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6310153256704981,
+          "ba_classes_with_20_rows": 0.7103119868637109,
+          "n_classes_20": 7,
+          "accuracy": 0.6918604651162791,
+          "corrected": 13,
+          "regressed": 0,
+          "changed": 19
+        }
+      },
+      {
+        "repeat": 1,
+        "n": 859,
+        "unique_prompts": 150,
+        "classes": 12,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 128,
+            "atlas_rows": 214,
+            "both_selected": 53
+          },
+          "adaptive": {
+            "rho": 0.020245799439211804,
+            "glm_rows": 128,
+            "atlas_rows": 214,
+            "both_selected": 56
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6621467207572685,
+            "ba_classes_with_20_rows": 0.6208229498696031,
+            "n_classes_20": 7,
+            "accuracy": 0.6239813736903376,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6618722431501336,
+            "ba_classes_with_20_rows": 0.6203524168288004,
+            "n_classes_20": 7,
+            "accuracy": 0.6251455180442375,
+            "corrected": 24,
+            "regressed": 23,
+            "changed": 64
+          },
+          "adaptive_glm": {
+            "ba": 0.6534600276892367,
+            "ba_classes_with_20_rows": 0.6345029046101199,
+            "n_classes_20": 7,
+            "accuracy": 0.6379511059371362,
+            "corrected": 14,
+            "regressed": 2,
+            "changed": 27
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6723388953282462,
+            "ba_classes_with_20_rows": 0.6382952491341364,
+            "n_classes_20": 7,
+            "accuracy": 0.6426076833527358,
+            "corrected": 37,
+            "regressed": 21,
+            "changed": 76
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6723388953282462,
+          "ba_classes_with_20_rows": 0.6382952491341364,
+          "n_classes_20": 7,
+          "accuracy": 0.6426076833527358,
+          "corrected": 17,
+          "regressed": 2,
+          "changed": 26
+        }
+      },
+      {
+        "repeat": 2,
+        "n": 859,
+        "unique_prompts": 150,
+        "classes": 12,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 128,
+            "atlas_rows": 214,
+            "both_selected": 68
+          },
+          "adaptive": {
+            "rho": 0.025128049652569383,
+            "glm_rows": 128,
+            "atlas_rows": 214,
+            "both_selected": 62
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6515929409032858,
+            "ba_classes_with_20_rows": 0.6408259939294422,
+            "n_classes_20": 7,
+            "accuracy": 0.6367869615832363,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6561617612910717,
+            "ba_classes_with_20_rows": 0.6486582574513609,
+            "n_classes_20": 7,
+            "accuracy": 0.6461001164144354,
+            "corrected": 16,
+            "regressed": 8,
+            "changed": 55
+          },
+          "adaptive_glm": {
+            "ba": 0.6859728027400441,
+            "ba_classes_with_20_rows": 0.6616676618400756,
+            "n_classes_20": 7,
+            "accuracy": 0.660069848661234,
+            "corrected": 22,
+            "regressed": 2,
+            "changed": 30
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6631613549285964,
+            "ba_classes_with_20_rows": 0.6606575608299747,
+            "n_classes_20": 7,
+            "accuracy": 0.6589057043073341,
+            "corrected": 25,
+            "regressed": 6,
+            "changed": 59
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6631613549285964,
+          "ba_classes_with_20_rows": 0.6606575608299747,
+          "n_classes_20": 7,
+          "accuracy": 0.6589057043073341,
+          "corrected": 11,
+          "regressed": 0,
+          "changed": 18
+        }
+      },
+      {
+        "repeat": 3,
+        "n": 860,
+        "unique_prompts": 150,
+        "classes": 12,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 129,
+            "atlas_rows": 215,
+            "both_selected": 66
+          },
+          "adaptive": {
+            "rho": 0.024166672668363916,
+            "glm_rows": 129,
+            "atlas_rows": 215,
+            "both_selected": 60
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6234386973180076,
+            "ba_classes_with_20_rows": 0.630656814449918,
+            "n_classes_20": 7,
+            "accuracy": 0.6174418604651163,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6693295019157088,
+            "ba_classes_with_20_rows": 0.6426600985221675,
+            "n_classes_20": 7,
+            "accuracy": 0.6348837209302326,
+            "corrected": 28,
+            "regressed": 13,
+            "changed": 57
+          },
+          "adaptive_glm": {
+            "ba": 0.6336039272030651,
+            "ba_classes_with_20_rows": 0.648082922824302,
+            "n_classes_20": 7,
+            "accuracy": 0.6372093023255814,
+            "corrected": 17,
+            "regressed": 0,
+            "changed": 32
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6607183908045977,
+            "ba_classes_with_20_rows": 0.6564696223316913,
+            "n_classes_20": 7,
+            "accuracy": 0.6488372093023256,
+            "corrected": 37,
+            "regressed": 10,
+            "changed": 66
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6607183908045977,
+          "ba_classes_with_20_rows": 0.6564696223316913,
+          "n_classes_20": 7,
+          "accuracy": 0.6488372093023256,
+          "corrected": 15,
+          "regressed": 3,
+          "changed": 26
+        }
+      },
+      {
+        "repeat": 4,
+        "n": 860,
+        "unique_prompts": 150,
+        "classes": 12,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 129,
+            "atlas_rows": 215,
+            "both_selected": 61
+          },
+          "adaptive": {
+            "rho": 0.019889746621886657,
+            "glm_rows": 129,
+            "atlas_rows": 215,
+            "both_selected": 62
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.7107878352490422,
+            "ba_classes_with_20_rows": 0.656588669950739,
+            "n_classes_20": 7,
+            "accuracy": 0.6779069767441861,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.71794061302682,
+            "ba_classes_with_20_rows": 0.6688505747126436,
+            "n_classes_20": 7,
+            "accuracy": 0.6895348837209302,
+            "corrected": 19,
+            "regressed": 9,
+            "changed": 42
+          },
+          "adaptive_glm": {
+            "ba": 0.7242289272030651,
+            "ba_classes_with_20_rows": 0.6796305418719211,
+            "n_classes_20": 7,
+            "accuracy": 0.7011627906976744,
+            "corrected": 21,
+            "regressed": 1,
+            "changed": 27
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.7246264367816092,
+            "ba_classes_with_20_rows": 0.680311986863711,
+            "n_classes_20": 7,
+            "accuracy": 0.7011627906976744,
+            "corrected": 29,
+            "regressed": 9,
+            "changed": 54
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.7246264367816092,
+          "ba_classes_with_20_rows": 0.680311986863711,
+          "n_classes_20": 7,
+          "accuracy": 0.7011627906976744,
+          "corrected": 11,
+          "regressed": 1,
+          "changed": 16
+        }
+      },
+      {
+        "repeat": 5,
+        "n": 860,
+        "unique_prompts": 150,
+        "classes": 12,
+        "projection": {
+          "fixed": {
+            "rho": 0.35,
+            "glm_rows": 129,
+            "atlas_rows": 215,
+            "both_selected": 51
+          },
+          "adaptive": {
+            "rho": 0.01566734703562061,
+            "glm_rows": 129,
+            "atlas_rows": 215,
+            "both_selected": 51
+          }
+        },
+        "scores": {
+          "fixed_glm": {
+            "ba": 0.6751724137931036,
+            "ba_classes_with_20_rows": 0.6526765188834155,
+            "n_classes_20": 7,
+            "accuracy": 0.6709302325581395,
+            "corrected": 0,
+            "regressed": 0,
+            "changed": 0
+          },
+          "fixed_glm_atlas": {
+            "ba": 0.6908357279693487,
+            "ba_classes_with_20_rows": 0.6604802955665025,
+            "n_classes_20": 7,
+            "accuracy": 0.6767441860465117,
+            "corrected": 17,
+            "regressed": 12,
+            "changed": 38
+          },
+          "adaptive_glm": {
+            "ba": 0.6693462643678161,
+            "ba_classes_with_20_rows": 0.67126026272578,
+            "n_classes_20": 7,
+            "accuracy": 0.6872093023255814,
+            "corrected": 19,
+            "regressed": 5,
+            "changed": 28
+          },
+          "adaptive_glm_atlas": {
+            "ba": 0.6934626436781609,
+            "ba_classes_with_20_rows": 0.6840311986863712,
+            "n_classes_20": 7,
+            "accuracy": 0.6965116279069767,
+            "corrected": 35,
+            "regressed": 13,
+            "changed": 58
+          }
+        },
+        "adaptive_atlas_vs_fixed_atlas": {
+          "ba": 0.6934626436781609,
+          "ba_classes_with_20_rows": 0.6840311986863712,
+          "n_classes_20": 7,
+          "accuracy": 0.6965116279069767,
+          "corrected": 22,
+          "regressed": 5,
+          "changed": 35
+        }
+      }
+    ]
+  }
+}
