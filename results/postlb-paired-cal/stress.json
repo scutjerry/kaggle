@@ -1,0 +1,32 @@
+{
+  "paired": {
+    "corrected": 121,
+    "regressed": 92,
+    "delta_interval": [
+      0.0007206014739571791,
+      0.021101028691537498
+    ],
+    "thin_batch_score": 0.4207979120059656,
+    "skew_mean_delta": 0.011576990104087408
+  },
+  "paired-cal": {
+    "corrected": 133,
+    "regressed": 83,
+    "delta_interval": [
+      0.00816309850118575,
+      0.02889895936204661
+    ],
+    "thin_batch_score": 0.4248869003231419,
+    "skew_mean_delta": 0.018420127973549014
+  },
+  "paired-frozen-cal": {
+    "corrected": 230,
+    "regressed": 154,
+    "delta_interval": [
+      0.014814814814814817,
+      0.041111111111111105
+    ],
+    "thin_batch_score": 0.43783992045737014,
+    "skew_mean_delta": 0.028541960379443888
+  }
+}
