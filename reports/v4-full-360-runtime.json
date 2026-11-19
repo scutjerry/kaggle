@@ -1,0 +1,78 @@
+{
+  "source_candidate_sha256": "57f93ccc4ea0301a38bccecf9fd743099bde4369ec9c85488be6bf8ce681b07e",
+  "input_sha256": "ce8975a047c4a9d800a9aeac63b6f5f469d83c6d37f57af149f7bcc1040c2056",
+  "ids_ordered_sha256": "91f5e070f41e114233bf098f6cdbad21b587d48917a7179b496efff02c838f31",
+  "passages": 360,
+  "classes": 18,
+  "mounts": 46,
+  "timings_s": {
+    "asset_preparation": 195.99502060500004,
+    "qwen_full_ensemble": 2805.472530909,
+    "glm_binary_and_tokenizer_checks": 184.93945279700029,
+    "glm_total": 1522.6591258559997,
+    "flash_pass": 445.50770183199984,
+    "glm53_pass": 1075.1811085489999,
+    "v3_style_finalization": 2.859712922999279,
+    "atlas_and_finalization": 111.33071607000056,
+    "total_wall": 4903.5611357279995
+  },
+  "purpose": "Unlabeled end-to-end engineering check. Intermediate predictions stay in temporary storage.",
+  "qwen": {
+    "main_six_reported_no_failure": true,
+    "core_prefit_used": true,
+    "group_embeddings_used": true,
+    "gsq_used": true,
+    "native_used": true,
+    "six_member_done": {
+      "q14v5": true,
+      "q8v5": true,
+      "ll8v5": true,
+      "n14b_clean": true,
+      "q25_14": true,
+      "deb": true
+    },
+    "logit_shape": [
+      360,
+      18
+    ]
+  },
+  "glm": {
+    "status": "applied",
+    "n_selected": 54,
+    "n_blended": 54,
+    "estimated_token_rows": 6821,
+    "flash_rows": 54,
+    "flash_token_positions_including_prefix": 6581,
+    "glm53_rows": 54,
+    "glm53_token_positions_including_prefix": 6581
+  },
+  "atlas": {
+    "status": "applied",
+    "rows": 360,
+    "eligible": 90,
+    "used": 90,
+    "changed": 19
+  },
+  "label_differences": {
+    "qwen_argmax_vs_v3_raw_glm": 13,
+    "qwen_completed_output_vs_v3_final": 18,
+    "qwen_completed_output_vs_v4_final": 31,
+    "v1_original54_vs_v3_token76": 11,
+    "v1_original54_vs_v4_atlas": 28,
+    "v3_token76_vs_v4_atlas": 19,
+    "labels_differ_before_style_54_vs_76": 6,
+    "paired_head_logits_replay_max_abs_error": 3.552713678800501e-15,
+    "glm_atlas_selection_intersection": 22,
+    "atlas_expected_request_rows": 90,
+    "atlas_applied_rows": 90,
+    "v1_requires_additional_gpu_forwards": 0
+  },
+  "status": "complete",
+  "private_run": {
+    "version": 371529552,
+    "runtime_seconds": 4925.0,
+    "hardware": "2 x Tesla T4",
+    "downloaded_receipt_sha256": "e10df76274d2c3f94b612bf328b665037dae33a538e6067d7bd86228bd0a9532"
+  },
+  "scope": "Unlabeled 360-passage public fixture, disjoint IDs from official training; some public examples overlap the V30 supervised sources. Real end-to-end engineering benchmark of the full candidate, ungraded. Archive exposes only aggregate counts, durations, and verification digests."
+}

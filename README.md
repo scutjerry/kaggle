@@ -18,7 +18,7 @@
 
 ## 目标 0.700 的实验
 
-11 月 20 日核对了两条新的公开路线，逐一匹配 Kaggle 获分提交的版本 ID。Vlad 的 V12 获得 **0.704**，另外两个账号使用相同的 29 个推理代码单元及同一组 45 项版本化输入，分别获得 **0.704** 和 **0.703**。他们添加的绘图单元、输入列表排列和实际运行镜像有所不同。Vlad 的这版提高了难分的 Fable 与 GLM 文章进入似然计算的优先级，并在足够强的 GLM 证据支持 Fable 时保留判决。其后续 V16 实际为 0.702。[Vlad V12](https://www.kaggle.com/code/lightningv08/0-704-glm-fable-routing-qwen3-8-27b-lora?scriptVersionId=371206226) · [Evgen V35](https://www.kaggle.com/code/evgendvorkin/name-that-llm-deep-forensic-eda-with-analogie?scriptVersionId=371401730) · [mzishran V2](https://www.kaggle.com/code/mzishran/name-that-llm-how-the-ensemble-predicts?scriptVersionId=371341961)
+11 月 20 日浏览 300 个竞赛公开 Notebook 的记录，核对 67 个固定版本的得分，逐一匹配 Kaggle 获分提交的版本 ID。Vlad 的 V12 获得 **0.704**，另外两个账号使用相同的 29 个推理代码单元及同一组 45 项版本化输入，分别获得 **0.704** 和 **0.703**。他们添加的绘图单元、输入列表排列和实际运行镜像有所不同。Vlad 的这版提高了难分的 Fable 与 GLM 文章进入似然计算的优先级，并在足够强的 GLM 证据支持 Fable 时保留判决。其后续 V16 实际为 0.702。[Vlad V12](https://www.kaggle.com/code/lightningv08/0-704-glm-fable-routing-qwen3-8-27b-lora?scriptVersionId=371206226) · [Evgen V35](https://www.kaggle.com/code/evgendvorkin/name-that-llm-deep-forensic-eda-with-analogie?scriptVersionId=371401730) · [mzishran V2](https://www.kaggle.com/code/mzishran/name-that-llm-how-the-ensemble-predicts?scriptVersionId=371341961) · [检索范围与逐版本核对](reports/refresh-summary.json)
 
 Bill 的 V1 独立取得 **0.704**，提交编号为 58558588。与 Alex V30 对比，31 个代码单元中只有两行变化，其中一行把两路 GLM 的融合权重提高 25%。另一行放宽预测改变比例检查，原有最多 15% 的选文上限已经比两个阈值都低。两个 Notebook 均挂载 45 项资源，公开语料版本从 V17 更新到 V18。代码会读取这份语料，但启用已拟合分类器时，训练程序没有接收准备好的语料路径。[Bill V1](https://www.kaggle.com/code/bill123987/ntl706w?scriptVersionId=371406176) · [四笔获分提交、源码与挂载哈希](reports/public-704-recipes.json)
 
@@ -32,6 +32,8 @@ Bill 的 V1 独立取得 **0.704**，提交编号为 58558588。与 Alex V30 对
 在 216 篇外部确认样本中，按原最低门槛会跳过 GLM，四种配置均判对 94 篇。另在同一批上模拟较大规模的 15% 启动率，前两种配置判对 100 篇，后两种判对 101 篇。这些是组件实验。上面的外部公榜分数均属于相应作者，本队成绩另列于上表。[按题目重采样的区间及外部诊断](reports/fable-route-comparison.json)
 
 用 Bill 交付文件里的实际 GLM 程序重新计算 30 次，稀疏条件下将权重提高 25% 后改对 12 篇、改错 2 篇，平衡准确率的差值区间为 +0.00110 至 +0.00666。原程序的变化比例检查 30 次均通过。在外部 216 篇的模拟启动条件下，提高权重只让一篇从一个错误类别变为另一个错误类别。[实际推理入口、独立读回与完整对照](reports/bill-v1-weight-validation.json)
+
+本队第八版沿用 Vlad 固定 V12 的 45 项输入及运行镜像。用真实缓存分数核对 333、334 和 540 篇三个批次时，分别有 0、50 和 81 篇进入 GLM，本队交付文件与原程序的全部最终类别逐篇一致。第九版在本队 76 维逐词元模型上合用了提高权重和 Fable 优先选文，保留现有末端风格规则。单篇、稀疏和密集验证分别从 0.68425、0.68980、0.71500 变为 0.68907、0.69053、0.71611。密集情况下仅提高权重得 0.71649，高于两者合用。第九版是本队本地候选。[第八版实际推理入口与阈值验证](reports/vlad-v12-fable-deployment.json) · [第九版四组比较](reports/v3-fable-weight-factorial.json)
 
 Kaggle 在 Alex Chilton 的固定 V30 上显示作者公榜 0.702。本队派生版在公开样例上也运行模型，并保留完整评分规模上的模型、权重和后处理。45 项依赖从 Kaggle 原资源挂载。本队私有版本 371475859 已在两张 T4 上实际运行 1,868.6 秒，下载的预测文件含三个唯一 ID 和有效的模型名称。小样本未触发 GLM 全量似然阶段。[作者 V30](https://www.kaggle.com/code/alexchilton/name-that-llm-0-702-all-public-what-failed?scriptVersionId=370591902) · [固定输入及代码哈希](reports/alex-v30-inputs.json) · [本队云端预览](reports/v30-cloud-previews.json)
 
@@ -74,6 +76,8 @@ CHEN Han 公开了 Qwen3-Embedding-8B 的官方训练集折外预测。2,699 行
 Kaggle 私有版本 371505276 在双 T4 上运行了 189.5 秒。两张卡各预热 8 篇，再用同一批共 64 篇比较两种方法，并交换先后顺序。18 来源耗时 59.74 秒，四来源耗时 13.74 秒，单步实测加速 **4.35 倍**。两种方法对应的 320 个来源分数中，最大绝对误差 0.00312，全部在预设 FP16 容差内。这次计时包含原作者 18 来源版本额外计算的 clipped S 分数。[双 T4 吞吐、显存和数值误差](reports/atlas-prefix-t4-timing.json)
 
 把四来源步骤放在 GLM 完成后，每题最多两篇时到达 **0.69534**，单篇为 0.69164，密集组为 0.71647。稀疏组相对逐词元基线改对 62 篇、改错 47 篇，按题目重采样的 95% 增益区间为 −0.00185 至 +0.01292。这个顺序允许先写好完整的 GLM 预测，再利用剩余时间加算 ATLAS。交付笔记本已用五折真实似然重放，得到同一个 0.69534。模拟 GPU 失败、输出缺失和时间不足时，原预测文件的哈希均保持一致。[两种执行顺序](reports/atlas-after-glm.json) · [交付笔记本重放与超时验证](reports/atlas-after-glm-deployment.json)
+
+本队 Kaggle 私有运行 371529552 在 **360 篇公开文章**上跑完完整第四版，双 T4 用时 **1 小时 22 分 05 秒**。主集成、GSQ 与原生五折专家均完成，输出 360 × 18 的分数。两路 GLM 各对 54 篇做真实推理，累计 25 分 23 秒。ATLAS 处理 90 篇，加上末端处理用时 1 分 51 秒，改变 19 篇的最终标签。此组检验实际计算、输入行序和落盘流程，未用文章标签计算准确率。[各阶段实测和版本间预测差异](reports/v4-full-360-runtime.json)
 
 在单篇 Qwen 验证上，分别让两种 GLM 变少、变多，或随机改变 18 类的比例，按新批次重新选择低置信文章及 GLM 计算对象。共 18 次抽样，追加四来源步骤相对逐词元基线的增益为 +0.00443 至 +0.00851。这些抽样复用了原来的文章和模型。[类别比例压力测试](reports/atlas-after-glm-prevalence.json)
 

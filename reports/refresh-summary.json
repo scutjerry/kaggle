@@ -1,0 +1,125 @@
+{
+  "scope": {
+    "competition_id": 170484,
+    "discovery_start_utc": "2026-11-17T16:00Z",
+    "newest_discovered_version_utc": "2026-11-19T18:55:45.210Z",
+    "latest_notebooks_inspected": 300,
+    "latest_notebooks_created_during_window": 182,
+    "window_latest_with_notebook_level_best_at_least_0700": 55,
+    "fixed_versions_checked_including_earlier_bests": 67,
+    "fixed_versions_created_in_window": 62,
+    "fixed_version_score_distribution": {
+      "unreported": 9,
+      "0.704": 3,
+      "0.702": 33,
+      "0.701": 8,
+      "0.700": 8,
+      "0.703": 1
+    },
+    "method": "Anonymous native Kaggle KernelsService/ListKernels DATE_RUN, competition filter; LegacyKernelsService/GetKernelViewModel for exact submission scores. The score is only counted when submission.sourceScriptVersionId equals the exact version. This is a bounded discovery sample, not all public notebooks or all November 20 activity."
+  },
+  "high_scoring_versions": [
+    {
+      "version_id": 371206226,
+      "number": 12,
+      "date_utc": "2026-11-19T00:01:58.040Z",
+      "submission_id": 58531533,
+      "score": "0.704",
+      "version_url": "https://www.kaggle.com/code/lightningv08/0-704-glm-fable-routing-qwen3-8-27b-lora?scriptVersionId=371206226",
+      "source_url": "https://www.kaggle.com/kernels/scriptcontent/371206226/download",
+      "source_sha256": "c6c5cb3118602882fee24d4fb42fd42123b7b13f0977efa2f90f04b89e288b99",
+      "scored_runtime_docker_image": 31508,
+      "source_json_docker_image": 31508,
+      "input_count": 45,
+      "identical_positions_vs_vlad": 45,
+      "identical_typed_set_vs_vlad": true,
+      "code_cells": 29
+    },
+    {
+      "version_id": 371401730,
+      "number": 35,
+      "date_utc": "2026-11-19T11:35:19.580Z",
+      "submission_id": 58557943,
+      "score": "0.704",
+      "version_url": "https://www.kaggle.com/code/evgendvorkin/name-that-llm-deep-forensic-eda-with-analogie?scriptVersionId=371401730",
+      "source_url": "https://www.kaggle.com/kernels/scriptcontent/371401730/download",
+      "source_sha256": "177f7610d29cd8dbc34a3aebb2818988c667cae3893191d84fda7cce2e6bc8bd",
+      "scored_runtime_docker_image": 31481,
+      "source_json_docker_image": 31508,
+      "input_count": 45,
+      "identical_positions_vs_vlad": 12,
+      "identical_typed_set_vs_vlad": true,
+      "code_cells": 35
+    },
+    {
+      "version_id": 371341961,
+      "number": 2,
+      "date_utc": "2026-11-19T08:36:25.610Z",
+      "submission_id": 58552855,
+      "score": "0.703",
+      "version_url": "https://www.kaggle.com/code/mzishran/name-that-llm-how-the-ensemble-predicts?scriptVersionId=371341961",
+      "source_url": "https://www.kaggle.com/kernels/scriptcontent/371341961/download",
+      "source_sha256": "d0f9f2b8ec57b4c32ed4ed9640c31c51679167135e03a2b41d4ef28fc8c5758c",
+      "scored_runtime_docker_image": 31523,
+      "source_json_docker_image": 31508,
+      "input_count": 45,
+      "identical_positions_vs_vlad": 12,
+      "identical_typed_set_vs_vlad": true,
+      "code_cells": 30
+    },
+    {
+      "version_id": 371406176,
+      "number": 1,
+      "date_utc": "2026-11-19T11:50:03.863Z",
+      "submission_id": 58558588,
+      "score": "0.704",
+      "version_url": "https://www.kaggle.com/code/bill123987/ntl706w?scriptVersionId=371406176",
+      "source_url": "https://www.kaggle.com/kernels/scriptcontent/371406176/download",
+      "source_sha256": "e6423c37328128db864c2c4c033e5ae3dde4ab4ce08c2b9bdaa3f211e8f6f0ae",
+      "scored_runtime_docker_image": 31508,
+      "source_json_docker_image": 31508,
+      "input_count": 45,
+      "identical_positions_vs_vlad": 38,
+      "identical_typed_set_vs_vlad": true,
+      "code_cells": 31
+    }
+  ],
+  "source_cell_comparison": {
+    "Vlad V12": "29 inference code cells; selected two-GLM row priority is the sum of GLM probabilities plus 0.35 times the lesser of that sum and Claude Fable probability. Up to 15% rows/90,000 estimated token positions, minimum 50 rows. Preserve post-GLM Fable for raw GLM winners if margin improves at least 0.30 and ends at least 0.25. Then multiply triggered forbidden typography classes by 0.15. Same upstream 54-feature head and GLM evidence scale as Alex V30.",
+    "Evgen V35": "Six extra code cells before all 29 byte-identical, ordered Vlad inference sources. Their execution and different runtime image can affect environment; inference text matches exactly.",
+    "mzishran V2": "All 29 byte-identical Vlad inference cells in order, followed by a visualization cell.",
+    "Bill V1": "Compared directly against Alex V30: 30 of 31 executable cells are identical. Existing two-GLM evidence weight is multiplied by 1.25 and guard ceiling changes from 0.25 to 0.32. Uses original GLM mass routing and original 0.05 typography penalty. Bound guard does not trigger at 15% selection. This is a separate change on the shared V30 family."
+  },
+  "pinning_checks": {
+    "Vlad V16": {
+      "version_id": 371209029,
+      "submission": 58531727,
+      "score": "0.702",
+      "url": "https://www.kaggle.com/code/lightningv08/0-704-glm-fable-routing-qwen3-8-27b-lora?scriptVersionId=371209029",
+      "note": "The title still advertises 0.704. This fixed version lost the V12 post-GLM Fable-return rule."
+    },
+    "mzishran V3": {
+      "version_id": 371476032,
+      "submission": 58568113,
+      "score": null,
+      "note": "The actual version-specific record contained no scoreFormatted at cutoff."
+    }
+  },
+  "resource_difference_from_alex": {
+    "resource": "crtproduction/name-that-llm-open-pool",
+    "source": "https://www.kaggle.com/datasets/crtproduction/name-that-llm-open-pool",
+    "replaced_version": {
+      "number": 17,
+      "id": 22123604,
+      "archive_bytes": 105140113
+    },
+    "new_version": {
+      "number": 18,
+      "id": 22385546,
+      "archive_bytes": 107234825
+    },
+    "verification": "Anonymous HTTP redirects from the official version-numbered Kaggle download requests contained the matching dataset version IDs. Other 44 typed sources persist. The data preparation cell reads the updated pool; in the actual full runner --pool and --extra are both omitted and default to empty, so the new pool is not passed through these GPU inference branches. No GPU end-to-end equality claim."
+  },
+  "licensing": "The previous Alex V30 page rendered Apache 2.0 for its code. The checked fixed sources and anonymous fixed-version metadata do not contain a separate author-specific license declaration. Mounted artifacts keep their own upstream licenses.",
+  "independence": "The reviewed versions scoring at least 0.703 share the main published ensemble ancestry. Within this search, two distinct scored changes were verified: Fable routing and Bill likelihood strength."
+}
