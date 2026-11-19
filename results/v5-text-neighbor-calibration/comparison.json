@@ -36,13 +36,18 @@
       "delta": 0.020370370370370428
     }
   ],
-  "thin": 0.4508153119562516,
-  "thin_delta": 0.002224707929405989,
-  "skew_mean_delta": 0.010378282615874845,
+  "thin": 0.4452647278150633,
+  "thin_baseline": 0.4460029828486205,
+  "thin_delta": -0.000738255033557178,
+  "single_baseline": 0.44340293313447676,
+  "single": 0.44340293313447676,
+  "single_delta": 0.0,
+  "stress_method": "Recompute both the upstream v3 calibration and topic-neighbor correction per sub-batch",
+  "skew_mean_delta": 0.012271872919176132,
   "skew_delta_percentiles": [
-    -0.006592094466707493,
-    0.009898944866050141,
-    0.026785501641823466
+    -0.002459443697188845,
+    0.013902871819538476,
+    0.02707322077071631
   ],
-  "eligible": true
+  "eligible": false
 }

@@ -27,13 +27,13 @@ v5 的新编码器用每类 40 条外部样本补充训练，固定融合权重�
 
 ### 文本近邻校准
 
-取同一批次中词语最相近的段落，若许多相似段落都被高置信度判为同一个模型，则轻微下调该模型的概率。每折仅用训练文本构建词表。把每个验证折拆成六个小批次后，三条基线仍有增益，但改善幅度比完整批次小。
+取同一批次中词语最相近的段落，若许多相似段落都被高置信度判为同一个模型，则轻微下调该模型的概率。每折仅用训练文本构建词表。每题约三段时，从原始折外预测重算各小批次的两级校准，v3 得到 0.00630 的净增益，v4 加 Extra40 的分数轻微下降。每题仅一段时，三种配置的平衡准确率均与各自基线相同。
 
-| 基线 | 原五折 | 完整批次校准 | 稀疏批次校准 | 提升折数 |
-| --- | ---: | ---: | ---: | ---: |
-| [v3（本轮 v6）](results/v3-text-neighbor-calibration/comparison.json) | 0.43821 | 0.46118 | 0.44229 | 5/5 |
-| [v3 + 18% Extra40](results/v5-v3-text-neighbor-calibration/comparison.json) | 0.44304 | 0.46378 | 0.44564 | 5/5 |
-| [v4 + 18% Extra40](results/v5-text-neighbor-calibration/comparison.json) | 0.44859 | 0.46156 | 0.45082 | 4/5 |
+| 基线 | 完整批次基线 | 完整批次校准 | 稀疏批次基线 | 稀疏批次校准 | 完整批次提升折数 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [v3（本轮 v6）](results/v3-text-neighbor-calibration/comparison.json) | 0.43821 | 0.46118 | 0.43303 | 0.43933 | 5/5 |
+| [v3 + 18% Extra40](results/v5-v3-text-neighbor-calibration/comparison.json) | 0.44304 | 0.46378 | 0.43860 | 0.44304 | 5/5 |
+| [v4 + 18% Extra40](results/v5-text-neighbor-calibration/comparison.json) | 0.44859 | 0.46156 | 0.44600 | 0.44526 | 4/5 |
 
 另两项对照同以 v4 + Extra40 的 0.44859 为基准。对易混淆型号做成对重排得到 0.44600，加入段落内部重复模式得到 0.44229。成对重排的二级模型复用了折外预测，报告保留了该验证设计的限制。[成对重排](results/v5-confusion-pairs/comparison.json) · [段落重复模式](results/passage-recurrence-v5-08/comparison.json)
 
