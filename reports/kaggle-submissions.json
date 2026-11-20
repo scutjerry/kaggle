@@ -10,11 +10,13 @@
     "previous_accepted_at": "2026-11-19T21:55:19+08:00",
     "interval_seconds": 36373,
     "attempt_number": 6,
-    "kaggle_status": "Notebook Running",
-    "public_score": null,
-    "platform_status_checked_at": "2026-11-20T12:36:10+08:00",
+    "kaggle_status": "Succeeded",
+    "public_score": 0.704,
+    "platform_status_checked_at": "2026-11-20T14:20:10+08:00",
     "team_disposition": "discarded_by_user",
+    "disposition_note": "The team archived this attempt while Kaggle was running it. Kaggle subsequently reported a score.",
     "submitted_notebook_archive_sha256": "6f6ece9a488a614a3728ee2c1fb3564c790351dd221c7b1ac62e8e3db0245cfd",
+    "scored_notebook_archive_sha256": "e0536229242cb95aa90306ea65b21b0cdda3a5aa49e8eb1d4aa590f00b0e7cad",
     "notebook_sha256": "9beea3ebf86ef70a8fc8f280230ca8f6192daaafb506ae8b782d8598ca1e9bfb",
     "quota_after_submission": 4,
     "team_submission_page": "https://www.kaggle.com/competitions/name-that-llm/submissions"
@@ -44,6 +46,14 @@
       "version": "Two-stage Qwen + text-neighbor calibration",
       "score": 0.593,
       "accepted_at": "2026-11-19T21:55:19+08:00"
+    },
+    {
+      "version": "V8 Vlad V12 Fable routing",
+      "team": "LiJY",
+      "formal_submission_id": 58584558,
+      "notebook_version_id": 371551411,
+      "score": 0.704,
+      "accepted_at": "2026-11-20T08:01:32+08:00"
     }
   ],
   "interval_policy_effective_after_attempt": 4
