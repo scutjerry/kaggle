@@ -1,15 +1,20 @@
 {
   "minimum_submission_interval_hours": 2,
   "latest": {
-    "name": "Two-stage Qwen + text-neighbor calibration",
+    "name": "V8 Vlad V12 Fable routing",
     "notebook_version": 1,
-    "accepted_at": "2026-11-19T21:55:19+08:00",
-    "previous_accepted_at": "2026-11-19T18:00:16+08:00",
-    "interval_seconds": 14103,
-    "attempt_number": 5,
-    "kaggle_status": "Succeeded",
-    "public_score": 0.593,
-    "notebook_sha256": "f4ccfe3aa6850186e63a3396b9b30a49c2e9d52016792bc2132cbd545cb9c9bc"
+    "notebook_version_id": 371551411,
+    "formal_submission_id": 58584558,
+    "team": "LiJY",
+    "accepted_at": "2026-11-20T08:01:32+08:00",
+    "previous_accepted_at": "2026-11-19T21:55:19+08:00",
+    "interval_seconds": 36373,
+    "attempt_number": 6,
+    "kaggle_status": "Notebook Running",
+    "public_score": null,
+    "notebook_sha256": "9beea3ebf86ef70a8fc8f280230ca8f6192daaafb506ae8b782d8598ca1e9bfb",
+    "quota_after_submission": 4,
+    "team_submission_page": "https://www.kaggle.com/competitions/name-that-llm/submissions"
   },
   "scored_public_history": [
     {
