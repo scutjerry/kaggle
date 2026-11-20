@@ -12,6 +12,9 @@
     "attempt_number": 6,
     "kaggle_status": "Notebook Running",
     "public_score": null,
+    "platform_status_checked_at": "2026-11-20T12:36:10+08:00",
+    "team_disposition": "discarded_by_user",
+    "submitted_notebook_archive_sha256": "6f6ece9a488a614a3728ee2c1fb3564c790351dd221c7b1ac62e8e3db0245cfd",
     "notebook_sha256": "9beea3ebf86ef70a8fc8f280230ca8f6192daaafb506ae8b782d8598ca1e9bfb",
     "quota_after_submission": 4,
     "team_submission_page": "https://www.kaggle.com/competitions/name-that-llm/submissions"
